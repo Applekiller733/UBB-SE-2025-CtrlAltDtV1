@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ec9P3oPcuvs=",
+  "success": true,
+  "projectFilePath": "D:\\Faculty\\SoftwareEngineering\\SocialStuff\\SocialStuff\\SocialStuff.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.web.webview2\\1.0.2651.64\\microsoft.web.webview2.1.0.2651.64.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.26100.1742\\microsoft.windows.sdk.buildtools.10.0.26100.1742.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.250228001\\microsoft.windowsappsdk.1.6.250228001.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.13\\microsoft.netcore.app.runtime.win-x86.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.200\\microsoft.net.sdk.compilers.toolset.9.0.200.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.13\\microsoft.aspnetcore.app.runtime.win-x86.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.13\\microsoft.windowsdesktop.app.ref.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.13\\microsoft.netcore.app.ref.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.netcore.app.host.win-arm64\\8.0.13\\microsoft.netcore.app.host.win-arm64.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\8.0.13\\microsoft.netcore.app.runtime.win-arm64.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.13\\microsoft.aspnetcore.app.runtime.win-x64.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-arm64\\8.0.13\\microsoft.windowsdesktop.app.runtime.win-arm64.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.13\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.13\\microsoft.aspnetcore.app.ref.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.13\\microsoft.netcore.app.host.win-x64.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\8.0.13\\microsoft.aspnetcore.app.runtime.win-arm64.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.13\\microsoft.netcore.app.runtime.win-x64.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.13\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.13.nupkg.sha512",
+    "C:\\Users\\alexe\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\8.0.13\\microsoft.netcore.app.host.win-x86.8.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
