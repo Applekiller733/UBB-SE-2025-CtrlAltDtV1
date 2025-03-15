@@ -29,25 +29,25 @@
     <AppXManifest Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-14T08:43:32.181</Modified>
+      <Modified>2025-03-15T17:44:42.019</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-03-14T08:43:31.642</Modified>
+      <Modified>2025-03-15T17:34:56.319</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.runtimeconfig.json">
       <PackagePath>SocialStuff.runtimeconfig.json</PackagePath>
-      <Modified>2025-03-14T08:43:31.135</Modified>
+      <Modified>2025-03-15T17:34:56.008</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.dll">
       <PackagePath>SocialStuff.dll</PackagePath>
-      <Modified>2025-03-14T08:43:30.120</Modified>
+      <Modified>2025-03-15T17:44:41.709</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>SocialStuff.exe</PackagePath>
-      <Modified>2025-03-14T08:43:30.144</Modified>
+      <Modified>2025-03-15T17:44:41.714</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
@@ -789,6 +789,86 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2024-11-11T17:23:04.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\azure.core\1.38.0\lib\net6.0\Azure.Core.dll">
+      <PackagePath>Azure.Core.dll</PackagePath>
+      <Modified>2024-02-26T15:24:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\azure.identity\1.11.4\lib\netstandard2.0\Azure.Identity.dll">
+      <PackagePath>Azure.Identity.dll</PackagePath>
+      <Modified>2024-06-10T16:43:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.bcl.asyncinterfaces\1.1.1\lib\netstandard2.1\Microsoft.Bcl.AsyncInterfaces.dll">
+      <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
+      <Modified>2020-04-14T22:39:12.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.bcl.cryptography\8.0.0\lib\net8.0\Microsoft.Bcl.Cryptography.dll">
+      <PackagePath>Microsoft.Bcl.Cryptography.dll</PackagePath>
+      <Modified>2023-10-31T14:58:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll">
+      <PackagePath>Microsoft.Data.SqlClient.dll</PackagePath>
+      <Modified>2025-01-23T18:45:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.extensions.caching.abstractions\8.0.0\lib\net8.0\Microsoft.Extensions.Caching.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Caching.Abstractions.dll</PackagePath>
+      <Modified>2023-10-31T14:58:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.extensions.caching.memory\8.0.1\lib\net8.0\Microsoft.Extensions.Caching.Memory.dll">
+      <PackagePath>Microsoft.Extensions.Caching.Memory.dll</PackagePath>
+      <Modified>2024-09-16T23:10:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\8.0.2\lib\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
+      <Modified>2024-09-16T23:09:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.extensions.logging.abstractions\8.0.2\lib\net8.0\Microsoft.Extensions.Logging.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Logging.Abstractions.dll</PackagePath>
+      <Modified>2024-09-16T23:09:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.extensions.options\8.0.2\lib\net8.0\Microsoft.Extensions.Options.dll">
+      <PackagePath>Microsoft.Extensions.Options.dll</PackagePath>
+      <Modified>2024-01-18T03:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.extensions.primitives\8.0.0\lib\net8.0\Microsoft.Extensions.Primitives.dll">
+      <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
+      <Modified>2023-10-31T14:58:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.identity.client\4.61.3\lib\net6.0\Microsoft.Identity.Client.dll">
+      <PackagePath>Microsoft.Identity.Client.dll</PackagePath>
+      <Modified>2024-06-06T22:09:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.identity.client.extensions.msal\4.61.3\lib\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll">
+      <PackagePath>Microsoft.Identity.Client.Extensions.Msal.dll</PackagePath>
+      <Modified>2024-06-06T22:14:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.identitymodel.abstractions\7.5.0\lib\net8.0\Microsoft.IdentityModel.Abstractions.dll">
+      <PackagePath>Microsoft.IdentityModel.Abstractions.dll</PackagePath>
+      <Modified>2024-03-26T18:40:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.identitymodel.jsonwebtokens\7.5.0\lib\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll">
+      <PackagePath>Microsoft.IdentityModel.JsonWebTokens.dll</PackagePath>
+      <Modified>2024-03-26T18:40:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.identitymodel.logging\7.5.0\lib\net8.0\Microsoft.IdentityModel.Logging.dll">
+      <PackagePath>Microsoft.IdentityModel.Logging.dll</PackagePath>
+      <Modified>2024-03-26T18:40:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.identitymodel.protocols\7.5.0\lib\net8.0\Microsoft.IdentityModel.Protocols.dll">
+      <PackagePath>Microsoft.IdentityModel.Protocols.dll</PackagePath>
+      <Modified>2024-03-26T18:40:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.identitymodel.protocols.openidconnect\7.5.0\lib\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll">
+      <PackagePath>Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</PackagePath>
+      <Modified>2024-03-26T18:40:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.identitymodel.tokens\7.5.0\lib\net8.0\Microsoft.IdentityModel.Tokens.dll">
+      <PackagePath>Microsoft.IdentityModel.Tokens.dll</PackagePath>
+      <Modified>2024-03-26T18:40:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.sqlserver.server\1.0.0\lib\netstandard2.0\Microsoft.SqlServer.Server.dll">
+      <PackagePath>Microsoft.SqlServer.Server.dll</PackagePath>
+      <Modified>2022-01-27T17:19:08.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.windowsappsdk\1.6.250228001\lib\net6.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
       <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
       <Modified>2025-02-21T02:26:38.000</Modified>
@@ -853,6 +933,94 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
       <Modified>2025-02-27T19:58:40.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.clientmodel\1.0.0\lib\net6.0\System.ClientModel.dll">
+      <PackagePath>System.ClientModel.dll</PackagePath>
+      <Modified>2024-01-03T17:43:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.configuration.configurationmanager\8.0.1\lib\net8.0\System.Configuration.ConfigurationManager.dll">
+      <PackagePath>System.Configuration.ConfigurationManager.dll</PackagePath>
+      <Modified>2024-09-16T23:09:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.diagnostics.eventlog\8.0.1\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll">
+      <PackagePath>System.Diagnostics.EventLog.Messages.dll</PackagePath>
+      <Modified>2024-09-16T23:10:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.diagnostics.eventlog\8.0.1\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll">
+      <PackagePath>System.Diagnostics.EventLog.dll</PackagePath>
+      <Modified>2024-09-16T23:10:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.identitymodel.tokens.jwt\7.5.0\lib\net8.0\System.IdentityModel.Tokens.Jwt.dll">
+      <PackagePath>System.IdentityModel.Tokens.Jwt.dll</PackagePath>
+      <Modified>2024-03-26T18:38:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.memory.data\1.0.2\lib\netstandard2.0\System.Memory.Data.dll">
+      <PackagePath>System.Memory.Data.dll</PackagePath>
+      <Modified>2021-04-08T16:45:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.security.cryptography.pkcs\8.0.1\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll">
+      <PackagePath>System.Security.Cryptography.Pkcs.dll</PackagePath>
+      <Modified>2024-09-16T23:10:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.security.cryptography.protecteddata\8.0.0\lib\net8.0\System.Security.Cryptography.ProtectedData.dll">
+      <PackagePath>System.Security.Cryptography.ProtectedData.dll</PackagePath>
+      <Modified>2023-10-31T14:59:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\cs\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>cs\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\de\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>de\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\es\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>es\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\fr\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>fr\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\it\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>it\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\ja\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>ja\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\ko\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>ko\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\pl\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>pl\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\pt-BR\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>pt-BR\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\ru\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>ru\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\tr\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>tr\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>zh-Hans\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient\6.0.1\lib\net8.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll">
+      <PackagePath>zh-Hant\Microsoft.Data.SqlClient.resources.dll</PackagePath>
+      <Modified>2025-01-23T18:45:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.data.sqlclient.sni.runtime\6.0.2\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll">
+      <PackagePath>Microsoft.Data.SqlClient.SNI.dll</PackagePath>
+      <Modified>2025-01-16T00:23:36.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>WebView2Loader.dll</PackagePath>
       <Modified>2024-07-20T08:33:54.000</Modified>
@@ -871,7 +1039,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.deps.json">
       <PackagePath>SocialStuff.deps.json</PackagePath>
-      <Modified>2025-03-14T08:43:30.898</Modified>
+      <Modified>2025-03-15T17:34:55.840</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
