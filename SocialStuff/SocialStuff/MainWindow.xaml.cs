@@ -29,12 +29,22 @@ namespace SocialStuff
             this.InitializeComponent();
         }
 
+        private void myButtonCheck()
+        {
+            myButton.Content = "Connected to DB";
+
+        }
+
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
             DatabaseConnection dc = new Repository.DatabaseConnection();
             dc.OpenConnection();
+            int res = dc.CheckConnection();
+            if (res == 1)
+            {
+                myButtonCheck();
+            }
             dc.CloseConnection();
-            myButton.Content = "Clicked";
         }
     }
 }

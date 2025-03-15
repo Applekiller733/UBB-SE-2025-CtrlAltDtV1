@@ -29,7 +29,7 @@
     <AppXManifest Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-15T17:44:42.019</Modified>
+      <Modified>2025-03-15T18:25:40.656</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.dll">
       <PackagePath>SocialStuff.dll</PackagePath>
-      <Modified>2025-03-15T17:44:41.709</Modified>
+      <Modified>2025-03-15T18:25:40.300</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>SocialStuff.exe</PackagePath>
-      <Modified>2025-03-15T17:44:41.714</Modified>
+      <Modified>2025-03-15T18:25:40.307</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
