@@ -10,6 +10,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using SocialStuff.Repository;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -30,6 +31,9 @@ namespace SocialStuff
 
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
+            DatabaseConnection dc = new Repository.DatabaseConnection();
+            dc.OpenConnection();
+            dc.CloseConnection();
             myButton.Content = "Clicked";
         }
     }

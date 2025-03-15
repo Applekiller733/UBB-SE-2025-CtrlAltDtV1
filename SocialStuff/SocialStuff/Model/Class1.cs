@@ -8,5 +8,6 @@ namespace SocialStuff.Model
 {
     internal class Class1
     {
+
     }
 }
