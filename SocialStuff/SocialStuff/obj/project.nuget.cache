@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ec9P3oPcuvs=",
+  "dgSpecHash": "jx2Bbo6GD2k=",
   "success": true,
-  "projectFilePath": "D:\\Faculty\\SoftwareEngineering\\SocialStuff\\SocialStuff\\SocialStuff.csproj",
+  "projectFilePath": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\SocialStuff.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexe\\.nuget\\packages\\microsoft.web.webview2\\1.0.2651.64\\microsoft.web.webview2.1.0.2651.64.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.26100.1742\\microsoft.windows.sdk.buildtools.10.0.26100.1742.nupkg.sha512",
