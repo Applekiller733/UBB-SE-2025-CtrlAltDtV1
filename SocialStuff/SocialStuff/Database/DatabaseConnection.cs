@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 
-namespace SocialStuff.Repository
+namespace SocialStuff.Database
 {
     internal class DatabaseConnection
     {
@@ -22,17 +22,17 @@ namespace SocialStuff.Repository
 
         public void OpenConnection()
         {
-            if (conn.State == System.Data.ConnectionState.Closed)
+            if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
                 Console.WriteLine("Database Connected!");
-                
+
             }
         }
 
         public int CheckConnection()
         {
-            if (conn.State == System.Data.ConnectionState.Open)
+            if (conn.State == ConnectionState.Open)
             {
                 Console.WriteLine("Database Connection is Open!");
                 // print something on the screen
@@ -48,7 +48,7 @@ namespace SocialStuff.Repository
         }
         public void CloseConnection()
         {
-            if (conn.State == System.Data.ConnectionState.Open)
+            if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
                 Console.WriteLine("Database Connection Closed!");

@@ -41,6 +41,7 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250228001" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Database\Procedures\Chats\" />
     <Folder Include="View\" />
   </ItemGroup>
 
