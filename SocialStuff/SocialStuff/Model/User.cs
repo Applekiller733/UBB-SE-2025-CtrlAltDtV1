@@ -12,27 +12,21 @@ namespace SocialStuff.Model
         public int UserId { get; set; }
         public string Username { get; set; }
         public string PhoneNumber { get; set; }
-        public List<int> Friends { get; set; }
-        public List<int> Chats { get; set; }
         public int ReportedCount { get; set; }
 
         public User() { }
-        public User(int userId, string username, string phoneNumber, List<int> friends, List<int> chats, int reportedCount)
+        public User(int userId, string username, string phoneNumber, int reportedCount)
         {
             UserId = userId;
             Username = username;
             PhoneNumber = phoneNumber;
-            Friends = friends;
-            Chats = chats;
             ReportedCount = reportedCount;
         }
-        public User(int userId, string username, string phoneNumber, List<int> friends, List<int> chats)
+        public User(int userId, string username, string phoneNumber)
         {
             UserId = userId;
             Username = username;
             PhoneNumber = phoneNumber;
-            Friends = friends;
-            Chats = chats;
             ReportedCount = 0;
         }
 
@@ -42,40 +36,9 @@ namespace SocialStuff.Model
             return $"User ID: {UserId}, " +
                 $"Username: {Username}, " +
                 $"Phone Number: {PhoneNumber}, " +
-                $"Friends: {string.Join(", ", Friends)}, " +
-                $"Chat IDs: {string.Join(", ", Chats)}, " +
                 $"Reported Count: {ReportedCount}";
         }
 
-        public void AddFriend(int friendID)
-        {
-            Friends.Add(friendID);
-        }
-
-        public void RemoveFriend(int friendID)
-        {
-            Friends.Remove(friendID);
-        }
-
-        public void JoinChat(int chat)
-        {
-            Chats.Add(chat);
-        }
-
-        public void LeaveChat(int chat)
-        {
-            Chats.Remove(chat);
-        }
-
-        public int GetFriendCount()
-        {
-            return Friends.Count;
-        }
-
-        public int GetChatCount()
-        {
-            return Chats.Count;
-        }
 
         public void IncreaseReportCount()
         {
