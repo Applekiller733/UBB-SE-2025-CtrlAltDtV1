@@ -17,14 +17,14 @@ namespace SocialStuff.Model
         public int ReportedCount { get; set; }
 
         public User() { }
-        public User(int userId, string username, string phoneNumber, List<int> friends, List<int> chats)
+        public User(int userId, string username, string phoneNumber, List<int> friends, List<int> chats, int reportedCount)
         {
             UserId = userId;
             Username = username;
             PhoneNumber = phoneNumber;
             Friends = friends;
             Chats = chats;
-            ReportedCount = 0;
+            ReportedCount = reportedCount;
         }
 
 

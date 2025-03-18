@@ -30,8 +30,8 @@ namespace SocialStuff.Services
 
         public void AddFriend(int userID, int newFriendID)
         {
-            var user = repo.GetUserById(userID);
-            var friend = repo.GetUserById(newFriendID);
+            var user = GetUserById(userID);
+            var friend = GetUserById(newFriendID);
 
             if (user != null && friend != null && !user.Friends.Contains(newFriendID))
             {
@@ -46,8 +46,8 @@ namespace SocialStuff.Services
 
         public void RemoveFriend(int userID, int oldFriendID)
         {
-            var user = repo.GetUserById(userID);
-            var friend = repo.GetUserById(oldFriendID);
+            var user = GetUserById(userID);
+            var friend = GetUserById(oldFriendID);
 
             if (user != null && friend != null && user.Friends.Contains(oldFriendID))
             {
@@ -61,7 +61,7 @@ namespace SocialStuff.Services
 
         public void JoinChat(int userID, int chatID)
         {
-            var user = repo.GetUserById(userID);
+            var user = GetUserById(userID);
             if (user != null && !user.Chats.Contains(chatID))
             {
                 user.JoinChat(chatID);
@@ -71,7 +71,7 @@ namespace SocialStuff.Services
 
         public void LeaveChat(int userID, int chatID)
         {
-            var user = repo.GetUserById(userID);
+            var user = GetUserById(userID);
             if (user != null && user.Chats.Contains(chatID))
             {
                 user.LeaveChat(chatID);
@@ -90,11 +90,11 @@ namespace SocialStuff.Services
 
         public List<int> FilterFriends(string keyword, int userID)
         {
-            var user = repo.GetUserById(userID);
+            var user = GetUserById(userID);
             if (user == null) return new List<int>();
 
             return user.Friends
-                       .Select(friendID => repo.GetUserById(friendID))
+                       .Select(friendID => GetUserById(friendID))
                        .Where(friend => friend != null &&
                                         (friend.Username.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
                                          friend.PhoneNumber.Contains(keyword)))
@@ -104,8 +104,22 @@ namespace SocialStuff.Services
 
         public List<int> GetFriendsByUser(int userID)
         {
-            var user = repo.GetUserById(userID);
+            var user =  GetUserById(userID);
             return user?.Friends ?? new List<int>();
+        }
+
+        public User GetUserById(int userID)
+        {
+            List<User> users = repo.GetAllUsers();
+            foreach (User user in users) 
+            {
+                if (user.UserId == userID)
+                {
+                    return user;
+                }
+            }
+
+            return null; 
         }
 
         public int GetCurrentUser()
