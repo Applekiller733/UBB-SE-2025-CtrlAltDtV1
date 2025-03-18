@@ -14,7 +14,7 @@ namespace SocialStuff.Model
         private int ChatID;
         private string ChatName;
 
-        // am presupus ca chat-ul va primi in constructor un chatid
+        // am presupus ca chat-ul va primi in constructor 
         public Chat(int ChatID)
         {
             this.ChatID = ChatID;
@@ -27,25 +27,33 @@ namespace SocialStuff.Model
             DatabaseConnection dbConnection = new DatabaseConnection();
             dbConnection.OpenConnection();
 
-            string chatQuery = "SELECT ChatName FROM CHATS WHERE ChatID = @ChatID";
-            SqlCommand chatCommand = new SqlCommand(chatQuery, dbConnection.getConnection());
-            chatCommand.Parameters.AddWithValue("@ChatID", this.ChatID);
-            this.ChatName = (string)chatCommand.ExecuteScalar();
-
-            string query = "SELECT UserID FROM CHAT_PARTICIPANTS WHERE ChatID = @ChatID";
-            using (SqlCommand cmd = new SqlCommand(query, dbConnection.getConnection()))
+            try
             {
-                cmd.Parameters.AddWithValue("@ChatID", this.ChatID);
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                string chatQuery = "SELECT ChatName FROM CHATS WHERE ChatID = @ChatID";
+                SqlCommand chatCommand = new SqlCommand(chatQuery, dbConnection.getConnection());
+                chatCommand.Parameters.AddWithValue("@ChatID", this.ChatID);
+                this.ChatName = (string)chatCommand.ExecuteScalar();
+
+                string query = "SELECT UserID FROM CHAT_PARTICIPANTS WHERE ChatID = @ChatID";
+                using (SqlCommand cmd = new SqlCommand(query, dbConnection.getConnection()))
                 {
-                    while (reader.Read())
+                    cmd.Parameters.AddWithValue("@ChatID", this.ChatID);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        UserIDsList.Add(reader.GetInt32(0));
+                        while (reader.Read())
+                        {
+                            UserIDsList.Add(reader.GetInt32(0));
+                        }
                     }
                 }
             }
-
-            dbConnection.CloseConnection();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            finally { dbConnection.CloseConnection(); }
+            
         }
 
         public int getChatID() { return this.ChatID; }
