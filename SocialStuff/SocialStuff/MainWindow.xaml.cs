@@ -11,6 +11,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using SocialStuff.Repository;
+using SocialStuff.Services;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 

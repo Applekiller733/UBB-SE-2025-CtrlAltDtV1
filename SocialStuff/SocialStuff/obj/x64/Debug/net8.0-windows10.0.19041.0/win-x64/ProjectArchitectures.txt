@@ -1,1 +1,1 @@
-D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\SocialStuff.csproj;x64
+D:\UBB\Anul_2\Semestrul_II\ISS\SocialStuff App\SocialStuff\SocialStuff\SocialStuff.csproj;x64

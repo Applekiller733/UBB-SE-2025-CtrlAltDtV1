@@ -8,6 +8,6 @@ namespace SocialStuff.Repository
 {
     internal class Repository
     {
-
+        
     }
 }
