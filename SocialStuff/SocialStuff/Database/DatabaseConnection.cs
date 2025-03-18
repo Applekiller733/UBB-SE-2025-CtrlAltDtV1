@@ -10,7 +10,7 @@ namespace SocialStuff.Database
 {
     internal class DatabaseConnection
     {
-        string connectionString = @"Data Source=RAZVAN\SQLEXPRESS01;Initial Catalog=BankingDB;Integrated Security=True;TrustServerCertificate=True";
+        string connectionString = @"Data Source=DESKTOP-6QSI2DC\MSSQLSERVER01;Initial Catalog=BankingDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
 
 
         private SqlConnection conn;
@@ -19,6 +19,8 @@ namespace SocialStuff.Database
         {
             conn = new SqlConnection(connectionString);
         }
+
+        public SqlConnection getConnection() { return conn; }
 
         public void OpenConnection()
         {

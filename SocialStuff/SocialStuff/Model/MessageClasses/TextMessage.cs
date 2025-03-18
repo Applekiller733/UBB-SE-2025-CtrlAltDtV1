@@ -4,8 +4,9 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.System;
 
-namespace SocialStuff.Model.Message
+namespace SocialStuff.Model.MessageClasses
 {
     class TextMessage : Message
     {
@@ -15,13 +16,23 @@ namespace SocialStuff.Model.Message
         private string Content;
         private List<int> UsersReport;
 
+        // make the getting of the reports..
         public TextMessage(int senderID, int chatID, string content)
         {
-            SenderID = senderID;
-            ChatID = chatID;
-            Timestamp = DateTime.Now;
-            Content = content;
-            UsersReport = new List<int>();
+            this.SenderID = senderID;
+            this.ChatID = chatID;
+            this.Timestamp = DateTime.Now;
+            this.Content = content;
+            this.UsersReport = new List<int>();
+        }
+
+        public TextMessage(int senderID, int chatID, DateTime timestamp, string content)
+        {
+            this.SenderID = senderID;
+            this.ChatID = chatID;
+            this.Timestamp = timestamp;
+            this.Content = content;
+            this.UsersReport = new List<int>();
         }
 
         public int getChatID() { return ChatID; }

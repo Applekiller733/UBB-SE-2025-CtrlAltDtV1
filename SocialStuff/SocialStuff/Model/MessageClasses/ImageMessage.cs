@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialStuff.Model.Message
+namespace SocialStuff.Model.MessageClasses
 {
     class ImageMessage : Message
     {
@@ -14,6 +14,7 @@ namespace SocialStuff.Model.Message
         private string ImageURL;
         private List<int> UsersReport;
 
+        // get reports list
         public ImageMessage(int senderID, int chatID, string imageUrl)
         {
             SenderID = senderID;
@@ -21,6 +22,15 @@ namespace SocialStuff.Model.Message
             Timestamp = DateTime.Now;
             ImageURL = imageUrl;
             UsersReport = new List<int>();
+        }
+
+        public ImageMessage(int senderID, int chatID, DateTime timestamp, string imageUrl)
+        {
+            this.SenderID = senderID;
+            this.ChatID = chatID;
+            this.Timestamp = timestamp;
+            this.ImageURL = imageUrl;
+            this.UsersReport = new List<int>();
         }
 
         public string getImageURL() { return ImageURL; }

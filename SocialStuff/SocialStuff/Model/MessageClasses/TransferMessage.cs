@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialStuff.Model.Message
+namespace SocialStuff.Model.MessageClasses
 {
     class TransferMessage : Message
     {
@@ -18,7 +18,7 @@ namespace SocialStuff.Model.Message
         private string Currency;
         private List<int> ListOfReceiversID;
 
-        public TransferMessage(int senderID, int chatID, int status, float amount, string desc, string currency, List<int> receivers)
+        public TransferMessage(int senderID, int chatID, int status, float amount, string desc, string currency)
         {
             this.SenderID = senderID;
             this.ChatID = chatID;
@@ -28,8 +28,21 @@ namespace SocialStuff.Model.Message
             this.Amount = amount;
             this.Description = desc;
             this.Currency = currency;
-            this.ListOfReceiversID = receivers;
+            this.ListOfReceiversID = new List<int>();
 
+        }
+
+        public TransferMessage(int senderID, int chatID, DateTime timestamp, int status, float amount, string desc, string currency)
+        {
+            this.SenderID = senderID;
+            this.ChatID = chatID;
+            this.Timestamp = timestamp;
+
+            this.Status = status;
+            this.Amount = amount;
+            this.Description = desc;
+            this.Currency = currency;
+            this.ListOfReceiversID = new List<int>();
         }
 
         public List<int> getReceiversIDs() { return this.ListOfReceiversID; }

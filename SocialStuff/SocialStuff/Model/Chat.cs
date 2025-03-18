@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SocialStuff.Model.MessageClasses;
 
 namespace SocialStuff.Model
 {
@@ -31,10 +32,10 @@ namespace SocialStuff.Model
         private void loadChatNameFromDB()
         {
             DatabaseConnection dbConnection = new DatabaseConnection();
-            dbConnection.OpenConnection();
 
             try
             {
+                dbConnection.OpenConnection();
                 string query = "SELECT ChatName FROM CHATS WHERE ChatID = @ChatID";
                 SqlCommand chatCommand = new SqlCommand(query, dbConnection.getConnection());
                 chatCommand.Parameters.AddWithValue("@ChatID", this.ChatID);
@@ -51,10 +52,10 @@ namespace SocialStuff.Model
         private void loadChatParticipantsFromDB()
         {
             DatabaseConnection dbConnection = new DatabaseConnection();
-            dbConnection.OpenConnection();
 
             try
             {
+                dbConnection.OpenConnection();
                 string query = "SELECT UserID FROM CHAT_PARTICIPANTS WHERE ChatID = @ChatID";
                 using (SqlCommand cmd = new SqlCommand(query, dbConnection.getConnection()))
                 {
@@ -85,12 +86,12 @@ namespace SocialStuff.Model
         public DateTime getLastMessageTimestamp()
         {
             DatabaseConnection dbConnection = new DatabaseConnection();
-            dbConnection.OpenConnection();
 
             DateTime lastTimestamp = DateTime.MinValue;
 
             try
             {
+                dbConnection.OpenConnection();
                 string query = "SELECT Timestamp FROM MESSAGES WHERE ChatID = @ChatID ORDER BY Timestamp DESC";
                 SqlCommand chatCommand = new SqlCommand(query, dbConnection.getConnection());
                 chatCommand.Parameters.AddWithValue("@ChatID", this.ChatID);
@@ -108,7 +109,63 @@ namespace SocialStuff.Model
 
         public List<Message> getChatHistory()
         {
-            throw new NotImplementedException();
+            List<Message> chatHistory = new List<Message>();
+            DatabaseConnection dbConnection = new DatabaseConnection();
+
+            try
+            {
+                dbConnection.OpenConnection();
+                string query = "SELECT TypeID, UserID, Timestamp, Content, Status, Amount, Currency FROM MESSAGES WHERE ChatID = @ChatID ORDER BY Timestamp";
+
+                SqlCommand cmd = new SqlCommand(query, dbConnection.getConnection());
+                cmd.Parameters.AddWithValue("@ChatID", this.ChatID);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int typeID = reader.GetInt32(0);
+                        int userID = reader.GetInt32(1);
+                        DateTime timestamp = reader.GetDateTime(2);
+                        string content = reader.GetString(3);
+                        string status = reader.GetString(4);
+                        float amount = reader.GetFloat(5);
+                        string currency = reader.GetString(6);
+
+                        Message message;
+
+                        switch (typeID)
+                        {
+                            case 1: // Text message
+                                message = new TextMessage(userID, this.ChatID, timestamp, content);
+                                break;
+                            case 2: // Image message
+                                message = new ImageMessage(userID, this.ChatID, timestamp, content);
+                                break;
+                            case 3: // Transfer message
+                                message = new TransferMessage(userID, this.ChatID, timestamp, status, amount, content, currency);
+                                break;
+                            case 4: // Request message
+                                message = new RequestMessage(userID, this.ChatID, timestamp, status, amount, content, currency);
+                                break;
+                            default:
+                                throw new Exception("Unknown message type");
+                        }
+
+                        chatHistory.Add(message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Model - Chat Error getChatHistory(): " + ex.Message);
+            }
+            finally
+            {
+                dbConnection.CloseConnection();
+            }
+
+            return chatHistory;
         }
 
         public int getUserCount() { return this.UserIDsList.Count; }
