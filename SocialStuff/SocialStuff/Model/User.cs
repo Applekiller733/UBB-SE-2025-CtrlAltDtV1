@@ -26,6 +26,15 @@ namespace SocialStuff.Model
             Chats = chats;
             ReportedCount = reportedCount;
         }
+        public User(int userId, string username, string phoneNumber, List<int> friends, List<int> chats)
+        {
+            UserId = userId;
+            Username = username;
+            PhoneNumber = phoneNumber;
+            Friends = friends;
+            Chats = chats;
+            ReportedCount = 0;
+        }
 
 
         public override string ToString()

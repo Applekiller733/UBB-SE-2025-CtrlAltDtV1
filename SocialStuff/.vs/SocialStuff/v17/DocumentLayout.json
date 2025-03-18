@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\repository\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\repository\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1389,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,20 +42,76 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Data\\Repository.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\Data\\Repository.cs",
+              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Data\\Repository.cs*",
+              "RelativeToolTip": "SocialStuff\\Data\\Repository.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T19:35:22.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SocialStuff\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T16:38:00.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\App.xaml.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\App.xaml.cs",
+              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\App.xaml.cs",
+              "RelativeToolTip": "SocialStuff\\App.xaml.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T16:37:27.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Model\\User.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\Model\\User.cs",
+              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Model\\User.cs",
+              "RelativeToolTip": "SocialStuff\\Model\\User.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwBgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T16:03:12.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Services\\UserService.cs",
-              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Services\\UserService.cs",
-              "RelativeToolTip": "SocialStuff\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Services\\UserService.cs*",
+              "RelativeToolTip": "SocialStuff\\Services\\UserService.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-18T15:58:06.944Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "app.manifest",
               "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\app.manifest",
               "RelativeDocumentMoniker": "SocialStuff\\app.manifest",
@@ -56,32 +120,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
               "WhenOpened": "2025-03-17T12:35:52.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Repository\\Repository.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\Repository\\Repository.cs",
-              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Repository\\Repository.cs",
-              "RelativeToolTip": "SocialStuff\\Repository\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T12:35:42.07Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DatabaseConnection.cs",
-              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Repository\\DatabaseConnection.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\Repository\\DatabaseConnection.cs",
-              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Repository\\DatabaseConnection.cs*",
-              "RelativeToolTip": "SocialStuff\\Repository\\DatabaseConnection.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T12:33:11.794Z",
               "EditorCaption": ""
             }
           ]

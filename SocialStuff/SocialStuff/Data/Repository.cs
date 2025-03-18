@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using SocialStuff.Data.Database;
+using User = SocialStuff.Model.User;
 using Windows.System;
 using Windows.UI.Notifications;
 
@@ -374,6 +375,11 @@ namespace SocialStuff.Data
                 new SqlParameter("@ChatID", chatID)
             };
             dbConnection.ExecuteNonQuery("RemoveUserFromChat", parameters);
+        }
+
+        internal int getLoggedInUser()
+        {
+            throw new NotImplementedException();
         }
     }
 

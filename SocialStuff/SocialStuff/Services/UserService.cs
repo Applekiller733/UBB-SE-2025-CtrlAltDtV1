@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using SocialStuff.Model;
-using SocialStuff.Repository;
+using SocialStuff.Data;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -52,7 +52,7 @@ namespace SocialStuff.Services
             if (user != null && friend != null && user.Friends.Contains(oldFriendID))
             {
                 user.RemoveFriend(oldFriendID);
-                repo.RemoveFriend(userID, oldFriendID); //function from repo
+                repo.DeleteFriend(userID, oldFriendID); //function from repo
 
                 //friend.RemoveFriend(userID);
                 //repo.UpdateUser(friend);
@@ -65,7 +65,7 @@ namespace SocialStuff.Services
             if (user != null && !user.Chats.Contains(chatID))
             {
                 user.JoinChat(chatID);
-                repo.JoinChat(chatID, userID);
+                repo.AddUserToChat(chatID, userID);
             }
         }
 
@@ -75,13 +75,13 @@ namespace SocialStuff.Services
             if (user != null && user.Chats.Contains(chatID))
             {
                 user.LeaveChat(chatID);
-                repo.LeaveChat(chatID, userID);
+                repo.RemoveUserFromChat(chatID, userID);
             }
         }
 
         public List<int> FilterUsers(string keyword, int userID)
         {
-            var users = repo.GetAllUsers();
+            var users = repo.GetUsersList();
             return users.Where(u => (u.Username.Contains(keyword, StringComparison.OrdinalIgnoreCase)
                                     || u.PhoneNumber.Contains(keyword)) && u.UserId != userID)
                         .Select(u => u.UserId)
@@ -110,7 +110,7 @@ namespace SocialStuff.Services
 
         public User GetUserById(int userID)
         {
-            List<User> users = repo.GetAllUsers();
+            List<User> users = repo.GetUsersList();
             foreach (User user in users) 
             {
                 if (user.UserId == userID)
