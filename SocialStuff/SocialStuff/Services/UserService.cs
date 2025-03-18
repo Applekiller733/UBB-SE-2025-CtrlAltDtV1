@@ -32,11 +32,11 @@ namespace SocialStuff.Services
         {
             var user = GetUserById(userID);
             var friend = GetUserById(newFriendID);
+            var friends = repo.GetFriendsIDs(userID); // to implement
 
-            if (user != null && friend != null && !user.Friends.Contains(newFriendID))
+            if (user != null && friend != null && !friends.Contains(newFriendID))
             {
                 // friends is one way process so we add the friend to the user's friend list
-                user.AddFriend(newFriendID);
                 repo.AddFriend(userID, newFriendID);  //function from repo
 
                 //friend.AddFriend(userID);
@@ -48,10 +48,10 @@ namespace SocialStuff.Services
         {
             var user = GetUserById(userID);
             var friend = GetUserById(oldFriendID);
+            var friends = repo.GetFriendsIDs(userID); // to implement
 
-            if (user != null && friend != null && user.Friends.Contains(oldFriendID))
+            if (user != null && friend != null && friends.Contains(oldFriendID))
             {
-                user.RemoveFriend(oldFriendID);
                 repo.DeleteFriend(userID, oldFriendID); //function from repo
 
                 //friend.RemoveFriend(userID);
@@ -62,9 +62,10 @@ namespace SocialStuff.Services
         public void JoinChat(int userID, int chatID)
         {
             var user = GetUserById(userID);
-            if (user != null && !user.Chats.Contains(chatID))
+            var chats = repo.GetChatsIDs(userID); // to implement
+
+            if (user != null && !chats.Contains(chatID))
             {
-                user.JoinChat(chatID);
                 repo.AddUserToChat(chatID, userID);
             }
         }
@@ -72,9 +73,10 @@ namespace SocialStuff.Services
         public void LeaveChat(int userID, int chatID)
         {
             var user = GetUserById(userID);
-            if (user != null && user.Chats.Contains(chatID))
+            var chats = repo.GetChatsIDs(userID); // to implement
+
+            if (user != null && chats.Contains(chatID))
             {
-                user.LeaveChat(chatID);
                 repo.RemoveUserFromChat(chatID, userID);
             }
         }
@@ -92,9 +94,10 @@ namespace SocialStuff.Services
         {
             var user = GetUserById(userID);
             if (user == null) return new List<int>();
+            var friends = repo.GetFriends(userID); // to implement
 
-            return user.Friends
-                       .Select(friendID => GetUserById(friendID))
+            return friends
+                       .Select(friendID => friendID)
                        .Where(friend => friend != null &&
                                         (friend.Username.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
                                          friend.PhoneNumber.Contains(keyword)))
@@ -105,7 +108,9 @@ namespace SocialStuff.Services
         public List<int> GetFriendsByUser(int userID)
         {
             var user =  GetUserById(userID);
-            return user?.Friends ?? new List<int>();
+            var friends = repo.GetFriendsIDs(userID); // to implement
+
+            return friends;
         }
 
         public User GetUserById(int userID)
@@ -124,7 +129,7 @@ namespace SocialStuff.Services
 
         public int GetCurrentUser()
         {
-            return repo.getLoggedInUser(); // This should be replaced with actual logic to get the logged-in user.
+            return repo.GetLoggedInUserID(); // This should be replaced with actual logic to get the logged-in user.
         }
     }
 }

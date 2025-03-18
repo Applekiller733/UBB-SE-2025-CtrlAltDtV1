@@ -26,7 +26,7 @@ namespace SocialStuff.Data
             return dbConnection;
         }
 
-        public static int GetLoggedInUserID()
+        public int GetLoggedInUserID()
         {
             return loggedInUserID;
         }
@@ -66,6 +66,79 @@ namespace SocialStuff.Data
             return notifications;
         }
 
+        // Get all friends of a user
+        public List<User> GetFriends(int userID)
+        {
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@UserID", userID)
+            };
+            DataTable dataTable = dbConnection.ExecuteReader("GetFriends", parameters);
+            List<User> friends = new List<User>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                friends.Add(new User
+                {
+                    UserId = Convert.ToInt32(row["UserID"]),
+                    Username = row["Username"].ToString(),
+                    PhoneNumber = row["PhoneNumber"].ToString(),
+                    ReportedCount = Convert.ToInt32(row["ReportedCount"])
+                });
+            }
+            return friends;
+        }
+
+        // Get all friends ids of a user
+        public List<int> GetFriendsIDs(int userID)
+        {
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@UserID", userID)
+            };
+            DataTable dataTable = dbConnection.ExecuteReader("GetFriends", parameters);
+            List<int> friends = new List<int>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                friends.Add(Convert.ToInt32(row["UserID"]));
+            }
+            return friends;
+        }
+
+        // Get all chats of a user
+        public List<Chat> GetChats(int userID)
+        {
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@UserID", userID)
+            };
+            DataTable dataTable = dbConnection.ExecuteReader("GetChats", parameters);
+            List<Chat> chats = new List<Chat>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                chats.Add(new Chat
+                {
+                    ChatID = Convert.ToInt32(row["ChatID"]),
+                    ChatName = row["ChatName"].ToString()
+                });
+            }
+            return chats;
+        }
+
+        // Get all chats ids of a user
+        public List<int> GetChatsIDs(int userID)
+        {
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@UserID", userID)
+            };
+            DataTable dataTable = dbConnection.ExecuteReader("GetChats", parameters);
+            List<int> chats = new List<int>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                chats.Add(Convert.ToInt32(row["ChatID"]));
+            }
+            return chats;
+        }
 
         // Add a chat to the database
         public void AddChat(string chatName, out int chatID)
@@ -377,10 +450,7 @@ namespace SocialStuff.Data
             dbConnection.ExecuteNonQuery("RemoveUserFromChat", parameters);
         }
 
-        internal int getLoggedInUser()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 
 }
