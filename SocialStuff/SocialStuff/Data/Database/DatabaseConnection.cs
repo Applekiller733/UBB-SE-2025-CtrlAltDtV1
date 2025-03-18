@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 
-namespace SocialStuff.Database
+namespace SocialStuff.Data.Database
 {
     internal class DatabaseConnection
     {
