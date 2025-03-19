@@ -52,7 +52,7 @@ namespace SocialStuff.Model.MessageClasses
 
         public float getAmount() { return this.Amount; }
 
-        public string getMessageStatus() { return this.Status; }
+        public int getMessageStatus() { return this.Status; }
 
         public string getCurrency() { return this.Currency; }
 
