@@ -19,6 +19,9 @@ namespace SocialStuff.Data
         {
             dbConnection = new DatabaseConnection();
             Console.WriteLine("Repo created");
+            //AddUser("Razvan", "0751198737");
+            //AddUser("Carmen", "0720511858");
+            //AddUser("Maria", "0712345678");
         }
 
 
@@ -143,7 +146,7 @@ namespace SocialStuff.Data
                 int chatID = Convert.ToInt32(row["chatid"]);
                 DateTime timestamp = Convert.ToDateTime(row["timestamp"]);
                 string content = row["content"].ToString();
-                int status = Convert.ToInt32(row["status"]);
+                string status = row["status"].ToString();
                 float amount = Convert.ToSingle(row["amount"]);
                 string currency = row["currency"].ToString();
                 switch (typeID)
