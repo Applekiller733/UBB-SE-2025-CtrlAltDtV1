@@ -5,11 +5,11 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.System;
-
 namespace SocialStuff.Model.MessageClasses
 {
     class TextMessage : Message
     {
+        private int MessageID;
         private int SenderID;
         private int ChatID;
         private DateTime Timestamp;
@@ -17,7 +17,7 @@ namespace SocialStuff.Model.MessageClasses
         private List<int> UsersReport;
 
         // make the getting of the reports..
-        public TextMessage(int senderID, int chatID, string content)
+        public TextMessage(int MessageID, int senderID, int chatID, string content)
         {
             this.SenderID = senderID;
             this.ChatID = chatID;
@@ -26,7 +26,7 @@ namespace SocialStuff.Model.MessageClasses
             this.UsersReport = new List<int>();
         }
 
-        public TextMessage(int senderID, int chatID, DateTime timestamp, string content)
+        public TextMessage(int MessageID,int senderID, int chatID, DateTime timestamp, string content)
         {
             this.SenderID = senderID;
             this.ChatID = chatID;

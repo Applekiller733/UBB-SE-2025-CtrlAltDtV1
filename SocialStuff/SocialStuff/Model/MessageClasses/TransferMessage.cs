@@ -8,6 +8,7 @@ namespace SocialStuff.Model.MessageClasses
 {
     class TransferMessage : Message
     {
+        private int MessageID;
         private int ChatID;
         private int SenderID;
         private DateTime Timestamp;
@@ -32,8 +33,9 @@ namespace SocialStuff.Model.MessageClasses
 
         }
 
-        public TransferMessage(int senderID, int chatID, DateTime timestamp, int status, float amount, string desc, string currency)
+        public TransferMessage(int MessageID, int senderID, int chatID, DateTime timestamp, int status, float amount, string desc, string currency)
         {
+            this.MessageID = MessageID;
             this.SenderID = senderID;
             this.ChatID = chatID;
             this.Timestamp = timestamp;

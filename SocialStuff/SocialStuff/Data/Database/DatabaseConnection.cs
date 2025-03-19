@@ -20,6 +20,11 @@ namespace SocialStuff.Data.Database
             conn = new SqlConnection(connectionString);
         }
 
+        public SqlConnection getConnection()
+        {
+            return conn;
+        }
+
         public void OpenConnection()
         {
             if (conn.State == ConnectionState.Closed)

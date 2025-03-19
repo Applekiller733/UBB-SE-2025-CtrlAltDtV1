@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialStuff.Model.Message
+namespace SocialStuff.Model.MessageClasses
 {
     interface Message
     {
