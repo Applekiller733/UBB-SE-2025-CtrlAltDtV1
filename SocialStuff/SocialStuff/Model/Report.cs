@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialStuff.Repository
+namespace SocialStuff.Model
 {
-    internal class Repository
+    internal class Report
     {
-
     }
 }
