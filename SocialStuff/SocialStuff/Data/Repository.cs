@@ -43,7 +43,7 @@ namespace SocialStuff.Data
 
             foreach (DataRow row in dataTable.Rows)
             {
-               int userID = Convert.ToInt32(row["chatid"]);
+               int userID = Convert.ToInt32(row["userid"]);
                 string username = row["username"].ToString();
                 string phoneNumber = row["phonenumber"].ToString();
                 int reportedCount = Convert.ToInt32(row["reportedcount"]);
@@ -80,7 +80,7 @@ namespace SocialStuff.Data
             List<User> users = new List<User>();
             foreach (DataRow row in dataTable.Rows)
             {
-                int userID = Convert.ToInt32(row["chatid"]);
+                int userID = Convert.ToInt32(row["userid"]);
                 if (FriendIds.Contains(userID))
                 {
                     string username = row["username"].ToString();
