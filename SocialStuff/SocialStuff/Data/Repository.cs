@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using SocialStuff.Data.Database;
+using User = SocialStuff.Model.User;
 using Windows.System;
 using Windows.UI.Notifications;
-using User = SocialStuff.Model.User;
 using SocialStuff.Model;
 using SocialStuff.Model.MessageClasses;
 namespace SocialStuff.Data
@@ -30,7 +30,7 @@ namespace SocialStuff.Data
             return dbConnection;
         }
 
-        public static int GetLoggedInUserID()
+        public int GetLoggedInUserID()
         {
             return loggedInUserID;
         }
@@ -170,6 +170,22 @@ namespace SocialStuff.Data
             return messages;
         }
 
+        // Get all friends ids of a user
+        public List<int> GetFriendsIDs(int userID)
+        {
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@UserID", userID)
+            };
+            DataTable dataTable = dbConnection.ExecuteReader("GetFriends", parameters);
+            List<int> friends = new List<int>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                friends.Add(Convert.ToInt32(row["UserID"]));
+            }
+            return friends;
+        }
+
         // Get all reports
         public List<Report> GetReportsList()
 
@@ -202,6 +218,22 @@ namespace SocialStuff.Data
         //    }
         //    return feedPosts;
         //}
+
+        // Get all chats ids of a user
+        public List<int> GetChatsIDs(int userID)
+        {
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@UserID", userID)
+            };
+            DataTable dataTable = dbConnection.ExecuteReader("GetChats", parameters);
+            List<int> chats = new List<int>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                chats.Add(Convert.ToInt32(row["ChatID"]));
+            }
+            return chats;
+        }
 
         // Add a chat to the database
         public void AddChat(string chatName, out int chatID)
@@ -512,6 +544,8 @@ namespace SocialStuff.Data
             };
             dbConnection.ExecuteNonQuery("RemoveUserFromChat", parameters);
         }
+
+       
     }
 
 }
