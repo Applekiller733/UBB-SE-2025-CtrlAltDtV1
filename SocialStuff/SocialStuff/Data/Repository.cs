@@ -6,7 +6,6 @@ using SocialStuff.Data.Database;
 using User = SocialStuff.Model.User;
 using Windows.System;
 using Windows.UI.Notifications;
-using User = SocialStuff.Model.User;
 using SocialStuff.Model;
 using SocialStuff.Model.MessageClasses;
 namespace SocialStuff.Data
@@ -169,28 +168,6 @@ namespace SocialStuff.Data
                 }
             }
             return messages;
-        }
-
-        // Get all friends of a user
-        public List<User> GetFriends(int userID)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@UserID", userID)
-            };
-            DataTable dataTable = dbConnection.ExecuteReader("GetFriends", parameters);
-            List<User> friends = new List<User>();
-            foreach (DataRow row in dataTable.Rows)
-            {
-                friends.Add(new User
-                {
-                    UserId = Convert.ToInt32(row["UserID"]),
-                    Username = row["Username"].ToString(),
-                    PhoneNumber = row["PhoneNumber"].ToString(),
-                    ReportedCount = Convert.ToInt32(row["ReportedCount"])
-                });
-            }
-            return friends;
         }
 
         // Get all friends ids of a user
