@@ -9,131 +9,108 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace SocialStuff.Services
-{
-    internal class UserService
-    {
+//namespace SocialStuff.Services
+//{
+//    internal class UserService
+//    {
 
-        private Repository repo; //readonly?
-        private int UserID;
+//        private Repository repo; //readonly?
+//        private int UserID;
 
-        public UserService(Repository repo)
-        {
-            repo = repo;
-            UserID = GetCurrentUser();
-        }
+//        public UserService(Repository repo)
+//        {
+//            repo = repo;
+//            UserID = GetCurrentUser();
+//        }
 
-        public Repository GetRepo()
-        {
-            return repo;
-        }
+//        public Repository GetRepo()
+//        {
+//            return repo;
+//        }
 
         public void AddFriend(int userID, int newFriendID)
         {
-            var user = GetUserById(userID);
-            var friend = GetUserById(newFriendID);
-            var friends = repo.GetFriendsIDs(userID); // to implement
+            var user = repo.GetUserById(userID);
+            var friend = repo.GetUserById(newFriendID);
 
-            if (user != null && friend != null && !friends.Contains(newFriendID))
+            if (user != null && friend != null && !user.Friends.Contains(newFriendID))
             {
                 // friends is one way process so we add the friend to the user's friend list
-                repo.AddFriend(userID, newFriendID);  //function from repo
                 user.AddFriend(newFriendID);
+                repo.AddFriend(userID, newFriendID);  //function from repo
 
-                //friend.AddFriend(userID);
-                //repo.UpdateUser(friend);
-            }
-        }
+//                //friend.AddFriend(userID);
+//                //repo.UpdateUser(friend);
+//            }
+//        }
 
         public void RemoveFriend(int userID, int oldFriendID)
         {
-            var user = GetUserById(userID);
-            var friend = GetUserById(oldFriendID);
-            var friends = repo.GetFriendsIDs(userID); // to implement
+            var user = repo.GetUserById(userID);
+            var friend = repo.GetUserById(oldFriendID);
 
-            if (user != null && friend != null && friends.Contains(oldFriendID))
+            if (user != null && friend != null && user.Friends.Contains(oldFriendID))
             {
-                repo.DeleteFriend(userID, oldFriendID); //function from repo
                 user.RemoveFriend(oldFriendID);
+                repo.RemoveFriend(userID, oldFriendID); //function from repo
 
-                //friend.RemoveFriend(userID);
-                //repo.UpdateUser(friend);
-            }
-        }
+//                //friend.RemoveFriend(userID);
+//                //repo.UpdateUser(friend);
+//            }
+//        }
 
         public void JoinChat(int userID, int chatID)
         {
-            var user = GetUserById(userID);
-            var chats = repo.GetChatsIDs(userID); // to implement
-
-            if (user != null && !chats.Contains(chatID))
+            var user = repo.GetUserById(userID);
+            if (user != null && !user.Chats.Contains(chatID))
             {
-                repo.AddUserToChat(chatID, userID);
                 user.JoinChat(chatID);
+                repo.JoinChat(chatID, userID);
             }
         }
 
         public void LeaveChat(int userID, int chatID)
         {
-            var user = GetUserById(userID);
-            var chats = repo.GetChatsIDs(userID); // to implement
-
-            if (user != null && chats.Contains(chatID))
+            var user = repo.GetUserById(userID);
+            if (user != null && user.Chats.Contains(chatID))
             {
-                repo.RemoveUserFromChat(chatID, userID);
                 user.LeaveChat(chatID);
+                repo.LeaveChat(chatID, userID);
             }
         }
 
         public List<int> FilterUsers(string keyword, int userID)
         {
-            var users = repo.GetUsersList();
-            return users.Where(u => (u.GetUsername().Contains(keyword, StringComparison.OrdinalIgnoreCase)
-                                    || u.GetPhoneNumber().Contains(keyword)) && u.GetUserId() != userID)
-                        .Select(u => u.GetUserId())
+            var users = repo.GetAllUsers();
+            return users.Where(u => (u.Username.Contains(keyword, StringComparison.OrdinalIgnoreCase)
+                                    || u.PhoneNumber.Contains(keyword)) && u.UserId != userID)
+                        .Select(u => u.UserId)
                         .ToList();
         }
 
         public List<int> FilterFriends(string keyword, int userID)
         {
-            var user = GetUserById(userID);
+            var user = repo.GetUserById(userID);
             if (user == null) return new List<int>();
-            var friends = repo.GetFriends(userID); // to implement
 
-            return friends
-                       .Select(friendID => friendID)
+            return user.Friends
+                       .Select(friendID => repo.GetUserById(friendID))
                        .Where(friend => friend != null &&
-                                        (friend.GetUsername().Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
-                                         friend.GetPhoneNumber().Contains(keyword)))
-                       .Select(friend => friend.GetUserId())
+                                        (friend.Username.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+                                         friend.PhoneNumber.Contains(keyword)))
+                       .Select(friend => friend.UserId)
                        .ToList();
         }
 
         public List<int> GetFriendsByUser(int userID)
         {
-            var user =  GetUserById(userID);
-            var friends = repo.GetFriendsIDs(userID); // to implement
-
-            return friends;
-        }
-
-        public User GetUserById(int userID)
-        {
-            List<User> users = repo.GetUsersList();
-            foreach (User user in users) 
-            {
-                if (user.GetUserId() == userID)
-                {
-                    return user;
-                }
-            }
-
-            return null; 
+            var user = repo.GetUserById(userID);
+            return user?.Friends ?? new List<int>();
         }
 
         public int GetCurrentUser()
         {
-            return repo.GetLoggedInUserID(); // This should be replaced with actual logic to get the logged-in user.
+            return repo.getLoggedInUser(); // This should be replaced with actual logic to get the logged-in user.
         }
     }
 }

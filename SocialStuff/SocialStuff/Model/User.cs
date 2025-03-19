@@ -17,23 +17,23 @@ namespace SocialStuff.Model
         private List<int> Chats { get; set; }
 
         public User() { }
-        public User(int userId, string username, string phoneNumber, int reportedCount, List<int> friends, List<int> chats)
+        public User(int userId, string username, string phoneNumber, int reportedCount)
         {
             UserId = userId;
             Username = username;
             PhoneNumber = phoneNumber;
             ReportedCount = reportedCount;
-            Friends = friends;
-            Chats = chats;
+            Friends = new List<int>();
+            Chats = new List<int>();
         }
         public User(int userId, string username, string phoneNumber, List<int> friends, List<int> chats)
         {
             UserId = userId;
             Username = username;
             PhoneNumber = phoneNumber;
-            ReportedCount = 0;
             Friends = friends;
             Chats = chats;
+            ReportedCount = 0;
         }
 
         public int GetUserId()
