@@ -16,7 +16,7 @@ namespace SocialStuff.Model.MessageClasses
         private string Content;
         private List<int> UsersReport;
 
-        // make the getting of the reports..
+        // get the reports list!
         public TextMessage(int senderID, int chatID, string content)
         {
             this.SenderID = senderID;

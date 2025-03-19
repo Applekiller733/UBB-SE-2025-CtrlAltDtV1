@@ -14,7 +14,7 @@ namespace SocialStuff.Model.MessageClasses
         private string ImageURL;
         private List<int> UsersReport;
 
-        // get reports list
+        // get reports list!
         public ImageMessage(int senderID, int chatID, string imageUrl)
         {
             SenderID = senderID;

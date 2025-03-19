@@ -12,13 +12,13 @@ namespace SocialStuff.Model.MessageClasses
         private int SenderID;
         private DateTime Timestamp;
 
-        private int Status;
+        private string Status;
         private float Amount;
         private string Description;
         private string Currency;
         private List<int> ListOfReceiversID;
 
-        public TransferMessage(int senderID, int chatID, int status, float amount, string desc, string currency)
+        public TransferMessage(int senderID, int chatID, string status, float amount, string desc, string currency)
         {
             this.SenderID = senderID;
             this.ChatID = chatID;
@@ -32,7 +32,7 @@ namespace SocialStuff.Model.MessageClasses
 
         }
 
-        public TransferMessage(int senderID, int chatID, DateTime timestamp, int status, float amount, string desc, string currency)
+        public TransferMessage(int senderID, int chatID, DateTime timestamp, string status, float amount, string desc, string currency)
         {
             this.SenderID = senderID;
             this.ChatID = chatID;
@@ -53,7 +53,7 @@ namespace SocialStuff.Model.MessageClasses
 
         public DateTime getTimestamp() { return this.Timestamp; }
 
-        public int getMessageStatus() { return this.Status; }
+        public string getMessageStatus() { return this.Status; }
 
         public float getAmount() { return this.Amount; }
 
