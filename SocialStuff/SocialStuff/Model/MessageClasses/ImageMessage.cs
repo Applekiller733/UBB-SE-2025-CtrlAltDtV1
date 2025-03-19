@@ -15,24 +15,24 @@ namespace SocialStuff.Model.MessageClasses
         private string ImageURL;
         private List<int> UsersReport;
 
-        // get reports list
-        public ImageMessage(int senderID, int chatID, string imageUrl)
+        public ImageMessage(int messageID, int senderID, int chatID, string imageUrl, List<int> usersReport)
         {
+            MessageID = messageID;
             SenderID = senderID;
             ChatID = chatID;
             Timestamp = DateTime.Now;
             ImageURL = imageUrl;
-            UsersReport = new List<int>();
+            UsersReport = usersReport;
         }
 
-        public ImageMessage(int MessageID, int senderID, int chatID, DateTime timestamp, string imageUrl)
+        public ImageMessage(int MessageID, int senderID, int chatID, DateTime timestamp, string imageUrl, List<int> usersReport)
         {
             this.MessageID = MessageID;
             this.SenderID = senderID;
             this.ChatID = chatID;
             this.Timestamp = timestamp;
             this.ImageURL = imageUrl;
-            this.UsersReport = new List<int>();
+            this.UsersReport = usersReport;
         }
 
         public string getImageURL() { return ImageURL; }
