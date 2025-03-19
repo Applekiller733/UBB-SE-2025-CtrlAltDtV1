@@ -9,23 +9,58 @@ namespace SocialStuff.Model
     class User
     {
 
-        public int UserId { get; set; }
-        public string Username { get; set; }
-        public string PhoneNumber { get; set; }
-        public List<int> Friends { get; set; }
-        public List<int> Chats { get; set; }
-        public int ReportedCount { get; set; }
+        private int UserId { get; set; }
+        private string Username { get; set; }
+        private string PhoneNumber { get; set; }
+        private int ReportedCount { get; set; }
+        private List<int> Friends { get; set; }
+        private List<int> Chats { get; set; }
 
         public User() { }
+        public User(int userId, string username, string phoneNumber, int reportedCount)
+        {
+            UserId = userId;
+            Username = username;
+            PhoneNumber = phoneNumber;
+            ReportedCount = reportedCount;
+            Friends = new List<int>();
+            Chats = new List<int>();
+        }
         public User(int userId, string username, string phoneNumber, List<int> friends, List<int> chats)
         {
             UserId = userId;
             Username = username;
             PhoneNumber = phoneNumber;
+            ReportedCount = 0;
             Friends = friends;
             Chats = chats;
-            ReportedCount = 0;
         }
+
+        public int GetUserId()
+        {
+            return UserId;
+        }
+        public string GetUsername()
+        {
+            return Username;
+        }
+        public string GetPhoneNumber()
+        {
+            return PhoneNumber;
+        }
+        public int GetReportedCount()
+        {
+            return ReportedCount;
+        }
+        public List<int> GetFriends()
+        {
+            return Friends;
+        }
+        public List<int> GetChats()
+        {
+            return Chats;
+        }
+
 
 
         public override string ToString()
@@ -33,40 +68,11 @@ namespace SocialStuff.Model
             return $"User ID: {UserId}, " +
                 $"Username: {Username}, " +
                 $"Phone Number: {PhoneNumber}, " +
-                $"Friends: {string.Join(", ", Friends)}, " +
-                $"Chat IDs: {string.Join(", ", Chats)}, " +
-                $"Reported Count: {ReportedCount}";
+                $"Reported Count: {ReportedCount}" +
+                $"Friends: {Friends}, " +
+                $"Chats: {Chats}";
         }
 
-        public void AddFriend(int friendID)
-        {
-            Friends.Add(friendID);
-        }
-
-        public void RemoveFriend(int friendID)
-        {
-            Friends.Remove(friendID);
-        }
-
-        public void JoinChat(int chat)
-        {
-            Chats.Add(chat);
-        }
-
-        public void LeaveChat(int chat)
-        {
-            Chats.Remove(chat);
-        }
-
-        public int GetFriendCount()
-        {
-            return Friends.Count;
-        }
-
-        public int GetChatCount()
-        {
-            return Chats.Count;
-        }
 
         public void IncreaseReportCount()
         {
@@ -76,6 +82,23 @@ namespace SocialStuff.Model
         public void resetReportCount()
         {
             ReportedCount = 0;
+        }
+
+        public void AddFriend(int friendID)
+        {
+            Friends.Add(friendID);
+        }
+        public void RemoveFriend(int friendID)
+        {
+            Friends.Remove(friendID);
+        }
+        public void JoinChat(int chatID)
+        {
+            Chats.Add(chatID);
+        }
+        public void LeaveChat(int chatID)
+        {
+            Chats.Remove(chatID);
         }
     }
 }

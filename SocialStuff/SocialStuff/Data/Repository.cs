@@ -5,6 +5,8 @@ using Microsoft.Data.SqlClient;
 using SocialStuff.Data.Database;
 using Windows.System;
 using Windows.UI.Notifications;
+using User = SocialStuff.Model.User;
+using SocialStuff.Model;
 
 namespace SocialStuff.Data
 {
@@ -33,16 +35,16 @@ namespace SocialStuff.Data
         // Get all users
         public List<User> GetUsersList()
         {
-            DataTable dataTable = dbConnection.ExecuteReader("GetUsersList");
+            DataTable dataTable = dbConnection.ExecuteReader("select * from Users");
             List<User> users = new List<User>();
 
             foreach (DataRow row in dataTable.Rows)
             {
-                users.Add(new User
-                {
-                    ID = Convert.ToInt32(row["ID"]),
-                    Name = row["Name"].ToString()
-                });
+               int userID = Convert.ToInt32(row["chatid"]);
+                string username = row["username"].ToString();
+                string phoneNumber = row["phonenumber"].ToString();
+                int reportedCount = Convert.ToInt32(row["reportedcount"]);
+                users.Add(new User(userID, username, phoneNumber, reportedCount));
             }
             return users;
         }
@@ -50,19 +52,102 @@ namespace SocialStuff.Data
         //Get all notifications
         public List<Notification> GetNotificationsList()
         {
-            DataTable dataTable = dbConnection.ExecuteReader("GetNotificationsList");
+            DataTable dataTable = dbConnection.ExecuteReader("select * from Notifications");
             List<Notification> notifications = new List<Notification>();
 
             foreach (DataRow row in dataTable.Rows)
             {
-                notifications.Add(new Notification
-                {
-                    ID = Convert.ToInt32(row["ID"]),
-                    Content = row["Content"].ToString(),
-                    UserReceiverID = Convert.ToInt32(row["UserReceiverID"])
-                });
+                notifications.Add(new Notification());
             }
             return notifications;
+        }
+
+        public List<User> GetUserFriendsList(int userId)
+        {
+            DataTable dataTable = dbConnection.ExecuteReader("select * from Users");
+            DataTable dataTable1 = dbConnection.ExecuteReader("select * from Friends");
+            List<int> FriendIds = new List<int>();
+            foreach (DataRow row in dataTable1.Rows)
+            {
+                if (Convert.ToInt32(row["userid"]) == userId)
+                {
+                    FriendIds.Add(Convert.ToInt32(row["friendid"]));
+                }
+            }
+            List<User> users = new List<User>();
+            foreach(DataRow row in dataTable.Rows)
+            {
+                int userID = Convert.ToInt32(row["chatid"];
+                if(FriendIds.Contains(userID))
+                {
+                    string username = row["username"].ToString();
+                    string phoneNumber = row["phonenumber"].ToString();
+                    int reportedCount = Convert.ToInt32(row["reportedcount"]);
+                    users.Add(new User(userID, username, phoneNumber, reportedCount));
+                }
+            }
+            return users;
+        }
+
+        public List<User> GetUserChatsList(int userId)
+        {
+            DataTable dataTable = dbConnection.ExecuteReader("select * from Users");
+            DataTable dataTable1 = dbConnection.ExecuteReader("select * from ChatParticipants");
+            List<int> ChatIds = new List<int>();
+            foreach (DataRow row in dataTable1.Rows)
+            {
+                if (Convert.ToInt32(row["userid"]) == userId)
+                {
+                    ChatIds.Add(Convert.ToInt32(row["chatid"]));
+                }
+            }
+            List<User> users = new List<User>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int userID = Convert.ToInt32(row["chatid"];
+                if (ChatIds.Contains(userID))
+                {
+                    string username = row["username"].ToString();
+                    string phoneNumber = row["phonenumber"].ToString();
+                    int reportedCount = Convert.ToInt32(row["reportedcount"]);
+                    users.Add(new User(userID, username, phoneNumber, reportedCount));
+                }
+            }
+            return users;
+        }
+
+        // Get all chats
+        public List<Chat> GetChatsList()
+        {
+            DataTable dataTable = dbConnection.ExecuteReader("select * from Chats");
+            List<Chat> chats = new List<Chat>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int chatID = Convert.ToInt32(row["chatid"]);
+                string chatName = row["chatname"].ToString();
+                chats.Add(new Chat(chatID, chatName));
+            }
+            return chats;
+        }
+
+        // Get all messages
+        public List<Message> GetMessagesList()
+        {
+            DataTable dataTable = dbConnection.ExecuteReader("select * from Messages");
+            List<Message> messages = new List<Message>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int messageID = Convert.ToInt32(row["messageid"]);
+                int typeID = Convert.ToInt32(row["typeid"]);
+                int userID = Convert.ToInt32(row["userid"]);
+                int chatID = Convert.ToInt32(row["chatid"]);
+                string content = row["content"].ToString();
+                string status = row["status"].ToString();
+                decimal amount = Convert.ToDecimal(row["amount"]);
+                string currency = row["currency"].ToString();
+                messages.Add(new Message(messageID, typeID, userID, chatID, content, status, amount, currency));
+            }
+            return messages;
         }
 
 
