@@ -14,7 +14,7 @@ namespace SocialStuff.Services
     internal class UserService
     {
 
-        private Repository repo; //readonly?
+        private Repository repo; 
         private int UserID;
 
         public UserService(Repository repo)
