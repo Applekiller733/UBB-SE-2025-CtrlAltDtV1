@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 
-namespace SocialStuff.Database
+namespace SocialStuff.Data.Database
 {
     internal class DatabaseConnection
     {
-        string connectionString = @"Data Source=DESKTOP-6QSI2DC\MSSQLSERVER01;Initial Catalog=BankingDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        string connectionString = @"Data Source=razvan\SQLEXPRESS01;Initial Catalog=BankingDB;Integrated Security=True;TrustServerCertificate=True";
 
 
         private SqlConnection conn;
@@ -20,7 +20,10 @@ namespace SocialStuff.Database
             conn = new SqlConnection(connectionString);
         }
 
-        public SqlConnection getConnection() { return conn; }
+        public SqlConnection getConnection()
+        {
+            return conn;
+        }
 
         public void OpenConnection()
         {

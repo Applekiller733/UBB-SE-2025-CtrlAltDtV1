@@ -10,14 +10,15 @@ namespace SocialStuff.Model.MessageClasses
 {
     class TextMessage : Message
     {
+        private int MessageID;
         private int SenderID;
         private int ChatID;
         private DateTime Timestamp;
         private string Content;
         private List<int> UsersReport;
 
-        // get the reports list!
-        public TextMessage(int senderID, int chatID, string content)
+        // make the getting of the reports..
+        public TextMessage(int MessageID, int senderID, int chatID, string content)
         {
             this.SenderID = senderID;
             this.ChatID = chatID;
@@ -26,7 +27,7 @@ namespace SocialStuff.Model.MessageClasses
             this.UsersReport = new List<int>();
         }
 
-        public TextMessage(int senderID, int chatID, DateTime timestamp, string content)
+        public TextMessage(int MessageID,int senderID, int chatID, DateTime timestamp, string content)
         {
             this.SenderID = senderID;
             this.ChatID = chatID;

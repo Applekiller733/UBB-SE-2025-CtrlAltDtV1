@@ -10,31 +10,31 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>350da5c3-2bff-4b04-8482-688a63ab230f</PackageIdentityName>
     <PackageIdentityPublisher>CN=alexe</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
+    <LayoutDir>C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.runtimeconfig.json">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.runtimeconfig.json">
       <PackagePath>SocialStuff.runtimeconfig.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.dll">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.dll">
       <PackagePath>SocialStuff.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>SocialStuff.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
@@ -778,28 +778,28 @@
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.web.webview2\1.0.2651.64\lib_manual\net6.0-windows10.0.17763.0\Microsoft.Web.WebView2.Core.Projection.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.deps.json">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.deps.json">
       <PackagePath>SocialStuff.deps.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Faculty\SoftwareEngineering\SocialStuff\SocialStuff\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

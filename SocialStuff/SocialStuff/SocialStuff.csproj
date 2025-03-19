@@ -12,6 +12,12 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Data\Database\Procedures\**" />
+    <EmbeddedResource Remove="Data\Database\Procedures\**" />
+    <None Remove="Data\Database\Procedures\**" />
+    <Page Remove="Data\Database\Procedures\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -42,7 +48,6 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Database\Procedures\Chats\" />
     <Folder Include="View\" />
   </ItemGroup>
 
@@ -62,4 +67,7 @@
     <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
     <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
   </PropertyGroup>
+  <ItemGroup>
+    <PRIResource Remove="Data\Database\Procedures\**" />
+  </ItemGroup>
 </Project>
