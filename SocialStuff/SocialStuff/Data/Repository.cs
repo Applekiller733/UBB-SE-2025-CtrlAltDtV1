@@ -327,7 +327,7 @@ namespace SocialStuff.Data
         }
 
 
-        public void AddRequestMessage(int userID, int chatID, string content, string status = null, decimal? amount = null, string currency = null)
+        public void AddRequestMessage(int userID, int chatID, string content, string status = null, float? amount = null, string currency = null)
         {
             SqlParameter[] parameters =
             {
@@ -343,7 +343,7 @@ namespace SocialStuff.Data
             dbConnection.ExecuteNonQuery("AddMessage", parameters);
         }
 
-        public void AddTransferMessage(int userID, int chatID, string content, string status = null, decimal? amount = null, string currency = null)
+        public void AddTransferMessage(int userID, int chatID, string content, string status = null, float? amount = null, string currency = null)
         {
             SqlParameter[] parameters =
             {
@@ -361,7 +361,7 @@ namespace SocialStuff.Data
 
 
         // Update a message in the database
-        public void UpdateMessage(int messageID, int typeID, string content, string status = null, decimal? amount = null, string currency = null)
+        public void UpdateMessage(int messageID, int typeID, string content, string status = null, float? amount = null, string currency = null)
         {
             SqlParameter[] parameters =
             {
