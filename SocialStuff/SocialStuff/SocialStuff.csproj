@@ -47,9 +47,6 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250228001" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\" />
-  </ItemGroup>
 
   <!--
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution
@@ -69,5 +66,19 @@
   </PropertyGroup>
   <ItemGroup>
     <PRIResource Remove="Data\Database\Procedures\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ViewModel\ChatListViewModel.xaml" />
+    <None Remove="View\ChatListView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ViewModel\ChatListViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\ChatListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

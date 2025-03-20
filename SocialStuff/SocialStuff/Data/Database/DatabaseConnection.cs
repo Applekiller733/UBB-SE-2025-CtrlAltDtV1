@@ -10,7 +10,7 @@ namespace SocialStuff.Data.Database
 {
     public class DatabaseConnection
     {
-        string connectionString = @"Data Source=razvan\SQLEXPRESS01;Initial Catalog=BankingDB;Integrated Security=True;TrustServerCertificate=True";
+        string connectionString = @"Data Source=DESKTOP-6QSI2DC\MSSQLSERVER01;Initial Catalog=BankingDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
 
 
         private SqlConnection conn;
