@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SocialStuff.Services
 {
-    internal class UserService
+    public class UserService
     {
 
         private Repository repo; //readonly?
