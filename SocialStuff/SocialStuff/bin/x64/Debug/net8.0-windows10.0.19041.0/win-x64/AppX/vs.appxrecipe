@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-18T16:39:58.543</Modified>
+      <Modified>2025-03-20T18:08:05.497</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-03-18T16:37:18.470</Modified>
+      <Modified>2025-03-20T18:03:39.979</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.runtimeconfig.json">
       <PackagePath>SocialStuff.runtimeconfig.json</PackagePath>
-      <Modified>2025-03-18T16:37:18.141</Modified>
+      <Modified>2025-03-20T18:03:39.891</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.dll">
       <PackagePath>SocialStuff.dll</PackagePath>
-      <Modified>2025-03-18T16:39:57.926</Modified>
+      <Modified>2025-03-20T18:08:04.758</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>SocialStuff.exe</PackagePath>
-      <Modified>2025-03-18T16:39:57.942</Modified>
+      <Modified>2025-03-20T18:08:04.787</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
@@ -941,6 +941,10 @@
       <PackagePath>System.Configuration.ConfigurationManager.dll</PackagePath>
       <Modified>2024-09-16T23:09:48.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.data.sqlclient\4.9.0\runtimes\win\lib\net8.0\System.Data.SqlClient.dll">
+      <PackagePath>System.Data.SqlClient.dll</PackagePath>
+      <Modified>2024-11-12T21:47:26.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.diagnostics.eventlog\8.0.1\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll">
       <PackagePath>System.Diagnostics.EventLog.Messages.dll</PackagePath>
       <Modified>2024-09-16T23:10:34.000</Modified>
@@ -1029,6 +1033,10 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2025-02-27T06:57:42.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\runtime.win-x64.runtime.native.system.data.sqlclient.sni\4.4.0\runtimes\win-x64\native\sni.dll">
+      <PackagePath>sni.dll</PackagePath>
+      <Modified>2017-07-12T11:24:22.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native_uap\Microsoft.Web.WebView2.Core.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
       <Modified>2024-07-20T08:33:44.000</Modified>
@@ -1039,7 +1047,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.deps.json">
       <PackagePath>SocialStuff.deps.json</PackagePath>
-      <Modified>2025-03-18T16:37:17.985</Modified>
+      <Modified>2025-03-20T18:03:39.886</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>

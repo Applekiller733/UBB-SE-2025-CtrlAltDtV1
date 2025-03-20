@@ -1,30 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\",
+  "WorkspaceRootPath": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\data\\database\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\data\\database\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\model\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\model\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\addfriend.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\addfriend.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb\\anul_2\\semestrul_ii\\iss\\socialstuff app\\socialstuff\\socialstuff\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\addfriend.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\addfriend.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,93 +29,72 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1389,
+          "DockedWidth": 261,
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DatabaseConnection.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Data\\Database\\DatabaseConnection.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\Data\\Database\\DatabaseConnection.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Data\\Database\\DatabaseConnection.cs",
+              "RelativeToolTip": "SocialStuff\\Data\\Database\\DatabaseConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T18:05:56.917Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Repository.cs",
-              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Data\\Repository.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Data\\Repository.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Data\\Repository.cs",
-              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Data\\Repository.cs*",
-              "RelativeToolTip": "SocialStuff\\Data\\Repository.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAYAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Data\\Repository.cs",
+              "RelativeToolTip": "SocialStuff\\Data\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T19:35:22.609Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\MainWindow.xaml.cs",
-              "RelativeToolTip": "SocialStuff\\MainWindow.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAowDUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T16:38:00.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\App.xaml.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\App.xaml.cs",
-              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\App.xaml.cs",
-              "RelativeToolTip": "SocialStuff\\App.xaml.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T16:37:27.882Z",
+              "WhenOpened": "2025-03-20T18:04:32.856Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Model\\User.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\Model\\User.cs",
-              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Model\\User.cs",
-              "RelativeToolTip": "SocialStuff\\Model\\User.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAIwBgAAAAeAAAAAAAAAA==",
+              "Title": "Chat.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Model\\Chat.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\Model\\Chat.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Model\\Chat.cs",
+              "RelativeToolTip": "SocialStuff\\Model\\Chat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T16:03:12.476Z",
+              "WhenOpened": "2025-03-20T18:04:31.945Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\Services\\UserService.cs",
-              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\Services\\UserService.cs*",
-              "RelativeToolTip": "SocialStuff\\Services\\UserService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH4AAAAiAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "AddFriend.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddFriend.xaml.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\AddFriend.xaml.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddFriend.xaml.cs",
+              "RelativeToolTip": "SocialStuff\\View\\AddFriend.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T15:58:06.944Z",
+              "WhenOpened": "2025-03-20T17:36:29.919Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "app.manifest",
-              "DocumentMoniker": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\app.manifest",
-              "RelativeDocumentMoniker": "SocialStuff\\app.manifest",
-              "ToolTip": "D:\\UBB\\Anul_2\\Semestrul_II\\ISS\\SocialStuff App\\SocialStuff\\SocialStuff\\app.manifest",
-              "RelativeToolTip": "SocialStuff\\app.manifest",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
-              "WhenOpened": "2025-03-17T12:35:52.499Z",
+              "DocumentIndex": 3,
+              "Title": "AddFriend.xaml",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddFriend.xaml",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\AddFriend.xaml",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddFriend.xaml",
+              "RelativeToolTip": "SocialStuff\\View\\AddFriend.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-20T17:36:18.29Z",
               "EditorCaption": ""
             }
           ]

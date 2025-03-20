@@ -706,6 +706,9 @@
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.configuration.configurationmanager\8.0.1\lib\net8.0\System.Configuration.ConfigurationManager.dll">
       <PackagePath>System.Configuration.ConfigurationManager.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.data.sqlclient\4.9.0\runtimes\win\lib\net8.0\System.Data.SqlClient.dll">
+      <PackagePath>System.Data.SqlClient.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\system.diagnostics.eventlog\8.0.1\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll">
       <PackagePath>System.Diagnostics.EventLog.Messages.dll</PackagePath>
     </AppxPackagedFile>
@@ -771,6 +774,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.windowsappsdk\1.6.250228001\runtimes\win-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\runtime.win-x64.runtime.native.system.data.sqlclient.sni\4.4.0\runtimes\win-x64\native\sni.dll">
+      <PackagePath>sni.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native_uap\Microsoft.Web.WebView2.Core.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
