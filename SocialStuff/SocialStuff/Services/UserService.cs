@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SocialStuff.Services
 {
-    internal class UserService
+    public class UserService
     {
 
         private Repository repo; 
@@ -20,7 +20,7 @@ namespace SocialStuff.Services
         public UserService(Repository repo)
         {
             this.repo = repo;
-            UserID = GetCurrentUser();
+            this.UserID = GetCurrentUser();
         }
 
         public Repository GetRepo()
@@ -102,12 +102,23 @@ namespace SocialStuff.Services
                        .ToList();
         }
 
-        public List<int> GetFriendsByUser(int userID)
+        public List<int> GetFriendsIDsByUser(int userID)
         {
-            var user = GetUserById(userID);
             var friends = repo.GetFriendsIDs(userID);
 
             return friends;
+        }
+
+        public List<User> GetFriendsByUser(int userID)
+        {
+            return repo.GetUserFriendsList(userID);
+        }
+
+
+        public List<int> GetChatsByUser(int userID)
+        {
+            var chats = repo.GetChatsIDs(userID);
+            return chats;
         }
 
         public User GetUserById(int userID)
