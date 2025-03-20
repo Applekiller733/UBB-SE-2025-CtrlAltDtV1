@@ -17,72 +17,11 @@ namespace SocialStuff.Model
 
         // The Chat constructor receives a chat ID in the constructor
 
-        public Chat(int ChatID, string ChatName)
+        public Chat(int ChatID, string ChatName, List<int> userIds)
         {
             this.ChatID = ChatID;
-            this.UserIDsList = new List<int>();
+            this.UserIDsList = userIds;
             this.ChatName = ChatName;
-        }
-
-        public Chat(int ChatID)
-        {
-            this.ChatID = ChatID;
-            this.UserIDsList = new List<int>();
-            this.ChatName = "";
-            loadChatDataFromDB();
-        }
-        private void loadChatDataFromDB()
-        {
-            loadChatNameFromDB();
-            loadChatParticipantsFromDB();
-        }
-
-        private void loadChatNameFromDB()
-        {
-            DatabaseConnection dbConnection = new DatabaseConnection();
-
-            try
-            {
-                dbConnection.OpenConnection();
-                string query = "SELECT ChatName FROM CHATS WHERE ChatID = @ChatID";
-                SqlCommand chatCommand = new SqlCommand(query, dbConnection.getConnection());
-                chatCommand.Parameters.AddWithValue("@ChatID", this.ChatID);
-                this.ChatName = (string)chatCommand.ExecuteScalar();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Model - Chat Error loadChatNameFromDB(): " + ex.Message);
-            }
-
-            finally { dbConnection.CloseConnection(); }
-        }
-
-        private void loadChatParticipantsFromDB()
-        {
-            DatabaseConnection dbConnection = new DatabaseConnection();
-
-            try
-            {
-                dbConnection.OpenConnection();
-                string query = "SELECT UserID FROM CHAT_PARTICIPANTS WHERE ChatID = @ChatID";
-                using (SqlCommand cmd = new SqlCommand(query, dbConnection.getConnection()))
-                {
-                    cmd.Parameters.AddWithValue("@ChatID", this.ChatID);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            UserIDsList.Add(reader.GetInt32(0));
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Model - Chat Error loadChatParticipantsFromDB(): " + ex.Message);
-            }
-
-            finally { dbConnection.CloseConnection(); }
         }
 
         public int getChatID() { return this.ChatID; }
@@ -91,29 +30,6 @@ namespace SocialStuff.Model
 
         public string getChatName() { return this.ChatName; }
 
-        public DateTime getLastMessageTimestamp()
-        {
-            DatabaseConnection dbConnection = new DatabaseConnection();
-
-            DateTime lastTimestamp = DateTime.MinValue;
-
-            try
-            {
-                dbConnection.OpenConnection();
-                string query = "SELECT Timestamp FROM MESSAGES WHERE ChatID = @ChatID ORDER BY Timestamp DESC";
-                SqlCommand chatCommand = new SqlCommand(query, dbConnection.getConnection());
-                chatCommand.Parameters.AddWithValue("@ChatID", this.ChatID);
-                object result = chatCommand.ExecuteScalar();
-                if (result != null && result != DBNull.Value) { lastTimestamp = (DateTime)result; }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Model - Chat Error getLastMessageTimestamp(): " + ex.Message);
-            }
-            finally { dbConnection.CloseConnection(); }
-
-            return lastTimestamp;
-        }
 
         //public List<Message> getChatHistory()
         //{
@@ -176,7 +92,7 @@ namespace SocialStuff.Model
         //    return chatHistory;
         //}
 
-        //public int getUserCount() { return this.UserIDsList.Count; }
+        public int getUserCount() { return this.UserIDsList.Count; }
 
         //public void AddUser(int UserID)
         //{
@@ -226,9 +142,9 @@ namespace SocialStuff.Model
         //    }
         //}
 
-        //public bool IsUserInChat(int UserID)
-        //{
-        //    return this.UserIDsList.Contains(UserID);
-        //}
+        public bool IsUserInChat(int UserID)
+        {
+            return this.UserIDsList.Contains(UserID);
+        }
     }
 }

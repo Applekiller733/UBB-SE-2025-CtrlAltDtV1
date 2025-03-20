@@ -5,6 +5,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.System;
+
 namespace SocialStuff.Model.MessageClasses
 {
     class TextMessage : Message

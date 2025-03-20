@@ -19,8 +19,9 @@ namespace SocialStuff.Model.MessageClasses
         private string Currency;
         private List<int> ListOfReceiversID;
 
-        public TransferMessage(int senderID, int chatID, string status, float amount, string desc, string currency)
+        public TransferMessage(int messageID, int chatID, int senderID, string status, float amount, string desc, string currency)
         {
+            this.MessageID = messageID;
             this.SenderID = senderID;
             this.ChatID = chatID;
             this.Timestamp = DateTime.Now;
@@ -30,12 +31,11 @@ namespace SocialStuff.Model.MessageClasses
             this.Description = desc;
             this.Currency = currency;
             this.ListOfReceiversID = new List<int>();
-
         }
 
-        public TransferMessage(int MessageID, int senderID, int chatID, DateTime timestamp, string status, float amount, string desc, string currency)
+        public TransferMessage(int messageID, int chatID, int senderID, DateTime timestamp, string status, float amount, string desc, string currency)
         {
-            this.MessageID = MessageID;
+            this.MessageID = messageID;
             this.SenderID = senderID;
             this.ChatID = chatID;
             this.Timestamp = timestamp;
