@@ -10,7 +10,7 @@ using SocialStuff.Model;
 using SocialStuff.Model.MessageClasses;
 namespace SocialStuff.Data
 {
-    internal class Repository
+     public class Repository
     {
         private DatabaseConnection dbConnection;
         private static int loggedInUserID=1;
@@ -104,6 +104,8 @@ namespace SocialStuff.Data
                     ChatIds.Add(Convert.ToInt32(row["chatid"]));
                 }
             }
+
+            
             List<Chat> Chats = new List<Chat>();
             foreach (DataRow row in dataTable.Rows)
             {
@@ -111,7 +113,15 @@ namespace SocialStuff.Data
                 if (ChatIds.Contains(chat))
                 {
                     string chatName = row["chatname"].ToString();
-                    Chats.Add(new Chat(chat, chatName));
+                    List<int> ParticipantsIDs = new List<int>();
+                    foreach (DataRow row1 in dataTable1.Rows)
+                    {
+                        if (chat == Convert.ToInt32(row1["chatid"]))
+                        {
+                            ParticipantsIDs.Add(Convert.ToInt32(row1["userid"]));
+                        }
+                    }
+                    Chats.Add(new Chat(chat, chatName, ParticipantsIDs));
                 
                 }
             }
@@ -122,12 +132,21 @@ namespace SocialStuff.Data
         public List<Chat> GetChatsList()
         {
             DataTable dataTable = dbConnection.ExecuteReader("select * from Chats");
+            DataTable dataTable1 = dbConnection.ExecuteReader("select * from ChatParticipants");
             List<Chat> chats = new List<Chat>();
             foreach (DataRow row in dataTable.Rows)
             {
                 int chatID = Convert.ToInt32(row["chatid"]);
                 string chatName = row["chatname"].ToString();
-                chats.Add(new Chat(chatID, chatName));
+                List<int> ParticipantsIDs = new List<int>();
+                foreach (DataRow row1 in dataTable1.Rows)
+                {
+                    if (chatID == Convert.ToInt32(row1["chatid"]))
+                    {
+                        ParticipantsIDs.Add(Convert.ToInt32(row1["userid"]));
+                    }
+                }
+                chats.Add(new Chat(chatID, chatName, ParticipantsIDs));
             }
             return chats;
         }
@@ -149,13 +168,23 @@ namespace SocialStuff.Data
                 string status = row["status"].ToString();
                 float amount = Convert.ToSingle(row["amount"]);
                 string currency = row["currency"].ToString();
+                DataTable reportsTable = dbConnection.ExecuteReader("select * from Reports");
+                List<int> UserReports = new List<int>();
+                foreach (DataRow row1 in reportsTable.Rows)
+                {
+                    if (Convert.ToInt32(row1["messageid"]) == messageID)
+                    {
+                        UserReports.Add(Convert.ToInt32(row1["userid"]));
+                    }
+                }
+
                 switch (typeID)
                 {
                     case 1: // Text message
-                        messages.Add(new TextMessage(messageID, userID, chatID, timestamp, content));
+                        messages.Add(new TextMessage(messageID, userID, chatID, timestamp, content, UserReports));
                         break;
                     case 2: // Image message
-                        messages.Add(new ImageMessage(messageID, userID, chatID, timestamp, content));
+                        messages.Add(new ImageMessage(messageID, userID, chatID, timestamp, content, UserReports));
                         break;
                     case 3: // Request message
                         messages.Add(new RequestMessage(messageID, userID, chatID, timestamp, status, amount, content, currency));

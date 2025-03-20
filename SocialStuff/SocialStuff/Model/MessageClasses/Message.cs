@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SocialStuff.Model.MessageClasses
 {
-    interface Message
+    public interface Message
     {
         int getSenderID();
         int getChatID();

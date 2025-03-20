@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SocialStuff.Model.MessageClasses
 {
-    class ImageMessage : Message
+    public class ImageMessage : Message
     {
         private int MessageID;
         private int SenderID;

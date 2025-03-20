@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SocialStuff.Model.MessageClasses
 {
-    class TransferMessage : Message
+    public class TransferMessage : Message
     {
         private int MessageID;
         private int ChatID;

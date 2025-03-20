@@ -8,7 +8,7 @@ using Windows.System;
 
 namespace SocialStuff.Model.MessageClasses
 {
-    class TextMessage : Message
+    public class TextMessage : Message
     {
         private int MessageID;
         private int SenderID;
@@ -27,13 +27,13 @@ namespace SocialStuff.Model.MessageClasses
             this.UsersReport = new List<int>();
         }
 
-        public TextMessage(int MessageID,int senderID, int chatID, DateTime timestamp, string content)
+        public TextMessage(int MessageID,int senderID, int chatID, DateTime timestamp, string content, List<int> usersReport)
         {
             this.SenderID = senderID;
             this.ChatID = chatID;
             this.Timestamp = timestamp;
             this.Content = content;
-            this.UsersReport = new List<int>();
+            this.UsersReport = usersReport;
         }
 
         public int getChatID() { return ChatID; }

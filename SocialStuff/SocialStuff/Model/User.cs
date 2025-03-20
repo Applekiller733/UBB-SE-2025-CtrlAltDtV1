@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SocialStuff.Model
 {
-    class User
+    public class User
     {
 
         private int UserId { get; set; }
