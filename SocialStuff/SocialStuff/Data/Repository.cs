@@ -236,8 +236,9 @@ namespace SocialStuff.Data
         }
 
         // Add a chat to the database
-        public void AddChat(string chatName, out int chatID)
+        public int AddChat(string chatName)
         {
+            int chatID;
             SqlParameter[] parameters =
             {
                 new SqlParameter("@ChatName", chatName),
@@ -246,6 +247,7 @@ namespace SocialStuff.Data
 
             dbConnection.ExecuteNonQuery("AddChat", parameters);
             chatID = (int)parameters[1].Value; // Get the generated ChatID from the output parameter
+            return chatID;
         }
 
         // Update a chat in the database
