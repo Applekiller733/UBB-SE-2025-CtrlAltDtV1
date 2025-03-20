@@ -5030,23 +5030,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alexe\\.nuget\\packages\\": {},
+    "C:\\Users\\album\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexe\\Source\\Repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\SocialStuff.csproj",
+      "projectUniqueName": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\SocialStuff.csproj",
       "projectName": "SocialStuff",
-      "projectPath": "C:\\Users\\alexe\\Source\\Repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\SocialStuff.csproj",
-      "packagesPath": "C:\\Users\\alexe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexe\\Source\\Repos\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\",
+      "projectPath": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\SocialStuff.csproj",
+      "packagesPath": "C:\\Users\\album\\.nuget\\packages\\",
+      "outputPath": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\alexe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\album\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5071,7 +5071,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
       "SdkAnalysisLevel": "9.0.200"
     },
@@ -5109,10 +5109,6 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.13, 8.0.13]"
-          },
-          {
             "name": "Microsoft.AspNetCore.App.Runtime.win-arm64",
             "version": "[8.0.13, 8.0.13]"
           },
@@ -5122,26 +5118,6 @@
           },
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-            "version": "[8.0.13, 8.0.13]"
-          },
-          {
-            "name": "Microsoft.Net.Sdk.Compilers.Toolset",
-            "version": "[9.0.200, 9.0.200]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-arm64",
-            "version": "[8.0.13, 8.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.13, 8.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x86",
-            "version": "[8.0.13, 8.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
             "version": "[8.0.13, 8.0.13]"
           },
           {
@@ -5159,10 +5135,6 @@
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
             "version": "[10.0.19041.57, 10.0.19041.57]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.13, 8.0.13]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-arm64",
