@@ -11,7 +11,7 @@
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
-    <Page Update="View\ChatListView.xaml">
+    <Page Update="View\ChatMessagesView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

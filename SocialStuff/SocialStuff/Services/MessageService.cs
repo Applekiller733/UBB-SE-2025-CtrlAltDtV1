@@ -28,7 +28,7 @@ namespace SocialStuff.Services
 
         public void sendImage(int SenderID, int ChatID, string ImageURL)
         {
-            this.repository.AddImageMessage(SenderID, ChatID, ImageURL);
+            this.repository.AddImageMessage(repository.GetLoggedInUserID(), ChatID, ImageURL);
         }
 
         public void sendTransferMessage(int userID, int chatID, string content, string status, float amount, string currency)

@@ -42,14 +42,17 @@ namespace SocialStuff
             Repository repo = new Repository();
             DatabaseConnection dc = repo.GetDatabaseConnection();
             dc.OpenConnection();
+
             int res = dc.CheckConnection();
             if (res == 1)
             {
                 myButtonCheck();
-
-                ChatListView chatWindow = new ChatListView();
-                chatWindow.Activate(); // Show the window in WinUI 3
+               
+                ChatMessagesView chatWindow = new ChatMessagesView();
+                chatWindow.Activate();
             }
+
+
             dc.CloseConnection();
         }
     }

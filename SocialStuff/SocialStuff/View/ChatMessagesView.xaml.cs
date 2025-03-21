@@ -14,14 +14,20 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Microsoft.UI;
 using Microsoft.UI.Windowing;
+using SocialStuff.ViewModel;
+using WinRT.Interop;
 
 namespace SocialStuff.View
 {
-    public sealed partial class ChatListView : Window
+    public sealed partial class ChatMessagesView : Window
     {
-        public ChatListView()
+        public ChatMessagesView()
         {
             this.InitializeComponent();
+
+            var chatMessagesViewModel = new ChatMessagesViewModel();
+            MainGrid.DataContext = chatMessagesViewModel;
+
         }
     }
 }

@@ -13,7 +13,6 @@ namespace SocialStuff.Services
 {
     public class UserService
     {
-
         private Repository repo; 
         private int UserID;
 

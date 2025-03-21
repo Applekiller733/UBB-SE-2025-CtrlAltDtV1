@@ -69,10 +69,7 @@
     <PRIResource Remove="Data\Database\Procedures\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="View\ChatListView.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="View\ChatListView.xaml">
+    <Page Update="View\ChatMessagesView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

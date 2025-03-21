@@ -1,4 +1,4 @@
 App.xbf
 MainWindow.xbf
 View\AddFriend.xbf
-View\ChatListView.xbf
+View\ChatMessagesView.xbf
