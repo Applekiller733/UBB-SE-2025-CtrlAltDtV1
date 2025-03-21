@@ -9,19 +9,25 @@ namespace SocialStuff.Model.MessageClasses
     public abstract class Message
     {
         private int MessageID { get; set; }
+        public int getMessageID() => MessageID;
         private int SenderID { get; set; }
+        public int getSenderID() => SenderID;
         private int ChatID { get; set; }
+        public int getChatID() => ChatID;
         private DateTime Timestamp { get; set; }
+        public DateTime getTimestamp() => Timestamp;
 
-        protected Message(int senderID, int chatID)
+        public Message(int messageID, int senderID, int chatID)
         {
+            MessageID = messageID;
             SenderID = senderID;
             ChatID = chatID;
             Timestamp = DateTime.Now;
         }
 
-        protected Message(int senderID, int chatID, DateTime timestamp)
+        public Message(int messageID, int senderID, int chatID, DateTime timestamp)
         {
+            MessageID = messageID;
             SenderID = senderID;
             ChatID = chatID;
             Timestamp = timestamp;

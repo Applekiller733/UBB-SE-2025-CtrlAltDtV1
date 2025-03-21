@@ -1,4 +1,4 @@
 App.xbf
 MainWindow.xbf
-View\AddFriend.xbf
 View\ChatMessagesView.xbf
+View\MessageTemplates.xbf

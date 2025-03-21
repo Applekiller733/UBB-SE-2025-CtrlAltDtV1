@@ -1,31 +1,52 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
 using SocialStuff.Model.MessageClasses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SocialStuff.Services;
+using System.Runtime.CompilerServices;
+using SocialStuff.Data;
 
 namespace SocialStuff.View
 {
     public class MessageTemplateSelector : DataTemplateSelector
     {
-        public DataTemplate TextMessageTemplate { get; set; }
-        public DataTemplate ImageMessageTemplate { get; set; }
-        public DataTemplate TransferMessageTemplate { get; set; }
-        public DataTemplate RequestMessageTemplate { get; set; }
+        public DataTemplate TextMessageTemplateLeft { get; set; }
+        public DataTemplate TextMessageTemplateRight { get; set; }
+        public DataTemplate ImageMessageTemplateLeft { get; set; }
+        public DataTemplate ImageMessageTemplateRight { get; set; }
+        public DataTemplate TransferMessageTemplateLeft { get; set; }
+        public DataTemplate TransferMessageTemplateRight { get; set; }
+        public DataTemplate RequestMessageTemplateLeft { get; set; }
+        public DataTemplate RequestMessageTemplateRight { get; set; }
+
+        private int CurrentUserID;
+
+        public MessageTemplateSelector()
+        {
+            Repository repo = new Repository();      // THIS MIGHT EXPLODE IF REPOSITORY USERID IS NOT STATIC, ILL FIGURE IT OUT
+            this.CurrentUserID = repo.GetLoggedInUserID();
+        }
 
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
-            switch (item)
+            if (item is Message message)
             {
-                case TextMessage _: return TextMessageTemplate;
-                case ImageMessage _: return ImageMessageTemplate;
-                case TransferMessage _: return TransferMessageTemplate;
-                case RequestMessage _: return RequestMessageTemplate;
-                default: return TextMessageTemplate;
+                switch (message)
+                {
+                    case TextMessage _:
+                        return message.getSenderID() == this.CurrentUserID ? TextMessageTemplateRight : TextMessageTemplateLeft;
+
+                    case ImageMessage _:
+                        return message.getSenderID() == this.CurrentUserID ? ImageMessageTemplateRight : ImageMessageTemplateLeft;
+
+                    case TransferMessage _:
+                        return message.getSenderID() == this.CurrentUserID ? TransferMessageTemplateRight : TransferMessageTemplateLeft;
+
+                    case RequestMessage _:
+                        return message.getSenderID() == this.CurrentUserID ? RequestMessageTemplateRight : RequestMessageTemplateLeft;
+                }
             }
+
+            return TextMessageTemplateLeft;
         }
     }
 }

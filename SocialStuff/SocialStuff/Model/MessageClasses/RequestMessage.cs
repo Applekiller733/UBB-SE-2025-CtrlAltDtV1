@@ -8,18 +8,30 @@ namespace SocialStuff.Model.MessageClasses
 {
     public class RequestMessage : Message
     {
-        public int MessageID { get; set; }
-        public int SenderID { get; set; }
-        public int ChatID { get; set; }
-        public string Status { get; set; }
+        private int MessageID { get; set; }
+        public int getMessageID() => MessageID;
+        private int SenderID { get; set; }
+        public int getSenderID() => SenderID;
+        private int ChatID { get; set; }
+        public int getChatID() => ChatID;
+        private DateTime Timestamp { get; set; }
+        public DateTime getTimestamp() => Timestamp;
+        private string Status { get; set; }
+        public string getStatus() => Status;
         public float Amount { get; set; }
+        public float getAmount() => Amount;
         public string Description { get; set; }
+        public string getDescription() => Description;
         public string Currency { get; set; }
+        public string getCurrency() => Currency;
 
         public RequestMessage(int messageID, int requesterID, int chatID, string status, float amount, string desc, string currency)
-            : base(requesterID, chatID)
+            : base(messageID, requesterID, chatID)
         {
             MessageID = messageID;
+            SenderID = requesterID;
+            ChatID = chatID;
+            Timestamp = DateTime.Now;
             Status = status;
             Amount = amount;
             Description = desc;
@@ -27,9 +39,12 @@ namespace SocialStuff.Model.MessageClasses
         }
 
         public RequestMessage(int messageID, int requesterID, int chatID, DateTime timestamp, string status, float amount, string desc, string currency)
-            : base(requesterID, chatID, timestamp)
+            : base(messageID, requesterID, chatID, timestamp)
         {
             MessageID = messageID;
+            SenderID = requesterID;
+            ChatID = chatID;
+            Timestamp = timestamp;
             Status = status;
             Amount = amount;
             Description = desc;
