@@ -8,6 +8,11 @@ namespace SocialStuff.ViewModel
         private readonly Action<object> execute;
         private readonly Predicate<object> canExecute;
 
+        public RelayCommand(Action execute, Predicate<object> canExecute = null)
+            : this(o => execute(), canExecute)
+        {
+        }
+
         public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
         {
             this.execute = execute ?? throw new ArgumentNullException(nameof(execute));

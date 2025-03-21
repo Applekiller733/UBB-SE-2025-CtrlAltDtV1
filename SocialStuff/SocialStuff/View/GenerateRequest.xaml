@@ -6,10 +6,9 @@
     xmlns:local="using:SocialStuff.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:SocialStuff.ViewModel"
     mc:Ignorable="d"
-    
     Title="GenerateRequest">
-
 
     <Grid Padding="20">
         <Grid.RowDefinitions>
@@ -36,6 +35,7 @@
                       Grid.Column="0"
                       Margin="10,10,0,0"
                       SelectionChanged="TransferTypeCombobox_SelectionChanged"
+                      SelectedIndex="{x:Bind ViewModel.TransferTypeIndex, Mode=TwoWay}"
                       PlaceholderText="Transfer Type">
                 <ComboBoxItem Content="Transfer Money"/>
                 <ComboBoxItem Content="Request Money"/>
@@ -73,6 +73,7 @@
                      Width="200"
                      HorizontalAlignment="Left"
                      BeforeTextChanging="AmountTextBox_BeforeTextChanging"
+                     Text="{x:Bind ViewModel.AmountText, Mode=TwoWay}"
                      x:Name="AmountTextBox"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0"
@@ -82,6 +83,7 @@
             <ComboBox Grid.Row="1" Grid.Column="1"
                       Margin="10,20,0,0"
                       x:Name="CurrencyComboBox"
+                      SelectedIndex="{x:Bind ViewModel.CurrencyIndex, Mode=TwoWay}"
                       PlaceholderText="Currency">
                 <ComboBoxItem Content="USD"/>
                 <ComboBoxItem Content="EUR"/>
@@ -98,7 +100,8 @@
                      AcceptsReturn="True"
                      Width="400"
                      Margin="10,20,0,0"
-                     MaxLength="10"
+                     MaxLength="100"
+                     Text="{x:Bind ViewModel.Description, Mode=TwoWay}"
                      x:Name="DescriptionTextBox"/>
 
             <Button Grid.Row="4" Grid.Column="1"
@@ -108,9 +111,9 @@
             Padding="5"
             HorizontalAlignment="Left"
             Content="Transfer Money"
-            x:Name="TransferButton">
-                
-            </Button>
+            Command="{x:Bind ViewModel.SendMessageCommand}"
+            IsEnabled="{x:Bind ViewModel.IsFormValid, Mode=OneWay}"
+            x:Name="TransferButton"/>
         </Grid>
     </Grid>
 </Window>

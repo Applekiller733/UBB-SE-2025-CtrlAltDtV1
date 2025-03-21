@@ -15,67 +15,55 @@ using Microsoft.UI.Xaml.Navigation;
 using Microsoft.UI;
 using Windows.Graphics;
 using WinRT.Interop;
-
-
+using SocialStuff.ViewModel;
+using SocialStuff.Services;
+using SocialStuff.Data;
 
 namespace SocialStuff.View
 {
     public sealed partial class GenerateRequest : Window
     {
+        public GenerateRequestViewModel ViewModel { get; }
+
         public GenerateRequest()
         {
+            // Create repository and services (this would typically be injected)
+            Repository repository = new Repository();
+            ChatService chatService = new ChatService(repository);
+
+            // Initialize ViewModel
+            ViewModel = new GenerateRequestViewModel(chatService);
+
             this.InitializeComponent();
-
-
-            TransferButton.IsEnabled = false;
-
-            // Add event handlers for validation
-            TransferTypeComboBox.SelectionChanged += ValidateFields;
-            CurrencyComboBox.SelectionChanged += ValidateFields;
-            AmountTextBox.TextChanged += ValidateFields;
         }
-
-        private void ValidateFields(object sender, object e)
-        {
-            // Check if all required fields are filled
-            bool isValid =
-                TransferTypeComboBox.SelectedItem != null &&
-                CurrencyComboBox.SelectedItem != null &&
-                !string.IsNullOrWhiteSpace(AmountTextBox.Text) &&
-                decimal.TryParse(AmountTextBox.Text, out decimal parsedAmount) &&
-                parsedAmount != 0.00m && parsedAmount != 0.0m && parsedAmount != 0m; // Ensure amount is a valid number
-
-            // Enable or disable the transfer button based on validation
-            TransferButton.IsEnabled = isValid;
-        }
-
-
 
         private void TransferTypeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (TransferTypeComboBox.SelectedItem != null)
             {
                 string selectedValue = ((ComboBoxItem)TransferTypeComboBox.SelectedItem).Content.ToString();
+                ViewModel.SelectedTransferType = selectedValue;
+
                 switch (selectedValue)
                 {
                     case "Transfer Money":
                         TitleTextBlock.Text = "Make a Transfer";
+                        TransferButton.Content = "Transfer Money";
                         break;
                     case "Request Money":
                         TitleTextBlock.Text = "Request Funds";
+                        TransferButton.Content = "Request Money";
                         break;
                     case "Split Bill":
                         TitleTextBlock.Text = "Split Bill";
+                        TransferButton.Content = "Split Bill";
                         break;
                     default:
-                        TitleTextBlock.Text = ""; 
+                        TitleTextBlock.Text = "";
                         break;
                 }
-
-
             }
         }
-
 
         private void AmountTextBox_BeforeTextChanging(TextBox sender, TextBoxBeforeTextChangingEventArgs args)
         {
@@ -87,13 +75,10 @@ namespace SocialStuff.View
             bool isValid = System.Text.RegularExpressions.Regex.IsMatch(
                 args.NewText,
                 @"^\d*\.?\d{0,2}$"
-             );
+            );
 
             // Cancel if invalid
             args.Cancel = !isValid;
         }
-
-
-
     }
 }

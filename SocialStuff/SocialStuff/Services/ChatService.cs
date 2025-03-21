@@ -10,7 +10,7 @@ using Microsoft.Identity.Client;
 
 namespace SocialStuff.Services
 {
-    class ChatService
+    public class ChatService
     {
         private Repository repository;
         public const int chatID = 1;
@@ -26,6 +26,12 @@ namespace SocialStuff.Services
             return repository.GetLoggedInUserID();
         }
 
+        //return the number of participants in a chat beside the user
+        public int getNumberOfParticipants(int ChatID)
+        {
+            return repository.GetChatParticipantsIDs(getCurrentChatID()).Count - 1;
+        }
+
         public ChatService(Repository repo)
         {
             this.repository = repo;
@@ -35,6 +41,12 @@ namespace SocialStuff.Services
         {
             return this.repository;
         }
+
+
+
+
+            /// MODIFY ERROR REQUEST HAS 1 INSTANCE WITH REQUESTER ID AND CHAT 1
+
 
 
         //Creates a new requestmessage and adds it to the database
@@ -73,6 +85,10 @@ namespace SocialStuff.Services
         }
 
 
+
+
+
+        ///ERROR ONLY 1 INSTANCE 1 SENDER ID 1 GROUP ID
 
         //creates a new transfermessage and adds it to the database
         public void sendMoneyViaChat(float Amount, string Currency, string Description, int ChatID)
