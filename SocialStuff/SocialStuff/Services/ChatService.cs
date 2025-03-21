@@ -6,12 +6,25 @@ using System.Text;
 using System.Threading.Tasks;
 using SocialStuff.Model.MessageClasses;
 using SocialStuff.Model;
+using Microsoft.Identity.Client;
 
 namespace SocialStuff.Services
 {
     class ChatService
     {
         private Repository repository;
+        public const int chatID = 1;
+
+        //Get current chat ID
+        public int getCurrentChatID()
+        {
+            return chatID;
+        }
+        //Get logged in user ID
+        public int GetCurrentUserID()
+        {
+            return repository.GetLoggedInUserID();
+        }
 
         public ChatService(Repository repo)
         {
@@ -23,15 +36,80 @@ namespace SocialStuff.Services
             return this.repository;
         }
 
-        public void requestMoneyViaChat(List<int> ListOfRequestedUsersID, int RequesterID, float Amount, string Currency, int ChatID, string Description)
+
+        //Creates a new requestmessage and adds it to the database
+        public void requestMoneyViaChat(float Amount, string Currency, int ChatID, string Description)
         {
-            throw new NotImplementedException();
+            if (Amount <= 0)
+            {
+                throw new ArgumentException("Amount must be greater than zero.");
+            }
+
+            if (string.IsNullOrEmpty(Currency))
+            {
+                throw new ArgumentException("Currency cannot be null or empty.");
+            }
+
+           
+
+            List<int> participantIDs = repository.GetChatParticipantsIDs(ChatID);
+            int currentUserId = GetCurrentUserID();
+
+            foreach (int participantID in participantIDs)
+            {
+                if (currentUserId != participantID)
+                {
+                    try
+                    {
+                        repository.AddRequestMessage(currentUserId, participantID, Description, "Pending", Amount, Currency);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Log the exception or handle it as needed
+                        Console.WriteLine($"Error requesting money from participant {participantID}: {ex.Message}");
+                    }
+                }
+            }
         }
 
-        public void sendMoneyViaChat(List<int> ListOfReceiversID, int SenderID, float Amount, string Currency, string Description, int ChatID)
+
+
+        //creates a new transfermessage and adds it to the database
+        public void sendMoneyViaChat(float Amount, string Currency, string Description, int ChatID)
         {
-            throw new NotImplementedException();
+            if (Amount <= 0)
+            {
+                throw new ArgumentException("Amount must be greater than zero.");
+            }
+
+            if (string.IsNullOrEmpty(Currency))
+            {
+                throw new ArgumentException("Currency cannot be null or empty.");
+            }
+
+
+            List<int> participantIDs = repository.GetChatParticipantsIDs(ChatID);
+            int currentUserId = GetCurrentUserID();
+
+            foreach (int participantID in participantIDs)
+            {
+                if (currentUserId != participantID)
+                {
+                    try
+                    {
+                        repository.AddTransferMessage(currentUserId, participantID, Description, "", Amount, Currency);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Log the exception or handle it as needed
+                        Console.WriteLine($"Error sending money to participant {participantID}: {ex.Message}");
+                    }
+                }
+            }
         }
+
+        
+
 
         public void createChat(List<int> ParticipantsID, string ChatName)
         {

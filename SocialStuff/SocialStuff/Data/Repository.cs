@@ -64,6 +64,23 @@ namespace SocialStuff.Data
             }
             return notifications;
         }
+
+        //Get all participants of a chat
+        public List<int> GetChatParticipantsIDs(int chatID)
+        {
+            DataTable dataTable = dbConnection.ExecuteReader("select * from ChatParticipants", null, false);
+            List<int> participants = new List<int>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (Convert.ToInt32(row["chatid"]) == chatID)
+                {
+                    participants.Add(Convert.ToInt32(row["userid"]));
+                }
+            }
+            return participants;
+        }
+
+
         //Get the Friends of a USERID, friends returned as User Class Type
         public List<User> GetUserFriendsList(int userId)
         {
