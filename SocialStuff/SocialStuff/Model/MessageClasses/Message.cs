@@ -8,9 +8,10 @@ namespace SocialStuff.Model.MessageClasses
 {
     public abstract class Message
     {
-        public int SenderID;
-        public int ChatID;
-        public DateTime Timestamp;
+        private int MessageID { get; set; }
+        private int SenderID { get; set; }
+        private int ChatID { get; set; }
+        private DateTime Timestamp { get; set; }
 
         protected Message(int senderID, int chatID)
         {
@@ -24,21 +25,6 @@ namespace SocialStuff.Model.MessageClasses
             SenderID = senderID;
             ChatID = chatID;
             Timestamp = timestamp;
-        }
-
-        public int getSenderID()
-        {
-            return this.SenderID;
-        }
-
-        public int getChatID()
-        {
-            return this.ChatID;
-        }
-
-        public DateTime getTimestamp()
-        {
-            return this.Timestamp;
         }
 
         public override string ToString()

@@ -20,16 +20,17 @@ namespace SocialStuff.ViewModel
         public ObservableCollection<Message> ChatMessages { get; set; }
         public MessageService MessageService;
         public ChatService ChatService;
+        public UserService UserService;
         public int CurrentChatID = 1;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ChatMessagesViewModel()
+        public ChatMessagesViewModel(MessageService msgService, ChatService chtService, UserService usrService)
         {
             ChatMessages = new ObservableCollection<Message>();
-            Repository repo = new Repository();
-            MessageService = new MessageService(repo);
-            ChatService = new ChatService(repo);
+            MessageService = msgService;
+            ChatService = chtService;
+            UserService = usrService;
             this.LoadMessagesForChat();
         }
 
@@ -40,7 +41,29 @@ namespace SocialStuff.ViewModel
 
             foreach (var message in messages)
             {
-                ChatMessages.Add(message);
+                if (message is TextMessage textMessage)
+                {
+                    ChatMessages.Add(new TextMessage
+                        (textMessage.MessageID, textMessage.SenderID, textMessage.ChatID, textMessage.Timestamp, textMessage.Content, textMessage.UsersReport));
+                }
+
+                if (message is ImageMessage imageMessage)
+                {
+                    ChatMessages.Add(new ImageMessage
+                        (imageMessage.MessageID, imageMessage.SenderID, imageMessage.ChatID, imageMessage.Timestamp, imageMessage.ImageURL, imageMessage.UsersReport));
+                }
+
+                if (message is TransferMessage transferMessage)
+                {
+                    ChatMessages.Add(new TransferMessage
+                        (transferMessage.MessageID, transferMessage.SenderID, transferMessage.ChatID, transferMessage.Status, transferMessage.Amount, transferMessage.Description, transferMessage.Currency));
+                }
+
+                if (message is RequestMessage requestMessage)
+                {
+                    ChatMessages.Add(new RequestMessage
+                        (requestMessage.MessageID, requestMessage.SenderID, requestMessage.ChatID, requestMessage.Status, requestMessage.Amount, requestMessage.Description, requestMessage.Currency));
+                }
             }
         }
 

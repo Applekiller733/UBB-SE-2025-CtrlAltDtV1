@@ -48,7 +48,7 @@ namespace SocialStuff
             {
                 myButtonCheck();
                
-                ChatMessagesView chatWindow = new ChatMessagesView();
+                ChatMessagesView chatWindow = new ChatMessagesView(repo);
                 chatWindow.Activate();
             }
 

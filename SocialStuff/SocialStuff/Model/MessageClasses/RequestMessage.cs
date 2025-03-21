@@ -8,53 +8,37 @@ namespace SocialStuff.Model.MessageClasses
 {
     public class RequestMessage : Message
     {
-        private int MessageID;
-        private int ChatID;
-        private int RequesterID;
-        private DateTime Timestamp;
-        private string Status;
-        private float Amount;
-        private string Description;
-        private string Currency;
+        public int MessageID { get; set; }
+        public int SenderID { get; set; }
+        public int ChatID { get; set; }
+        public string Status { get; set; }
+        public float Amount { get; set; }
+        public string Description { get; set; }
+        public string Currency { get; set; }
 
         public RequestMessage(int messageID, int requesterID, int chatID, string status, float amount, string desc, string currency)
             : base(requesterID, chatID)
         {
-            this.MessageID = messageID;
-            this.Status = status;
-            this.Amount = amount;
-            this.Description = desc;
-            this.Currency = currency;
+            MessageID = messageID;
+            Status = status;
+            Amount = amount;
+            Description = desc;
+            Currency = currency;
         }
 
         public RequestMessage(int messageID, int requesterID, int chatID, DateTime timestamp, string status, float amount, string desc, string currency)
             : base(requesterID, chatID, timestamp)
         {
-            this.MessageID = messageID;
-            this.Status = status;
-            this.Amount = amount;
-            this.Description = desc;
-            this.Currency = currency;
+            MessageID = messageID;
+            Status = status;
+            Amount = amount;
+            Description = desc;
+            Currency = currency;
         }
-
-        public int getChatID() { return this.ChatID; }
-
-        public string getDescription() { return this.Description; }
-
-        public int getSenderID() { return this.RequesterID; }
-
-        public DateTime getTimestamp() { return this.Timestamp; }
-
-        public float getAmount() { return this.Amount; }
-
-        public string getMessageStatus() { return this.Status; }
-
-        public string getCurrency() { return this.Currency; }
 
         public override string ToString()
         {
-            String message = "Request Message: " + this.Amount + this.Currency + this.Description;
-            return message;
+            return $"Request Message: {Amount}{Currency} - {Description}";
         }
     }
 }

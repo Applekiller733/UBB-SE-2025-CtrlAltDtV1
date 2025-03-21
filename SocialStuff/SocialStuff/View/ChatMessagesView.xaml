@@ -18,6 +18,27 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <Grid.Resources>
+            <!-- Text Message Template -->
+            <DataTemplate x:Key="TextMessageTemplate">
+                <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5">
+                    <TextBlock Text="{Binding Content}" Foreground="Black" TextWrapping="Wrap"/>
+                </Border>
+            </DataTemplate>
+
+            <!-- Image Message Template -->
+            <DataTemplate x:Key="ImageMessageTemplate">
+                <Border Background="Transparent" Padding="5" CornerRadius="10" Margin="5">
+                    <Image Source="{Binding ImageUrl}" MaxWidth="200" Stretch="UniformToFill"/>
+                </Border>
+            </DataTemplate>
+
+            <!-- Message Template Selector -->
+            <local:MessageTemplateSelector x:Key="MessageTemplateSelector"
+                                           TextMessageTemplate="{StaticResource TextMessageTemplate}"
+                                           ImageMessageTemplate="{StaticResource ImageMessageTemplate}"/>
+        </Grid.Resources>
+
 
         <!-- Right Dynamic Content -->
         <Grid Grid.Column="1">
@@ -53,7 +74,8 @@
                           ItemsSource="{Binding ChatMessages}"
                           Background="Black" 
                           Padding="10"
-                          ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ItemTemplateSelector="{StaticResource MessageTemplateSelector}"/>
             </Border>
 
             <Border Grid.Row="2" Background="#39374f" Padding="10">

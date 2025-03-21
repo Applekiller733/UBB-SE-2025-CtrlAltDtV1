@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialStuff.View.Templates
+namespace SocialStuff.View
 {
     public class MessageTemplateSelector : DataTemplateSelector
     {
@@ -16,7 +16,7 @@ namespace SocialStuff.View.Templates
         public DataTemplate TransferMessageTemplate { get; set; }
         public DataTemplate RequestMessageTemplate { get; set; }
 
-        protected override DataTemplate SelectTemplateCore(object item)
+        protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
             switch (item)
             {

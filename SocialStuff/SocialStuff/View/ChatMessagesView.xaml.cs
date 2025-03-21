@@ -16,16 +16,20 @@ using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using SocialStuff.ViewModel;
 using WinRT.Interop;
+using SocialStuff.Data;
+using SocialStuff.Services;
 
 namespace SocialStuff.View
 {
     public sealed partial class ChatMessagesView : Window
     {
-        public ChatMessagesView()
+        public ChatMessagesView(Repository repo)
         {
             this.InitializeComponent();
-
-            var chatMessagesViewModel = new ChatMessagesViewModel();
+            UserService userService = new UserService(repo);
+            ChatService chatService = new ChatService(repo);
+            MessageService messageService = new MessageService(repo);
+            var chatMessagesViewModel = new ChatMessagesViewModel(messageService, chatService, userService);
             MainGrid.DataContext = chatMessagesViewModel;
 
         }

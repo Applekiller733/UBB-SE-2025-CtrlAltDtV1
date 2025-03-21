@@ -10,14 +10,15 @@ namespace SocialStuff.Model.MessageClasses
 {
     public class TextMessage : Message
     {
-        private int MessageID;
-        private int SenderID;
-        private int ChatID;
-        private DateTime Timestamp;
-        private string Content;
-        private List<int> UsersReport;
+        public int MessageID { get; set; }
+        public int SenderID { get; set; }
+        public int ChatID { get; set; }
+        public DateTime Timestamp { get; set; }
+        public string Content { get; set; }
+        public List<int> UsersReport { get; set; }
+
         public TextMessage(int messageID, int senderID, int chatID, string content)
-           : base(senderID, chatID)
+            : base(senderID, chatID)
         {
             this.MessageID = messageID;
             this.Content = content;
@@ -31,14 +32,6 @@ namespace SocialStuff.Model.MessageClasses
             this.Content = content;
             this.UsersReport = usersReport;
         }
-
-        public int getChatID() { return ChatID; }
-
-        public int getSenderID() { return SenderID; }
-
-        public DateTime getTimestamp() { return Timestamp; }
-
-        public string getTextContent() { return Content; }
 
         public override string ToString() { return Content; }
     }
