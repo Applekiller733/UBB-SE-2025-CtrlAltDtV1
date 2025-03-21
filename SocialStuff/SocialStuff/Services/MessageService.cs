@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SocialStuff.Services
 {
-    class MessageService
+    public class MessageService
     {
         private Repository repository;
 

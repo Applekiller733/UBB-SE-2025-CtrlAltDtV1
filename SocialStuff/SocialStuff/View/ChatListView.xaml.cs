@@ -20,17 +20,9 @@ namespace SocialStuff.View
    
     public sealed partial class ChatListView : Window
     {
-        private AppWindow _appWindow;
-
         public ChatListView()
         {
             this.InitializeComponent();
-            IntPtr hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
-            WindowId myWndId = Win32Interop.GetWindowIdFromWindow(hWnd);
-            _appWindow = AppWindow.GetFromWindowId(myWndId);
-
-            // Set window size
-            _appWindow.Resize(new Windows.Graphics.SizeInt32(400, 600));
         }
     }
 }
