@@ -16,22 +16,18 @@ namespace SocialStuff.Model.MessageClasses
         private DateTime Timestamp;
         private string Content;
         private List<int> UsersReport;
-
-        // make the getting of the reports..
-        public TextMessage(int MessageID, int senderID, int chatID, string content)
+        public TextMessage(int messageID, int senderID, int chatID, string content)
+           : base(senderID, chatID)
         {
-            this.SenderID = senderID;
-            this.ChatID = chatID;
-            this.Timestamp = DateTime.Now;
+            this.MessageID = messageID;
             this.Content = content;
             this.UsersReport = new List<int>();
         }
 
-        public TextMessage(int MessageID,int senderID, int chatID, DateTime timestamp, string content, List<int> usersReport)
+        public TextMessage(int messageID, int senderID, int chatID, DateTime timestamp, string content, List<int> usersReport)
+            : base(senderID, chatID, timestamp)
         {
-            this.SenderID = senderID;
-            this.ChatID = chatID;
-            this.Timestamp = timestamp;
+            this.MessageID = messageID;
             this.Content = content;
             this.UsersReport = usersReport;
         }

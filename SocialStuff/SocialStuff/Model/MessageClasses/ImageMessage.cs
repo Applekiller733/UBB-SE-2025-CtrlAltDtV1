@@ -16,23 +16,19 @@ namespace SocialStuff.Model.MessageClasses
         private List<int> UsersReport;
 
         public ImageMessage(int messageID, int senderID, int chatID, string imageUrl, List<int> usersReport)
+            : base(senderID, chatID)
         {
             MessageID = messageID;
-            SenderID = senderID;
-            ChatID = chatID;
-            Timestamp = DateTime.Now;
             ImageURL = imageUrl;
             UsersReport = usersReport;
         }
 
-        public ImageMessage(int MessageID, int senderID, int chatID, DateTime timestamp, string imageUrl, List<int> usersReport)
+        public ImageMessage(int messageID, int senderID, int chatID, DateTime timestamp, string imageUrl, List<int> usersReport)
+            : base(senderID, chatID, timestamp)
         {
-            this.MessageID = MessageID;
-            this.SenderID = senderID;
-            this.ChatID = chatID;
-            this.Timestamp = timestamp;
-            this.ImageURL = imageUrl;
-            this.UsersReport = usersReport;
+            MessageID = messageID;
+            ImageURL = imageUrl;
+            UsersReport = usersReport;
         }
 
         public string getImageURL() { return ImageURL; }

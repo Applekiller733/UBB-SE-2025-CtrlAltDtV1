@@ -16,7 +16,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        
 
         <!-- Right Dynamic Content -->
         <Grid Grid.Column="1">
@@ -48,11 +47,7 @@
             </Border>
 
             <Border Grid.Row="1" Background="Black">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel x:Name="ChatContainer" Padding="10">
-                        <!-- Messages will be dynamically added here -->
-                    </StackPanel>
-                </ScrollViewer>
+                
             </Border>
 
             <Border Grid.Row="2" Background="#39374f" Padding="10">

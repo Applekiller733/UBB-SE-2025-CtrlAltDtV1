@@ -17,13 +17,10 @@ namespace SocialStuff.Model.MessageClasses
         private string Description;
         private string Currency;
 
-        public RequestMessage(int messageID, int chatID, int requesterID, string status, float amount, string desc, string currency)
+        public RequestMessage(int messageID, int requesterID, int chatID, string status, float amount, string desc, string currency)
+            : base(requesterID, chatID)
         {
             this.MessageID = messageID;
-            this.RequesterID = requesterID;
-            this.ChatID = chatID;
-            this.Timestamp = DateTime.Now;
-
             this.Status = status;
             this.Amount = amount;
             this.Description = desc;
@@ -31,12 +28,9 @@ namespace SocialStuff.Model.MessageClasses
         }
 
         public RequestMessage(int messageID, int requesterID, int chatID, DateTime timestamp, string status, float amount, string desc, string currency)
+            : base(requesterID, chatID, timestamp)
         {
             this.MessageID = messageID;
-            this.RequesterID = requesterID;
-            this.ChatID = chatID;
-            this.Timestamp = timestamp;
-
             this.Status = status;
             this.Amount = amount;
             this.Description = desc;

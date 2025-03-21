@@ -6,12 +6,44 @@ using System.Threading.Tasks;
 
 namespace SocialStuff.Model.MessageClasses
 {
-    public interface Message
+    public abstract class Message
     {
-        int getSenderID();
-        int getChatID();
-        DateTime getTimestamp();
+        public int SenderID;
+        public int ChatID;
+        public DateTime Timestamp;
 
-        string toString();
+        protected Message(int senderID, int chatID)
+        {
+            SenderID = senderID;
+            ChatID = chatID;
+            Timestamp = DateTime.Now;
+        }
+
+        protected Message(int senderID, int chatID, DateTime timestamp)
+        {
+            SenderID = senderID;
+            ChatID = chatID;
+            Timestamp = timestamp;
+        }
+
+        public int getSenderID()
+        {
+            return this.SenderID;
+        }
+
+        public int getChatID()
+        {
+            return this.ChatID;
+        }
+
+        public DateTime getTimestamp()
+        {
+            return this.Timestamp;
+        }
+
+        public string toString()
+        {
+            return $"{GetType().Name} from {SenderID} in chat {ChatID} at {Timestamp}";
+        }
     }
 }

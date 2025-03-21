@@ -8,13 +8,16 @@ using System.Windows.Input;
 using SocialStuff.Model.MessageClasses;
 using MvvmHelpers;
 using SocialStuff.Services;
+using Windows.ApplicationModel.Chat;
 
 
 namespace SocialStuff.ViewModel
 {
     public class ChatListViewModel : BaseViewModel
     {
-        
+        public ObservableCollection<Message> Messages { get; set; } = new ObservableCollection<Message>();
+
+
     }
 
 }

@@ -17,7 +17,6 @@ using Microsoft.UI.Windowing;
 
 namespace SocialStuff.View
 {
-   
     public sealed partial class ChatListView : Window
     {
         public ChatListView()
