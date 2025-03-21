@@ -41,7 +41,7 @@ namespace SocialStuff.Model.MessageClasses
             return this.Timestamp;
         }
 
-        public string toString()
+        public override string ToString()
         {
             return $"{GetType().Name} from {SenderID} in chat {ChatID} at {Timestamp}";
         }

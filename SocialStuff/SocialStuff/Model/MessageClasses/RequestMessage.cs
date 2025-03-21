@@ -51,7 +51,7 @@ namespace SocialStuff.Model.MessageClasses
 
         public string getCurrency() { return this.Currency; }
 
-        public string toString()
+        public override string ToString()
         {
             String message = "Request Message: " + this.Amount + this.Currency + this.Description;
             return message;

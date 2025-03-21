@@ -36,6 +36,6 @@ namespace SocialStuff.Model.MessageClasses
 
         public int getChatID() { return ChatID; }
         public DateTime getTimestamp() { return Timestamp; }
-        public string toString() { return ImageURL; }
+        public override string ToString() { return ImageURL; }
     }
 }

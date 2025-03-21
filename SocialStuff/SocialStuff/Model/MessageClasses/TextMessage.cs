@@ -40,6 +40,6 @@ namespace SocialStuff.Model.MessageClasses
 
         public string getTextContent() { return Content; }
 
-        public string toString() { return Content; }
+        public override string ToString() { return Content; }
     }
 }
