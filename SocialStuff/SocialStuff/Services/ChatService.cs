@@ -45,7 +45,7 @@ namespace SocialStuff.Services
 
 
 
-            /// MODIFY ERROR REQUEST HAS 1 INSTANCE WITH REQUESTER ID AND CHAT 1
+            /// MODIFY ERROR REQUEST HAS 1 INSTANCE WITH REQUESTER ID AND CHAT 1 -: DONE (depends on implementation)
 
 
 
@@ -62,25 +62,14 @@ namespace SocialStuff.Services
                 throw new ArgumentException("Currency cannot be null or empty.");
             }
 
-           
-
-            List<int> participantIDs = repository.GetChatParticipantsIDs(ChatID);
-            int currentUserId = GetCurrentUserID();
-
-            foreach (int participantID in participantIDs)
+            try
             {
-                if (currentUserId != participantID)
-                {
-                    try
-                    {
-                        repository.AddRequestMessage(currentUserId, participantID, Description, "Pending", Amount, Currency);
-                    }
-                    catch (Exception ex)
-                    {
-                        // Log the exception or handle it as needed
-                        Console.WriteLine($"Error requesting money from participant {participantID}: {ex.Message}");
-                    }
-                }
+                repository.AddRequestMessage(GetCurrentUserID(), ChatID, Description, "Pending", Amount, Currency);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it as needed
+                Console.WriteLine($"Error requesting money from participant {ChatID}: {ex.Message}");
             }
         }
 
@@ -88,7 +77,7 @@ namespace SocialStuff.Services
 
 
 
-        ///ERROR ONLY 1 INSTANCE 1 SENDER ID 1 GROUP ID
+      
 
         //creates a new transfermessage and adds it to the database
         public void sendMoneyViaChat(float Amount, string Currency, string Description, int ChatID)
@@ -103,25 +92,67 @@ namespace SocialStuff.Services
                 throw new ArgumentException("Currency cannot be null or empty.");
             }
 
-
             List<int> participantIDs = repository.GetChatParticipantsIDs(ChatID);
-            int currentUserId = GetCurrentUserID();
-
-            foreach (int participantID in participantIDs)
+            try
             {
-                if (currentUserId != participantID)
+                if (this.enoughFunds(Amount*(participantIDs.Count-1), Currency, GetCurrentUserID()))
                 {
-                    try
+                    int currentUserId = GetCurrentUserID();
+                   
+                    repository.AddTransferMessage(GetCurrentUserID(), ChatID, Description, "Accepted", Amount * (participantIDs.Count - 1), Currency);
+                    foreach (int reciverid in participantIDs)
                     {
-                        repository.AddTransferMessage(currentUserId, participantID, Description, "", Amount, Currency);
-                    }
-                    catch (Exception ex)
-                    {
-                        // Log the exception or handle it as needed
-                        Console.WriteLine($"Error sending money to participant {participantID}: {ex.Message}");
+                        if (currentUserId != reciverid)
+                        {
+                            initiateTransfer(currentUserId, reciverid, Amount, Currency);
+                        }
                     }
                 }
+                else
+                {
+                    repository.AddTransferMessage(GetCurrentUserID(), ChatID, Description, "Rejected", Amount * (participantIDs.Count - 1), Currency);
+                }
             }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it as needed
+                Console.WriteLine($"Error sending money to participant {ChatID}: {ex.Message}");
+            }
+
+
+        }
+
+        //when a reqest is initiated in chat if you press accept a new transfer message is initiated with sender id the one who pressed and 
+        //chat id the chat 
+        public void acceptRequestViaChat(float amount, string currency, int AccepterID, int RequesterID)
+        {
+            //from Adrada
+            if (this.enoughFunds(amount,currency, AccepterID))
+            {
+                initiateTransfer(AccepterID, RequesterID, amount, currency);
+                repository.AddTransferMessage(AccepterID, getCurrentChatID(), "YOU JUST SENT " + amount.ToString() + currency +
+                    "TO here function that retrives username by ID", "Accepted", amount, currency);     
+            }
+            else
+            {
+                repository.AddTransferMessage(AccepterID, getCurrentChatID(), "YOU FAILED TO SEND " + amount.ToString() + currency +
+                    "TO here function that retrives username by ID", "Rejected", amount, currency);
+            }
+            
+        }
+        //mock function for enough funds
+        public bool enoughFunds(float amount, string currency, int SenderID)
+        {
+
+            Random random = new Random();
+            bool randomBool = random.Next(2) == 0; 
+            return randomBool;
+            
+        }
+        //mock transfer function
+        public void initiateTransfer(int senderID, int reciverID, float amount, string currency)
+        {
+            return;
         }
 
         

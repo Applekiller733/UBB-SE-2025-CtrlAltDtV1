@@ -68,7 +68,7 @@ namespace SocialStuff.Data
         //Get all participants of a chat
         public List<int> GetChatParticipantsIDs(int chatID)
         {
-            DataTable dataTable = dbConnection.ExecuteReader("select * from ChatParticipants", null, false);
+            DataTable dataTable = dbConnection.ExecuteReader("select * from Chat_Participants", null, false);
             List<int> participants = new List<int>();
             foreach (DataRow row in dataTable.Rows)
             {
@@ -388,7 +388,7 @@ namespace SocialStuff.Data
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@TypeID", 1),
+                new SqlParameter("@TypeID", 4),
                 new SqlParameter("@UserID", userID),
                 new SqlParameter("@ChatID", chatID),
                 new SqlParameter("@Content", content)
@@ -401,7 +401,7 @@ namespace SocialStuff.Data
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@TypeID", 2),
+                new SqlParameter("@TypeID", 5),
                 new SqlParameter("@UserID", userID),
                 new SqlParameter("@ChatID", chatID),
                 new SqlParameter("@Content", ImageURL)
@@ -415,7 +415,7 @@ namespace SocialStuff.Data
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@TypeID", 3),
+                new SqlParameter("@TypeID", 10),
                 new SqlParameter("@UserID", userID),
                 new SqlParameter("@ChatID", chatID),
                 new SqlParameter("@Content", content),
@@ -431,7 +431,7 @@ namespace SocialStuff.Data
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@TypeID", 4),
+                new SqlParameter("@TypeID", 11),
                 new SqlParameter("@UserID", userID),
                 new SqlParameter("@ChatID", chatID),
                 new SqlParameter("@Content", content),
