@@ -6,13 +6,28 @@
     <DataTemplate x:Key="TextMessageTemplateLeft">
         <Grid HorizontalAlignment="Left">
             <StackPanel>
+                <!-- Display Sender's Name -->
                 <TextBlock Text="{Binding SenderUsername}" Foreground="LightGray" 
                        FontSize="12" FontWeight="Bold" Margin="5,0,5,2"/>
-                <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5"
-                    MaxWidth="400">
-                    <TextBlock Text="{Binding Content}" Foreground="White" 
-                           TextWrapping="Wrap" FontFamily="Segoe UI Emoji"/>
-                </Border>
+                <Grid>
+                    <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5"
+                        MaxWidth="400">
+                        <TextBlock Text="{Binding Content}" Foreground="White" 
+                               TextWrapping="Wrap" FontFamily="Segoe UI Emoji"/>
+                    </Border>
+                    <!-- Menu button for left messages (positioned on right side) -->
+                    <Button HorizontalAlignment="Right" VerticalAlignment="Top" 
+                            Background="Transparent" BorderThickness="0" Margin="0,0,-30,0"
+                            Width="30" Height="30">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
+                        <Button.Flyout>
+                            <MenuFlyout Placement="Bottom">
+                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+                </Grid>
             </StackPanel>
         </Grid>
     </DataTemplate>
@@ -20,13 +35,28 @@
     <DataTemplate x:Key="TextMessageTemplateRight">
         <Grid HorizontalAlignment="Right">
             <StackPanel>
+                <!-- Added Sender's Name -->
                 <TextBlock Text="{Binding SenderUsername}" Foreground="LightGray" 
                        FontSize="12" FontWeight="Bold" Margin="5,0,5,2"
                        HorizontalAlignment="Right"/>
-                <Border Background="#4e6e8e" Padding="10" CornerRadius="10" Margin="5"
-                        MaxWidth="400">
-                    <TextBlock Text="{Binding Content}" Foreground="White" TextWrapping="Wrap" FontFamily="Segoe UI Emoji"/>
-                </Border>
+                <Grid>
+                    <!-- Menu button for right messages (positioned on left side) -->
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
+                            Background="Transparent" BorderThickness="0" Margin="-30,0,0,0"
+                            Width="30" Height="30">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
+                        <Button.Flyout>
+                            <MenuFlyout Placement="Bottom">
+                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+                    <Border Background="#4e6e8e" Padding="10" CornerRadius="10" Margin="5"
+                            MaxWidth="400">
+                        <TextBlock Text="{Binding Content}" Foreground="White" TextWrapping="Wrap" FontFamily="Segoe UI Emoji"/>
+                    </Border>
+                </Grid>
             </StackPanel>
         </Grid>
     </DataTemplate>
@@ -35,11 +65,26 @@
     <DataTemplate x:Key="ImageMessageTemplateLeft">
         <Grid HorizontalAlignment="Left">
             <StackPanel>
+                <!-- Added Sender's Name -->
                 <TextBlock Text="{Binding SenderUsername}" Foreground="LightGray" 
                        FontSize="12" FontWeight="Bold" Margin="5,0,5,2"/>
-                <Border Background="Transparent" Padding="5" CornerRadius="10" Margin="5">
-                    <Image Source="{Binding ImageURL}" MaxWidth="200" Stretch="UniformToFill"/>
-                </Border>
+                <Grid>
+                    <Border Background="Transparent" Padding="5" CornerRadius="10" Margin="5">
+                        <Image Source="{Binding ImageURL}" MaxWidth="200" Stretch="UniformToFill"/>
+                    </Border>
+                    <!-- Menu button for left messages (positioned on right side) -->
+                    <Button HorizontalAlignment="Right" VerticalAlignment="Top" 
+                            Background="Transparent" BorderThickness="0" Margin="0,0,-30,0"
+                            Width="30" Height="30">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
+                        <Button.Flyout>
+                            <MenuFlyout Placement="Bottom">
+                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+                </Grid>
             </StackPanel>
         </Grid>
     </DataTemplate>
@@ -47,12 +92,27 @@
     <DataTemplate x:Key="ImageMessageTemplateRight">
         <Grid HorizontalAlignment="Right">
             <StackPanel>
+                <!-- Added Sender's Name -->
                 <TextBlock Text="{Binding SenderUsername}" Foreground="LightGray" 
                        FontSize="12" FontWeight="Bold" Margin="5,0,5,2"
                        HorizontalAlignment="Right"/>
-                <Border Background="Transparent" Padding="5" CornerRadius="10" Margin="5">
-                    <Image Source="{Binding ImageURL}" MaxWidth="200" Stretch="UniformToFill"/>
-                </Border>
+                <Grid>
+                    <!-- Menu button for right messages (positioned on left side) -->
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
+                            Background="Transparent" BorderThickness="0" Margin="-30,0,0,0"
+                            Width="30" Height="30">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
+                        <Button.Flyout>
+                            <MenuFlyout Placement="Bottom">
+                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+                    <Border Background="Transparent" Padding="5" CornerRadius="10" Margin="5">
+                        <Image Source="{Binding ImageURL}" MaxWidth="200" Stretch="UniformToFill"/>
+                    </Border>
+                </Grid>
             </StackPanel>
         </Grid>
     </DataTemplate>
@@ -61,15 +121,30 @@
     <DataTemplate x:Key="TransferMessageTemplateLeft">
         <Grid HorizontalAlignment="Left">
             <StackPanel>
+                <!-- Added Sender's Name -->
                 <TextBlock Text="{Binding SenderUsername}" Foreground="LightGray" 
                        FontSize="12" FontWeight="Bold" Margin="5,0,5,2"/>
-                <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
-                    <StackPanel>
-                        <TextBlock Text="{Binding FormattedAmount }" 
-                                   Foreground="White" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Description}" Foreground="White" TextWrapping="Wrap"/>
-                    </StackPanel>
-                </Border>
+                <Grid>
+                    <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
+                        <StackPanel>
+                            <TextBlock Text="{Binding FormattedAmount }" 
+                                       Foreground="White" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Description}" Foreground="White" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                    <!-- Menu button for left messages (positioned on right side) -->
+                    <Button HorizontalAlignment="Right" VerticalAlignment="Top" 
+                            Background="Transparent" BorderThickness="0" Margin="0,0,-30,0"
+                            Width="30" Height="30">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
+                        <Button.Flyout>
+                            <MenuFlyout Placement="Bottom">
+                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+                </Grid>
             </StackPanel>
         </Grid>
     </DataTemplate>
@@ -77,16 +152,31 @@
     <DataTemplate x:Key="TransferMessageTemplateRight">
         <Grid HorizontalAlignment="Right">
             <StackPanel>
+                <!-- Added Sender's Name -->
                 <TextBlock Text="{Binding SenderUsername}" Foreground="LightGray" 
                        FontSize="12" FontWeight="Bold" Margin="5,0,5,2"
                        HorizontalAlignment="Right"/>
-                <Border Background="#4e6e8e" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
-                    <StackPanel>
-                        <TextBlock Text="{Binding FormattedAmount }" 
-                                   Foreground="Black" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Description}" Foreground="Black" TextWrapping="Wrap"/>
-                    </StackPanel>
-                </Border>
+                <Grid>
+                    <!-- Menu button for right messages (positioned on left side) -->
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
+                            Background="Transparent" BorderThickness="0" Margin="-30,0,0,0"
+                            Width="30" Height="30">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
+                        <Button.Flyout>
+                            <MenuFlyout Placement="Bottom">
+                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+                    <Border Background="#4e6e8e" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
+                        <StackPanel>
+                            <TextBlock Text="{Binding FormattedAmount }" 
+                                       Foreground="Black" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Description}" Foreground="Black" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
             </StackPanel>
         </Grid>
     </DataTemplate>
@@ -95,18 +185,33 @@
     <DataTemplate x:Key="RequestMessageTemplateLeft">
         <Grid HorizontalAlignment="Left">
             <StackPanel>
+                <!-- Added Sender's Name -->
                 <TextBlock Text="{Binding SenderUsername}" Foreground="LightGray" 
                        FontSize="12" FontWeight="Bold" Margin="5,0,5,2"/>
-                <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
-                    <StackPanel>
-                        <TextBlock Text="{Binding FormattedAmount }" 
-                                   Foreground="White" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Description}" Foreground="White" TextWrapping="Wrap"/>
-                        <Button Content="Accept Request" Background="#4CAF50" Foreground="White" 
-                                HorizontalAlignment="Center" Padding="5" Margin="5" 
-                                Command="{Binding AcceptRequestCommand}"/>
-                    </StackPanel>
-                </Border>
+                <Grid>
+                    <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
+                        <StackPanel>
+                            <TextBlock Text="{Binding FormattedAmount }" 
+                                       Foreground="White" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Description}" Foreground="White" TextWrapping="Wrap"/>
+                            <Button Content="Accept Request" Background="#4CAF50" Foreground="White" 
+                                    HorizontalAlignment="Center" Padding="5" Margin="5" 
+                                    Command="{Binding AcceptRequestCommand}"/>
+                        </StackPanel>
+                    </Border>
+                    <!-- Menu button for left messages (positioned on right side) -->
+                    <Button HorizontalAlignment="Right" VerticalAlignment="Top" 
+                            Background="Transparent" BorderThickness="0" Margin="0,0,-30,0"
+                            Width="30" Height="30">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
+                        <Button.Flyout>
+                            <MenuFlyout Placement="Bottom">
+                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+                </Grid>
             </StackPanel>
         </Grid>
     </DataTemplate>
@@ -114,19 +219,34 @@
     <DataTemplate x:Key="RequestMessageTemplateRight">
         <Grid HorizontalAlignment="Right">
             <StackPanel>
+                <!-- Added Sender's Name -->
                 <TextBlock Text="{Binding SenderUsername}" Foreground="LightGray" 
                        FontSize="12" FontWeight="Bold" Margin="5,0,5,2"
                        HorizontalAlignment="Right"/>
-                <Border Background="#4e6e8e" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
-                    <StackPanel>
-                        <TextBlock Text="{Binding FormattedAmount }" 
-                                   Foreground="Black" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Description}" Foreground="Black" TextWrapping="Wrap"/>
-                        <Button Content="Accept Request" Background="#4CAF50" Foreground="White" 
-                                HorizontalAlignment="Center" Padding="5" Margin="5" 
-                                Command="{Binding AcceptRequestCommand}"/>
-                    </StackPanel>
-                </Border>
+                <Grid>
+                    <!-- Menu button for right messages (positioned on left side) -->
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
+                            Background="Transparent" BorderThickness="0" Margin="-30,0,0,0"
+                            Width="30" Height="30">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
+                        <Button.Flyout>
+                            <MenuFlyout Placement="Bottom">
+                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+                    <Border Background="#4e6e8e" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
+                        <StackPanel>
+                            <TextBlock Text="{Binding FormattedAmount }" 
+                                       Foreground="Black" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Description}" Foreground="Black" TextWrapping="Wrap"/>
+                            <Button Content="Accept Request" Background="#4CAF50" Foreground="White" 
+                                    HorizontalAlignment="Center" Padding="5" Margin="5" 
+                                    Command="{Binding AcceptRequestCommand}"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
             </StackPanel>
         </Grid>
     </DataTemplate>
