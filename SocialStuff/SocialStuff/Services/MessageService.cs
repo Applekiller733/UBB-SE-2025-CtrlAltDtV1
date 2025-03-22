@@ -40,5 +40,6 @@ namespace SocialStuff.Services
         {
             this.repository.AddRequestMessage(userID, chatID, content, status, amount, currency);
         }
+
     }
 }

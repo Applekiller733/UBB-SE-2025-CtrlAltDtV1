@@ -16,6 +16,7 @@ namespace SocialStuff.Model.MessageClasses
         public int getChatID() => ChatID;
         private DateTime Timestamp { get; set; }
         public DateTime getTimestamp() => Timestamp;
+        public string SenderUsername { get; set; }
 
         public Message(int messageID, int senderID, int chatID)
         {

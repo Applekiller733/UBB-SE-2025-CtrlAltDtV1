@@ -60,9 +60,8 @@ namespace SocialStuff.ViewModel
         {
             if (ChatListView != null)
             {
-                ChatListView.DispatcherQueue.TryEnqueue(async () =>
+                ChatListView.DispatcherQueue.TryEnqueue(() =>
                 {
-                    await Task.Delay(50);
                     var scrollViewer = FindVisualChild<ScrollViewer>(ChatListView);
                     scrollViewer?.ChangeView(null, scrollViewer.ScrollableHeight, null);
                 });
@@ -116,28 +115,34 @@ namespace SocialStuff.ViewModel
             {
                 if (message is TextMessage textMessage)
                 {
-                    ChatMessages.Add(new TextMessage 
-                        (textMessage.getMessageID(), textMessage.getSenderID(), textMessage.getChatID(), textMessage.getTimestamp(), textMessage.getContent(), textMessage.getUsersReport()));
+                    TextMessage newTextMessage = new TextMessage(textMessage.getMessageID(), textMessage.getSenderID(), textMessage.getChatID(), textMessage.getTimestamp(), textMessage.getContent(), textMessage.getUsersReport());
+                    newTextMessage.SenderUsername = this.userService.GetUserById(textMessage.getSenderID()).GetUsername();
+                    ChatMessages.Add(newTextMessage);
                 }
 
                 if (message is ImageMessage imageMessage)
                 {
-                    ChatMessages.Add(new ImageMessage
-                        (imageMessage.getMessageID(), imageMessage.getSenderID(), imageMessage.getChatID(), imageMessage.getTimestamp(), imageMessage.getImageURL(), imageMessage.getUsersReport()));
+                    ImageMessage newImageMessage = new ImageMessage(imageMessage.getMessageID(), imageMessage.getSenderID(), imageMessage.getChatID(), imageMessage.getTimestamp(), imageMessage.getImageURL(), imageMessage.getUsersReport());
+                    newImageMessage.SenderUsername = this.userService.GetUserById(imageMessage.getSenderID()).GetUsername();
+                    ChatMessages.Add(newImageMessage);
                 }
 
                 if (message is TransferMessage transferMessage)
                 {
-                    ChatMessages.Add(new TransferMessage
-                        (transferMessage.getMessageID(), transferMessage.getSenderID(), transferMessage.getChatID(), transferMessage.getStatus(), transferMessage.getAmount(), transferMessage.getDescription(), transferMessage.getCurrency()));
+                    TransferMessage newTransferMessage = new TransferMessage(transferMessage.getMessageID(), transferMessage.getSenderID(), transferMessage.getChatID(), transferMessage.getStatus(), transferMessage.getAmount(), transferMessage.getDescription(), transferMessage.getCurrency());
+                    newTransferMessage.SenderUsername = this.userService.GetUserById(transferMessage.getSenderID()).GetUsername();
+                    ChatMessages.Add(newTransferMessage);
                 }
 
                 if (message is RequestMessage requestMessage)
                 {
-                    ChatMessages.Add(new RequestMessage
-                        (requestMessage.getMessageID(), requestMessage.getSenderID(), requestMessage.getChatID(), requestMessage.getStatus(), requestMessage.getAmount(), requestMessage.getDescription(), requestMessage.getCurrency()));
+                    RequestMessage newRequestMessage = new RequestMessage(requestMessage.getMessageID(), requestMessage.getSenderID(), requestMessage.getChatID(), requestMessage.getStatus(), requestMessage.getAmount(), requestMessage.getDescription(), requestMessage.getCurrency());
+                    newRequestMessage.SenderUsername = this.userService.GetUserById(requestMessage.getSenderID()).GetUsername();
+                    ChatMessages.Add(newRequestMessage);
+                    
                 }
             }
+
             ScrollToBottom();
         }
 

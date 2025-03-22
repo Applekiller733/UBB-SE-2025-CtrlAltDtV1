@@ -88,6 +88,7 @@
 
                     <TextBox 
                         x:Name="MessageTextBox"
+                        FontFamily="Segoe UI Emoji"
                         Text="{Binding MessageContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         AutomationProperties.Name="multi-line TextBox"
                         TextWrapping="Wrap" 
