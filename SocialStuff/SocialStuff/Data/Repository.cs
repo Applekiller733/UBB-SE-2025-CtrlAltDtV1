@@ -167,7 +167,7 @@ namespace SocialStuff.Data
                 DateTime timestamp = Convert.ToDateTime(row["timestamp"]);
                 string content = row["content"].ToString();
                 string status = row["status"].ToString();
-                float amount = Convert.ToSingle(row["amount"]);
+                float? amount = row["amount"] == DBNull.Value ? (float?)null : Convert.ToSingle(row["amount"]);
                 string currency = row["currency"].ToString();
                 DataTable reportsTable = dbConnection.ExecuteReader("select * from Reports", null, false);
                 List<int> UserReports = new List<int>();
@@ -188,10 +188,10 @@ namespace SocialStuff.Data
                         messages.Add(new ImageMessage(messageID, userID, chatID, timestamp, content, UserReports));
                         break;
                     case 3: // Request message
-                        messages.Add(new RequestMessage(messageID, userID, chatID, timestamp, status, amount, content, currency));
+                        messages.Add(new RequestMessage(messageID, userID, chatID, timestamp, status, amount ?? 0, content, currency));
                         break;
                     case 4: // Transfer message
-                        messages.Add(new TransferMessage(messageID, userID, chatID, timestamp, status, amount, content, currency));
+                        messages.Add(new TransferMessage(messageID, userID, chatID, timestamp, status, amount ?? 0, content, currency));
                         break;
                     default:
                         throw new Exception("Unknown message type");

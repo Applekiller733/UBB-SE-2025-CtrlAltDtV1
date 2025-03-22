@@ -13,6 +13,8 @@ using SocialStuff.Data;
 using System.ComponentModel;
 using Microsoft.UI.Xaml;
 using SocialStuff.View;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
 
 
 namespace SocialStuff.ViewModel
@@ -20,14 +22,66 @@ namespace SocialStuff.ViewModel
     public class ChatMessagesViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Message> ChatMessages { get; set; }
+        public ListView ChatListView { get; set; }
         public MessageService messageService;
         public ChatService chatService;
         public UserService userService;
         private MessageTemplateSelector templateSelector;
-        public int CurrentChatID = 1;
+        public int CurrentChatID { get; set; } = 1;
         public int CurrentUserID { get; set; }
 
+
         public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private string messageContent;
+        public string MessageContent
+        {
+            get => messageContent;
+            set
+            {
+                messageContent = value;
+                OnPropertyChanged(nameof(MessageContent));
+            }
+        }
+
+        public ICommand SendMessageCommand { get; }
+        private void SendMessage()
+        {
+            this.messageService.sendMessage(CurrentUserID, CurrentChatID, MessageContent);
+            this.LoadMessagesForChat();
+            MessageContent = "";
+        }
+
+        public void ScrollToBottom()
+        {
+            if (ChatListView != null)
+            {
+                ChatListView.DispatcherQueue.TryEnqueue(async () =>
+                {
+                    await Task.Delay(50);
+                    var scrollViewer = FindVisualChild<ScrollViewer>(ChatListView);
+                    scrollViewer?.ChangeView(null, scrollViewer.ScrollableHeight, null);
+                });
+            }
+        }
+        private T FindVisualChild<T>(DependencyObject parent) where T : DependencyObject
+        {
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
+            {
+                DependencyObject child = VisualTreeHelper.GetChild(parent, i);
+                if (child is T typedChild)
+                    return typedChild;
+
+                T childOfChild = FindVisualChild<T>(child);
+                if (childOfChild != null)
+                    return childOfChild;
+            }
+            return null;
+        }
 
         public ChatMessagesViewModel(MessageService msgService, ChatService chtService, UserService usrService)
         {
@@ -36,6 +90,7 @@ namespace SocialStuff.ViewModel
             chatService = chtService;
             userService = usrService;
             this.CurrentUserID = userService.GetCurrentUser();
+            this.SendMessageCommand = new RelayCommand(SendMessage);
 
             templateSelector = new MessageTemplateSelector()
             {
@@ -83,8 +138,20 @@ namespace SocialStuff.ViewModel
                         (requestMessage.getMessageID(), requestMessage.getSenderID(), requestMessage.getChatID(), requestMessage.getStatus(), requestMessage.getAmount(), requestMessage.getDescription(), requestMessage.getCurrency()));
                 }
             }
+            ScrollToBottom();
         }
 
+        public void SetupMessageTracking()
+        {
+            ChatMessages.CollectionChanged += (sender, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add ||
+                    e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Reset)
+                {
+                    ScrollToBottom();
+                }
+            };
+        }
 
     }
 

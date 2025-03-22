@@ -24,6 +24,7 @@ namespace SocialStuff.Model.MessageClasses
         public string getDescription() => Description;
         public string Currency { get; set; }
         public string getCurrency() => Currency;
+        public string FormattedAmount => $"{Amount} {Currency}";
 
         public RequestMessage(int messageID, int requesterID, int chatID, string status, float amount, string desc, string currency)
             : base(messageID, requesterID, chatID)

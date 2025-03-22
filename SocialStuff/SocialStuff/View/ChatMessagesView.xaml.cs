@@ -26,12 +26,19 @@ namespace SocialStuff.View
         public ChatMessagesView(Repository repo)
         {
             this.InitializeComponent();
+
             UserService userService = new UserService(repo);
             ChatService chatService = new ChatService(repo);
             MessageService messageService = new MessageService(repo);
+
             var chatMessagesViewModel = new ChatMessagesViewModel(messageService, chatService, userService);
+
+            chatMessagesViewModel.ChatListView = ChatListView;
+            chatMessagesViewModel.SetupMessageTracking();
+
             MainGrid.DataContext = chatMessagesViewModel;
 
         }
+
     }
 }

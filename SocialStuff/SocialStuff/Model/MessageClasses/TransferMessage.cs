@@ -26,6 +26,7 @@ namespace SocialStuff.Model.MessageClasses
         public string getCurrency() => Currency;
         private List<int> ListOfReceiversID { get; set; }
         public List<int> getListOfReceiversID() => ListOfReceiversID;
+        public string FormattedAmount => $"{Amount} {Currency}";
 
         public TransferMessage(int messageID, int senderID, int chatID, string status, float amount, string desc, string currency)
             : base(messageID, senderID, chatID)

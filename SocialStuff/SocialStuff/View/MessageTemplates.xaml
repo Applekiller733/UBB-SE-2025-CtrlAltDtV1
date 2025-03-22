@@ -43,7 +43,7 @@
         <Grid HorizontalAlignment="Left">
             <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
                 <StackPanel>
-                    <TextBlock Text="{Binding Amount, ConverterParameter={Binding Currency}}" 
+                    <TextBlock Text="{Binding FormattedAmount }" 
                                Foreground="White" FontWeight="Bold"/>
                     <TextBlock Text="{Binding Description}" Foreground="White" TextWrapping="Wrap"/>
                 </StackPanel>
@@ -55,7 +55,7 @@
         <Grid HorizontalAlignment="Right">
             <Border Background="#4e6e8e" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
                 <StackPanel>
-                    <TextBlock Text="{Binding Amount, ConverterParameter={Binding Currency}}" 
+                    <TextBlock Text="{Binding FormattedAmount }" 
                                Foreground="Black" FontWeight="Bold"/>
                     <TextBlock Text="{Binding Description}" Foreground="Black" TextWrapping="Wrap"/>
                 </StackPanel>
@@ -68,7 +68,7 @@
         <Grid HorizontalAlignment="Left">
             <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
                 <StackPanel>
-                    <TextBlock Text="{Binding Amount, ConverterParameter={Binding Currency}}" 
+                    <TextBlock Text="{Binding FormattedAmount }" 
                                Foreground="White" FontWeight="Bold"/>
                     <TextBlock Text="{Binding Description}" Foreground="White" TextWrapping="Wrap"/>
                     <Button Content="Accept Request" Background="#4CAF50" Foreground="White" 
@@ -83,7 +83,7 @@
         <Grid HorizontalAlignment="Right">
             <Border Background="#4e6e8e" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
                 <StackPanel>
-                    <TextBlock Text="{Binding Amount, ConverterParameter={Binding Currency}}" 
+                    <TextBlock Text="{Binding FormattedAmount }" 
                                Foreground="Black" FontWeight="Bold"/>
                     <TextBlock Text="{Binding Description}" Foreground="Black" TextWrapping="Wrap"/>
                     <Button Content="Accept Request" Background="#4CAF50" Foreground="White" 

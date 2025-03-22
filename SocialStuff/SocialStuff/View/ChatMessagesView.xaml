@@ -63,7 +63,7 @@
                             TransferMessageTemplateLeft="{StaticResource TransferMessageTemplateLeft}"
                             TransferMessageTemplateRight="{StaticResource TransferMessageTemplateRight}"
                             RequestMessageTemplateLeft="{StaticResource RequestMessageTemplateLeft}"
-                            RequestMessageTemplateRight="{StaticResource RequestMessageTemplateRight}" />   
+                            RequestMessageTemplateRight="{StaticResource RequestMessageTemplateRight}" />
                     </ListView.ItemTemplateSelector>
                 </ListView>
             </Border>
@@ -73,6 +73,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
@@ -86,6 +87,8 @@
                     </Button>
 
                     <TextBox 
+                        x:Name="MessageTextBox"
+                        Text="{Binding MessageContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         AutomationProperties.Name="multi-line TextBox"
                         TextWrapping="Wrap" 
                         AcceptsReturn="True" 
@@ -94,10 +97,22 @@
                         MinWidth="400"
                         VerticalAlignment="Center"
                         Height="Auto"
-                        PlaceholderText="Type a message"
-                        Grid.Column="1"/>   
+                        Margin="10"
+                        PlaceholderText="Type a message..."
+                        Grid.Column="1"/>
 
-                    <DropDownButton Grid.Column="2" Margin="10,0">
+                    <Button Width="42" Height="40"
+                        VerticalAlignment="Center" 
+                        Grid.Column="2"
+                        Command="{Binding SendMessageCommand}">
+                        <FontIcon Glyph="&#xE725;" 
+                              Width="20" 
+                              Height="20" 
+                              HorizontalAlignment="Center" 
+                              VerticalAlignment="Center"/>
+                    </Button>
+
+                    <DropDownButton Grid.Column="3" Margin="10,0">
                         <DropDownButton.Content>
                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" />
                         </DropDownButton.Content>
