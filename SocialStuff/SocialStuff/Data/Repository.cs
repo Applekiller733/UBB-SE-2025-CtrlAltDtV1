@@ -133,7 +133,7 @@ namespace SocialStuff.Data
         public List<Chat> GetChatsList()
         {
             DataTable dataTable = dbConnection.ExecuteReader("select * from Chats", null, false);
-            DataTable dataTable1 = dbConnection.ExecuteReader("select * from ChatParticipants", null, false);
+            DataTable dataTable1 = dbConnection.ExecuteReader("select * from Chat_Participants", null, false);
             List<Chat> chats = new List<Chat>();
             foreach (DataRow row in dataTable.Rows)
             {
@@ -150,6 +150,35 @@ namespace SocialStuff.Data
                 chats.Add(new Chat(chatID, chatName, ParticipantsIDs));
             }
             return chats;
+        }
+
+        //get the pparticipants of a chat
+        public List<User> GetChatParticipants(int chatID)
+        {
+            DataTable dataTable = dbConnection.ExecuteReader("select * from Users", null, false);
+            DataTable dataTable1 = dbConnection.ExecuteReader("select * from Chat_Participants", null, false);
+            List<int> UserIds = new List<int>();
+            foreach (DataRow row in dataTable1.Rows)
+            {
+                if (Convert.ToInt32(row["ChatID"]) == chatID)
+                {
+                    UserIds.Add(Convert.ToInt32(row["UserID"]));
+                }
+            }
+
+            List<User> users = new List<User>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int userID = Convert.ToInt32(row["UserID"]);
+                if (UserIds.Contains(userID))
+                {
+                    string username = row["Username"].ToString();
+                    string phoneNumber = row["PhoneNumber"].ToString();
+                    int reportedCount = Convert.ToInt32(row["ReportedCount"]);
+                    users.Add(new User(userID, username, phoneNumber, reportedCount));
+                }
+            }
+            return users;
         }
 
         // Get all messages
@@ -268,6 +297,8 @@ namespace SocialStuff.Data
             }
             return chats;
         }
+
+        
 
         // Add a chat to the database
         public int AddChat(string chatName)

@@ -32,7 +32,7 @@ namespace SocialStuff.View
             ChatService chatService = new ChatService(repo);
             MessageService messageService = new MessageService(repo);
 
-            var chatMessagesViewModel = new ChatMessagesViewModel(this, messageService, chatService, userService);
+            var chatMessagesViewModel = new ChatMessagesViewModel(this, 1, messageService, chatService, userService);
 
             chatMessagesViewModel.ChatListView = ChatListView;
             chatMessagesViewModel.SetupMessageTracking();

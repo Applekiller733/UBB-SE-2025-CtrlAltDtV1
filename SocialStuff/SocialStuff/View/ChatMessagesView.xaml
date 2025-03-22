@@ -26,14 +26,17 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="0" Background="#39374f" Height="50" Padding="10">
+            <Border Grid.Row="0" Background="#39374f" Padding="10">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="0" VerticalAlignment="Center" Foreground="White" Text="Group Name"/>
+                    <StackPanel Grid.Column="0" VerticalAlignment="Top">
+                        <TextBlock VerticalAlignment="Center" Foreground="White" Text="{Binding CurrentChatName}"/>
+                        <TextBlock VerticalAlignment="Top" Foreground="White" Text="{Binding CurrentChatParticipantsString}" FontSize="12"/>
+                    </StackPanel>
 
                     <Grid Grid.Column="1">
                         <Grid.ColumnDefinitions>
@@ -75,6 +78,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
                     <Button Width="42" 
@@ -104,11 +108,22 @@
                         Height="Auto"
                         Margin="10"
                         PlaceholderText="Type a message..."
-                        Grid.Column="1"/>
+                        Grid.Column="1"
+                        MaxLength="256">
+                    </TextBox>
+
+                    <TextBlock 
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="{Binding RemainingCharacterCount}"
+                        Foreground="Gray"
+                        FontSize="12"
+                        Grid.Column="2"
+                        Margin="0,0,10,0"/>
 
                     <Button Width="42" Height="40"
                         VerticalAlignment="Center" 
-                        Grid.Column="2"
+                        Grid.Column="3"
                         Command="{Binding SendMessageCommand}">
                         <FontIcon Glyph="&#xE725;" 
                               Width="20" 
@@ -117,7 +132,7 @@
                               VerticalAlignment="Center"/>
                     </Button>
 
-                    <DropDownButton Grid.Column="3" Margin="10,0">
+                    <DropDownButton Grid.Column="4" Margin="10,0">
                         <DropDownButton.Content>
                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" />
                         </DropDownButton.Content>

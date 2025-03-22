@@ -77,5 +77,20 @@ namespace SocialStuff.Services
         {
             this.repository.RemoveUserFromChat(UserID, ChatID);
         }
+
+        public string getChatNameByID(int ChatID)
+        {
+            List<Chat> chatList = this.repository.GetChatsList();
+            string chatName = chatList.Where(c => c.getChatID() == ChatID).FirstOrDefault().getChatName();
+
+            return chatName;
+        }
+
+        public List<string> getChatParticipantsList(int ChatID)
+        {
+            List<User> participants = this.repository.GetChatParticipants(ChatID);
+            List<string> participantsList = participants.Select(p => p.GetUsername()).ToList();
+            return participantsList;
+        }
     }
 }

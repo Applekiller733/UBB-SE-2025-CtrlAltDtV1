@@ -30,8 +30,12 @@ namespace SocialStuff.ViewModel
         public ChatService chatService;
         public UserService userService;
         private MessageTemplateSelector templateSelector;
-        public int CurrentChatID { get; set; } = 1;
+        public int CurrentChatID { get; set; }
         public int CurrentUserID { get; set; }
+        public string CurrentChatName { get; set; }
+        public List<string> CurrentChatParticipants { get; set; }
+        public string CurrentChatParticipantsString => string.Join(", ", CurrentChatParticipants);
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -46,10 +50,15 @@ namespace SocialStuff.ViewModel
             get => messageContent;
             set
             {
-                messageContent = value;
-                OnPropertyChanged(nameof(MessageContent));
+                if (messageContent != value)
+                {
+                    messageContent = value;
+                    OnPropertyChanged(nameof(MessageContent));
+                    OnPropertyChanged(nameof(RemainingCharacterCount));
+                }
             }
         }
+        public int RemainingCharacterCount => 256 - (MessageContent?.Length ?? 0);
 
         public ICommand SendMessageCommand { get; }
         private void SendMessage()
@@ -110,16 +119,19 @@ namespace SocialStuff.ViewModel
             return null;
         }
 
-        public ChatMessagesViewModel(Window window, MessageService msgService, ChatService chtService, UserService usrService)
+        public ChatMessagesViewModel(Window window, int currentChatID, MessageService msgService, ChatService chtService, UserService usrService)
         {
             _window = window;
             ChatMessages = new ObservableCollection<Message>();
             messageService = msgService;
             chatService = chtService;
             userService = usrService;
+            this.CurrentChatID = currentChatID;
             this.CurrentUserID = userService.GetCurrentUser();
             this.SendMessageCommand = new RelayCommand(SendMessage);
             this.SendImageCommand = new RelayCommand(SendImage);
+            this.CurrentChatName = chatService.getChatNameByID(CurrentChatID);
+            this.CurrentChatParticipants = chatService.getChatParticipantsList(CurrentChatID);
 
             templateSelector = new MessageTemplateSelector()
             {
