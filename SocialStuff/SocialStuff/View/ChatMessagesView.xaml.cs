@@ -23,6 +23,7 @@ namespace SocialStuff.View
 {
     public sealed partial class ChatMessagesView : Window
     {
+
         public ChatMessagesView(Repository repo)
         {
             this.InitializeComponent();
@@ -31,10 +32,11 @@ namespace SocialStuff.View
             ChatService chatService = new ChatService(repo);
             MessageService messageService = new MessageService(repo);
 
-            var chatMessagesViewModel = new ChatMessagesViewModel(messageService, chatService, userService);
+            var chatMessagesViewModel = new ChatMessagesViewModel(this, messageService, chatService, userService);
 
             chatMessagesViewModel.ChatListView = ChatListView;
             chatMessagesViewModel.SetupMessageTracking();
+
 
             MainGrid.DataContext = chatMessagesViewModel;
 

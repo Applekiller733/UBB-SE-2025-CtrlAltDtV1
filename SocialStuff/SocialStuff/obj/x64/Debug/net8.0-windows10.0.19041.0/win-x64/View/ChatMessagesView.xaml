@@ -77,8 +77,12 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Width="42" Height="40" Margin="10,0"
-                        VerticalAlignment="Center" Grid.Column="0">
+                    <Button Width="42" 
+                            Height="40" 
+                            Margin="10,0" 
+                            VerticalAlignment="Center" 
+                            Grid.Column="0"
+                            Command="{Binding SendImageCommand}">
                         <Image Source="https://img.icons8.com/m_outlined/512/FFFFFF/plus.png" 
                                Width="20" 
                                Height="20" 

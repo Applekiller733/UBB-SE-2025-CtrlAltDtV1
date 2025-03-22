@@ -15,12 +15,15 @@ using Microsoft.UI.Xaml;
 using SocialStuff.View;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
-
+using Windows.Storage;
+using WinRT.Interop;
+using Windows.Storage.Pickers;
 
 namespace SocialStuff.ViewModel
 {
     public class ChatMessagesViewModel : INotifyPropertyChanged
     {
+        private readonly Window _window;
         public ObservableCollection<Message> ChatMessages { get; set; }
         public ListView ChatListView { get; set; }
         public MessageService messageService;
@@ -56,6 +59,31 @@ namespace SocialStuff.ViewModel
             MessageContent = "";
         }
 
+        public ICommand SendImageCommand { get; }
+        private async void SendImage()
+        {
+            var picker = new FileOpenPicker
+            {
+                ViewMode = PickerViewMode.Thumbnail,
+                SuggestedStartLocation = PickerLocationId.PicturesLibrary
+            };
+
+            picker.FileTypeFilter.Add(".jpg");
+            picker.FileTypeFilter.Add(".jpeg");
+            picker.FileTypeFilter.Add(".png");
+
+            var hwnd = WindowNative.GetWindowHandle(_window);
+            InitializeWithWindow.Initialize(picker, hwnd);
+
+            StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null)
+            {
+                string imageUrl = await ImgurImageUploader.UploadImageAndGetUrl(file);
+                this.messageService.sendImage(CurrentUserID, CurrentChatID, imageUrl);
+                this.LoadMessagesForChat();
+            }
+        }
+
         public void ScrollToBottom()
         {
             if (ChatListView != null)
@@ -82,14 +110,16 @@ namespace SocialStuff.ViewModel
             return null;
         }
 
-        public ChatMessagesViewModel(MessageService msgService, ChatService chtService, UserService usrService)
+        public ChatMessagesViewModel(Window window, MessageService msgService, ChatService chtService, UserService usrService)
         {
+            _window = window;
             ChatMessages = new ObservableCollection<Message>();
             messageService = msgService;
             chatService = chtService;
             userService = usrService;
             this.CurrentUserID = userService.GetCurrentUser();
             this.SendMessageCommand = new RelayCommand(SendMessage);
+            this.SendImageCommand = new RelayCommand(SendImage);
 
             templateSelector = new MessageTemplateSelector()
             {
