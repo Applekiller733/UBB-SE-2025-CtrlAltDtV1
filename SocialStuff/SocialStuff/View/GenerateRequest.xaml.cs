@@ -80,5 +80,19 @@ namespace SocialStuff.View
             // Cancel if invalid
             args.Cancel = !isValid;
         }
+        private void AmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // This ensures the funds check happens when text changes through user input
+            if (sender is TextBox textBox && textBox.FocusState != FocusState.Unfocused)
+            {
+                // The binding will update the ViewModel.AmountText which triggers CheckFunds
+            }
+        }
+
+        private void CurrencyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // This ensures the funds check happens when currency changes
+            // The binding will update ViewModel.CurrencyIndex which triggers CheckFunds
+        }
     }
 }

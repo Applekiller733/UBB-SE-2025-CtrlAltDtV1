@@ -19,6 +19,8 @@ namespace SocialStuff.ViewModel
         private int transferTypeIndex = -1;
         private int currencyIndex = -1;
         private bool isFormValid;
+        private bool hasSufficientFunds = true;
+        private bool isCheckingFunds = false;
 
         private readonly ChatService chatService;
 
@@ -40,6 +42,7 @@ namespace SocialStuff.ViewModel
                 amountText = value;
                 OnPropertyChanged();
                 ValidateForm();
+                CheckFunds();
             }
         }
 
@@ -74,6 +77,7 @@ namespace SocialStuff.ViewModel
                 selectedTransferType = value;
                 OnPropertyChanged();
                 ValidateForm();
+                CheckFunds();
             }
         }
 
@@ -114,6 +118,7 @@ namespace SocialStuff.ViewModel
                 currencyIndex = value;
                 OnPropertyChanged();
                 ValidateForm();
+                CheckFunds();
             }
         }
 
@@ -164,7 +169,8 @@ namespace SocialStuff.ViewModel
                 CurrencyIndex >= 0 &&
                 !string.IsNullOrWhiteSpace(AmountText) &&
                 float.TryParse(AmountText, out float parsedAmount) &&
-                parsedAmount > 0;
+                parsedAmount > 0 &&
+                (SelectedTransferType != "Transfer Money" || HasSufficientFunds);
         }
 
         private void ExecuteSendMessage(object parameter)
@@ -202,7 +208,96 @@ namespace SocialStuff.ViewModel
         {
             AmountText = "";
             Description = "";
+            HasSufficientFunds = true;
             // Optionally reset other fields if needed
+        }
+        
+
+        public bool HasSufficientFunds
+        {
+            get => hasSufficientFunds;
+            set
+            {
+                if (hasSufficientFunds != value)
+                {
+                    hasSufficientFunds = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(ShowInsufficientFundsError));
+                }
+            }
+        }
+
+        public bool IsCheckingFunds
+        {
+            get => isCheckingFunds;
+            set
+            {
+                if (isCheckingFunds != value)
+                {
+                    isCheckingFunds = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public bool ShowInsufficientFundsError
+        {
+            get
+            {
+                // Only show error for Transfer Money operations
+                return !HasSufficientFunds &&
+                       SelectedTransferType == "Transfer Money" &&
+                       !string.IsNullOrWhiteSpace(AmountText) &&
+                       float.TryParse(AmountText, out float amount) &&
+                       amount > 0 &&
+                       CurrencyIndex >= 0;
+            }
+        }
+
+        private void CheckFunds()
+        {
+            // Only check funds for transfer money operations
+            if (SelectedTransferType != "Transfer Money")
+            {
+                HasSufficientFunds = true;
+                return;
+            }
+
+            // Return if any required fields are not set
+            if (string.IsNullOrWhiteSpace(AmountText) ||
+                !float.TryParse(AmountText, out float amount) ||
+                amount <= 0 ||
+                CurrencyIndex < 0)
+            {
+                HasSufficientFunds = true;
+                return;
+            }
+
+            IsCheckingFunds = true;
+
+            try
+            {
+                int chatID = chatService.getCurrentChatID();
+                int currentUserID = chatService.GetCurrentUserID();
+
+                // Calculate total amount based on number of participants
+                int participantCount = chatService.getNumberOfParticipants(chatID);
+                float totalAmount = amount * (participantCount-1);
+
+                // Check if user has enough funds for the total amount
+                HasSufficientFunds = chatService.enoughFunds(totalAmount, Currency, currentUserID);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error checking funds: {ex.Message}");
+                HasSufficientFunds = false;
+            }
+            finally
+            {
+                IsCheckingFunds = false;
+                OnPropertyChanged(nameof(ShowInsufficientFundsError));
+                ValidateForm();
+            }
         }
     }
 }

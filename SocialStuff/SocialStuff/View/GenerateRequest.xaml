@@ -73,8 +73,17 @@
                      Width="200"
                      HorizontalAlignment="Left"
                      BeforeTextChanging="AmountTextBox_BeforeTextChanging"
+                     TextChanged="AmountTextBox_TextChanged"
                      Text="{x:Bind ViewModel.AmountText, Mode=TwoWay}"
                      x:Name="AmountTextBox"/>
+
+            <!-- Insufficient Funds Error Message -->
+            <TextBlock Grid.Row="0" Grid.Column="1"
+                     Margin="10,50,0,0"
+                     Foreground="Red"
+                     Visibility="{x:Bind ViewModel.ShowInsufficientFundsError, Mode=OneWay}"
+                     Text="Insufficient funds"
+                     x:Name="InsufficientFundsText"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0"
                        Margin="10,20,0,0"
@@ -83,6 +92,7 @@
             <ComboBox Grid.Row="1" Grid.Column="1"
                       Margin="10,20,0,0"
                       x:Name="CurrencyComboBox"
+                      SelectionChanged="CurrencyComboBox_SelectionChanged"
                       SelectedIndex="{x:Bind ViewModel.CurrencyIndex, Mode=TwoWay}"
                       PlaceholderText="Currency">
                 <ComboBoxItem Content="USD"/>
