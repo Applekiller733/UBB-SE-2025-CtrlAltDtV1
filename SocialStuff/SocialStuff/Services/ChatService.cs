@@ -93,7 +93,6 @@ namespace SocialStuff.Services
             }
 
             List<int> participantIDs = repository.GetChatParticipantsIDs(ChatID);
-            repository.AddTransferMessage(GetCurrentUserID(), ChatID, Description, "Accepted", Amount * (participantIDs.Count - 1), Currency);
 
             try
             {
@@ -106,8 +105,11 @@ namespace SocialStuff.Services
                         if (currentUserId != reciverid)
                         {
                             initiateTransfer(currentUserId, reciverid, Amount, Currency);
+
                         }
                     }
+                    repository.AddTransferMessage(GetCurrentUserID(), ChatID, Description, "Accepted", Amount * (participantIDs.Count - 1), Currency);
+
 
                 }
                 else

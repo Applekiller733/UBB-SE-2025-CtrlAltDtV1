@@ -33,6 +33,7 @@ namespace SocialStuff
         private UserService userService;
         private ChatService chatService;
         private MessageService messageService;
+        private FeedService feedService;
 
         public MainWindow()
         {
@@ -43,6 +44,7 @@ namespace SocialStuff
             userService = new UserService(repo);
             chatService = new ChatService(repo);
             messageService = new MessageService(repo);
+            feedService = new FeedService(repo, userService);
         }
 
         private void Chat_Click(object sender, RoutedEventArgs e)
@@ -60,6 +62,18 @@ namespace SocialStuff
             {
                 var friendsListView = new FriendsListView(chatService, userService, messageService, this.RightFrame);
                 LeftFrame.Content = friendsListView;
+
+            }
+        }
+
+        private void Feed_Click(object sender, RoutedEventArgs e)
+        {
+            if (RightFrame.Content == null || !(RightFrame.Content is FeedView))
+            {
+
+                var feedViewModel = new FeedViewModel(feedService);
+                var feedView = new FeedView(feedViewModel, userService, feedService);
+                RightFrame.Content = feedView;
             }
         }
     }
