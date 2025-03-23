@@ -55,11 +55,4 @@ namespace SocialStuff
         }
     }
 
-    public class NavigationParameters
-    {
-        public int ChatID { get; set; }
-        public UserService UserService { get; set; }
-        public ChatService ChatService { get; set; }
-        public MessageService MessageService { get; set; }
-    }
 }

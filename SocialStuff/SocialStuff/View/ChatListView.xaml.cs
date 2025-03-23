@@ -26,11 +26,12 @@ namespace SocialStuff.View
     /// </summary>
     public sealed partial class ChatListView : Page
     {
-        UserService userService;
-        ChatService chatService;
-        MessageService messageService;
-        Frame RightFrame;
-        Window mainWindow;
+        private ChatListViewModel chatListViewModel;
+        public UserService userService;
+        public ChatService chatService;
+        public MessageService messageService;
+        public Frame RightFrame;
+        public Window mainWindow;
 
         public ChatListView(Window mainWindow, ChatService chatService, UserService userService, MessageService messageService, Frame RightFrame)
         {
@@ -41,8 +42,13 @@ namespace SocialStuff.View
             this.chatService = chatService;
             this.messageService = messageService;
             this.RightFrame = RightFrame;
-            ChatListViewModel chatListViewModel = new ChatListViewModel(chatService, userService);
+            chatListViewModel = new ChatListViewModel(chatService, userService);
             MainGrid.DataContext = chatListViewModel;
+        }
+
+        private void CreateChat_Click(object sender, RoutedEventArgs e)
+        {
+            this.RightFrame.Content = new CreateChatView(chatListViewModel, chatService, userService);
         }
 
         private void ChatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -52,5 +58,6 @@ namespace SocialStuff.View
                 this.RightFrame.Content = new ChatMessagesView(mainWindow, selectedChat.getChatID(), userService, chatService, messageService);
             }
         }
+
     }
 }

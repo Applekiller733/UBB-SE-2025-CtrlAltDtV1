@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SocialStuff.ViewModel
 {
-    class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)

@@ -17,8 +17,8 @@
 
         <!-- Search Box -->
         <Grid Grid.Row="0" Margin="0,0,0,10">
-            <TextBox x:ConnectionId='4' x:Name="SearchBox" 
-                Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
+            <TextBox x:ConnectionId='5' x:Name="SearchBox" 
+                Text="{Binding SearchQuery, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 PlaceholderText="Search chats..."
                 TextWrapping="Wrap"
                 AcceptsReturn="True"
@@ -40,7 +40,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Chats" FontSize="24" FontWeight="Bold"/>
-            <Button Content="+" Grid.Column="1"/>
+            <Button x:ConnectionId='4' Content="+" Grid.Column="1"                         />
         </Grid>
 
         <!-- Chat List -->

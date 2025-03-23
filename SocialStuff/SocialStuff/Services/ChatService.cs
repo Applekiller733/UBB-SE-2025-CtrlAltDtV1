@@ -35,7 +35,16 @@ namespace SocialStuff.Services
 
         public void createChat(List<int> ParticipantsID, string ChatName)
         {
-            throw new NotImplementedException();
+
+            int chatID;
+            repository.AddChat(ChatName, out chatID);
+
+            foreach (var userID in ParticipantsID)
+            {
+                repository.AddUserToChat(userID, chatID);
+            }
+            var addedUsers = repository.GetChatParticipants(chatID);
+
         }
 
         public void deleteChat(int ChatID)

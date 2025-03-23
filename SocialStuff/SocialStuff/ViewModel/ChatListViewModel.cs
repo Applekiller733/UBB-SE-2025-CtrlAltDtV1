@@ -12,7 +12,7 @@ using Windows.ApplicationModel.Chat;
 
 namespace SocialStuff.ViewModel
 {
-    class ChatListViewModel : INotifyPropertyChanged
+    public class ChatListViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
@@ -20,16 +20,33 @@ namespace SocialStuff.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private string searchQuery = string.Empty;
         public ObservableCollection<Chat> ChatList { get; set; }
+        public List<Chat> currentUserChats;
         public ChatService chatService;
         public UserService userService;
         public CountToVisibilityConverter CountToVisibilityConverter { get; set; }
+
+        public string SearchQuery
+        {
+            get => searchQuery;
+            set
+            {
+                if (searchQuery != value)
+                {
+                    searchQuery = value;
+                    OnPropertyChanged(nameof(SearchQuery));
+                    FilterChats();
+                }
+            }
+        }
 
         public ChatListViewModel(ChatService chatS, UserService userS)
         {
             ChatList = new ObservableCollection<Chat>();
             chatService = chatS;
             userService = userS;
+            currentUserChats = this.userService.GetCurrentUserChats();
             CountToVisibilityConverter = new CountToVisibilityConverter();
 
             LoadChats();
@@ -37,12 +54,19 @@ namespace SocialStuff.ViewModel
 
         public void LoadChats()
         {
-            ChatList.Clear();
-            var chat = this.userService.GetCurrentUserChats();
+            FilterChats();
+        }
 
-            foreach(var c in chat)
+        public void FilterChats()
+        {
+            ChatList.Clear();
+            foreach (var chat in currentUserChats)
             {
-                ChatList.Add(c);
+                if (string.IsNullOrEmpty(SearchQuery) ||
+                    chat.getChatName().IndexOf(SearchQuery, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    ChatList.Add(chat);
+                }
             }
         }
     }
