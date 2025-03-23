@@ -10,6 +10,8 @@ namespace SocialStuff.Data.Database
 {
     public class DatabaseConnection
     {
+        // change the connectionString to yours
+        // #TODO  an .env file
         string connectionString = @"Data Source=DESKTOP-VRGLOTC\SQLEXPRESS;Initial Catalog=BankingDB;Integrated Security=True;TrustServerCertificate=True";
 
 
@@ -101,29 +103,20 @@ namespace SocialStuff.Data.Database
         // Executes a stored procedure and returns multiple rows and columns as a DataTable
         public DataTable ExecuteReader(string query, SqlParameter[]? sqlParameters = null, bool isStoredProcedure = true)
         {
-            Console.WriteLine("Haide ma");
             try
             {
-                Console.WriteLine("0"); 
                 OpenConnection();
-                Console.WriteLine("i");
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
-                    Console.WriteLine("1");
                     if (isStoredProcedure)
                     {
-                        Console.WriteLine("2");
                         command.CommandType = CommandType.StoredProcedure;
-                        Console.WriteLine("3");
                     }
                     else
                     {
-                        Console.WriteLine("4");
                         command.CommandType = CommandType.Text;
-                        Console.WriteLine("5");
                     }
 
-                    Console.WriteLine("6");
                     if (sqlParameters != null)
                     {
                         command.Parameters.AddRange(sqlParameters);
