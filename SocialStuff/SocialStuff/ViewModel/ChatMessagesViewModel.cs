@@ -77,7 +77,8 @@ namespace SocialStuff.ViewModel
         public ICommand SendMessageCommand { get; }
         private void SendMessage()
         {
-            this.messageService.sendMessage(CurrentUserID, CurrentChatID, MessageContent);
+            string convertedContent = EmoticonConverter.ConvertEmoticonsToEmojis(MessageContent);
+            this.messageService.sendMessage(CurrentUserID, CurrentChatID, convertedContent);
             this.LoadMessagesForChat();
             MessageContent = "";
         }

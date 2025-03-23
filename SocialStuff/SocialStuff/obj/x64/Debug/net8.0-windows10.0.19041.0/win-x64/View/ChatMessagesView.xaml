@@ -10,6 +10,10 @@
     x:Name="chatMessagesView"
     >
 
+    <Page.Resources>
+        <local:EmoticonToEmojiConverter x:Key="EmoticonConverter"/>
+    </Page.Resources>
+
     <Grid x:ConnectionId='2' x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
