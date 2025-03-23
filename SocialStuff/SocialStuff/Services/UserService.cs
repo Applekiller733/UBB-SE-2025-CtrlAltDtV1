@@ -120,6 +120,22 @@ namespace SocialStuff.Services
             return chats;
         }
 
+        public List<Chat> GetCurrentUserChats()
+        {
+            List<Chat> chats = new List<Chat>();
+            List<Chat> currentUserChats = new List<Chat>();
+            chats = this.repo.GetChatsList();
+
+            foreach (Chat chat in chats)
+            {
+                if(chat.getUserIDsList().Contains(UserID))
+                {
+                    currentUserChats.Add(chat);
+                }
+            }
+            return currentUserChats;
+        }
+
         public User GetUserById(int userID)
         {
             List<User> users = repo.GetUsersList();

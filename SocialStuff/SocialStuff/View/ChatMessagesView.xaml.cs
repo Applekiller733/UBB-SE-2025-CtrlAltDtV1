@@ -18,29 +18,45 @@ using SocialStuff.ViewModel;
 using WinRT.Interop;
 using SocialStuff.Data;
 using SocialStuff.Services;
+using SocialStuff.Model;
 
 namespace SocialStuff.View
 {
-    public sealed partial class ChatMessagesView : Window
+    public sealed partial class ChatMessagesView : Page
     {
+        public int SelectedChat { get; set; }
+        private ChatMessagesViewModel chatMessagesViewModel;
 
-        public ChatMessagesView(Repository repo)
+        public ChatMessagesView(int ChatID, UserService userService, ChatService chatService, MessageService messageService)
         {
             this.InitializeComponent();
-
-            UserService userService = new UserService(repo);
-            ChatService chatService = new ChatService(repo);
-            MessageService messageService = new MessageService(repo);
-
-            var chatMessagesViewModel = new ChatMessagesViewModel(this, 1, messageService, chatService, userService);
+            SelectedChat = ChatID;
+            chatMessagesViewModel = new ChatMessagesViewModel(this, ChatID, messageService, chatService, userService);
 
             chatMessagesViewModel.ChatListView = ChatListView;
             chatMessagesViewModel.SetupMessageTracking();
 
-
             MainGrid.DataContext = chatMessagesViewModel;
-
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            if (e.Parameter is NavigationParameters parameters)
+            {
+                SelectedChat = parameters.ChatID;
+                chatMessagesViewModel = new ChatMessagesViewModel(
+                    this,
+                    parameters.ChatID,
+                    parameters.MessageService,
+                    parameters.ChatService,
+                    parameters.UserService);
+
+                chatMessagesViewModel.ChatListView = ChatListView;
+                chatMessagesViewModel.SetupMessageTracking();
+                MainGrid.DataContext = chatMessagesViewModel;
+            }
+        }
     }
 }

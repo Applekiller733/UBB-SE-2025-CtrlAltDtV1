@@ -3,7 +3,8 @@
     x:Class="SocialStuff.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:SocialStuff">
+    xmlns:local="using:SocialStuff"
+    xmlns:converters="using:SocialStuff.View">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -12,6 +13,7 @@
                 <ResourceDictionary Source="/View/MessageTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
+            <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

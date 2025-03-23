@@ -43,5 +43,10 @@ namespace SocialStuff.Model
         {
             return this.UserIDsList.Contains(UserID);
         }
+
+        public override string ToString()
+        {
+            return this.ChatName;
+        }
     }
 }
