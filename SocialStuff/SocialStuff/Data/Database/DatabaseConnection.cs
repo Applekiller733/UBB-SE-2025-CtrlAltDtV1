@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace SocialStuff.Data.Database
 {
     public class DatabaseConnection
     {
-        string connectionString = @"Data Source=DESKTOP-6QSI2DC\MSSQLSERVER01;Initial Catalog=BankingDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        string connectionString = @"Data Source=razvan\SQLEXPRESS01;Initial Catalog=BankingDB;Integrated Security=True;TrustServerCertificate=true";
 
 
         private SqlConnection conn;
