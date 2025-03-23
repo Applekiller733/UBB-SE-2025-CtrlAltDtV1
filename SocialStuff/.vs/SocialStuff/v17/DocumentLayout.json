@@ -3,31 +3,83 @@
   "WorkspaceRootPath": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\album\\Desktop\\SQLQuery2.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\data\\database\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\data\\database\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\addfriendsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\addfriendsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\addfriendsview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\addfriendsview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\addnewmemberviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\addnewmemberviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\chatmessagesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\chatmessagesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\addnewmemberview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\addnewmemberview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\chatmessagesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\chatmessagesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\addnewmemberview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\addnewmemberview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\addfriendsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\addfriendsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\friendslistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\friendslistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\createchatview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\createchatview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\messagetemplates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\messagetemplates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\friendslistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\friendslistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\chatmessagesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\chatmessagesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\chatlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\chatlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\addfriendsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\addfriendsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\services\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\services\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\chatlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\chatlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\album\\Desktop\\SQLQuery2.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\addfriendsview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\addfriendsview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,52 +90,12 @@
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\friendslistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\createchatview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\createchatview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\createchatviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\createchatviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\chatmessagesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\chatmessagesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\friendslistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\friendslistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\chatlistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\chatlistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\chatlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\chatlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\chatlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\chatlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\messagetemplates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\messagetemplates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\createchatview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\createchatview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\messagetemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\messagetemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -94,36 +106,8 @@
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\chatmessagesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\chatmessagesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\chatmessagesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\chatmessagesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\FriendsListView.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\FriendsListView.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\view\\counttovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\counttovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\services\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\services\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\model\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -134,32 +118,12 @@
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\viewmodel\\imgurimageuploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\imgurimageuploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\model\\messageclasses\\imagemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\model\\messageclasses\\imagemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\MainWindow.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\MainWindow.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatListView.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatListView.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\model\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\model\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatMessagesView.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatMessagesView.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|d:\\ubb-se-2025-ctrlaltdefeat\\socialstuff\\socialstuff\\model\\messageclasses\\textmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -191,7 +155,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 44,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -199,7 +163,111 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DatabaseConnection.cs",
+              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Data\\Database\\DatabaseConnection.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\Data\\Database\\DatabaseConnection.cs",
+              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Data\\Database\\DatabaseConnection.cs",
+              "RelativeToolTip": "SocialStuff\\Data\\Database\\DatabaseConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T17:10:01.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AddNewMemberView.xaml.cs",
+              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddNewMemberView.xaml.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\AddNewMemberView.xaml.cs",
+              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddNewMemberView.xaml.cs",
+              "RelativeToolTip": "SocialStuff\\View\\AddNewMemberView.xaml.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAjwCkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T16:17:07.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FriendsListView.xaml",
+              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\FriendsListView.xaml",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\FriendsListView.xaml",
+              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\FriendsListView.xaml",
+              "RelativeToolTip": "SocialStuff\\View\\FriendsListView.xaml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-23T16:16:33.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateChatView.xaml",
+              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\CreateChatView.xaml",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\CreateChatView.xaml",
+              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\CreateChatView.xaml",
+              "RelativeToolTip": "SocialStuff\\View\\CreateChatView.xaml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-23T16:16:21.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ChatMessagesView.xaml",
+              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatMessagesView.xaml",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\ChatMessagesView.xaml",
+              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatMessagesView.xaml",
+              "RelativeToolTip": "SocialStuff\\View\\ChatMessagesView.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-23T16:16:20.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ChatListView.xaml",
+              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatListView.xaml",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\ChatListView.xaml",
+              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatListView.xaml",
+              "RelativeToolTip": "SocialStuff\\View\\ChatListView.xaml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-23T16:16:15.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AddNewMemberViewModel.cs",
+              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\AddNewMemberViewModel.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\AddNewMemberViewModel.cs",
+              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\AddNewMemberViewModel.cs",
+              "RelativeToolTip": "SocialStuff\\ViewModel\\AddNewMemberViewModel.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAcwDwAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T15:22:02.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddNewMemberView.xaml",
+              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddNewMemberView.xaml",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\AddNewMemberView.xaml",
+              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddNewMemberView.xaml",
+              "RelativeToolTip": "SocialStuff\\View\\AddNewMemberView.xaml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-23T15:21:31.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "AddFriendsView.xaml.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddFriendsView.xaml.cs",
               "RelativeDocumentMoniker": "SocialStuff\\View\\AddFriendsView.xaml.cs",
@@ -212,33 +280,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
               "Title": "AddFriendsViewModel.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\AddFriendsViewModel.cs",
               "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\AddFriendsViewModel.cs",
               "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\AddFriendsViewModel.cs",
               "RelativeToolTip": "SocialStuff\\ViewModel\\AddFriendsViewModel.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAASwDgAAABeAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAhwEUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T14:15:27.622Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "AddFriendsView.xaml",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddFriendsView.xaml",
               "RelativeDocumentMoniker": "SocialStuff\\View\\AddFriendsView.xaml",
               "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\AddFriendsView.xaml",
               "RelativeToolTip": "SocialStuff\\View\\AddFriendsView.xaml",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAIwDEAAABkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-03-23T14:07:18.245Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 9,
               "Title": "MessageTemplates.xaml",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\MessageTemplates.xaml",
               "RelativeDocumentMoniker": "SocialStuff\\View\\MessageTemplates.xaml",
@@ -251,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 26,
               "Title": "FriendsListView.g.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\FriendsListView.g.cs",
               "RelativeDocumentMoniker": "SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\FriendsListView.g.cs",
@@ -264,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 21,
               "Title": "FriendsListView.xaml.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\FriendsListView.xaml.cs",
               "RelativeDocumentMoniker": "SocialStuff\\View\\FriendsListView.xaml.cs",
@@ -277,215 +345,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FriendsListViewModel.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\FriendsListViewModel.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\FriendsListViewModel.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\FriendsListViewModel.cs",
-              "RelativeToolTip": "SocialStuff\\ViewModel\\FriendsListViewModel.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAmwFMAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T12:33:37.519Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FriendsListView.xaml",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\FriendsListView.xaml",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\FriendsListView.xaml",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\FriendsListView.xaml",
-              "RelativeToolTip": "SocialStuff\\View\\FriendsListView.xaml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-23T12:30:42.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "RelayCommand.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\RelayCommand.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\RelayCommand.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\RelayCommand.cs",
-              "RelativeToolTip": "SocialStuff\\ViewModel\\RelayCommand.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAnwA4AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T10:58:25.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "App.g.i.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\App.g.i.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\App.g.i.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\App.g.i.cs",
-              "RelativeToolTip": "SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\App.g.i.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAIA9wDcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T10:41:07.905Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "CreateChatView.xaml.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\CreateChatView.xaml.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\CreateChatView.xaml.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\CreateChatView.xaml.cs",
-              "RelativeToolTip": "SocialStuff\\View\\CreateChatView.xaml.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAvwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T10:25:27.877Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CreateChatViewModel.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\CreateChatViewModel.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\CreateChatViewModel.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\CreateChatViewModel.cs",
-              "RelativeToolTip": "SocialStuff\\ViewModel\\CreateChatViewModel.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAA8wF8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T10:20:38.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CreateChatView.xaml",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\CreateChatView.xaml",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\CreateChatView.xaml",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\CreateChatView.xaml",
-              "RelativeToolTip": "SocialStuff\\View\\CreateChatView.xaml",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAmwCsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-23T10:19:12.935Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "ChatListView.g.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatListView.g.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatListView.g.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatListView.g.cs",
-              "RelativeToolTip": "SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatListView.g.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T09:33:22.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ChatListView.xaml.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatListView.xaml.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\ChatListView.xaml.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatListView.xaml.cs",
-              "RelativeToolTip": "SocialStuff\\View\\ChatListView.xaml.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAmwDAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T09:31:25.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "ChatListView.xaml",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatListView.xaml",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\ChatListView.xaml",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatListView.xaml",
-              "RelativeToolTip": "SocialStuff\\View\\ChatListView.xaml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAABUAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-23T09:30:58.993Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "MessageService.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Services\\MessageService.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\Services\\MessageService.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Services\\MessageService.cs",
-              "RelativeToolTip": "SocialStuff\\Services\\MessageService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T23:56:54.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "MainWindow.g.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\MainWindow.g.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\MainWindow.g.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\MainWindow.g.cs",
-              "RelativeToolTip": "SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\MainWindow.g.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T23:28:31.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "MessageTemplateSelector.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\MessageTemplateSelector.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\MessageTemplateSelector.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\MessageTemplateSelector.cs",
-              "RelativeToolTip": "SocialStuff\\View\\MessageTemplateSelector.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwA8AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T23:14:20.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "ImgurImageUploader.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\ImgurImageUploader.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\ImgurImageUploader.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\ImgurImageUploader.cs",
-              "RelativeToolTip": "SocialStuff\\ViewModel\\ImgurImageUploader.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T23:14:15.983Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "CountToVisibilityConverter.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\CountToVisibilityConverter.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\CountToVisibilityConverter.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\CountToVisibilityConverter.cs",
-              "RelativeToolTip": "SocialStuff\\View\\CountToVisibilityConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T23:13:22.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
               "Title": "ChatListViewModel.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\ChatListViewModel.cs",
               "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\ChatListViewModel.cs",
               "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\ChatListViewModel.cs",
               "RelativeToolTip": "SocialStuff\\ViewModel\\ChatListViewModel.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAcwAgAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowCUAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T22:44:58.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "BaseViewModel.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\BaseViewModel.cs",
               "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\BaseViewModel.cs",
@@ -498,20 +371,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "ChatMessagesViewModel.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\ChatMessagesViewModel.cs",
               "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\ChatMessagesViewModel.cs",
               "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\ViewModel\\ChatMessagesViewModel.cs",
               "RelativeToolTip": "SocialStuff\\ViewModel\\ChatMessagesViewModel.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAswNUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T22:30:25.803Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 10,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\MainWindow.xaml",
               "RelativeDocumentMoniker": "SocialStuff\\View\\MainWindow.xaml",
@@ -524,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "SocialStuff\\View\\MainWindow.xaml.cs",
@@ -537,46 +410,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 5,
               "Title": "ChatMessagesView.xaml.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatMessagesView.xaml.cs",
               "RelativeDocumentMoniker": "SocialStuff\\View\\ChatMessagesView.xaml.cs",
               "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatMessagesView.xaml.cs",
               "RelativeToolTip": "SocialStuff\\View\\ChatMessagesView.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAArwCAAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAADwvzEAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T22:25:03.627Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ChatMessagesView.xaml",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatMessagesView.xaml",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\ChatMessagesView.xaml",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\View\\ChatMessagesView.xaml",
-              "RelativeToolTip": "SocialStuff\\View\\ChatMessagesView.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-22T22:22:11.167Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "ChatMessagesView.g.cs",
-              "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatMessagesView.g.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatMessagesView.g.cs",
-              "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatMessagesView.g.cs",
-              "RelativeToolTip": "SocialStuff\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\View\\ChatMessagesView.g.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T22:08:00.904Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\App.xaml.cs",
               "RelativeDocumentMoniker": "SocialStuff\\App.xaml.cs",
@@ -589,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\App.xaml",
               "RelativeDocumentMoniker": "SocialStuff\\App.xaml",
@@ -602,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 20,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Model\\User.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Model\\User.cs",
@@ -615,20 +462,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Repository.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Data\\Repository.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Data\\Repository.cs",
               "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Data\\Repository.cs",
               "RelativeToolTip": "SocialStuff\\Data\\Repository.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAIAwwDMAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T11:54:16.046Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 30,
               "Title": "Report.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Model\\Report.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Model\\Report.cs",
@@ -641,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 27,
               "Title": "Chat.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Model\\Chat.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Model\\Chat.cs",
@@ -654,20 +501,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 15,
               "Title": "ChatService.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Services\\ChatService.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Services\\ChatService.cs",
               "ToolTip": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Services\\ChatService.cs",
               "RelativeToolTip": "SocialStuff\\Services\\ChatService.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAUwCcAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAIA6wGgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T09:51:47.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 19,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Services\\UserService.cs",
@@ -680,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 31,
               "Title": "TextMessage.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Model\\MessageClasses\\TextMessage.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Model\\MessageClasses\\TextMessage.cs",
@@ -693,7 +540,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 29,
               "Title": "ImageMessage.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Model\\MessageClasses\\ImageMessage.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Model\\MessageClasses\\ImageMessage.cs",
@@ -706,7 +553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 32,
               "Title": "Message.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Model\\MessageClasses\\Message.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Model\\MessageClasses\\Message.cs",
@@ -719,7 +566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 33,
               "Title": "TransferMessage.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Model\\MessageClasses\\TransferMessage.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Model\\MessageClasses\\TransferMessage.cs",
@@ -732,7 +579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 34,
               "Title": "RequestMessage.cs",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\Model\\MessageClasses\\RequestMessage.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Model\\MessageClasses\\RequestMessage.cs",
@@ -745,7 +592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 28,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\UBB-SE-2025-CtrlAltDefeat\\SocialStuff\\SocialStuff\\.gitignore",
               "RelativeDocumentMoniker": "SocialStuff\\.gitignore",
@@ -758,7 +605,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 17,
               "Title": "SQLQuery2.sql ",
               "DocumentMoniker": "C:\\Users\\album\\Desktop\\SQLQuery2.sql",
               "ToolTip": "SQLQuery2.sql ",

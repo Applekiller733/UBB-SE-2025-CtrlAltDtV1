@@ -95,11 +95,17 @@ namespace SocialStuff.Services
             return chatName;
         }
 
-        public List<string> getChatParticipantsList(int ChatID)
+        public List<string> getChatParticipantsStringList(int ChatID)
         {
             List<User> participants = this.repository.GetChatParticipants(ChatID);
             List<string> participantsList = participants.Select(p => p.GetUsername()).ToList();
             return participantsList;
+        }
+
+        public List<User> getChatParticipantsList(int ChatID)
+        {
+            List<User> participants = this.repository.GetChatParticipants(ChatID);
+            return participants;
         }
     }
 }

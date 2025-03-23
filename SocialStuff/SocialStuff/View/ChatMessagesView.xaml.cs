@@ -26,11 +26,17 @@ namespace SocialStuff.View
     {
         public int SelectedChat { get; set; }
         private ChatMessagesViewModel chatMessagesViewModel;
+        private Frame RightFrame;
+        private UserService userService;
+        private ChatService chatService;
 
-        public ChatMessagesView(Window mainWindow, int ChatID, UserService userService, ChatService chatService, MessageService messageService)
+        public ChatMessagesView(Window mainWindow, Frame RightFrame, int ChatID, UserService userService, ChatService chatService, MessageService messageService)
         {
             this.InitializeComponent();
             SelectedChat = ChatID;
+            this.userService = userService;
+            this.chatService = chatService;
+            this.RightFrame = RightFrame;
             chatMessagesViewModel = new ChatMessagesViewModel(mainWindow, ChatID, messageService, chatService, userService);
 
             chatMessagesViewModel.ChatListView = ChatListView;
@@ -39,5 +45,9 @@ namespace SocialStuff.View
             MainGrid.DataContext = chatMessagesViewModel;
         }
 
+        public void AddNewMember_Click(object sender, RoutedEventArgs e)
+        {
+            this.RightFrame.Content = new AddNewMemberView(chatMessagesViewModel, this, this.RightFrame, SelectedChat, chatService, userService);
+        }
     }
 }

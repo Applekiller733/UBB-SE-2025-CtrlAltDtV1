@@ -1,5 +1,6 @@
 App.xbf
 View\AddFriendsView.xbf
+View\AddNewMemberView.xbf
 View\ChatListView.xbf
 View\ChatMessagesView.xbf
 View\CreateChatView.xbf
