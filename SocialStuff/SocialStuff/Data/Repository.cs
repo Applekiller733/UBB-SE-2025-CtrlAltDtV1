@@ -22,9 +22,7 @@ namespace SocialStuff.Data
             //AddUser("Razvan", "0751198737");
             //AddUser("Carmen", "0720511858");
             //AddUser("Maria", "0712345678");
-
         }
-
 
         public DatabaseConnection GetDatabaseConnection()
         {

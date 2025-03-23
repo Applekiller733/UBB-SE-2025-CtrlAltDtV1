@@ -43,33 +43,14 @@ namespace SocialStuff
             userService = new UserService(repo);
             chatService = new ChatService(repo);
             messageService = new MessageService(repo);
-            
-            ChatListViewModel chatListViewModel = new ChatListViewModel(chatService, userService);
-
-            MainGrid.DataContext = chatListViewModel;
         }
 
-        private void ChatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Chat_Click(object sender, RoutedEventArgs e)
         {
-            if (ChatList.SelectedItem is Chat selectedChat)
+            if (LeftFrame.Content == null || !(LeftFrame.Content is ChatListView))
             {
-                this.DispatcherQueue.TryEnqueue(() =>
-                {
-                    try
-                    {
-                        var chatMessagesView = new ChatMessagesView(
-                            selectedChat.getChatID(),
-                            userService,
-                            chatService,
-                            messageService);
-
-                        ContentFrame.Content = chatMessagesView;
-                    }
-                    catch (Exception ex)
-                    {
-                        System.Diagnostics.Debug.WriteLine($"Error setting content: {ex.Message}");
-                    }
-                });
+                var chatListView = new ChatListView(this, chatService, userService, messageService, this.RightFrame);
+                LeftFrame.Content = chatListView;
             }
         }
     }

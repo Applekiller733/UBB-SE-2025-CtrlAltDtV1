@@ -23,7 +23,7 @@ namespace SocialStuff.ViewModel
 {
     public class ChatMessagesViewModel : INotifyPropertyChanged
     {
-        private readonly Page _page;
+        private readonly Window _window;
         public ObservableCollection<Message> ChatMessages { get; set; }
         public ListView ChatListView { get; set; }
         public MessageService messageService;
@@ -81,7 +81,7 @@ namespace SocialStuff.ViewModel
             picker.FileTypeFilter.Add(".jpeg");
             picker.FileTypeFilter.Add(".png");
 
-            var hwnd = WindowNative.GetWindowHandle(_page);
+            var hwnd = WindowNative.GetWindowHandle(_window);
             InitializeWithWindow.Initialize(picker, hwnd);
 
             StorageFile file = await picker.PickSingleFileAsync();
@@ -119,9 +119,9 @@ namespace SocialStuff.ViewModel
             return null;
         }
 
-        public ChatMessagesViewModel(Page page, int currentChatID, MessageService msgService, ChatService chtService, UserService usrService)
+        public ChatMessagesViewModel(Window window, int currentChatID, MessageService msgService, ChatService chtService, UserService usrService)
         {
-            _page = page;
+            _window = window;
             ChatMessages = new ObservableCollection<Message>();
             messageService = msgService;
             chatService = chtService;

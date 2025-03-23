@@ -27,11 +27,11 @@ namespace SocialStuff.View
         public int SelectedChat { get; set; }
         private ChatMessagesViewModel chatMessagesViewModel;
 
-        public ChatMessagesView(int ChatID, UserService userService, ChatService chatService, MessageService messageService)
+        public ChatMessagesView(Window mainWindow, int ChatID, UserService userService, ChatService chatService, MessageService messageService)
         {
             this.InitializeComponent();
             SelectedChat = ChatID;
-            chatMessagesViewModel = new ChatMessagesViewModel(this, ChatID, messageService, chatService, userService);
+            chatMessagesViewModel = new ChatMessagesViewModel(mainWindow, ChatID, messageService, chatService, userService);
 
             chatMessagesViewModel.ChatListView = ChatListView;
             chatMessagesViewModel.SetupMessageTracking();
@@ -39,24 +39,5 @@ namespace SocialStuff.View
             MainGrid.DataContext = chatMessagesViewModel;
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-
-            if (e.Parameter is NavigationParameters parameters)
-            {
-                SelectedChat = parameters.ChatID;
-                chatMessagesViewModel = new ChatMessagesViewModel(
-                    this,
-                    parameters.ChatID,
-                    parameters.MessageService,
-                    parameters.ChatService,
-                    parameters.UserService);
-
-                chatMessagesViewModel.ChatListView = ChatListView;
-                chatMessagesViewModel.SetupMessageTracking();
-                MainGrid.DataContext = chatMessagesViewModel;
-            }
-        }
     }
 }

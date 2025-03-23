@@ -1,4 +1,5 @@
 App.xbf
+View\ChatListView.xbf
 View\ChatMessagesView.xbf
 View\MainWindow.xbf
 View\MessageTemplates.xbf
