@@ -5,11 +5,26 @@
     <None Update="App.xaml">
       <SubType>Designer</SubType>
     </None>
-    <None Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </None>
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="View\AddFriendsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\FriendsListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\CreateChatView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ChatListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MessageTemplates.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ChatMessagesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

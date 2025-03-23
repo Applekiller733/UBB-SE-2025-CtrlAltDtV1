@@ -10,10 +10,10 @@ using SocialStuff.Model;
 using SocialStuff.Model.MessageClasses;
 namespace SocialStuff.Data
 {
-     public class Repository
+    public class Repository
     {
         private DatabaseConnection dbConnection;
-        private static int loggedInUserID=1;
+        private static int loggedInUserID = 1;
 
         public Repository()
         {
@@ -23,7 +23,6 @@ namespace SocialStuff.Data
             //AddUser("Carmen", "0720511858");
             //AddUser("Maria", "0712345678");
         }
-
 
         public DatabaseConnection GetDatabaseConnection()
         {
@@ -43,7 +42,7 @@ namespace SocialStuff.Data
 
             foreach (DataRow row in dataTable.Rows)
             {
-               int userID = Convert.ToInt32(row["userid"]);
+                int userID = Convert.ToInt32(row["userid"]);
                 string username = row["username"].ToString();
                 string phoneNumber = row["phonenumber"].ToString();
                 int reportedCount = Convert.ToInt32(row["reportedcount"]);
@@ -105,7 +104,7 @@ namespace SocialStuff.Data
                 }
             }
 
-            
+
             List<Chat> Chats = new List<Chat>();
             foreach (DataRow row in dataTable.Rows)
             {
@@ -122,7 +121,7 @@ namespace SocialStuff.Data
                         }
                     }
                     Chats.Add(new Chat(chat, chatName, ParticipantsIDs));
-                
+
                 }
             }
             return Chats;
@@ -132,7 +131,7 @@ namespace SocialStuff.Data
         public List<Chat> GetChatsList()
         {
             DataTable dataTable = dbConnection.ExecuteReader("select * from Chats", null, false);
-            DataTable dataTable1 = dbConnection.ExecuteReader("select * from ChatParticipants", null, false);
+            DataTable dataTable1 = dbConnection.ExecuteReader("select * from Chat_Participants", null, false);
             List<Chat> chats = new List<Chat>();
             foreach (DataRow row in dataTable.Rows)
             {
@@ -151,6 +150,35 @@ namespace SocialStuff.Data
             return chats;
         }
 
+        //get the pparticipants of a chat
+        public List<User> GetChatParticipants(int chatID)
+        {
+            DataTable dataTable = dbConnection.ExecuteReader("select * from Users", null, false);
+            DataTable dataTable1 = dbConnection.ExecuteReader("select * from Chat_Participants", null, false);
+            List<int> UserIds = new List<int>();
+            foreach (DataRow row in dataTable1.Rows)
+            {
+                if (Convert.ToInt32(row["ChatID"]) == chatID)
+                {
+                    UserIds.Add(Convert.ToInt32(row["UserID"]));
+                }
+            }
+
+            List<User> users = new List<User>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int userID = Convert.ToInt32(row["UserID"]);
+                if (UserIds.Contains(userID))
+                {
+                    string username = row["Username"].ToString();
+                    string phoneNumber = row["PhoneNumber"].ToString();
+                    int reportedCount = Convert.ToInt32(row["ReportedCount"]);
+                    users.Add(new User(userID, username, phoneNumber, reportedCount));
+                }
+            }
+            return users;
+        }
+
         // Get all messages
         public List<Message> GetMessagesList()
         {
@@ -166,7 +194,7 @@ namespace SocialStuff.Data
                 DateTime timestamp = Convert.ToDateTime(row["timestamp"]);
                 string content = row["content"].ToString();
                 string status = row["status"].ToString();
-                float amount = Convert.ToSingle(row["amount"]);
+                float? amount = row["amount"] == DBNull.Value ? (float?)null : Convert.ToSingle(row["amount"]);
                 string currency = row["currency"].ToString();
                 DataTable reportsTable = dbConnection.ExecuteReader("select * from Reports", null, false);
                 List<int> UserReports = new List<int>();
@@ -187,10 +215,10 @@ namespace SocialStuff.Data
                         messages.Add(new ImageMessage(messageID, userID, chatID, timestamp, content, UserReports));
                         break;
                     case 3: // Request message
-                        messages.Add(new RequestMessage(messageID, userID, chatID, timestamp, status, amount, content, currency));
+                        messages.Add(new RequestMessage(messageID, userID, chatID, timestamp, status, amount ?? 0, content, currency));
                         break;
                     case 4: // Transfer message
-                        messages.Add(new TransferMessage(messageID, userID, chatID, timestamp, status, amount, content, currency));
+                        messages.Add(new TransferMessage(messageID, userID, chatID, timestamp, status, amount ?? 0, content, currency));
                         break;
                     default:
                         throw new Exception("Unknown message type");
@@ -232,7 +260,7 @@ namespace SocialStuff.Data
                 string reason = row["reason"].ToString();
                 string description = row["description"].ToString();
                 string status = row["status"].ToString();
-               // reports.Add(new Report(reportID, messageID, reason, description, status));
+                // reports.Add(new Report(reportID, messageID, reason, description, status));
             }
             return reports;
         }
@@ -268,10 +296,11 @@ namespace SocialStuff.Data
             return chats;
         }
 
+
+
         // Add a chat to the database
-        public int AddChat(string chatName)
+        public void AddChat(string chatName, out int chatID)
         {
-            int chatID;
             SqlParameter[] parameters =
             {
                 new SqlParameter("@ChatName", chatName),
@@ -280,7 +309,6 @@ namespace SocialStuff.Data
 
             dbConnection.ExecuteNonQuery("AddChat", parameters);
             chatID = (int)parameters[1].Value; // Get the generated ChatID from the output parameter
-            return chatID;
         }
 
         // Update a chat in the database
@@ -580,8 +608,7 @@ namespace SocialStuff.Data
             dbConnection.ExecuteNonQuery("RemoveUserFromChat", parameters);
         }
 
-       
+
     }
 
 }
-

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SocialStuff.Services
 {
-    class MessageService
+    public class MessageService
     {
         private Repository repository;
 
@@ -28,7 +28,7 @@ namespace SocialStuff.Services
 
         public void sendImage(int SenderID, int ChatID, string ImageURL)
         {
-            this.repository.AddImageMessage(SenderID, ChatID, ImageURL);
+            this.repository.AddImageMessage(repository.GetLoggedInUserID(), ChatID, ImageURL);
         }
 
         public void sendTransferMessage(int userID, int chatID, string content, string status, float amount, string currency)
@@ -40,5 +40,6 @@ namespace SocialStuff.Services
         {
             this.repository.AddRequestMessage(userID, chatID, content, status, amount, currency);
         }
+
     }
 }

@@ -10,8 +10,8 @@ namespace SocialStuff.Model
     {
 
         private int UserId { get; set; }
-        private string Username { get; set; }
-        private string PhoneNumber { get; set; }
+        public string Username { get; set; }
+        public string PhoneNumber { get; set; }
         private int ReportedCount { get; set; }
         private List<int> Friends { get; set; }
         private List<int> Chats { get; set; }
@@ -60,8 +60,6 @@ namespace SocialStuff.Model
         {
             return Chats;
         }
-
-
 
         public override string ToString()
         {

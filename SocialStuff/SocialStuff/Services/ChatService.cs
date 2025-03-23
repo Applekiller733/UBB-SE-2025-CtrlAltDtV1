@@ -9,7 +9,7 @@ using SocialStuff.Model;
 
 namespace SocialStuff.Services
 {
-    class ChatService
+    public class ChatService
     {
         private Repository repository;
 
@@ -35,7 +35,16 @@ namespace SocialStuff.Services
 
         public void createChat(List<int> ParticipantsID, string ChatName)
         {
-            throw new NotImplementedException();
+
+            int chatID;
+            repository.AddChat(ChatName, out chatID);
+
+            foreach (var userID in ParticipantsID)
+            {
+                repository.AddUserToChat(userID, chatID);
+            }
+            var addedUsers = repository.GetChatParticipants(chatID);
+
         }
 
         public void deleteChat(int ChatID)
@@ -76,6 +85,21 @@ namespace SocialStuff.Services
         public void RemoveUserFromChat(int UserID, int ChatID)
         {
             this.repository.RemoveUserFromChat(UserID, ChatID);
+        }
+
+        public string getChatNameByID(int ChatID)
+        {
+            List<Chat> chatList = this.repository.GetChatsList();
+            string chatName = chatList.Where(c => c.getChatID() == ChatID).FirstOrDefault().getChatName();
+
+            return chatName;
+        }
+
+        public List<string> getChatParticipantsList(int ChatID)
+        {
+            List<User> participants = this.repository.GetChatParticipants(ChatID);
+            List<string> participantsList = participants.Select(p => p.GetUsername()).ToList();
+            return participantsList;
         }
     }
 }

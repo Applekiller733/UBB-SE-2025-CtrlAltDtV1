@@ -13,7 +13,6 @@ namespace SocialStuff.Services
 {
     public class UserService
     {
-
         private Repository repo; 
         private int UserID;
 
@@ -121,6 +120,22 @@ namespace SocialStuff.Services
             return chats;
         }
 
+        public List<Chat> GetCurrentUserChats()
+        {
+            List<Chat> chats = new List<Chat>();
+            List<Chat> currentUserChats = new List<Chat>();
+            chats = this.repo.GetChatsList();
+
+            foreach (Chat chat in chats)
+            {
+                if(chat.getUserIDsList().Contains(UserID))
+                {
+                    currentUserChats.Add(chat);
+                }
+            }
+            return currentUserChats;
+        }
+
         public User GetUserById(int userID)
         {
             List<User> users = repo.GetUsersList();
@@ -133,6 +148,21 @@ namespace SocialStuff.Services
             }
 
             return null;
+        }
+
+        public List<User> GetNonFriendsUsers(int UserID)
+        {
+            List<User> users = new List<User>(repo.GetUsersList().Where(user => user.GetUserId() != UserID));
+            List<int> friends = repo.GetFriendsIDs(UserID);
+            List<User> nonFriends = new List<User>();
+            foreach (User user in users)
+            {
+                if (!friends.Contains(user.GetUserId()))
+                {
+                    nonFriends.Add(user);
+                }
+            }
+            return nonFriends;
         }
 
         public int GetCurrentUser()
