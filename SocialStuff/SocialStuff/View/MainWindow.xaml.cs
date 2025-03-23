@@ -53,6 +53,15 @@ namespace SocialStuff
                 LeftFrame.Content = chatListView;
             }
         }
+
+        private void Friends_Click(object sender, RoutedEventArgs e)
+        {
+            if (LeftFrame.Content == null || !(LeftFrame.Content is FriendsListView))
+            {
+                var friendsListView = new FriendsListView(chatService, userService, messageService, this.RightFrame);
+                LeftFrame.Content = friendsListView;
+            }
+        }
     }
 
 }

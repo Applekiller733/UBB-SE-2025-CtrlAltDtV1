@@ -1,6 +1,8 @@
 App.xbf
+View\AddFriendsView.xbf
 View\ChatListView.xbf
 View\ChatMessagesView.xbf
 View\CreateChatView.xbf
+View\FriendsListView.xbf
 View\MainWindow.xbf
 View\MessageTemplates.xbf

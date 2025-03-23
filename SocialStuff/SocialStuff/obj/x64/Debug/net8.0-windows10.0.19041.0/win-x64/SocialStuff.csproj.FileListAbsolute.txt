@@ -318,3 +318,13 @@ D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-window
 D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\CreateChatView.xaml
 D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\CreateChatView.xbf
 D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\CreateChatView.xbf
+D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\FriendsListView.g.i.cs
+D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\FriendsListView.g.cs
+D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\FriendsListView.xaml
+D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\FriendsListView.xbf
+D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\FriendsListView.xbf
+D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\AddFriendsView.g.i.cs
+D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\AddFriendsView.g.cs
+D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\AddFriendsView.xaml
+D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\AddFriendsView.xbf
+D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\AddFriendsView.xbf

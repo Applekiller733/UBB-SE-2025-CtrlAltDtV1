@@ -150,6 +150,21 @@ namespace SocialStuff.Services
             return null;
         }
 
+        public List<User> GetNonFriendsUsers(int UserID)
+        {
+            List<User> users = new List<User>(repo.GetUsersList().Where(user => user.GetUserId() != UserID));
+            List<int> friends = repo.GetFriendsIDs(UserID);
+            List<User> nonFriends = new List<User>();
+            foreach (User user in users)
+            {
+                if (!friends.Contains(user.GetUserId()))
+                {
+                    nonFriends.Add(user);
+                }
+            }
+            return nonFriends;
+        }
+
         public int GetCurrentUser()
         {
             return repo.GetLoggedInUserID(); // This should be replaced with actual logic to get the logged-in user.
