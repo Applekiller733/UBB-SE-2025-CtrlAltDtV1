@@ -72,7 +72,7 @@ namespace SocialStuff.Services
 
             if (user != null && chats.Contains(chatID))
             {
-                repo.RemoveUserFromChat(chatID, userID);
+                repo.RemoveUserFromChat(userID, chatID);
                 user.LeaveChat(chatID);
             }
         }

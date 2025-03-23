@@ -9,7 +9,13 @@
     mc:Ignorable="d">
 
     <Grid>
-
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+            <TextBlock Text="Are you sure?" FontSize="20" FontWeight="Bold" TextAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                <Button x:ConnectionId='2' Content="Confirm" Width="100"                         Command="{Binding LeaveChatCommand}"/>
+                <Button x:ConnectionId='3' Content="Cancel" Width="100"                            />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
 

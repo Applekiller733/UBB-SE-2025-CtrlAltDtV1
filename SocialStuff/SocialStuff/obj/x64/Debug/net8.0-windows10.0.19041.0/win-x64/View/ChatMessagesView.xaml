@@ -39,7 +39,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Button x:ConnectionId='5' Grid.Column="0" Margin="0,0,10,0" Content="Add a new member"                           ></Button>
-                    <Button Grid.Column="1" Content="Leave Chat"></Button>
+                    <Button x:ConnectionId='6' Grid.Column="1" Content="Leave Chat"                        ></Button>
                 </Grid>
 
             </Grid>

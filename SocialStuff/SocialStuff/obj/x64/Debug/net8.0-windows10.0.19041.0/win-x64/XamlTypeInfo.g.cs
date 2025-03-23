@@ -315,7 +315,6 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
         private object Activate_4_CountToVisibilityConverter() { return new global::SocialStuff.View.CountToVisibilityConverter(); }
         private object Activate_10_EmoticonToEmojiConverter() { return new global::SocialStuff.View.EmoticonToEmojiConverter(); }
         private object Activate_11_MessageTemplateSelector() { return new global::SocialStuff.View.MessageTemplateSelector(); }
-        private object Activate_18_LeaveChatView() { return new global::SocialStuff.View.LeaveChatView(); }
         private object Activate_19_MainWindow() { return new global::SocialStuff.MainWindow(); }
         private object Activate_21_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
@@ -474,7 +473,6 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
 
             case 18:   //  SocialStuff.View.LeaveChatView
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_LeaveChatView;
                 userType.StaticInitializer = StaticInitializer_18_LeaveChatView;
                 userType.SetIsLocalType();
                 xamlType = userType;

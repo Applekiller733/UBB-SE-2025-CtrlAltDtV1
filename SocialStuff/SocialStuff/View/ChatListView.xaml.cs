@@ -56,7 +56,7 @@ namespace SocialStuff.View
         {
             if (ChatList.SelectedItem is Chat selectedChat)
             {
-                this.RightFrame.Content = new ChatMessagesView(mainWindow, RightFrame, selectedChat.getChatID(), userService, chatService, messageService);
+                this.RightFrame.Content = new ChatMessagesView(chatListViewModel, mainWindow, RightFrame, selectedChat.getChatID(), userService, chatService, messageService);
             }
         }
 
