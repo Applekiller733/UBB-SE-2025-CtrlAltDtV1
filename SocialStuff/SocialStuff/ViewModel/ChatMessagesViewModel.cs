@@ -33,13 +33,27 @@ namespace SocialStuff.ViewModel
         public int CurrentChatID { get; set; }
         public int CurrentUserID { get; set; }
         public string CurrentChatName { get; set; }
-        public List<string> CurrentChatParticipants { get; set; }
-        public string CurrentChatParticipantsString => string.Join(", ", CurrentChatParticipants);
+
+        public string CurrentChatParticipantsString => string.Join(", ", CurrentChatParticipants ?? new List<string>());
+        private List<string> currentChatParticipants;
+        public List<string> CurrentChatParticipants
+        {
+            get => currentChatParticipants;
+            set
+            {
+                if (currentChatParticipants != value)
+                {
+                    currentChatParticipants = value;
+                    OnPropertyChanged(nameof(CurrentChatParticipants));
+                    OnPropertyChanged(nameof(CurrentChatParticipantsString));
+                }
+            }
+        }
 
 
 
         public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
+        public virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -63,7 +77,8 @@ namespace SocialStuff.ViewModel
         public ICommand SendMessageCommand { get; }
         private void SendMessage()
         {
-            this.messageService.sendMessage(CurrentUserID, CurrentChatID, MessageContent);
+            string convertedContent = EmoticonConverter.ConvertEmoticonsToEmojis(MessageContent);
+            this.messageService.sendMessage(CurrentUserID, CurrentChatID, convertedContent);
             this.LoadMessagesForChat();
             MessageContent = "";
         }
@@ -131,7 +146,7 @@ namespace SocialStuff.ViewModel
             this.SendMessageCommand = new RelayCommand(SendMessage);
             this.SendImageCommand = new RelayCommand(SendImage);
             this.CurrentChatName = chatService.getChatNameByID(CurrentChatID);
-            this.CurrentChatParticipants = chatService.getChatParticipantsList(CurrentChatID);
+            this.CurrentChatParticipants = chatService.getChatParticipantsStringList(CurrentChatID);
 
             templateSelector = new MessageTemplateSelector()
             {

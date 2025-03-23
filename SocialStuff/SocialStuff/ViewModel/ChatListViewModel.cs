@@ -60,6 +60,7 @@ namespace SocialStuff.ViewModel
         public void FilterChats()
         {
             ChatList.Clear();
+            currentUserChats = this.userService.GetCurrentUserChats();
             foreach (var chat in currentUserChats)
             {
                 if (string.IsNullOrEmpty(SearchQuery) ||

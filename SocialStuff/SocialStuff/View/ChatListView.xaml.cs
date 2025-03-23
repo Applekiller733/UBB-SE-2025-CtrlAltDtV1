@@ -51,11 +51,12 @@ namespace SocialStuff.View
             this.RightFrame.Content = new CreateChatView(chatListViewModel, chatService, userService);
         }
 
+
         private void ChatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ChatList.SelectedItem is Chat selectedChat)
             {
-                this.RightFrame.Content = new ChatMessagesView(mainWindow, selectedChat.getChatID(), userService, chatService, messageService);
+                this.RightFrame.Content = new ChatMessagesView(chatListViewModel, mainWindow, RightFrame, selectedChat.getChatID(), userService, chatService, messageService);
             }
         }
 
