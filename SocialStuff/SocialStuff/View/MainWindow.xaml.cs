@@ -54,6 +54,11 @@ namespace SocialStuff
             }
         }
 
+        private void Feed_Click(object sender, RoutedEventArgs e)
+        {
+            RightFrame.Navigate(typeof(FeedView));
+        }
+
         private void Friends_Click(object sender, RoutedEventArgs e)
         {
             if (LeftFrame.Content == null || !(LeftFrame.Content is FriendsListView))
