@@ -1,4 +1,4 @@
-using Microsoft.UI.Xaml.Controls;
+﻿using Microsoft.UI.Xaml.Controls;
 using SocialStuff.ViewModel;
 using SocialStuff.Services;
 using SocialStuff.Data;
