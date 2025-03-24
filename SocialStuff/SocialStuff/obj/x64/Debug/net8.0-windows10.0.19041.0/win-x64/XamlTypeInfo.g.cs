@@ -226,83 +226,89 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[37];
+            _typeNameTable = new string[40];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
             _typeNameTable[3] = "Boolean";
             _typeNameTable[4] = "SocialStuff.View.CountToVisibilityConverter";
-            _typeNameTable[5] = "SocialStuff.View.AddFriendsView";
-            _typeNameTable[6] = "Microsoft.UI.Xaml.Controls.Page";
-            _typeNameTable[7] = "Microsoft.UI.Xaml.Controls.UserControl";
-            _typeNameTable[8] = "SocialStuff.View.AddNewMemberView";
-            _typeNameTable[9] = "SocialStuff.View.ChatListView";
-            _typeNameTable[10] = "SocialStuff.View.EmoticonToEmojiConverter";
-            _typeNameTable[11] = "SocialStuff.View.CommandBindingProxy";
-            _typeNameTable[12] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[13] = "System.Windows.Input.ICommand";
-            _typeNameTable[14] = "SocialStuff.View.MessageTemplateSelector";
-            _typeNameTable[15] = "Microsoft.UI.Xaml.Controls.DataTemplateSelector";
-            _typeNameTable[16] = "Microsoft.UI.Xaml.DataTemplate";
-            _typeNameTable[17] = "Int32";
-            _typeNameTable[18] = "SocialStuff.View.ChatMessagesView";
-            _typeNameTable[19] = "SocialStuff.View.CreateChatView";
-            _typeNameTable[20] = "SocialStuff.ViewModel.FeedViewModel";
-            _typeNameTable[21] = "System.Collections.ObjectModel.ObservableCollection`1<SocialStuff.Model.Post>";
-            _typeNameTable[22] = "System.Collections.ObjectModel.Collection`1<SocialStuff.Model.Post>";
-            _typeNameTable[23] = "SocialStuff.Model.Post";
-            _typeNameTable[24] = "String";
-            _typeNameTable[25] = "System.DateTime";
-            _typeNameTable[26] = "System.ValueType";
-            _typeNameTable[27] = "SocialStuff.View.FeedView";
-            _typeNameTable[28] = "SocialStuff.View.FriendsListView";
-            _typeNameTable[29] = "SocialStuff.View.GenerateTransferView";
-            _typeNameTable[30] = "SocialStuff.ViewModel.GenerateTransferViewModel";
-            _typeNameTable[31] = "SocialStuff.View.LeaveChatView";
-            _typeNameTable[32] = "SocialStuff.MainWindow";
-            _typeNameTable[33] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[34] = "SocialStuff.Views.ReportView";
-            _typeNameTable[35] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[36] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[5] = "SocialStuff.View.BooleanToVisibilityConverter";
+            _typeNameTable[6] = "SocialStuff.View.AddFriendsView";
+            _typeNameTable[7] = "Microsoft.UI.Xaml.Controls.Page";
+            _typeNameTable[8] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[9] = "SocialStuff.View.AddNewMemberView";
+            _typeNameTable[10] = "SocialStuff.View.ChatListView";
+            _typeNameTable[11] = "SocialStuff.View.EmoticonToEmojiConverter";
+            _typeNameTable[12] = "SocialStuff.View.CommandBindingProxy";
+            _typeNameTable[13] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[14] = "System.Windows.Input.ICommand";
+            _typeNameTable[15] = "SocialStuff.View.MessageTemplateSelector";
+            _typeNameTable[16] = "Microsoft.UI.Xaml.Controls.DataTemplateSelector";
+            _typeNameTable[17] = "Microsoft.UI.Xaml.DataTemplate";
+            _typeNameTable[18] = "Int32";
+            _typeNameTable[19] = "SocialStuff.View.ChatMessagesView";
+            _typeNameTable[20] = "SocialStuff.View.CreateChatView";
+            _typeNameTable[21] = "SocialStuff.ViewModel.FeedViewModel";
+            _typeNameTable[22] = "System.Collections.ObjectModel.ObservableCollection`1<SocialStuff.Model.Post>";
+            _typeNameTable[23] = "System.Collections.ObjectModel.Collection`1<SocialStuff.Model.Post>";
+            _typeNameTable[24] = "SocialStuff.Model.Post";
+            _typeNameTable[25] = "String";
+            _typeNameTable[26] = "System.DateTime";
+            _typeNameTable[27] = "System.ValueType";
+            _typeNameTable[28] = "SocialStuff.View.FeedView";
+            _typeNameTable[29] = "SocialStuff.View.FriendsListView";
+            _typeNameTable[30] = "SocialStuff.View.GenerateTransferView";
+            _typeNameTable[31] = "SocialStuff.ViewModel.GenerateTransferViewModel";
+            _typeNameTable[32] = "SocialStuff.View.LeaveChatView";
+            _typeNameTable[33] = "SocialStuff.MainWindow";
+            _typeNameTable[34] = "Microsoft.UI.Xaml.Window";
+            _typeNameTable[35] = "SocialStuff.View.NotificationView";
+            _typeNameTable[36] = "SocialStuff.Views.ReportView";
+            _typeNameTable[37] = "SocialStuff.ViewModel.ReportViewModel";
+            _typeNameTable[38] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[39] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[37];
+            _typeTable = new global::System.Type[40];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::System.Boolean);
             _typeTable[4] = typeof(global::SocialStuff.View.CountToVisibilityConverter);
-            _typeTable[5] = typeof(global::SocialStuff.View.AddFriendsView);
-            _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
-            _typeTable[7] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
-            _typeTable[8] = typeof(global::SocialStuff.View.AddNewMemberView);
-            _typeTable[9] = typeof(global::SocialStuff.View.ChatListView);
-            _typeTable[10] = typeof(global::SocialStuff.View.EmoticonToEmojiConverter);
-            _typeTable[11] = typeof(global::SocialStuff.View.CommandBindingProxy);
-            _typeTable[12] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[13] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[14] = typeof(global::SocialStuff.View.MessageTemplateSelector);
-            _typeTable[15] = typeof(global::Microsoft.UI.Xaml.Controls.DataTemplateSelector);
-            _typeTable[16] = typeof(global::Microsoft.UI.Xaml.DataTemplate);
-            _typeTable[17] = typeof(global::System.Int32);
-            _typeTable[18] = typeof(global::SocialStuff.View.ChatMessagesView);
-            _typeTable[19] = typeof(global::SocialStuff.View.CreateChatView);
-            _typeTable[20] = typeof(global::SocialStuff.ViewModel.FeedViewModel);
-            _typeTable[21] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::SocialStuff.Model.Post>);
-            _typeTable[22] = typeof(global::System.Collections.ObjectModel.Collection<global::SocialStuff.Model.Post>);
-            _typeTable[23] = typeof(global::SocialStuff.Model.Post);
-            _typeTable[24] = typeof(global::System.String);
-            _typeTable[25] = typeof(global::System.DateTime);
-            _typeTable[26] = typeof(global::System.ValueType);
-            _typeTable[27] = typeof(global::SocialStuff.View.FeedView);
-            _typeTable[28] = typeof(global::SocialStuff.View.FriendsListView);
-            _typeTable[29] = typeof(global::SocialStuff.View.GenerateTransferView);
-            _typeTable[30] = typeof(global::SocialStuff.ViewModel.GenerateTransferViewModel);
-            _typeTable[31] = typeof(global::SocialStuff.View.LeaveChatView);
-            _typeTable[32] = typeof(global::SocialStuff.MainWindow);
-            _typeTable[33] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[34] = typeof(global::SocialStuff.Views.ReportView);
-            _typeTable[35] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[36] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[5] = typeof(global::SocialStuff.View.BooleanToVisibilityConverter);
+            _typeTable[6] = typeof(global::SocialStuff.View.AddFriendsView);
+            _typeTable[7] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
+            _typeTable[8] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[9] = typeof(global::SocialStuff.View.AddNewMemberView);
+            _typeTable[10] = typeof(global::SocialStuff.View.ChatListView);
+            _typeTable[11] = typeof(global::SocialStuff.View.EmoticonToEmojiConverter);
+            _typeTable[12] = typeof(global::SocialStuff.View.CommandBindingProxy);
+            _typeTable[13] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[14] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[15] = typeof(global::SocialStuff.View.MessageTemplateSelector);
+            _typeTable[16] = typeof(global::Microsoft.UI.Xaml.Controls.DataTemplateSelector);
+            _typeTable[17] = typeof(global::Microsoft.UI.Xaml.DataTemplate);
+            _typeTable[18] = typeof(global::System.Int32);
+            _typeTable[19] = typeof(global::SocialStuff.View.ChatMessagesView);
+            _typeTable[20] = typeof(global::SocialStuff.View.CreateChatView);
+            _typeTable[21] = typeof(global::SocialStuff.ViewModel.FeedViewModel);
+            _typeTable[22] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::SocialStuff.Model.Post>);
+            _typeTable[23] = typeof(global::System.Collections.ObjectModel.Collection<global::SocialStuff.Model.Post>);
+            _typeTable[24] = typeof(global::SocialStuff.Model.Post);
+            _typeTable[25] = typeof(global::System.String);
+            _typeTable[26] = typeof(global::System.DateTime);
+            _typeTable[27] = typeof(global::System.ValueType);
+            _typeTable[28] = typeof(global::SocialStuff.View.FeedView);
+            _typeTable[29] = typeof(global::SocialStuff.View.FriendsListView);
+            _typeTable[30] = typeof(global::SocialStuff.View.GenerateTransferView);
+            _typeTable[31] = typeof(global::SocialStuff.ViewModel.GenerateTransferViewModel);
+            _typeTable[32] = typeof(global::SocialStuff.View.LeaveChatView);
+            _typeTable[33] = typeof(global::SocialStuff.MainWindow);
+            _typeTable[34] = typeof(global::Microsoft.UI.Xaml.Window);
+            _typeTable[35] = typeof(global::SocialStuff.View.NotificationView);
+            _typeTable[36] = typeof(global::SocialStuff.Views.ReportView);
+            _typeTable[37] = typeof(global::SocialStuff.ViewModel.ReportViewModel);
+            _typeTable[38] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[39] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -339,40 +345,45 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
 
         private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
         private object Activate_4_CountToVisibilityConverter() { return new global::SocialStuff.View.CountToVisibilityConverter(); }
-        private object Activate_10_EmoticonToEmojiConverter() { return new global::SocialStuff.View.EmoticonToEmojiConverter(); }
-        private object Activate_11_CommandBindingProxy() { return new global::SocialStuff.View.CommandBindingProxy(); }
-        private object Activate_14_MessageTemplateSelector() { return new global::SocialStuff.View.MessageTemplateSelector(); }
-        private object Activate_20_FeedViewModel() { return new global::SocialStuff.ViewModel.FeedViewModel(); }
-        private object Activate_21_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::SocialStuff.Model.Post>(); }
-        private object Activate_22_Collection() { return new global::System.Collections.ObjectModel.Collection<global::SocialStuff.Model.Post>(); }
-        private object Activate_32_MainWindow() { return new global::SocialStuff.MainWindow(); }
-        private object Activate_35_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_5_BooleanToVisibilityConverter() { return new global::SocialStuff.View.BooleanToVisibilityConverter(); }
+        private object Activate_11_EmoticonToEmojiConverter() { return new global::SocialStuff.View.EmoticonToEmojiConverter(); }
+        private object Activate_12_CommandBindingProxy() { return new global::SocialStuff.View.CommandBindingProxy(); }
+        private object Activate_15_MessageTemplateSelector() { return new global::SocialStuff.View.MessageTemplateSelector(); }
+        private object Activate_21_FeedViewModel() { return new global::SocialStuff.ViewModel.FeedViewModel(); }
+        private object Activate_22_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::SocialStuff.Model.Post>(); }
+        private object Activate_23_Collection() { return new global::System.Collections.ObjectModel.Collection<global::SocialStuff.Model.Post>(); }
+        private object Activate_33_MainWindow() { return new global::SocialStuff.MainWindow(); }
+        private object Activate_35_NotificationView() { return new global::SocialStuff.View.NotificationView(); }
+        private object Activate_38_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_CountToVisibilityConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.CountToVisibilityConverter).TypeHandle);
-        private void StaticInitializer_5_AddFriendsView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.AddFriendsView).TypeHandle);
-        private void StaticInitializer_8_AddNewMemberView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.AddNewMemberView).TypeHandle);
-        private void StaticInitializer_9_ChatListView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.ChatListView).TypeHandle);
-        private void StaticInitializer_10_EmoticonToEmojiConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.EmoticonToEmojiConverter).TypeHandle);
-        private void StaticInitializer_11_CommandBindingProxy() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.CommandBindingProxy).TypeHandle);
-        private void StaticInitializer_13_ICommand() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Windows.Input.ICommand).TypeHandle);
-        private void StaticInitializer_14_MessageTemplateSelector() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.MessageTemplateSelector).TypeHandle);
-        private void StaticInitializer_18_ChatMessagesView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.ChatMessagesView).TypeHandle);
-        private void StaticInitializer_19_CreateChatView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.CreateChatView).TypeHandle);
-        private void StaticInitializer_20_FeedViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.ViewModel.FeedViewModel).TypeHandle);
-        private void StaticInitializer_21_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::SocialStuff.Model.Post>).TypeHandle);
-        private void StaticInitializer_22_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::SocialStuff.Model.Post>).TypeHandle);
-        private void StaticInitializer_23_Post() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.Model.Post).TypeHandle);
-        private void StaticInitializer_25_DateTime() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.DateTime).TypeHandle);
-        private void StaticInitializer_26_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
-        private void StaticInitializer_27_FeedView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.FeedView).TypeHandle);
-        private void StaticInitializer_28_FriendsListView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.FriendsListView).TypeHandle);
-        private void StaticInitializer_29_GenerateTransferView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.GenerateTransferView).TypeHandle);
-        private void StaticInitializer_30_GenerateTransferViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.ViewModel.GenerateTransferViewModel).TypeHandle);
-        private void StaticInitializer_31_LeaveChatView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.LeaveChatView).TypeHandle);
-        private void StaticInitializer_32_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.MainWindow).TypeHandle);
-        private void StaticInitializer_34_ReportView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.Views.ReportView).TypeHandle);
-        private void StaticInitializer_35_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_36_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_5_BooleanToVisibilityConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.BooleanToVisibilityConverter).TypeHandle);
+        private void StaticInitializer_6_AddFriendsView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.AddFriendsView).TypeHandle);
+        private void StaticInitializer_9_AddNewMemberView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.AddNewMemberView).TypeHandle);
+        private void StaticInitializer_10_ChatListView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.ChatListView).TypeHandle);
+        private void StaticInitializer_11_EmoticonToEmojiConverter() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.EmoticonToEmojiConverter).TypeHandle);
+        private void StaticInitializer_12_CommandBindingProxy() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.CommandBindingProxy).TypeHandle);
+        private void StaticInitializer_14_ICommand() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Windows.Input.ICommand).TypeHandle);
+        private void StaticInitializer_15_MessageTemplateSelector() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.MessageTemplateSelector).TypeHandle);
+        private void StaticInitializer_19_ChatMessagesView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.ChatMessagesView).TypeHandle);
+        private void StaticInitializer_20_CreateChatView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.CreateChatView).TypeHandle);
+        private void StaticInitializer_21_FeedViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.ViewModel.FeedViewModel).TypeHandle);
+        private void StaticInitializer_22_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::SocialStuff.Model.Post>).TypeHandle);
+        private void StaticInitializer_23_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::SocialStuff.Model.Post>).TypeHandle);
+        private void StaticInitializer_24_Post() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.Model.Post).TypeHandle);
+        private void StaticInitializer_26_DateTime() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.DateTime).TypeHandle);
+        private void StaticInitializer_27_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
+        private void StaticInitializer_28_FeedView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.FeedView).TypeHandle);
+        private void StaticInitializer_29_FriendsListView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.FriendsListView).TypeHandle);
+        private void StaticInitializer_30_GenerateTransferView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.GenerateTransferView).TypeHandle);
+        private void StaticInitializer_31_GenerateTransferViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.ViewModel.GenerateTransferViewModel).TypeHandle);
+        private void StaticInitializer_32_LeaveChatView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.LeaveChatView).TypeHandle);
+        private void StaticInitializer_33_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.MainWindow).TypeHandle);
+        private void StaticInitializer_35_NotificationView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.View.NotificationView).TypeHandle);
+        private void StaticInitializer_36_ReportView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.Views.ReportView).TypeHandle);
+        private void StaticInitializer_37_ReportViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::SocialStuff.ViewModel.ReportViewModel).TypeHandle);
+        private void StaticInitializer_38_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_39_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -380,19 +391,19 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_21_ObservableCollection(object instance, object item)
+        private void VectorAdd_22_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::SocialStuff.Model.Post>)instance;
             var newItem = (global::SocialStuff.Model.Post)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_22_Collection(object instance, object item)
+        private void VectorAdd_23_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::SocialStuff.Model.Post>)instance;
             var newItem = (global::SocialStuff.Model.Post)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_36_IList(object instance, object item)
+        private void VectorAdd_39_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -438,67 +449,75 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 5:   //  SocialStuff.View.AddFriendsView
-                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.StaticInitializer = StaticInitializer_5_AddFriendsView;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 6:   //  Microsoft.UI.Xaml.Controls.Page
-                xamlType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 7:   //  Microsoft.UI.Xaml.Controls.UserControl
-                xamlType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 8:   //  SocialStuff.View.AddNewMemberView
-                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.StaticInitializer = StaticInitializer_8_AddNewMemberView;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 9:   //  SocialStuff.View.ChatListView
-                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.StaticInitializer = StaticInitializer_9_ChatListView;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 10:   //  SocialStuff.View.EmoticonToEmojiConverter
+            case 5:   //  SocialStuff.View.BooleanToVisibilityConverter
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_10_EmoticonToEmojiConverter;
-                userType.StaticInitializer = StaticInitializer_10_EmoticonToEmojiConverter;
+                userType.Activator = Activate_5_BooleanToVisibilityConverter;
+                userType.StaticInitializer = StaticInitializer_5_BooleanToVisibilityConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  SocialStuff.View.CommandBindingProxy
+            case 6:   //  SocialStuff.View.AddFriendsView
+                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.StaticInitializer = StaticInitializer_6_AddFriendsView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Microsoft.UI.Xaml.Controls.Page
+                xamlType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  Microsoft.UI.Xaml.Controls.UserControl
+                xamlType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 9:   //  SocialStuff.View.AddNewMemberView
+                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.StaticInitializer = StaticInitializer_9_AddNewMemberView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  SocialStuff.View.ChatListView
+                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.StaticInitializer = StaticInitializer_10_ChatListView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 11:   //  SocialStuff.View.EmoticonToEmojiConverter
+                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_11_EmoticonToEmojiConverter;
+                userType.StaticInitializer = StaticInitializer_11_EmoticonToEmojiConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 12:   //  SocialStuff.View.CommandBindingProxy
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_11_CommandBindingProxy;
-                userType.StaticInitializer = StaticInitializer_11_CommandBindingProxy;
+                userType.Activator = Activate_12_CommandBindingProxy;
+                userType.StaticInitializer = StaticInitializer_12_CommandBindingProxy;
                 userType.AddMemberName("Command");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  Microsoft.UI.Xaml.DependencyObject
+            case 13:   //  Microsoft.UI.Xaml.DependencyObject
                 xamlType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  System.Windows.Input.ICommand
+            case 14:   //  System.Windows.Input.ICommand
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_13_ICommand;
+                userType.StaticInitializer = StaticInitializer_14_ICommand;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 14:   //  SocialStuff.View.MessageTemplateSelector
+            case 15:   //  SocialStuff.View.MessageTemplateSelector
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.DataTemplateSelector"));
-                userType.Activator = Activate_14_MessageTemplateSelector;
-                userType.StaticInitializer = StaticInitializer_14_MessageTemplateSelector;
+                userType.Activator = Activate_15_MessageTemplateSelector;
+                userType.StaticInitializer = StaticInitializer_15_MessageTemplateSelector;
                 userType.AddMemberName("TextMessageTemplateLeft");
                 userType.AddMemberName("TextMessageTemplateRight");
                 userType.AddMemberName("ImageMessageTemplateLeft");
@@ -512,61 +531,61 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 15:   //  Microsoft.UI.Xaml.Controls.DataTemplateSelector
+            case 16:   //  Microsoft.UI.Xaml.Controls.DataTemplateSelector
                 xamlType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  Microsoft.UI.Xaml.DataTemplate
+            case 17:   //  Microsoft.UI.Xaml.DataTemplate
                 xamlType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 17:   //  Int32
+            case 18:   //  Int32
                 xamlType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  SocialStuff.View.ChatMessagesView
+            case 19:   //  SocialStuff.View.ChatMessagesView
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.StaticInitializer = StaticInitializer_18_ChatMessagesView;
+                userType.StaticInitializer = StaticInitializer_19_ChatMessagesView;
                 userType.AddMemberName("SelectedChat");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 19:   //  SocialStuff.View.CreateChatView
+            case 20:   //  SocialStuff.View.CreateChatView
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.StaticInitializer = StaticInitializer_19_CreateChatView;
+                userType.StaticInitializer = StaticInitializer_20_CreateChatView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 20:   //  SocialStuff.ViewModel.FeedViewModel
+            case 21:   //  SocialStuff.ViewModel.FeedViewModel
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_20_FeedViewModel;
-                userType.StaticInitializer = StaticInitializer_20_FeedViewModel;
+                userType.Activator = Activate_21_FeedViewModel;
+                userType.StaticInitializer = StaticInitializer_21_FeedViewModel;
                 userType.AddMemberName("Posts");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 21:   //  System.Collections.ObjectModel.ObservableCollection`1<SocialStuff.Model.Post>
+            case 22:   //  System.Collections.ObjectModel.ObservableCollection`1<SocialStuff.Model.Post>
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<SocialStuff.Model.Post>"));
-                userType.StaticInitializer = StaticInitializer_21_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_21_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_22_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_22_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 22:   //  System.Collections.ObjectModel.Collection`1<SocialStuff.Model.Post>
+            case 23:   //  System.Collections.ObjectModel.Collection`1<SocialStuff.Model.Post>
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_22_Collection;
-                userType.StaticInitializer = StaticInitializer_22_Collection;
-                userType.CollectionAdd = VectorAdd_22_Collection;
+                userType.Activator = Activate_23_Collection;
+                userType.StaticInitializer = StaticInitializer_23_Collection;
+                userType.CollectionAdd = VectorAdd_23_Collection;
                 xamlType = userType;
                 break;
 
-            case 23:   //  SocialStuff.Model.Post
+            case 24:   //  SocialStuff.Model.Post
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_23_Post;
+                userType.StaticInitializer = StaticInitializer_24_Post;
                 userType.AddMemberName("PostID");
                 userType.AddMemberName("Title");
                 userType.AddMemberName("Category");
@@ -576,83 +595,100 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 24:   //  String
+            case 25:   //  String
                 xamlType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 25:   //  System.DateTime
+            case 26:   //  System.DateTime
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_25_DateTime;
+                userType.StaticInitializer = StaticInitializer_26_DateTime;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 26:   //  System.ValueType
+            case 27:   //  System.ValueType
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_26_ValueType;
+                userType.StaticInitializer = StaticInitializer_27_ValueType;
                 xamlType = userType;
                 break;
 
-            case 27:   //  SocialStuff.View.FeedView
+            case 28:   //  SocialStuff.View.FeedView
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.StaticInitializer = StaticInitializer_27_FeedView;
+                userType.StaticInitializer = StaticInitializer_28_FeedView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 28:   //  SocialStuff.View.FriendsListView
+            case 29:   //  SocialStuff.View.FriendsListView
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.StaticInitializer = StaticInitializer_28_FriendsListView;
+                userType.StaticInitializer = StaticInitializer_29_FriendsListView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 29:   //  SocialStuff.View.GenerateTransferView
+            case 30:   //  SocialStuff.View.GenerateTransferView
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.StaticInitializer = StaticInitializer_29_GenerateTransferView;
+                userType.StaticInitializer = StaticInitializer_30_GenerateTransferView;
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 30:   //  SocialStuff.ViewModel.GenerateTransferViewModel
+            case 31:   //  SocialStuff.ViewModel.GenerateTransferViewModel
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_30_GenerateTransferViewModel;
+                userType.StaticInitializer = StaticInitializer_31_GenerateTransferViewModel;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 31:   //  SocialStuff.View.LeaveChatView
+            case 32:   //  SocialStuff.View.LeaveChatView
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.StaticInitializer = StaticInitializer_31_LeaveChatView;
+                userType.StaticInitializer = StaticInitializer_32_LeaveChatView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 32:   //  SocialStuff.MainWindow
+            case 33:   //  SocialStuff.MainWindow
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_32_MainWindow;
-                userType.StaticInitializer = StaticInitializer_32_MainWindow;
+                userType.Activator = Activate_33_MainWindow;
+                userType.StaticInitializer = StaticInitializer_33_MainWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 33:   //  Microsoft.UI.Xaml.Window
+            case 34:   //  Microsoft.UI.Xaml.Window
                 xamlType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 34:   //  SocialStuff.Views.ReportView
-                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.StaticInitializer = StaticInitializer_34_ReportView;
+            case 35:   //  SocialStuff.View.NotificationView
+                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_35_NotificationView;
+                userType.StaticInitializer = StaticInitializer_35_NotificationView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 35:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 36:   //  SocialStuff.Views.ReportView
+                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
+                userType.StaticInitializer = StaticInitializer_36_ReportView;
+                userType.AddMemberName("ViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 37:   //  SocialStuff.ViewModel.ReportViewModel
+                userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.StaticInitializer = StaticInitializer_37_ReportViewModel;
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 38:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_35_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_35_TreeViewNode;
+                userType.Activator = Activate_38_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_38_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -664,10 +700,10 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 36:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 39:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_36_IList;
-                userType.CollectionAdd = VectorAdd_36_IList;
+                userType.StaticInitializer = StaticInitializer_39_IList;
+                userType.CollectionAdd = VectorAdd_39_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -915,52 +951,57 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
             var that = (global::SocialStuff.View.GenerateTransferView)instance;
             return that.ViewModel;
         }
-        private object get_19_TreeViewNode_Children(object instance)
+        private object get_19_ReportView_ViewModel(object instance)
+        {
+            var that = (global::SocialStuff.Views.ReportView)instance;
+            return that.ViewModel;
+        }
+        private object get_20_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_20_TreeViewNode_Content(object instance)
+        private object get_21_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_20_TreeViewNode_Content(object instance, object Value)
+        private void set_21_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_21_TreeViewNode_Depth(object instance)
+        private object get_22_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_22_TreeViewNode_HasChildren(object instance)
+        private object get_23_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_23_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_24_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_23_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_24_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_24_TreeViewNode_IsExpanded(object instance)
+        private object get_25_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_24_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_25_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_25_TreeViewNode_Parent(object instance)
+        private object get_26_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -1089,50 +1130,56 @@ namespace SocialStuff.SocialStuff_XamlTypeInfo
                 xamlMember.Getter = get_18_GenerateTransferView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "SocialStuff.Views.ReportView.ViewModel":
+                userType = (global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SocialStuff.Views.ReportView");
+                xamlMember = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlMember(this, "ViewModel", "SocialStuff.ViewModel.ReportViewModel");
+                xamlMember.Getter = get_19_ReportView_ViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_19_TreeViewNode_Children;
+                xamlMember.Getter = get_20_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_20_TreeViewNode_Content;
-                xamlMember.Setter = set_20_TreeViewNode_Content;
+                xamlMember.Getter = get_21_TreeViewNode_Content;
+                xamlMember.Setter = set_21_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_21_TreeViewNode_Depth;
+                xamlMember.Getter = get_22_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_22_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_23_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_23_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_23_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_24_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_24_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_24_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_24_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_25_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_25_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::SocialStuff.SocialStuff_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::SocialStuff.SocialStuff_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_25_TreeViewNode_Parent;
+                xamlMember.Getter = get_26_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

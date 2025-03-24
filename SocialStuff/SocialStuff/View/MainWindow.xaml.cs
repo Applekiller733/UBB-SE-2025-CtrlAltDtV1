@@ -35,6 +35,7 @@ namespace SocialStuff
         private MessageService messageService;
         private FeedService feedService;
         private ReportService reportService;
+        private NotificationService notificationService;
 
         public MainWindow()
         {
@@ -42,6 +43,7 @@ namespace SocialStuff
 
             mainWindow = this;
             Repository repo = new Repository();
+            notificationService = new NotificationService(repo);
             userService = new UserService(repo);
             chatService = new ChatService(repo);
             messageService = new MessageService(repo);
@@ -76,6 +78,15 @@ namespace SocialStuff
                 var feedViewModel = new FeedViewModel(feedService);
                 var feedView = new FeedView(feedViewModel, userService, feedService);
                 RightFrame.Content = feedView;
+            }
+        }
+
+        private void Notifications_click(object sender, RoutedEventArgs e)
+        {
+            if (RightFrame.Content == null || !(RightFrame.Content is NotificationView))
+            {
+                var notificationView = new NotificationView();
+                RightFrame.Content = notificationView;
             }
         }
     }

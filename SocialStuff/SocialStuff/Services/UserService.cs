@@ -14,11 +14,13 @@ namespace SocialStuff.Services
     public class UserService
     {
         private Repository repo;
+        private readonly NotificationService notificationService;
         private int UserID;
 
         public UserService(Repository repo)
         {
             this.repo = repo;
+            this.notificationService = new NotificationService(repo);
             this.UserID = GetCurrentUser();
         }
 
@@ -27,18 +29,6 @@ namespace SocialStuff.Services
             return repo;
         }
 
-        public void MarkUserAsDangerousAndGiveTimeout(User user)
-        {
-            if (user.GetReportedCount() >= 1)
-            {
-                user.SetTimeoutEnd(DateTime.Now.AddMinutes(3));
-            }
-        }
-
-        public bool IsUserInTimeout(User user)
-        {
-            return user.GetTimeoutEnd() != null && user.GetTimeoutEnd() > DateTime.Now;
-        }
         public void AddFriend(int userID, int newFriendID)
         {
             var user = GetUserById(userID);
@@ -49,6 +39,7 @@ namespace SocialStuff.Services
             {
                 repo.AddFriend(userID, newFriendID);
                 user.AddFriend(newFriendID);
+                notificationService.SendFriendNotification(userID, newFriendID);
             }
         }
 
@@ -62,6 +53,7 @@ namespace SocialStuff.Services
             {
                 repo.DeleteFriend(userID, oldFriendID);
                 user.RemoveFriend(oldFriendID);
+                notificationService.SendRemoveFriendNotification(userID, oldFriendID);
             }
         }
 
@@ -125,7 +117,6 @@ namespace SocialStuff.Services
             return repo.GetUserFriendsList(userID);
         }
 
-
         public List<int> GetChatsByUser(int userID)
         {
             var chats = repo.GetChatsIDs(userID);
@@ -180,6 +171,19 @@ namespace SocialStuff.Services
         public int GetCurrentUser()
         {
             return repo.GetLoggedInUserID(); // This should be replaced with actual logic to get the logged-in user.
+        }
+
+        public void MarkUserAsDangerousAndGiveTimeout(User user)
+        {
+            if (user.GetReportedCount() >= 1)
+            {
+                user.SetTimeoutEnd(DateTime.Now.AddMinutes(3));
+            }
+        }
+
+        public bool IsUserInTimeout(User user)
+        {
+            return user.GetTimeoutEnd() != null && user.GetTimeoutEnd() > DateTime.Now;
         }
     }
 }

@@ -693,3 +693,8 @@ C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\obj\x64\Debug\n
 C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\ReportView.xaml
 C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\ReportView.xbf
 C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\ReportView.xbf
+C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\NotificationView.g.i.cs
+C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\NotificationView.g.cs
+C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\NotificationView.xaml
+C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\NotificationView.xbf
+C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\View\NotificationView.xbf

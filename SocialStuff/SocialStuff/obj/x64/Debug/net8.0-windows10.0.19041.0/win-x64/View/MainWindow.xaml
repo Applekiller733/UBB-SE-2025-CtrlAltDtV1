@@ -26,7 +26,7 @@
                 <Button x:ConnectionId='5' Content="Chat"                   />
                 <Button x:ConnectionId='6' Content="Feed"                    />
                 <Button x:ConnectionId='7' Content="Friends"                      />
-                <Button Content="Notifications" />
+                <Button x:ConnectionId='8' Content="Notifications"                             />
             </StackPanel>
 
             <Frame x:ConnectionId='4' x:Name="LeftFrame" Grid.Row="1"/>

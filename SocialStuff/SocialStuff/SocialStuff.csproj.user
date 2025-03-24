@@ -8,6 +8,9 @@
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="View\NotificationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\ReportView.xaml">
       <SubType>Designer</SubType>
     </Page>

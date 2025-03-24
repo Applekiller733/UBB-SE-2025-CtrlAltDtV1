@@ -10,4 +10,5 @@ View\GenerateTransferView.xbf
 View\LeaveChatView.xbf
 View\MainWindow.xbf
 View\MessageTemplates.xbf
+View\NotificationView.xbf
 View\ReportView.xbf
