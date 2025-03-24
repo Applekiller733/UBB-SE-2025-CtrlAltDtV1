@@ -76,6 +76,7 @@ namespace SocialStuff.Views
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
+            // reportcommand
             ViewModel.SubmitCommand.Execute(null);
         }
 

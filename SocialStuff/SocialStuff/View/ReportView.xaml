@@ -29,8 +29,10 @@
                       Width="Auto"
                       SelectionChanged="CategoryComboBox_SelectionChanged"
                       HorizontalAlignment="Stretch">
-                <ComboBoxItem Content="Spam" />
-                <ComboBoxItem Content="Harassment" />
+                <ComboBoxItem Content="Stinky" />
+                <ComboBoxItem Content="Bad Language" />
+                <ComboBoxItem Content="Ugly Emoji" />
+                <ComboBoxItem Content="Scamming" />
                 <ComboBoxItem Content="Other" />
             </ComboBox>
         </StackPanel>

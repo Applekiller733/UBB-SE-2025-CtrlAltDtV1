@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-24T04:11:10.321</Modified>
+      <Modified>2025-03-24T10:40:00.057</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-03-24T04:11:09.898</Modified>
+      <Modified>2025-03-24T09:36:35.052</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.runtimeconfig.json">
       <PackagePath>SocialStuff.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SocialStuff.dll">
       <PackagePath>SocialStuff.dll</PackagePath>
-      <Modified>2025-03-24T04:11:09.475</Modified>
+      <Modified>2025-03-24T10:39:59.390</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>SocialStuff.exe</PackagePath>
-      <Modified>2025-03-24T04:11:09.504</Modified>
+      <Modified>2025-03-24T10:39:59.454</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alexe\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.13\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>

@@ -187,7 +187,8 @@ namespace SocialStuff.Services
 
             if (lastMessage == null)
             {
-                throw new Exception("No messages to show in the chat with id: " + ChatID);
+                // return a lower datetime
+                return DateTime.MinValue;
             }
 
             return lastMessage.getTimestamp();

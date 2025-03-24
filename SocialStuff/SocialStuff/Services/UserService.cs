@@ -16,6 +16,7 @@ namespace SocialStuff.Services
         private Repository repo;
         private readonly NotificationService notificationService;
         private int UserID;
+        private static bool isUserInTimeout;
 
         public UserService(Repository repo)
         {
@@ -184,6 +185,15 @@ namespace SocialStuff.Services
         public bool IsUserInTimeout(User user)
         {
             return user.GetTimeoutEnd() != null && user.GetTimeoutEnd() > DateTime.Now;
+        }
+        public static bool IsUserInTimeout()
+        {
+            return isUserInTimeout;
+        }
+
+        public static void setUserTimeout(bool value)
+        {
+            isUserInTimeout = true;
         }
     }
 }
