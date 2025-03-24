@@ -69,6 +69,9 @@ namespace SocialStuff.ViewModel
                     ChatList.Add(chat);
                 }
             }
+            // sort chats by last message time
+            ChatList = new ObservableCollection<Chat>(ChatList.OrderByDescending(chat => chatService.getLastMessageTimeStamp(chat.getChatID())));
+
         }
     }
     
