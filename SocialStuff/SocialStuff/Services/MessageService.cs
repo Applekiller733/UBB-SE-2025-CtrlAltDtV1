@@ -38,6 +38,7 @@ namespace SocialStuff.Services
         public void sendMessage(int SenderID, int ChatID, string Content)
         {
             if (this.IsUserInTimeout(SenderID)) return;
+            if(UserService.IsUserInTimeout()) return;
             this.repository.AddTextMessage(SenderID, ChatID, Content);
         }
 

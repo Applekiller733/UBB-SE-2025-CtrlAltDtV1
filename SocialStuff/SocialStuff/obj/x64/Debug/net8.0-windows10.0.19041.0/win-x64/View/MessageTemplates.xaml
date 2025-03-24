@@ -135,6 +135,7 @@ CommandParameter="{Binding}"/>
                 <Grid>
                     <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
                         <StackPanel>
+                            <TextBlock Text="Sent:" Foreground="White" FontWeight="Bold"/>
                             <TextBlock Text="{Binding FormattedAmount }" 
                                        Foreground="White" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Description}" Foreground="White" TextWrapping="Wrap"/>
@@ -183,6 +184,7 @@ CommandParameter="{Binding}"/>
                     </Button>
                     <Border Background="#4e6e8e" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
                         <StackPanel>
+                            <TextBlock Text="Sent:" Foreground="White" FontWeight="Bold"/>
                             <TextBlock Text="{Binding FormattedAmount }" 
                                        Foreground="Black" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Description}" Foreground="Black" TextWrapping="Wrap"/>
