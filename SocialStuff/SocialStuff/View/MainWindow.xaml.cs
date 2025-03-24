@@ -33,6 +33,9 @@ namespace SocialStuff
         private UserService userService;
         private ChatService chatService;
         private MessageService messageService;
+        private FeedService feedService;
+        private ReportService reportService;
+        private NotificationService notificationService;
 
         public MainWindow()
         {
@@ -40,16 +43,32 @@ namespace SocialStuff
 
             mainWindow = this;
             Repository repo = new Repository();
+            notificationService = new NotificationService(repo);
             userService = new UserService(repo);
             chatService = new ChatService(repo);
             messageService = new MessageService(repo);
+            feedService = new FeedService(repo, userService);
+            reportService = new ReportService(repo);
+
+            if (LeftFrame.Content == null || !(LeftFrame.Content is ChatListView))
+            {
+                var chatListView = new ChatListView(this, chatService, userService, reportService, messageService, this.RightFrame);
+                LeftFrame.Content = chatListView;
+            }
+            if (RightFrame.Content == null || !(RightFrame.Content is FeedView))
+            {
+
+                var feedViewModel = new FeedViewModel(feedService);
+                var feedView = new FeedView(feedViewModel, userService, feedService);
+                RightFrame.Content = feedView;
+            }
         }
 
         private void Chat_Click(object sender, RoutedEventArgs e)
         {
             if (LeftFrame.Content == null || !(LeftFrame.Content is ChatListView))
             {
-                var chatListView = new ChatListView(this, chatService, userService, messageService, this.RightFrame);
+                var chatListView = new ChatListView(this, chatService, userService, reportService, messageService, this.RightFrame);
                 LeftFrame.Content = chatListView;
             }
         }
@@ -65,6 +84,27 @@ namespace SocialStuff
             {
                 var friendsListView = new FriendsListView(chatService, userService, messageService, this.RightFrame);
                 LeftFrame.Content = friendsListView;
+
+            }
+        }
+
+        private void Feed_Click(object sender, RoutedEventArgs e)
+        {
+            if (RightFrame.Content == null || !(RightFrame.Content is FeedView))
+            {
+
+                var feedViewModel = new FeedViewModel(feedService);
+                var feedView = new FeedView(feedViewModel, userService, feedService);
+                RightFrame.Content = feedView;
+            }
+        }
+
+        private void Notifications_click(object sender, RoutedEventArgs e)
+        {
+            if (RightFrame.Content == null || !(RightFrame.Content is NotificationView))
+            {
+                var notificationView = new NotificationView();
+                RightFrame.Content = notificationView;
             }
         }
     }

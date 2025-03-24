@@ -10,9 +10,7 @@ namespace SocialStuff.Data.Database
 {
     public class DatabaseConnection
     {
-        // change the connectionString to yours
-        // #TODO  an .env file
-        string connectionString = @"Data Source=DESKTOP-VRGLOTC\SQLEXPRESS;Initial Catalog=BankingDB;Integrated Security=True;TrustServerCertificate=True";
+        string connectionString = @"Data Source=razvan\sqlexpress01;Initial Catalog=BankingDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
 
 
         private SqlConnection conn;

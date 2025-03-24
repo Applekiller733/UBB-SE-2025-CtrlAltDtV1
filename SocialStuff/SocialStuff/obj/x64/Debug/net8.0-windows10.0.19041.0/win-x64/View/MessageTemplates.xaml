@@ -22,10 +22,10 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
-                        </Button.Flyout>
+                        </Button.Flyout>    
                     </Button>
                 </Grid>
             </StackPanel>
@@ -47,8 +47,12 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Delete" 
+                                                Icon="Delete"
+                                                Command="{Binding DataContext.DeleteMessageCommand, ElementName=chatMessagesView}"
+                                                CommandParameter="{Binding}"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -79,8 +83,8 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+                                CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -104,8 +108,12 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Delete" 
+                                                Icon="Delete"
+                                                Command="{Binding DataContext.DeleteMessageCommand, ElementName=chatMessagesView}"
+                                                CommandParameter="{Binding}"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -139,8 +147,8 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -164,8 +172,12 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Delete"
+                                                Icon="Delete"
+                                                Command="{Binding DataContext.DeleteMessageCommand, ElementName=chatMessagesView}"
+                                                CommandParameter="{Binding}"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -191,6 +203,7 @@
                 <Grid>
                     <Border Background="#39374f" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
                         <StackPanel>
+                            <TextBlock Text="Requested:" Foreground="White" FontWeight="Bold"/>
                             <TextBlock Text="{Binding FormattedAmount }" 
                                        Foreground="White" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Description}" Foreground="White" TextWrapping="Wrap"/>
@@ -206,8 +219,8 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -231,24 +244,26 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Delete" 
+                                                Icon="Delete"
+                                                Command="{Binding DataContext.DeleteMessageCommand, ElementName=chatMessagesView}"
+                                                CommandParameter="{Binding}"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
                     <Border Background="#4e6e8e" Padding="10" CornerRadius="10" Margin="5" MaxWidth="400">
                         <StackPanel>
+                            <TextBlock Text="You requested:" Foreground="White" FontWeight="Bold"/>
                             <TextBlock Text="{Binding FormattedAmount }" 
                                        Foreground="Black" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Description}" Foreground="Black" TextWrapping="Wrap"/>
-                            <Button Content="Accept Request" Background="#4CAF50" Foreground="White" 
-                                    HorizontalAlignment="Center" Padding="5" Margin="5" 
-                                    Command="{Binding AcceptRequestCommand}"/>
+                            
                         </StackPanel>
                     </Border>
                 </Grid>
             </StackPanel>
         </Grid>
     </DataTemplate>
-
 </ResourceDictionary>

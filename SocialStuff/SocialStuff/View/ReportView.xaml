@@ -1,0 +1,70 @@
+<Window
+    x:Class="SocialStuff.Views.ReportView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SocialStuff.Views"
+    Title="Report Issue">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Grid.Row="0" 
+                   Text="Report an Issue" 
+                   FontSize="18" 
+                   FontWeight="Bold" 
+                   Margin="0,0,0,20"/>
+
+        <!-- Category Selection -->
+        <StackPanel Grid.Row="1" Margin="0,0,0,15">
+            <TextBlock Text="Select Category:" 
+                       Margin="0,0,0,5"/>
+            <ComboBox x:Name="CategoryComboBox"
+                      Width="Auto"
+                      SelectionChanged="CategoryComboBox_SelectionChanged"
+                      HorizontalAlignment="Stretch">
+                <ComboBoxItem Content="Spam" />
+                <ComboBoxItem Content="Harassment" />
+                <ComboBoxItem Content="Other" />
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Other Reason Text Box -->
+        <StackPanel Grid.Row="2" Margin="0,0,0,15">
+            <TextBlock x:Name="OtherReasonLabel" 
+                       Text="Please Specify:" 
+                       Margin="0,0,0,5"
+                       Visibility="Collapsed"/>
+            <TextBox x:Name="OtherReasonTextBox"
+                     Height="80"
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"
+                     Visibility="Collapsed"
+                     TextChanged="OtherReasonTextBox_TextChanged"/>
+        </StackPanel>
+
+        <!-- Space Filler -->
+        <Grid Grid.Row="3"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="4" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right">
+            <Button Content="Cancel"
+                    Click="CancelButton_Click"
+                    Width="80"
+                    Margin="0,0,10,0"/>
+            <Button Content="Submit"
+                    Click="SubmitButton_Click"
+                    Width="80"
+                    Background="#0078D7"
+                    Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Window>

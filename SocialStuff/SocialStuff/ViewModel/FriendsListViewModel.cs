@@ -1,4 +1,5 @@
 ﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using SocialStuff.Model;
 using SocialStuff.Services;
 using System;
@@ -43,7 +44,7 @@ namespace SocialStuff.ViewModel
                 if (searchQuery != value)
                 {
                     searchQuery = value;
-                    OnPropertyChanged(nameof(searchQuery));
+                    OnPropertyChanged(nameof(SearchQuery));
                     FilterFriends();
                 }
             }
@@ -70,7 +71,7 @@ namespace SocialStuff.ViewModel
         public void RemoveFriendFromList(object user)
         {
             var friend = user as User;
-            if(friend != null)
+            if (friend != null)
             {
                 this.userService.RemoveFriend(this.userService.GetCurrentUser(), friend.GetUserId());
             }
@@ -91,7 +92,8 @@ namespace SocialStuff.ViewModel
 
             foreach (var friend in allFriends.Where(f =>
                          string.IsNullOrEmpty(SearchQuery) ||
-                         f.Username.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase)))
+                         f.Username.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase) ||
+                         f.PhoneNumber.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase)))
             {
                 FriendsList.Add(friend);
             }

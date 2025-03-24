@@ -10,6 +10,11 @@
     x:Name="chatMessagesView"
     >
 
+    <Page.Resources>
+        <local:EmoticonToEmojiConverter x:Key="EmoticonConverter"/>
+        <local:CommandBindingProxy x:Key="DeleteCommandProxy" Command="{Binding DeleteMessageCommand}"/>
+    </Page.Resources>
+
     <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -34,8 +39,8 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Margin="0,0,10,0" Content="Add a new member"></Button>
-                    <Button Grid.Column="1" Content="Leave Chat"></Button>
+                    <Button Grid.Column="0" Margin="0,0,10,0" Content="Add a new member" Click="AddNewMember_Click"></Button>
+                    <Button Grid.Column="1" Content="Leave Chat" Click="LeaveChat_Click"></Button>
                 </Grid>
 
             </Grid>
@@ -48,16 +53,17 @@
                           Padding="10"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           >
+
                 <ListView.ItemTemplateSelector>
                     <local:MessageTemplateSelector 
-                            TextMessageTemplateLeft="{StaticResource TextMessageTemplateLeft}"
-                            TextMessageTemplateRight="{StaticResource TextMessageTemplateRight}"
-                            ImageMessageTemplateLeft="{StaticResource ImageMessageTemplateLeft}"
-                            ImageMessageTemplateRight="{StaticResource ImageMessageTemplateRight}"
-                            TransferMessageTemplateLeft="{StaticResource TransferMessageTemplateLeft}"
-                            TransferMessageTemplateRight="{StaticResource TransferMessageTemplateRight}"
-                            RequestMessageTemplateLeft="{StaticResource RequestMessageTemplateLeft}"
-                            RequestMessageTemplateRight="{StaticResource RequestMessageTemplateRight}" />
+                        TextMessageTemplateLeft="{StaticResource TextMessageTemplateLeft}"
+                        TextMessageTemplateRight="{StaticResource TextMessageTemplateRight}"
+                        ImageMessageTemplateLeft="{StaticResource ImageMessageTemplateLeft}"
+                        ImageMessageTemplateRight="{StaticResource ImageMessageTemplateRight}"
+                        TransferMessageTemplateLeft="{StaticResource TransferMessageTemplateLeft}"
+                        TransferMessageTemplateRight="{StaticResource TransferMessageTemplateRight}"
+                        RequestMessageTemplateLeft="{StaticResource RequestMessageTemplateLeft}"
+                        RequestMessageTemplateRight="{StaticResource RequestMessageTemplateRight}"/>
                 </ListView.ItemTemplateSelector>
             </ListView>
         </Border>
@@ -115,6 +121,7 @@
                 <Button Width="42" Height="40"
                         VerticalAlignment="Center" 
                         Grid.Column="3"
+                        Margin="0,0,10,0"
                         Command="{Binding SendMessageCommand}">
                     <FontIcon Glyph="&#xE725;" 
                               Width="20" 
@@ -123,18 +130,16 @@
                               VerticalAlignment="Center"/>
                 </Button>
 
-                <DropDownButton Grid.Column="4" Margin="10,0">
-                    <DropDownButton.Content>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" />
-                    </DropDownButton.Content>
-                    <DropDownButton.Flyout>
-                        <MenuFlyout Placement="Bottom">
-                            <MenuFlyoutItem Text="Transfer"/>
-                            <MenuFlyoutItem Text="Request"/>
-                            <MenuFlyoutItem Text="Split The Bill"/>
-                        </MenuFlyout>
-                    </DropDownButton.Flyout>
-                </DropDownButton>
+                <Button Width="42" Height="40"
+                    VerticalAlignment="Center" 
+                    Grid.Column="4"
+                    Click = "SendTransfer_Click">
+                    <Image Source="https://icon-library.com/images/white-money-icon/white-money-icon-2.jpg"
+                          Width="20" 
+                          Height="20" 
+                          HorizontalAlignment="Center" 
+                          VerticalAlignment="Center"/>
+                </Button>
             </Grid>
         </Border>
     </Grid>

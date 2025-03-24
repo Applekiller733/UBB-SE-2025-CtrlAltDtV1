@@ -7,13 +7,16 @@ namespace SocialStuff.View
 {
     public sealed partial class FeedView : Page
     {
-        public FeedView()
+        private FeedViewModel feedViewModel;
+        private UserService userService;
+        private FeedService feedService;
+        public FeedView(FeedViewModel feedViewModel, UserService userService, FeedService feedService)
         {
             this.InitializeComponent();
-            var repository = new Repository();
-            var userService = new UserService(repository);
-            var feedService = new FeedService(repository, userService);
-            this.DataContext = new FeedViewModel(feedService);
+            this.userService = userService;
+            this.feedService = feedService;
+            this.feedViewModel = feedViewModel;
+            this.DataContext = feedViewModel;
         }
     }
 }

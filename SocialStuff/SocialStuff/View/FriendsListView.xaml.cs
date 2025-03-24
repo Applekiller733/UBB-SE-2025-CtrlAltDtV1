@@ -30,6 +30,7 @@ namespace SocialStuff.View
         private UserService userService;
         private MessageService messageService;
         private Frame RightFrame;
+        private Page AddFriendsPage;
 
         public FriendsListView(ChatService chatService, UserService userService, MessageService messageService, Frame RightFrame)
         {
@@ -38,7 +39,7 @@ namespace SocialStuff.View
             this.userService = userService;
             this.messageService = messageService;
             this.RightFrame = RightFrame;
-            this.friendsListViewModel = new FriendsListViewModel(chatService,userService,messageService);
+            this.friendsListViewModel = new FriendsListViewModel(chatService, userService, messageService);
 
             this.DataContext = friendsListViewModel;
         }

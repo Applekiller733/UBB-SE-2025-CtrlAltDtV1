@@ -26,7 +26,7 @@
                 <Button Content="Chat" Click="Chat_Click"/>
                 <Button Content="Feed" Click="Feed_Click"/>
                 <Button Content="Friends" Click="Friends_Click"/>
-                <Button Content="Notifications" />
+                <Button Content="Notifications" Click="Notifications_click" />
             </StackPanel>
 
             <Frame x:Name="LeftFrame" Grid.Row="1"/>

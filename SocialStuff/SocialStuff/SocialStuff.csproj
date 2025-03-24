@@ -71,10 +71,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="View\AddFriendsView.xaml" />
+    <None Remove="View\AddNewMemberView.xaml" />
     <None Remove="View\ChatListView.xaml" />
     <None Remove="View\CreateChatView.xaml" />
     <None Remove="View\FriendsListView.xaml" />
+    <None Remove="View\LeaveChatView.xaml" />
     <None Remove="View\MessageTemplates.xaml" />
+    <None Remove="View\NotificationView.xaml" />
+    <None Remove="View\ReportView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\NotificationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\ReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\LeaveChatView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\AddNewMemberView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\AddFriendsView.xaml">
