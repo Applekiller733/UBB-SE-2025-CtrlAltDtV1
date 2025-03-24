@@ -3,12 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\messagetemplates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\messagetemplates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\viewmodel\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\notificationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\notificationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\feedview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\feedview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\viewmodel\\feedviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\feedviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\feedview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\feedview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\services\\feedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\services\\feedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\messagetemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\messagetemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\messagetemplates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\messagetemplates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\messagetemplates.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,14 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\chatmessagesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\chatmessagesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\notificationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,28 +79,8 @@
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\reportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\viewmodel\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\viewmodel\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\notificationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\notificationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\feedview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\feedview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\view\\feedview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|solutionrelative:socialstuff\\view\\feedview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7F2FD0-7F7E-4C40-B094-522416594283}|SocialStuff\\SocialStuff.csproj|c:\\users\\alexe\\source\\repos\\otherrepoiss\\socialstuff\\socialstuff\\model\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -125,20 +133,111 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MessageTemplates.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MessageTemplates.xaml.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\MessageTemplates.xaml.cs",
-              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MessageTemplates.xaml.cs",
-              "RelativeToolTip": "SocialStuff\\View\\MessageTemplates.xaml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SocialStuff\\View\\MainWindow.xaml.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAIAwwDEAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T03:20:49.077Z",
+              "WhenOpened": "2025-03-24T01:30:14.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NotificationView.xaml",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\NotificationView.xaml",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\NotificationView.xaml",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\NotificationView.xaml",
+              "RelativeToolTip": "SocialStuff\\View\\NotificationView.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-24T02:53:30.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NotificationViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\ViewModel\\NotificationViewModel.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\NotificationViewModel.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\ViewModel\\NotificationViewModel.cs",
+              "RelativeToolTip": "SocialStuff\\ViewModel\\NotificationViewModel.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAtwDkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T02:54:27.07Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Data\\Repository.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\Data\\Repository.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Data\\Repository.cs",
+              "RelativeToolTip": "SocialStuff\\Data\\Repository.cs",
+              "ViewState": "AgIAACcCAAAAAAAAAAApwDYCAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T02:47:43.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FeedView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\FeedView.xaml.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\FeedView.xaml.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\FeedView.xaml.cs",
+              "RelativeToolTip": "SocialStuff\\View\\FeedView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T02:52:05.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\Services\\NotificationService.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Services\\NotificationService.cs",
+              "RelativeToolTip": "SocialStuff\\Services\\NotificationService.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAApwG0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T02:47:32.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FeedView.xaml",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\FeedView.xaml",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\FeedView.xaml",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\FeedView.xaml",
+              "RelativeToolTip": "SocialStuff\\View\\FeedView.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-24T02:52:00.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FeedViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\ViewModel\\FeedViewModel.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\FeedViewModel.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\ViewModel\\FeedViewModel.cs",
+              "RelativeToolTip": "SocialStuff\\ViewModel\\FeedViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T03:58:57.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "MessageTemplateSelector.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MessageTemplateSelector.cs",
               "RelativeDocumentMoniker": "SocialStuff\\View\\MessageTemplateSelector.cs",
@@ -151,20 +250,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
+              "Title": "FeedService.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Services\\FeedService.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\Services\\FeedService.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Services\\FeedService.cs",
+              "RelativeToolTip": "SocialStuff\\Services\\FeedService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T03:57:10.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "MessageTemplates.xaml",
-              "DocumentMoniker": "C:\\Users\\alexe\\Source\\Repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MessageTemplates.xaml",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MessageTemplates.xaml",
               "RelativeDocumentMoniker": "SocialStuff\\View\\MessageTemplates.xaml",
-              "ToolTip": "C:\\Users\\alexe\\Source\\Repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MessageTemplates.xaml",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MessageTemplates.xaml",
               "RelativeToolTip": "SocialStuff\\View\\MessageTemplates.xaml",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAAAM0AAABdAAAAAAAAAA==",
+              "ViewState": "AgIAAOoAAAAAAAAAAAAAAPIAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-03-24T03:15:43.478Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "ChatMessagesView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\ChatMessagesView.xaml.cs",
               "RelativeDocumentMoniker": "SocialStuff\\View\\ChatMessagesView.xaml.cs",
@@ -172,12 +284,23 @@
               "RelativeToolTip": "SocialStuff\\View\\ChatMessagesView.xaml.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T03:14:14.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T03:14:14.244Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
+              "Title": "MessageTemplates.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MessageTemplates.xaml.cs",
+              "RelativeDocumentMoniker": "SocialStuff\\View\\MessageTemplates.xaml.cs",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MessageTemplates.xaml.cs",
+              "RelativeToolTip": "SocialStuff\\View\\MessageTemplates.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T03:20:49.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "ChatMessagesView.xaml",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\ChatMessagesView.xaml",
               "RelativeDocumentMoniker": "SocialStuff\\View\\ChatMessagesView.xaml",
@@ -185,12 +308,11 @@
               "RelativeToolTip": "SocialStuff\\View\\ChatMessagesView.xaml",
               "ViewState": "AgIAADYAAAAAAAAAAAAAADkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-24T03:14:08.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T03:14:08.823Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "NotificationView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\NotificationView.xaml.cs",
               "RelativeDocumentMoniker": "SocialStuff\\View\\NotificationView.xaml.cs",
@@ -198,25 +320,11 @@
               "RelativeToolTip": "SocialStuff\\View\\NotificationView.xaml.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAApwBEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:53:44.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T02:53:44.622Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MainWindow.xaml.cs",
-              "RelativeToolTip": "SocialStuff\\View\\MainWindow.xaml.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAtwC4AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T01:30:14.727Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Services\\UserService.cs",
@@ -224,12 +332,11 @@
               "RelativeToolTip": "SocialStuff\\Services\\UserService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAApwBYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:49:28.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T02:49:28.674Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "MessageService.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Services\\MessageService.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Services\\MessageService.cs",
@@ -237,25 +344,11 @@
               "RelativeToolTip": "SocialStuff\\Services\\MessageService.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAApwB0AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T03:03:10.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T03:03:10.172Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Data\\Repository.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\Data\\Repository.cs",
-              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Data\\Repository.cs",
-              "RelativeToolTip": "SocialStuff\\Data\\Repository.cs",
-              "ViewState": "AgIAAPIAAAAAAAAAAAAhwPQAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:47:43.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "ChatService.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Services\\ChatService.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Services\\ChatService.cs",
@@ -263,12 +356,11 @@
               "RelativeToolTip": "SocialStuff\\Services\\ChatService.cs",
               "ViewState": "AgIAAJcAAAAAAAAAAAAcwKQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:59:24.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T02:59:24.777Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\MainWindow.xaml",
               "RelativeDocumentMoniker": "SocialStuff\\View\\MainWindow.xaml",
@@ -276,25 +368,11 @@
               "RelativeToolTip": "SocialStuff\\View\\MainWindow.xaml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-24T02:55:03.693Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T02:55:03.693Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "NotificationService.cs",
-              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Services\\NotificationService.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\Services\\NotificationService.cs",
-              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Services\\NotificationService.cs",
-              "RelativeToolTip": "SocialStuff\\Services\\NotificationService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBQAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:47:32.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "ReportViewModel.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\ViewModel\\ReportViewModel.cs",
               "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\ReportViewModel.cs",
@@ -302,64 +380,11 @@
               "RelativeToolTip": "SocialStuff\\ViewModel\\ReportViewModel.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAADgvw8AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:20:29.628Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T02:20:29.628Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "NotificationViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\ViewModel\\NotificationViewModel.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\ViewModel\\NotificationViewModel.cs",
-              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\ViewModel\\NotificationViewModel.cs",
-              "RelativeToolTip": "SocialStuff\\ViewModel\\NotificationViewModel.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAwwEkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:54:27.07Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "NotificationView.xaml",
-              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\NotificationView.xaml",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\NotificationView.xaml",
-              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\NotificationView.xaml",
-              "RelativeToolTip": "SocialStuff\\View\\NotificationView.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-24T02:53:30.335Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "FeedView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\FeedView.xaml.cs",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\FeedView.xaml.cs",
-              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\FeedView.xaml.cs",
-              "RelativeToolTip": "SocialStuff\\View\\FeedView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:52:05.764Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "FeedView.xaml",
-              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\FeedView.xaml",
-              "RelativeDocumentMoniker": "SocialStuff\\View\\FeedView.xaml",
-              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\FeedView.xaml",
-              "RelativeToolTip": "SocialStuff\\View\\FeedView.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-24T02:52:00.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\Model\\Notification.cs",
               "RelativeDocumentMoniker": "SocialStuff\\Model\\Notification.cs",
@@ -367,12 +392,11 @@
               "RelativeToolTip": "SocialStuff\\Model\\Notification.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAA/wCYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:46:53.321Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T02:46:53.321Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "ReportView.xaml",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\ReportView.xaml",
               "RelativeDocumentMoniker": "SocialStuff\\View\\ReportView.xaml",
@@ -380,12 +404,11 @@
               "RelativeToolTip": "SocialStuff\\View\\ReportView.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-24T00:57:28.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T00:57:28.028Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "ReportView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\ReportView.xaml.cs",
               "RelativeDocumentMoniker": "SocialStuff\\View\\ReportView.xaml.cs",
@@ -393,12 +416,11 @@
               "RelativeToolTip": "SocialStuff\\View\\ReportView.xaml.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAUwFoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T00:58:39.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T00:58:39.579Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "CountToVisibilityConverter.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\CountToVisibilityConverter.cs",
               "RelativeDocumentMoniker": "SocialStuff\\View\\CountToVisibilityConverter.cs",
@@ -406,12 +428,11 @@
               "RelativeToolTip": "SocialStuff\\View\\CountToVisibilityConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:36:04.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T02:36:04.853Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
               "DocumentMoniker": "C:\\Users\\alexe\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250310001\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250310001\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
@@ -419,25 +440,23 @@
               "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250310001\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
               "ViewState": "AgIAAN0BAAAAAAAAAAAwwPwBAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-03-24T02:38:59.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T02:38:59.905Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\alexe\\Source\\Repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\App.xaml",
               "RelativeDocumentMoniker": "SocialStuff\\App.xaml",
-              "ToolTip": "C:\\Users\\alexe\\Source\\Repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\App.xaml",
+              "ToolTip": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\App.xaml",
               "RelativeToolTip": "SocialStuff\\App.xaml",
               "ViewState": "AgIAAAEAAAAAAAAAAAAmwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-24T02:33:03.912Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T02:33:03.912Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "BooleanToVisibilityConverter.cs",
               "DocumentMoniker": "C:\\Users\\alexe\\source\\repos\\OtherRepoISS\\SocialStuff\\SocialStuff\\View\\BooleanToVisibilityConverter.cs",
               "RelativeDocumentMoniker": "SocialStuff\\View\\BooleanToVisibilityConverter.cs",
@@ -445,8 +464,7 @@
               "RelativeToolTip": "SocialStuff\\View\\BooleanToVisibilityConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T02:36:11.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T02:36:11.761Z"
             }
           ]
         }

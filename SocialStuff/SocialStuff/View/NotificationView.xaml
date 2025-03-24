@@ -22,7 +22,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Content="Clear All" Command="{Binding ClearAllCommand}" Margin="5"/>
+            <Button Content="Clear All" Command="{Binding ClearAllNotificationsCommand}" Margin="5"/>
         </StackPanel>
     </Grid>
 </Page>

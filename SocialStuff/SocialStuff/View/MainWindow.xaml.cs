@@ -49,6 +49,19 @@ namespace SocialStuff
             messageService = new MessageService(repo);
             feedService = new FeedService(repo, userService);
             reportService = new ReportService(repo);
+
+            if (LeftFrame.Content == null || !(LeftFrame.Content is ChatListView))
+            {
+                var chatListView = new ChatListView(this, chatService, userService, reportService, messageService, this.RightFrame);
+                LeftFrame.Content = chatListView;
+            }
+            if (RightFrame.Content == null || !(RightFrame.Content is FeedView))
+            {
+
+                var feedViewModel = new FeedViewModel(feedService);
+                var feedView = new FeedView(feedViewModel, userService, feedService);
+                RightFrame.Content = feedView;
+            }
         }
 
         private void Chat_Click(object sender, RoutedEventArgs e)
