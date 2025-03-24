@@ -4,7 +4,10 @@ View\AddNewMemberView.xbf
 View\ChatListView.xbf
 View\ChatMessagesView.xbf
 View\CreateChatView.xbf
+View\FeedView.xbf
 View\FriendsListView.xbf
+View\GenerateTransferView.xbf
 View\LeaveChatView.xbf
 View\MainWindow.xbf
 View\MessageTemplates.xbf
+View\ReportView.xbf

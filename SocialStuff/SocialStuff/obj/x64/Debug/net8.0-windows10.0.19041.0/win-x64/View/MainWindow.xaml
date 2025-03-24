@@ -24,8 +24,8 @@
 
             <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Padding="10">
                 <Button x:ConnectionId='5' Content="Chat"                   />
-                <Button Content="Feed"/>
-                <Button x:ConnectionId='6' Content="Friends"                      />
+                <Button x:ConnectionId='6' Content="Feed"                    />
+                <Button x:ConnectionId='7' Content="Friends"                      />
                 <Button Content="Notifications" />
             </StackPanel>
 

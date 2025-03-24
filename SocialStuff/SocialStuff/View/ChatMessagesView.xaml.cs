@@ -29,23 +29,25 @@ namespace SocialStuff.View
         private Frame RightFrame;
         private UserService userService;
         private ChatService chatService;
+        private ReportService reportService;
         private ChatListViewModel chatListViewModel;
         private GenerateTransferViewModel GenerateTransferViewModel;
 
-        public ChatMessagesView(ChatListViewModel chatListViewModel, Window mainWindow, Frame RightFrame, int ChatID, UserService userService, ChatService chatService, MessageService messageService)
+        public ChatMessagesView(ChatListViewModel chatListViewModel, Window mainWindow, Frame RightFrame, int ChatID, UserService userService, ChatService chatService, MessageService messageService, ReportService reportService)
         {
             this.InitializeComponent();
             SelectedChat = ChatID;
             this.chatListViewModel = chatListViewModel;
             this.userService = userService;
             this.chatService = chatService;
+            this.reportService = reportService;
             this.RightFrame = RightFrame;
-            chatMessagesViewModel = new ChatMessagesViewModel(mainWindow, ChatID, messageService, chatService, userService);
+            chatMessagesViewModel = new ChatMessagesViewModel(mainWindow,RightFrame, ChatID, messageService, chatService, userService, reportService);
             GenerateTransferViewModel = new GenerateTransferViewModel(chatService, ChatID);
             chatMessagesViewModel.ChatListView = ChatListView;
             chatMessagesViewModel.SetupMessageTracking();
 
-            MainGrid.DataContext = chatMessagesViewModel;
+            this.DataContext = chatMessagesViewModel;
         }
 
         public void AddNewMember_Click(object sender, RoutedEventArgs e)

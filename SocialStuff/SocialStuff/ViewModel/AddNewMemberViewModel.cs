@@ -58,7 +58,7 @@ namespace SocialStuff.ViewModel
 
         public void AddUsersToChat()
         {
-            foreach(User user in this.NewlyAddedFriends)
+            foreach (User user in this.NewlyAddedFriends)
             {
                 this.chatService.AddUserToChat(user.GetUserId(), this.ChatID);
             }
@@ -117,10 +117,10 @@ namespace SocialStuff.ViewModel
         public void UpdateFilteredFriends()
         {
             UnaddedFriends.Clear();
-
             foreach (var friend in allUnaddedFriends.Where(f =>
-                         string.IsNullOrEmpty(SearchQuery) ||
-                         f.Username.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase)))
+                 string.IsNullOrEmpty(SearchQuery) ||
+                 f.GetUsername()?.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase) == true ||
+                 f.GetPhoneNumber()?.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase) == true))
             {
                 UnaddedFriends.Add(friend);
             }

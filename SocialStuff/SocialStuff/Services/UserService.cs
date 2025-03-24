@@ -13,7 +13,7 @@ namespace SocialStuff.Services
 {
     public class UserService
     {
-        private Repository repo; 
+        private Repository repo;
         private int UserID;
 
         public UserService(Repository repo)
@@ -27,15 +27,27 @@ namespace SocialStuff.Services
             return repo;
         }
 
+        public void MarkUserAsDangerousAndGiveTimeout(User user)
+        {
+            if (user.GetReportedCount() >= 1)
+            {
+                user.SetTimeoutEnd(DateTime.Now.AddMinutes(3));
+            }
+        }
+
+        public bool IsUserInTimeout(User user)
+        {
+            return user.GetTimeoutEnd() != null && user.GetTimeoutEnd() > DateTime.Now;
+        }
         public void AddFriend(int userID, int newFriendID)
         {
             var user = GetUserById(userID);
             var friend = GetUserById(newFriendID);
-            var friends = repo.GetFriendsIDs(userID); 
+            var friends = repo.GetFriendsIDs(userID);
 
             if (user != null && friend != null && !friends.Contains(newFriendID))
             {
-                repo.AddFriend(userID, newFriendID); 
+                repo.AddFriend(userID, newFriendID);
                 user.AddFriend(newFriendID);
             }
         }
@@ -48,7 +60,7 @@ namespace SocialStuff.Services
 
             if (user != null && friend != null && friends.Contains(oldFriendID))
             {
-                repo.DeleteFriend(userID, oldFriendID); 
+                repo.DeleteFriend(userID, oldFriendID);
                 user.RemoveFriend(oldFriendID);
             }
         }
@@ -90,7 +102,7 @@ namespace SocialStuff.Services
         {
             var user = GetUserById(userID);
             if (user == null) return new List<int>();
-            var friends = repo.GetUserFriendsList(userID); 
+            var friends = repo.GetUserFriendsList(userID);
 
             return friends
                        .Select(friendID => friendID)
@@ -128,7 +140,7 @@ namespace SocialStuff.Services
 
             foreach (Chat chat in chats)
             {
-                if(chat.getUserIDsList().Contains(UserID))
+                if (chat.getUserIDsList().Contains(UserID))
                 {
                     currentUserChats.Add(chat);
                 }

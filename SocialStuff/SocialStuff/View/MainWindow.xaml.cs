@@ -34,6 +34,7 @@ namespace SocialStuff
         private ChatService chatService;
         private MessageService messageService;
         private FeedService feedService;
+        private ReportService reportService;
 
         public MainWindow()
         {
@@ -45,13 +46,14 @@ namespace SocialStuff
             chatService = new ChatService(repo);
             messageService = new MessageService(repo);
             feedService = new FeedService(repo, userService);
+            reportService = new ReportService(repo);
         }
 
         private void Chat_Click(object sender, RoutedEventArgs e)
         {
             if (LeftFrame.Content == null || !(LeftFrame.Content is ChatListView))
             {
-                var chatListView = new ChatListView(this, chatService, userService, messageService, this.RightFrame);
+                var chatListView = new ChatListView(this, chatService, userService, reportService, messageService, this.RightFrame);
                 LeftFrame.Content = chatListView;
             }
         }

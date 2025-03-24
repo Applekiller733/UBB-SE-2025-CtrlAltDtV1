@@ -280,7 +280,7 @@ namespace SocialStuff.ViewModel
 
             try
             {
-                int chatID = chatService.getCurrentChatID();
+                int chatID = ChatID;
                 int currentUserID = chatService.GetCurrentUserID();
 
                 // Calculate total amount based on number of participants

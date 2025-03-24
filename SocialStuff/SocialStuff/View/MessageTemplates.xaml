@@ -22,8 +22,8 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -47,8 +47,12 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Delete" 
+                                                Icon="Delete"
+                                                Command="{Binding DataContext.DeleteMessageCommand, ElementName=chatMessagesView}"
+                                                CommandParameter="{Binding}"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -79,8 +83,8 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+                                CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -104,8 +108,12 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Delete" 
+                                                Icon="Delete"
+                                                Command="{Binding DataContext.DeleteMessageCommand, ElementName=chatMessagesView}"
+                                                CommandParameter="{Binding}"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -139,8 +147,8 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -164,8 +172,12 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Delete"
+                                                Icon="Delete"
+                                                Command="{Binding DataContext.DeleteMessageCommand, ElementName=chatMessagesView}"
+                                                CommandParameter="{Binding}"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -206,8 +218,8 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -231,8 +243,12 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE10C;" Foreground="LightGray"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Delete" Icon="Delete"/>
-                                <MenuFlyoutItem Text="Report" Icon="ReportHacked"/>
+                                <MenuFlyoutItem Text="Delete" 
+                                                Icon="Delete"
+                                                Command="{Binding DataContext.DeleteMessageCommand, ElementName=chatMessagesView}"
+                                                CommandParameter="{Binding}"/>
+                                <MenuFlyoutItem Text="Report" Icon="ReportHacked" Command="{Binding DataContext.ReportMessageCommand, ElementName=chatMessagesView}"
+CommandParameter="{Binding}"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
@@ -250,5 +266,4 @@
             </StackPanel>
         </Grid>
     </DataTemplate>
-
 </ResourceDictionary>

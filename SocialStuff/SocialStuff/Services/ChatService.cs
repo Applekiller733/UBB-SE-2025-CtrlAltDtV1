@@ -15,11 +15,7 @@ namespace SocialStuff.Services
         private Repository repository;
         public const int chatID = 1;
 
-        //Get current chat ID
-        public int getCurrentChatID()
-        {
-            return chatID;
-        }
+
         //Get logged in user ID
         public int GetCurrentUserID()
         {
@@ -29,7 +25,7 @@ namespace SocialStuff.Services
         //return the number of participants in a chat beside the user
         public int getNumberOfParticipants(int ChatID)
         {
-            return repository.GetChatParticipantsIDs(getCurrentChatID()).Count;
+            return repository.GetChatParticipantsIDs(ChatID).Count;
         }
 
         public ChatService(Repository repo)
@@ -128,22 +124,23 @@ namespace SocialStuff.Services
 
         //when a reqest is initiated in chat if you press accept a new transfer message is initiated with sender id the one who pressed and 
         //chat id the chat 
-        public void acceptRequestViaChat(float amount, string currency, int AccepterID, int RequesterID)
+        public void acceptRequestViaChat(float amount, string currency, int AccepterID, int RequesterID, int ChatID)
         {
             //from Adrada
             if (this.enoughFunds(amount,currency, AccepterID))
             {
                 initiateTransfer(AccepterID, RequesterID, amount, currency);
-                repository.AddTransferMessage(AccepterID, getCurrentChatID(), "YOU JUST SENT " + amount.ToString() + currency +
+                repository.AddTransferMessage(AccepterID, ChatID, "YOU JUST SENT " + amount.ToString() + currency +
                     "TO here function that retrives username by ID", "Accepted", amount, currency);     
             }
             else
             {
-                repository.AddTransferMessage(AccepterID, getCurrentChatID(), "YOU FAILED TO SEND " + amount.ToString() + currency +
+                repository.AddTransferMessage(AccepterID, ChatID, "YOU FAILED TO SEND " + amount.ToString() + currency +
                     "TO here function that retrives username by ID", "Rejected", amount, currency);
             }
             
         }
+
         //mock function for enough funds
         public bool enoughFunds(float amount, string currency, int SenderID)
         {
@@ -165,8 +162,7 @@ namespace SocialStuff.Services
         public void createChat(List<int> ParticipantsID, string ChatName)
         {
 
-            int chatID;
-            repository.AddChat(ChatName, out chatID);
+            int chatID = repository.AddChat(ChatName);
 
             foreach (var userID in ParticipantsID)
             {

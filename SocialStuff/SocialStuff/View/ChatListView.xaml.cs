@@ -30,10 +30,11 @@ namespace SocialStuff.View
         public UserService userService;
         public ChatService chatService;
         public MessageService messageService;
+        public ReportService reportService;
         public Frame RightFrame;
         public Window mainWindow;
 
-        public ChatListView(Window mainWindow, ChatService chatService, UserService userService, MessageService messageService, Frame RightFrame)
+        public ChatListView(Window mainWindow, ChatService chatService, UserService userService, ReportService reportService, MessageService messageService, Frame RightFrame)
         {
             this.InitializeComponent();
 
@@ -41,6 +42,7 @@ namespace SocialStuff.View
             this.userService = userService;
             this.chatService = chatService;
             this.messageService = messageService;
+            this.reportService = reportService;
             this.RightFrame = RightFrame;
             chatListViewModel = new ChatListViewModel(chatService, userService);
             MainGrid.DataContext = chatListViewModel;
@@ -56,7 +58,7 @@ namespace SocialStuff.View
         {
             if (ChatList.SelectedItem is Chat selectedChat)
             {
-                this.RightFrame.Content = new ChatMessagesView(chatListViewModel, mainWindow, RightFrame, selectedChat.getChatID(), userService, chatService, messageService);
+                this.RightFrame.Content = new ChatMessagesView(chatListViewModel, mainWindow, RightFrame, selectedChat.getChatID(), userService, chatService, messageService, reportService);
             }
         }
 

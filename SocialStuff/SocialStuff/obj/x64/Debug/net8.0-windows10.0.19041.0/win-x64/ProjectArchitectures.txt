@@ -1,1 +1,1 @@
-D:\UBB-SE-2025-CtrlAltDefeat\SocialStuff\SocialStuff\SocialStuff.csproj;x64
+C:\Users\alexe\Source\Repos\OtherRepoISS\SocialStuff\SocialStuff\SocialStuff.csproj;x64

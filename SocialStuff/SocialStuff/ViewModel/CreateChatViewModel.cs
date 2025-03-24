@@ -91,6 +91,8 @@ namespace SocialStuff.ViewModel
             if (friend != null && !SelectedFriends.Contains(friend))
             {
                 SelectedFriends.Add(friend);
+                FilterFriends();
+
             }
         }
 
@@ -108,6 +110,11 @@ namespace SocialStuff.ViewModel
                          f.Username.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase)))
             {
                 Friends.Add(friend);
+            }
+
+            foreach(var friend in SelectedFriends)
+            {
+                Friends.Remove(friend);
             }
         }
     }

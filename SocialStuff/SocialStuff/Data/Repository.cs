@@ -219,7 +219,7 @@ namespace SocialStuff.Data
                 {
                     if (Convert.ToInt32(row1["messageid"]) == messageID)
                     {
-                        UserReports.Add(Convert.ToInt32(row1["userid"]));
+                        UserReports.Add(userID);
                     }
                 }
 
@@ -281,21 +281,22 @@ namespace SocialStuff.Data
             }
             return reports;
         }
-        //// Get all feed posts
-        //public List<FeedPost> GetFeedPostsList()
-        //{
-        //    DataTable dataTable = dbConnection.ExecuteReader("select * from FeedPosts", null, false);
-        //    List<FeedPost> feedPosts = new List<FeedPost>();
-        //    foreach (DataRow row in dataTable.Rows)
-        //    {
-        //        int postID = Convert.ToInt32(row["postid"]);
-        //        string title = row["title"].ToString();
-        //        string category = row["category"].ToString();
-        //        string content = row["content"].ToString();
-        //        //feedPosts.Add(new FeedPost(postID, title, category, content));
-        //    }
-        //    return feedPosts;
-        //}
+        // Get all feed posts
+        public List<Post> GetFeedPostsList()
+        {
+            DataTable dataTable = dbConnection.ExecuteReader("select * from Feed_Posts", null, false);
+            List<Post> feedPosts = new List<Post>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int postID = Convert.ToInt32(row["postid"]);
+                string title = row["title"].ToString();
+                string category = row["category"].ToString();
+                string content = row["content"].ToString();
+                DateTime timestamp = Convert.ToDateTime(row["timestamp"]);
+                feedPosts.Add(new Post(postID, title, category, content, timestamp));
+            }
+            return feedPosts;
+        }
 
         // Get all chats ids of a user
         public List<int> GetChatsIDs(int userID)
@@ -316,8 +317,9 @@ namespace SocialStuff.Data
 
 
         // Add a chat to the database
-        public void AddChat(string chatName, out int chatID)
+        public int AddChat(string chatName)
         {
+            int chatID;
             SqlParameter[] parameters =
             {
                 new SqlParameter("@ChatName", chatName),
@@ -326,6 +328,7 @@ namespace SocialStuff.Data
 
             dbConnection.ExecuteNonQuery("AddChat", parameters);
             chatID = (int)parameters[1].Value; // Get the generated ChatID from the output parameter
+            return chatID;
         }
 
         // Update a chat in the database
@@ -568,42 +571,42 @@ namespace SocialStuff.Data
         }
 
         //// Add a feed post
-        //public void AddFeedPost(string title, string category, string content)
-        //{
-        //    SqlParameter[] parameters =
-        //    {
-        //        new SqlParameter("@Title", title),
-        //        new SqlParameter("@Category", category),
-        //        new SqlParameter("@Content", content)
-        //    };
+        public void AddFeedPost(string title, string category, string content)
+        {
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@Title", title),
+                new SqlParameter("@Category", category),
+                new SqlParameter("@Content", content)
+            };
 
-        //    dbConnection.ExecuteNonQuery("AddFeedPost", parameters);
-        //}
+            dbConnection.ExecuteNonQuery("AddFeedPost", parameters);
+        }
 
-        //// Update a feed post
-        //public void UpdateFeedPost(int postID, string title, string category, string content)
-        //{
-        //    SqlParameter[] parameters =
-        //    {
-        //        new SqlParameter("@PostID", postID),
-        //        new SqlParameter("@Title", title),
-        //        new SqlParameter("@Category", category),
-        //        new SqlParameter("@Content", content)
-        //    };
+        // Update a feed post
+        public void UpdateFeedPost(int postID, string title, string category, string content)
+        {
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@PostID", postID),
+                new SqlParameter("@Title", title),
+                new SqlParameter("@Category", category),
+                new SqlParameter("@Content", content)
+            };
 
-        //    dbConnection.ExecuteNonQuery("UpdateFeedPost", parameters);
-        //}
+            dbConnection.ExecuteNonQuery("UpdateFeedPost", parameters);
+        }
 
         //// Delete a feed post
-        //public void DeleteFeedPost(int postID)
-        //{
-        //    SqlParameter[] parameters =
-        //    {
-        //        new SqlParameter("@PostID", postID)
-        //    };
+        public void DeleteFeedPost(int postID)
+        {
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@PostID", postID)
+            };
 
-        //    dbConnection.ExecuteNonQuery("DeleteFeedPost", parameters);
-        //}
+            dbConnection.ExecuteNonQuery("DeleteFeedPost", parameters);
+        }
 
         public void AddUserToChat(int userID, int chatID)
         {
