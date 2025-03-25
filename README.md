@@ -1,7 +1,7 @@
 # UBB-SE-2025-CtrlAltDefeat
 **Team Name:** CtrlAltDefeat
 
-**Team Members:** Alexe Răzvan (Team Lead), Bălă Bogdan, Balog David, Albu Maria, Beudean Carmen, Alistar Alexandra, Bardan Irina
+**Team Members:** Alexe Răzvan (Team Lead),Beudean Carmen,Albu Maria, Bălă Bogdan, Alistar Alexandra, Balog David,   Bardan Irina
 
 **Functionalities summary:**
 
