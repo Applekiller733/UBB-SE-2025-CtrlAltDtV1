@@ -14,8 +14,10 @@ namespace SocialStuff.Data
 {
     public class Repository
     {
+        public const int LOGGED_IN_USER_ID = 2;
+
         private DatabaseConnection dbConnection;
-        private static int loggedInUserID = 2;
+        private static int loggedInUserID = LOGGED_IN_USER_ID;
 
         public Repository()
         {
