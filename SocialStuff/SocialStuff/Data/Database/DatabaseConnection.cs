@@ -10,8 +10,8 @@ namespace SocialStuff.Data.Database
 {
     public class DatabaseConnection
     {
-        string connectionString = @"Data Source=razvan\sqlexpress01;Initial Catalog=BankingDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
-
+        //string connectionString = @"Data Source=razvan\sqlexpress01;Initial Catalog=BankingDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        string connectionString = @"Server=localhost;Database=BankingDB;Integrated Security=True;TrustServerCertificate=True;";
 
         private SqlConnection conn;
 
