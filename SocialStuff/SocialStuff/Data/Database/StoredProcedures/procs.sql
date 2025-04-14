@@ -1,3 +1,6 @@
+USE BankingDB
+go
+
 CREATE OR ALTER PROCEDURE AddChat
 @ChatName NVARCHAR(255),
 @ChatID INT OUTPUT  -- OUTPUT parameter to return the ID
