@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using SocialStuff.Model.MessageClasses;
 using SocialStuff.Model;
 using Microsoft.Identity.Client;
+using SocialStuff.Services.Interfaces;
 
-namespace SocialStuff.Services
+namespace SocialStuff.Services.Implementations
 {
-    public class ChatService
+    public class ChatService : IChatService
     {
-        private Repository repository;
+        private IRepository repository;
         public const int chatID = 1;
 
 
@@ -28,14 +29,14 @@ namespace SocialStuff.Services
             return repository.GetChatParticipantsIDs(ChatID).Count;
         }
 
-        public ChatService(Repository repo)
+        public ChatService(IRepository repo)
         {
-            this.repository = repo;
+            repository = repo;
         }
 
-        public Repository getRepo()
+        public IRepository getRepo()
         {
-            return this.repository;
+            return repository;
         }
 
 
@@ -92,7 +93,7 @@ namespace SocialStuff.Services
 
             try
             {
-                if (this.enoughFunds(Amount*(participantIDs.Count-1), Currency, GetCurrentUserID()))
+                if (enoughFunds(Amount*(participantIDs.Count-1), Currency, GetCurrentUserID()))
                 {
                     int currentUserId = GetCurrentUserID();
                    
@@ -127,7 +128,7 @@ namespace SocialStuff.Services
         public void acceptRequestViaChat(float amount, string currency, int AccepterID, int RequesterID, int ChatID)
         {
             //from Adrada
-            if (this.enoughFunds(amount,currency, AccepterID))
+            if (enoughFunds(amount,currency, AccepterID))
             {
                 initiateTransfer(AccepterID, RequesterID, amount, currency);
                 repository.AddTransferMessage(AccepterID, ChatID, "YOU JUST SENT " + amount.ToString() + currency +
@@ -150,7 +151,7 @@ namespace SocialStuff.Services
             return randomBool;
             
         }
-        //mock transfer function
+        //mock transfer function --- THAT'S WHY IT DOESN'T WORK
         public void initiateTransfer(int senderID, int reciverID, float amount, string currency)
         {
             return;
@@ -174,12 +175,12 @@ namespace SocialStuff.Services
 
         public void deleteChat(int ChatID)
         {
-            this.repository.DeleteChat(ChatID);
+            repository.DeleteChat(ChatID);
         }
 
         public DateTime getLastMessageTimeStamp(int ChatID)
         {
-            List<Message> allMessages = this.repository.GetMessagesList();
+            List<Message> allMessages = repository.GetMessagesList();
 
             var chatMessages = allMessages.Where(m => m.getChatID() == ChatID).ToList();
 
@@ -196,7 +197,7 @@ namespace SocialStuff.Services
 
         public List<Message> getChatHistory(int ChatID)
         {
-            List<Message> allMessages = this.repository.GetMessagesList();
+            List<Message> allMessages = repository.GetMessagesList();
 
             List<Message> chatHistory = allMessages.Where(m => m.getChatID() == ChatID).ToList();
 
@@ -205,17 +206,17 @@ namespace SocialStuff.Services
 
         public void AddUserToChat(int UserID, int ChatID)
         {
-            this.repository.AddUserToChat(UserID, ChatID);
+            repository.AddUserToChat(UserID, ChatID);
         }
 
         public void RemoveUserFromChat(int UserID, int ChatID)
         {
-            this.repository.RemoveUserFromChat(UserID, ChatID);
+            repository.RemoveUserFromChat(UserID, ChatID);
         }
 
         public string getChatNameByID(int ChatID)
         {
-            List<Chat> chatList = this.repository.GetChatsList();
+            List<Chat> chatList = repository.GetChatsList();
             string chatName = chatList.Where(c => c.getChatID() == ChatID).FirstOrDefault().getChatName();
 
             return chatName;
@@ -223,14 +224,14 @@ namespace SocialStuff.Services
 
         public List<string> getChatParticipantsStringList(int ChatID)
         {
-            List<User> participants = this.repository.GetChatParticipants(ChatID);
+            List<User> participants = repository.GetChatParticipants(ChatID);
             List<string> participantsList = participants.Select(p => p.GetUsername()).ToList();
             return participantsList;
         }
 
         public List<User> getChatParticipantsList(int ChatID)
         {
-            List<User> participants = this.repository.GetChatParticipants(ChatID);
+            List<User> participants = repository.GetChatParticipants(ChatID);
             return participants;
         }
     }

@@ -2,13 +2,13 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using SocialStuff.Model;
-using SocialStuff.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using SocialStuff.Services.Implementations;
 
 namespace SocialStuff.ViewModel
 {

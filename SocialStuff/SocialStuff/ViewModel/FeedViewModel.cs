@@ -1,5 +1,5 @@
 ﻿using SocialStuff.Model;
-using SocialStuff.Services;
+using SocialStuff.Services.Implementations;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 

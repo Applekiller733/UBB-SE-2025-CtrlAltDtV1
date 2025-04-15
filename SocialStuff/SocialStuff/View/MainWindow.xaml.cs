@@ -15,9 +15,9 @@ using SocialStuff.Data;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using SocialStuff.View;
-using SocialStuff.Services;
 using SocialStuff.ViewModel;
 using SocialStuff.Model;
+using SocialStuff.Services.Implementations;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -44,11 +44,11 @@ namespace SocialStuff
             mainWindow = this;
             Repository repo = new Repository();
             notificationService = new NotificationService(repo);
-            userService = new UserService(repo);
+            userService = new UserService(repo, notificationService);
             chatService = new ChatService(repo);
-            messageService = new MessageService(repo);
+            messageService = new MessageService(repo, userService);
             feedService = new FeedService(repo, userService);
-            reportService = new ReportService(repo);
+            reportService = new ReportService(repo, userService);
 
             if (LeftFrame.Content == null || !(LeftFrame.Content is ChatListView))
             {

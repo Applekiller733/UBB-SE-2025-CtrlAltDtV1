@@ -4,22 +4,23 @@ using Microsoft.Data.SqlClient;
 using System.Data.Common;
 using SocialStuff.Data;
 using SocialStuff.Model;
+using SocialStuff.Services.Interfaces;
 
 
-namespace SocialStuff.Services
+namespace SocialStuff.Services.Implementations
 {
-    public class ReportService
+    public class ReportService : IReportService
     {
 
-        private Repository repository;
-        private readonly UserService userService;
+        private IRepository repository;
+        private readonly IUserService userService;
         private List<Report> reports;
 
 
-        public ReportService(Repository repository)
+        public ReportService(IRepository repository, IUserService userService)
         {
             this.repository = repository;
-            this.reports = repository.GetReportsList();
+            reports = repository.GetReportsList();
             this.userService = userService;
         }
 

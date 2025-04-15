@@ -1,6 +1,6 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using SocialStuff.Model;
-using SocialStuff.Services;
+using SocialStuff.Services.Implementations;
 using SocialStuff.View;
 using System;
 using System.Collections.Generic;

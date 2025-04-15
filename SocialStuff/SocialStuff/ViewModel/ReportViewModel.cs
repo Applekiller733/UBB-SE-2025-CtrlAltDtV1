@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using SocialStuff.Model;
-using SocialStuff.Services;
+using SocialStuff.Services.Implementations;
 
 
 namespace SocialStuff.ViewModel
@@ -90,7 +90,7 @@ namespace SocialStuff.ViewModel
             string reportMessage = reportedUser.IncreaseReportCount();
 
             userService.MarkUserAsDangerousAndGiveTimeout(reportedUser);
-            UserService.setUserTimeout(true);
+            this.userService.setUserTimeout(true);  //MADE IT NONSTATIC HERE TOO!!!
 
             // Trigger an event or callback to show the success dialog in the view
             OnShowSuccessDialog("Report submitted successfully.");
