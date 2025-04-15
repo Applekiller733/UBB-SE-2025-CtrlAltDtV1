@@ -1,75 +1,98 @@
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
+// <copyright file="DatabaseConnection.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.Data.Database
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Microsoft.Data.SqlClient;
+
+    /// <summary>
+    /// Represents a connection to a SQL database.
+    /// </summary>
     public class DatabaseConnection
     {
-        //string connectionString = @"Data Source=razvan\sqlexpress01;Initial Catalog=BankingDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
-        string connectionString = @"Server=localhost;Database=BankingDB;Integrated Security=True;TrustServerCertificate=True;";
-
+        private string connectionString = @"Server=localhost;Database=BankingDB;Integrated Security=True;TrustServerCertificate=True;";
         private SqlConnection conn;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatabaseConnection"/> class.
+        /// </summary>
         public DatabaseConnection()
         {
-            conn = new SqlConnection(connectionString);
+            this.conn = new SqlConnection(this.connectionString);
             Console.WriteLine("Database Connection Created!");
         }
 
-        public SqlConnection getConnection()
+        /// <summary>
+        /// Gets the SQL connection.
+        /// </summary>
+        /// <returns>The SQL connection.</returns>
+        public SqlConnection GetConnection()
         {
-            return conn;
+            return this.conn;
         }
 
+        /// <summary>
+        /// Opens the SQL connection.
+        /// </summary>
         public void OpenConnection()
         {
-            if (conn.State == ConnectionState.Closed)
+            if (this.conn.State == ConnectionState.Closed)
             {
-                conn.Open();
+                this.conn.Open();
                 Console.WriteLine("Database Connected!");
-
             }
         }
 
+        /// <summary>
+        /// Checks the state of the SQL connection.
+        /// </summary>
+        /// <returns>1 if the connection is open, otherwise 0.</returns>
         public int CheckConnection()
         {
-            if (conn.State == ConnectionState.Open)
+            if (this.conn.State == ConnectionState.Open)
             {
                 Console.WriteLine("Database Connection is Open!");
-                // print something on the screen
                 return 1;
             }
             else
             {
                 Console.WriteLine("Database Connection is Closed!");
-                // print something on the screen
                 return 0;
             }
-
         }
+
+        /// <summary>
+        /// Closes the SQL connection.
+        /// </summary>
         public void CloseConnection()
         {
-            if (conn.State == ConnectionState.Open)
+            if (this.conn.State == ConnectionState.Open)
             {
-                conn.Close();
+                this.conn.Close();
                 Console.WriteLine("Database Connection Closed!");
-                // print something on the screen
-
             }
         }
 
-        // Executes a stored procedure and returns a single scalar value (e.g., COUNT(*), SUM(), MAX(), etc.)
-        public T? ExecuteScalar<T>(string storedProcedure, SqlParameter[]? sqlParameters = null)
+        /// <summary>
+        /// Executes a stored procedure and returns a single scalar value.
+        /// </summary>
+        /// <typeparam name="T">The type of the scalar value.</typeparam>
+        /// <param name="storedProcedure">The name of the stored procedure.</param>
+        /// <param name="sqlParameters">The parameters for the stored procedure.</param>
+        /// <returns>The scalar value.</returns>
+        public T? ExecuteScalar<T>(string storedProcedure, SqlParameter[] sqlParameters)
         {
             try
             {
-                OpenConnection();
-                using (SqlCommand command = new SqlCommand(storedProcedure, conn))
+                this.OpenConnection();
+                using (SqlCommand command = new SqlCommand(storedProcedure, this.conn))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -93,18 +116,23 @@ namespace SocialStuff.Data.Database
             }
             finally
             {
-                CloseConnection();
+                this.CloseConnection();
             }
         }
 
-
-        // Executes a stored procedure and returns multiple rows and columns as a DataTable
-        public DataTable ExecuteReader(string query, SqlParameter[]? sqlParameters = null, bool isStoredProcedure = true)
+        /// <summary>
+        /// Executes a query or stored procedure and returns the result as a DataTable.
+        /// </summary>
+        /// <param name="query">The query or stored procedure name.</param>
+        /// <param name="sqlParameters">The parameters for the query or stored procedure.</param>
+        /// <param name="isStoredProcedure">Indicates whether the query is a stored procedure.</param>
+        /// <returns>The result as a DataTable.</returns>
+        public DataTable ExecuteReader(string query, SqlParameter[] sqlParameters, bool isStoredProcedure = true)
         {
             try
             {
-                OpenConnection();
-                using (SqlCommand command = new SqlCommand(query, conn))
+                this.OpenConnection();
+                using (SqlCommand command = new SqlCommand(query, this.conn))
                 {
                     if (isStoredProcedure)
                     {
@@ -134,20 +162,22 @@ namespace SocialStuff.Data.Database
             }
             finally
             {
-                CloseConnection();
+                this.CloseConnection();
             }
         }
 
-
-
-        // Executes a stored procedure that modifies data (INSERT, UPDATE, DELETE) and returns the number of affected rows
-        //Alexandra- i ve changes such dat it also works with query
-        public int ExecuteNonQuery(string storedProcedure, SqlParameter[]? sqlParameters = null)
+        /// <summary>
+        /// Executes a stored procedure or query that modifies data and returns the number of affected rows.
+        /// </summary>
+        /// <param name="storedProcedure">The name of the stored procedure or query.</param>
+        /// <param name="sqlParameters">The parameters for the stored procedure or query.</param>
+        /// <returns>The number of affected rows.</returns>
+        public int ExecuteNonQuery(string storedProcedure, SqlParameter[] sqlParameters)
         {
             try
             {
-                OpenConnection();
-                using (SqlCommand command = new SqlCommand(storedProcedure, conn))
+                this.OpenConnection();
+                using (SqlCommand command = new SqlCommand(storedProcedure, this.conn))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -165,11 +195,8 @@ namespace SocialStuff.Data.Database
             }
             finally
             {
-                CloseConnection();
+                this.CloseConnection();
             }
         }
-
     }
-
-
 }

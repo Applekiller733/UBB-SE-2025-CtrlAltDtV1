@@ -14,6 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using SocialStuff.ViewModel;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -22,11 +23,11 @@ namespace SocialStuff.View
 {
     public sealed partial class AddFriendsView : Page
     {
-        private UserService userService;
+        private IUserService userService;
         private FriendsListViewModel friendsListViewModel;
         private AddFriendsViewModel addFriendsViewModel;
 
-        public AddFriendsView(FriendsListViewModel friendsListViewModel, UserService userService)
+        public AddFriendsView(FriendsListViewModel friendsListViewModel, IUserService userService)
         {
             this.InitializeComponent();
 

@@ -1,5 +1,6 @@
 ﻿using SocialStuff.Model;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -7,7 +8,7 @@ namespace SocialStuff.ViewModel
 {
     public class FeedViewModel : INotifyPropertyChanged
     {
-        private readonly FeedService feedService;
+        private readonly IFeedService feedService;
         private ObservableCollection<Post> posts;
 
         public ObservableCollection<Post> Posts
@@ -25,7 +26,7 @@ namespace SocialStuff.ViewModel
             // Default constructor for XAML
         }
 
-        public FeedViewModel(FeedService service)
+        public FeedViewModel(IFeedService service)
         {
             this.feedService = service;
             LoadPosts();

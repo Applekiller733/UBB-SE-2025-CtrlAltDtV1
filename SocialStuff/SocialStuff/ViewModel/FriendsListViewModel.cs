@@ -2,6 +2,7 @@
 using Microsoft.UI.Xaml.Controls;
 using SocialStuff.Model;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,9 +19,9 @@ namespace SocialStuff.ViewModel
     {
         public List<User> allFriends { get; set; }
         public ObservableCollection<User> FriendsList { get; set; }
-        public UserService userService { get; set; }
-        public ChatService chatService { get; set; }
-        public MessageService messageService { get; set; }
+        public IUserService userService { get; set; }
+        public IChatService chatService { get; set; }
+        public IMessageService messageService { get; set; }
 
         public ICommand RemoveFriend { get; }
 
@@ -56,7 +57,7 @@ namespace SocialStuff.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public FriendsListViewModel(ChatService chat, UserService user, MessageService message)
+        public FriendsListViewModel(IChatService chat, IUserService user, IMessageService message)
         {
             this.userService = user;
             this.chatService = chat;

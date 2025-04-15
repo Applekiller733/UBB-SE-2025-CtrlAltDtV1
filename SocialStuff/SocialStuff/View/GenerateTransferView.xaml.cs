@@ -19,17 +19,18 @@ using SocialStuff.ViewModel;
 using SocialStuff.Data;
 using Microsoft.IdentityModel.Tokens;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 
 namespace SocialStuff.View
 {
     public sealed partial class GenerateTransferView : Page
     {
         public GenerateTransferViewModel ViewModel { get; }
-        private ChatService chatService;
+        private IChatService chatService;
         private Page lastChat;
         private Frame rightFrame;
 
-        public GenerateTransferView(GenerateTransferViewModel GenerateTransferViewModel, Page lastChat, Frame rightFrame, int ChatID, ChatService chatService)
+        public GenerateTransferView(GenerateTransferViewModel GenerateTransferViewModel, Page lastChat, Frame rightFrame, int ChatID, IChatService chatService)
         {
             // Create repository and services (this would typically be injected)
             this.chatService = chatService;

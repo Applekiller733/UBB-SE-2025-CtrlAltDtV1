@@ -24,7 +24,7 @@ namespace SocialStuff.Services.Implementations
             this.userService = userService;
         }
 
-        public Report GetReportById(int id)
+        public Report? GetReportById(int id)
         {
             return reports.Find(report => report.MessageID == id);
         }

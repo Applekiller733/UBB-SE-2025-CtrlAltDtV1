@@ -2,6 +2,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using SocialStuff.Model;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 using SocialStuff.ViewModel;
 using System;
 
@@ -11,7 +12,7 @@ namespace SocialStuff.Views
     {
         public ReportViewModel ViewModel { get; }
 
-        public ReportView(UserService userService, ReportService reportService, int reportedUserId, int messageId)
+        public ReportView(IUserService userService, IReportService reportService, int reportedUserId, int messageId)
         {
             this.InitializeComponent();
 

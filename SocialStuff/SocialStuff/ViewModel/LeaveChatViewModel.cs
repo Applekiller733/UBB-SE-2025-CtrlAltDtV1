@@ -1,5 +1,6 @@
 ﻿using SocialStuff.Model;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,8 @@ namespace SocialStuff.ViewModel
     public class LeaveChatViewModel : INotifyPropertyChanged
     {
         public ICommand LeaveChatCommand { get; set; }
-        private UserService userService;
-        private ChatService chatService;
+        private IUserService userService;
+        private IChatService chatService;
         private ChatListViewModel lastViewModel;
         private int ChatID;
 
@@ -24,7 +25,7 @@ namespace SocialStuff.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public LeaveChatViewModel(UserService userService, ChatService chatService, ChatListViewModel chatMessagesViewModel, int ChatID)
+        public LeaveChatViewModel(IUserService userService, IChatService chatService, ChatListViewModel chatMessagesViewModel, int ChatID)
         {
             LeaveChatCommand = new RelayCommand(LeaveChat);
 
