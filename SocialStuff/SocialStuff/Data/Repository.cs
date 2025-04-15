@@ -229,7 +229,10 @@ namespace SocialStuff.Data
             return users;
         }
 
-        // Get all messages
+        // <summary>
+        // Gets the list of all messages.
+        // </summary>
+        // <returns>A list of messages.</returns>
         public List<Message> GetMessagesList()
         {
             // messagetypes : 1-text , 2-image, 3-request, 4-transfer
@@ -585,7 +588,13 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("DeleteAllNotifications", parameters);
         }
 
-        // Add a report
+        // <summary>
+        // Adds a report to the database.
+        // </summary>
+        // <param name="messageID">The ID of the message being reported.</param>
+        // <param name="reason">The reason for the report.</param>
+        // <param name="description">The description of the report.</param>
+        // <param name="status">The status of the report.</param>
         public void AddReport(int messageID, string reason, string description, string status)
         {
             SqlParameter[] parameters =
