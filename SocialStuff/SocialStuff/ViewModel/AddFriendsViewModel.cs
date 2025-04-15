@@ -1,5 +1,6 @@
 ﻿using SocialStuff.Model;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,7 +17,7 @@ namespace SocialStuff.ViewModel
     {
         public List<User> allUsers { get; set; }
         public ObservableCollection<User> UsersList { get; set; }
-        public UserService userService { get; set; }
+        public IUserService userService { get; set; }
         private FriendsListViewModel friendsListViewModel;
         public ICommand AddFriendCommand { get; set; }
 
@@ -39,7 +40,7 @@ namespace SocialStuff.ViewModel
                 }
             }
         }
-        public AddFriendsViewModel(FriendsListViewModel friendsListViewModel, UserService userService)
+        public AddFriendsViewModel(FriendsListViewModel friendsListViewModel, IUserService userService)
         {
             this.userService = userService;
             this.friendsListViewModel = friendsListViewModel;

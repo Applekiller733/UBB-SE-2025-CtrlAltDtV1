@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Chat;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 
 namespace SocialStuff.ViewModel
 {
@@ -23,8 +24,8 @@ namespace SocialStuff.ViewModel
         private string searchQuery = string.Empty;
         public ObservableCollection<Chat> ChatList { get; set; }
         public List<Chat> currentUserChats;
-        public ChatService chatService;
-        public UserService userService;
+        public IChatService chatService;
+        public IUserService userService;
         public CountToVisibilityConverter CountToVisibilityConverter { get; set; }
 
         public string SearchQuery
@@ -41,7 +42,7 @@ namespace SocialStuff.ViewModel
             }
         }
 
-        public ChatListViewModel(ChatService chatS, UserService userS)
+        public ChatListViewModel(IChatService chatS, IUserService userS)
         {
             ChatList = new ObservableCollection<Chat>();
             chatService = chatS;

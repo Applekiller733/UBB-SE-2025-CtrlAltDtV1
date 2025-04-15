@@ -19,6 +19,7 @@ using WinRT.Interop;
 using SocialStuff.Data;
 using SocialStuff.Model;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 
 namespace SocialStuff.View
 {
@@ -27,13 +28,13 @@ namespace SocialStuff.View
         public int SelectedChat { get; set; }
         private ChatMessagesViewModel chatMessagesViewModel;
         private Frame RightFrame;
-        private UserService userService;
-        private ChatService chatService;
-        private ReportService reportService;
+        private IUserService userService;
+        private IChatService chatService;
+        private IReportService reportService;
         private ChatListViewModel chatListViewModel;
         private GenerateTransferViewModel GenerateTransferViewModel;
 
-        public ChatMessagesView(ChatListViewModel chatListViewModel, Window mainWindow, Frame RightFrame, int ChatID, UserService userService, ChatService chatService, MessageService messageService, ReportService reportService)
+        public ChatMessagesView(ChatListViewModel chatListViewModel, Window mainWindow, Frame RightFrame, int ChatID, IUserService userService, IChatService chatService, IMessageService messageService, IReportService reportService)
         {
             this.InitializeComponent();
             SelectedChat = ChatID;

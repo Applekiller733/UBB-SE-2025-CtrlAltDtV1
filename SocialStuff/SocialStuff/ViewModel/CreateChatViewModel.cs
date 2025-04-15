@@ -1,6 +1,7 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using SocialStuff.Model;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,8 +17,8 @@ namespace SocialStuff.ViewModel
     {
         private string groupName;
         private string searchQuery;
-        private UserService userService;
-        private ChatService chatService;
+        private IUserService userService;
+        private IChatService chatService;
         private ChatListViewModel chatListViewModel;
         public ICommand AddToSelectedList { get; }
         public ICommand CreateGroupChat { get; }
@@ -59,7 +60,7 @@ namespace SocialStuff.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public CreateChatViewModel(ChatListViewModel chatListViewModel, ChatService chatService, UserService userService)
+        public CreateChatViewModel(ChatListViewModel chatListViewModel, IChatService chatService, IUserService userService)
         {
             this.chatListViewModel = chatListViewModel;
             AddToSelectedList = new RelayCommand<object>(AddFriendToSelectedList);

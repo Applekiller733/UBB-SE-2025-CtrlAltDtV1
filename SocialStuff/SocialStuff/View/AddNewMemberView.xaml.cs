@@ -14,6 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using SocialStuff.ViewModel;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -22,14 +23,14 @@ namespace SocialStuff.View
 {
     public sealed partial class AddNewMemberView : Page
     {
-        private ChatService chatService;
-        private UserService userService;
+        private IChatService chatService;
+        private IUserService userService;
         private AddNewMemberViewModel addNewMemberViewModel;
         private Page lastChat;
         private Frame RightFrame;
         private ChatMessagesViewModel chatMessagesViewModel;
 
-        public AddNewMemberView(ChatMessagesViewModel chatMessagesViewModel, Page lastChat, Frame rightFrame, int ChatID, ChatService chatService, UserService userService)
+        public AddNewMemberView(ChatMessagesViewModel chatMessagesViewModel, Page lastChat, Frame rightFrame, int ChatID, IChatService chatService, IUserService userService)
         {
             this.InitializeComponent();
             this.chatMessagesViewModel = chatMessagesViewModel;
