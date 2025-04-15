@@ -1,6 +1,6 @@
 using Microsoft.UI.Xaml.Controls;
 using SocialStuff.ViewModel;
-using SocialStuff.Services;
+using SocialStuff.Services.Implementations;
 using SocialStuff.Data;
 using Microsoft.UI.Xaml;
 
@@ -15,7 +15,7 @@ namespace SocialStuff.View
             this.InitializeComponent();
             var repo = new Repository();
             var notificationService = new NotificationService(repo);
-            var userService = new UserService(repo);
+            var userService = new UserService(repo, notificationService);
             int currentUserID = repo.GetLoggedInUserID();
             this.DataContext = new NotificationViewModel(notificationService, currentUserID);
         }

@@ -1,6 +1,5 @@
 ﻿using SocialStuff.View;
 using SocialStuff.Model;
-using SocialStuff.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Chat;
+using SocialStuff.Services.Implementations;
 
 namespace SocialStuff.ViewModel
 {

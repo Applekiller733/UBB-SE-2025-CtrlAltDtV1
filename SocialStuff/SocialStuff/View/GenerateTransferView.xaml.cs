@@ -16,9 +16,9 @@ using Microsoft.UI;
 using Windows.Graphics;
 using WinRT.Interop;
 using SocialStuff.ViewModel;
-using SocialStuff.Services;
 using SocialStuff.Data;
 using Microsoft.IdentityModel.Tokens;
+using SocialStuff.Services.Implementations;
 
 namespace SocialStuff.View
 {

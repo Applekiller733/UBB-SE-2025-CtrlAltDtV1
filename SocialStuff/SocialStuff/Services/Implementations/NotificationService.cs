@@ -4,16 +4,17 @@ using System.Collections.Generic;
 
 using NotificationModel = SocialStuff.Model.Notification;
 using WindowsNotification = Windows.UI.Notifications.Notification;
+using SocialStuff.Services.Interfaces;
 
-namespace SocialStuff.Services
+namespace SocialStuff.Services.Implementations
 {
-    public class NotificationService
+    public class NotificationService : INotificationService
     {
-        private readonly Repository repo;
+        private readonly IRepository repo;
 
-        public NotificationService(Repository repository)
+        public NotificationService(IRepository repo)
         {
-            repo = repository;
+            this.repo = repo;
         }
 
         public List<NotificationModel> GetNotifications(int userID)

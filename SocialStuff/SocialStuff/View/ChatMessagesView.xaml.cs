@@ -17,8 +17,8 @@ using Microsoft.UI.Windowing;
 using SocialStuff.ViewModel;
 using WinRT.Interop;
 using SocialStuff.Data;
-using SocialStuff.Services;
 using SocialStuff.Model;
+using SocialStuff.Services.Implementations;
 
 namespace SocialStuff.View
 {

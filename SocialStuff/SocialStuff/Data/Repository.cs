@@ -12,11 +12,10 @@ using NotificationModel = SocialStuff.Model.Notification;
 using WindowsNotification = Windows.UI.Notifications.Notification;
 namespace SocialStuff.Data
 {
-    public class Repository
+    public class Repository : IRepository
     {
-        public const int LOGGED_IN_USER_ID = 2;
-
         private DatabaseConnection dbConnection;
+        public const int LOGGED_IN_USER_ID = 2;
         private static int loggedInUserID = LOGGED_IN_USER_ID;
 
         public Repository()
@@ -25,10 +24,10 @@ namespace SocialStuff.Data
             Console.WriteLine("Repo created");
         }
 
-        public DatabaseConnection GetDatabaseConnection()
-        {
-            return dbConnection;
-        }
+        //public DatabaseConnection GetDatabaseConnection()
+        //{
+        //    return dbConnection;
+        //}
 
         public int GetLoggedInUserID()
         {
@@ -139,42 +138,42 @@ namespace SocialStuff.Data
             }
             return users;
         }
-        // Get all the Chats for a USERID, chats returned as Chat Class Type
-        public List<Chat> GetUserChatsList(int userId)
-        {
-            DataTable dataTable = dbConnection.ExecuteReader("select * from Chats", null, false);
-            DataTable dataTable1 = dbConnection.ExecuteReader("select * from ChatParticipants", null, false);
-            List<int> ChatIds = new List<int>();
-            foreach (DataRow row in dataTable1.Rows)
-            {
-                if (Convert.ToInt32(row["userid"]) == userId)
-                {
-                    ChatIds.Add(Convert.ToInt32(row["chatid"]));
-                }
-            }
+        //// Get all the Chats for a USERID, chats returned as Chat Class Type
+        //public List<Chat> GetUserChatsList(int userId)
+        //{
+        //    DataTable dataTable = dbConnection.ExecuteReader("select * from Chats", null, false);
+        //    DataTable dataTable1 = dbConnection.ExecuteReader("select * from ChatParticipants", null, false);
+        //    List<int> ChatIds = new List<int>();
+        //    foreach (DataRow row in dataTable1.Rows)
+        //    {
+        //        if (Convert.ToInt32(row["userid"]) == userId)
+        //        {
+        //            ChatIds.Add(Convert.ToInt32(row["chatid"]));
+        //        }
+        //    }
 
 
-            List<Chat> Chats = new List<Chat>();
-            foreach (DataRow row in dataTable.Rows)
-            {
-                int chat = Convert.ToInt32(row["chatid"]);
-                if (ChatIds.Contains(chat))
-                {
-                    string chatName = row["chatname"].ToString();
-                    List<int> ParticipantsIDs = new List<int>();
-                    foreach (DataRow row1 in dataTable1.Rows)
-                    {
-                        if (chat == Convert.ToInt32(row1["chatid"]))
-                        {
-                            ParticipantsIDs.Add(Convert.ToInt32(row1["userid"]));
-                        }
-                    }
-                    Chats.Add(new Chat(chat, chatName, ParticipantsIDs));
+        //    List<Chat> Chats = new List<Chat>();
+        //    foreach (DataRow row in dataTable.Rows)
+        //    {
+        //        int chat = Convert.ToInt32(row["chatid"]);
+        //        if (ChatIds.Contains(chat))
+        //        {
+        //            string chatName = row["chatname"].ToString();
+        //            List<int> ParticipantsIDs = new List<int>();
+        //            foreach (DataRow row1 in dataTable1.Rows)
+        //            {
+        //                if (chat == Convert.ToInt32(row1["chatid"]))
+        //                {
+        //                    ParticipantsIDs.Add(Convert.ToInt32(row1["userid"]));
+        //                }
+        //            }
+        //            Chats.Add(new Chat(chat, chatName, ParticipantsIDs));
 
-                }
-            }
-            return Chats;
-        }
+        //        }
+        //    }
+        //    return Chats;
+        //}
 
         // Get all chats
         public List<Chat> GetChatsList()
@@ -369,17 +368,17 @@ namespace SocialStuff.Data
             return participants;
         }
 
-        // Update a chat in the database
-        public void UpdateChat(int chatID, string chatName)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@ChatID", chatID),
-                new SqlParameter("@ChatName", chatName)
-            };
+        //// Update a chat in the database
+        //public void UpdateChat(int chatID, string chatName)
+        //{
+        //    SqlParameter[] parameters =
+        //    {
+        //        new SqlParameter("@ChatID", chatID),
+        //        new SqlParameter("@ChatName", chatName)
+        //    };
 
-            dbConnection.ExecuteNonQuery("UpdateChat", parameters);
-        }
+        //    dbConnection.ExecuteNonQuery("UpdateChat", parameters);
+        //}
 
         // Delete a chat from the database
         public void DeleteChat(int chatID)
@@ -416,41 +415,41 @@ namespace SocialStuff.Data
             dbConnection.ExecuteNonQuery("DeleteFriend", parameters);
         }
 
-        // Add a user to the database
-        public void AddUser(string username, string phoneNumber)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@Username", username),
-                new SqlParameter("@PhoneNumber", phoneNumber)
-            };
+        //// Add a user to the database
+        //public void AddUser(string username, string phoneNumber)
+        //{
+        //    SqlParameter[] parameters =
+        //    {
+        //        new SqlParameter("@Username", username),
+        //        new SqlParameter("@PhoneNumber", phoneNumber)
+        //    };
 
-            dbConnection.ExecuteNonQuery("AddUser", parameters);
-        }
+        //    dbConnection.ExecuteNonQuery("AddUser", parameters);
+        //}
 
-        // Update a user in the database
-        public void UpdateUser(int userID, string username, string phoneNumber)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@UserID", userID),
-                new SqlParameter("@Username", username),
-                new SqlParameter("@PhoneNumber", phoneNumber)
-            };
+        //// Update a user in the database
+        //public void UpdateUser(int userID, string username, string phoneNumber)
+        //{
+        //    SqlParameter[] parameters =
+        //    {
+        //        new SqlParameter("@UserID", userID),
+        //        new SqlParameter("@Username", username),
+        //        new SqlParameter("@PhoneNumber", phoneNumber)
+        //    };
 
-            dbConnection.ExecuteNonQuery("UpdateUser", parameters);
-        }
+        //    dbConnection.ExecuteNonQuery("UpdateUser", parameters);
+        //}
 
-        // Delete a user from the database
-        public void DeleteUser(int userID)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@UserID", userID)
-            };
+        //// Delete a user from the database
+        //public void DeleteUser(int userID)
+        //{
+        //    SqlParameter[] parameters =
+        //    {
+        //        new SqlParameter("@UserID", userID)
+        //    };
 
-            dbConnection.ExecuteNonQuery("DeleteUser", parameters);
-        }
+        //    dbConnection.ExecuteNonQuery("DeleteUser", parameters);
+        //}
 
         // Add a message to the database (handles all types)
         public void AddTextMessage(int userID, int chatID, string content)
@@ -513,21 +512,21 @@ namespace SocialStuff.Data
         }
 
 
-        // Update a message in the database
-        public void UpdateMessage(int messageID, int typeID, string content, string status = null, float? amount = null, string currency = null)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@MessageID", messageID),
-                new SqlParameter("@TypeID", typeID),
-                new SqlParameter("@Content", content),
-                new SqlParameter("@Status", status ?? (object)DBNull.Value),
-                new SqlParameter("@Amount", amount ?? (object)DBNull.Value),
-                new SqlParameter("@Currency", currency ?? (object)DBNull.Value)
-            };
+        //// Update a message in the database
+        //public void UpdateMessage(int messageID, int typeID, string content, string status = null, float? amount = null, string currency = null)
+        //{
+        //    SqlParameter[] parameters =
+        //    {
+        //        new SqlParameter("@MessageID", messageID),
+        //        new SqlParameter("@TypeID", typeID),
+        //        new SqlParameter("@Content", content),
+        //        new SqlParameter("@Status", status ?? (object)DBNull.Value),
+        //        new SqlParameter("@Amount", amount ?? (object)DBNull.Value),
+        //        new SqlParameter("@Currency", currency ?? (object)DBNull.Value)
+        //    };
 
-            dbConnection.ExecuteNonQuery("UpdateMessage", parameters);
-        }
+        //    dbConnection.ExecuteNonQuery("UpdateMessage", parameters);
+        //}
 
         // Delete a message from the database
         public void DeleteMessage(int messageID)
@@ -588,68 +587,68 @@ namespace SocialStuff.Data
             dbConnection.ExecuteNonQuery("AddReport", parameters);
         }
 
-        // Update a report
-        public void UpdateReport(int reportID, string reason, string description, string status)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@ReportID", reportID),
-                new SqlParameter("@Reason", reason),
-                new SqlParameter("@Description", description ?? (object)DBNull.Value),
-                new SqlParameter("@Status", status)
-            };
+        //// Update a report
+        //public void UpdateReport(int reportID, string reason, string description, string status)
+        //{
+        //    SqlParameter[] parameters =
+        //    {
+        //        new SqlParameter("@ReportID", reportID),
+        //        new SqlParameter("@Reason", reason),
+        //        new SqlParameter("@Description", description ?? (object)DBNull.Value),
+        //        new SqlParameter("@Status", status)
+        //    };
 
-            dbConnection.ExecuteNonQuery("UpdateReport", parameters);
-        }
+        //    dbConnection.ExecuteNonQuery("UpdateReport", parameters);
+        //}
 
-        // Delete a report
-        public void DeleteReport(int reportID)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@ReportID", reportID)
-            };
+        //// Delete a report
+        //public void DeleteReport(int reportID)
+        //{
+        //    SqlParameter[] parameters =
+        //    {
+        //        new SqlParameter("@ReportID", reportID)
+        //    };
 
-            dbConnection.ExecuteNonQuery("DeleteReport", parameters);
-        }
+        //    dbConnection.ExecuteNonQuery("DeleteReport", parameters);
+        //}
 
-        // Add a feed post
-        public void AddFeedPost(string title, string category, string content)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@Title", title),
-                new SqlParameter("@Category", category),
-                new SqlParameter("@Content", content)
-            };
+        //// Add a feed post
+        //public void AddFeedPost(string title, string category, string content)
+        //{
+        //    SqlParameter[] parameters =
+        //    {
+        //        new SqlParameter("@Title", title),
+        //        new SqlParameter("@Category", category),
+        //        new SqlParameter("@Content", content)
+        //    };
 
-            dbConnection.ExecuteNonQuery("AddFeedPost", parameters);
-        }
+        //    dbConnection.ExecuteNonQuery("AddFeedPost", parameters);
+        //}
 
-        // Update a feed post
-        public void UpdateFeedPost(int postID, string title, string category, string content)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@PostID", postID),
-                new SqlParameter("@Title", title),
-                new SqlParameter("@Category", category),
-                new SqlParameter("@Content", content)
-            };
+        //// Update a feed post
+        //public void UpdateFeedPost(int postID, string title, string category, string content)
+        //{
+        //    SqlParameter[] parameters =
+        //    {
+        //        new SqlParameter("@PostID", postID),
+        //        new SqlParameter("@Title", title),
+        //        new SqlParameter("@Category", category),
+        //        new SqlParameter("@Content", content)
+        //    };
 
-            dbConnection.ExecuteNonQuery("UpdateFeedPost", parameters);
-        }
+        //    dbConnection.ExecuteNonQuery("UpdateFeedPost", parameters);
+        //}
 
-        // Delete a feed post
-        public void DeleteFeedPost(int postID)
-        {
-            SqlParameter[] parameters =
-            {
-                new SqlParameter("@PostID", postID)
-            };
+        //// Delete a feed post
+        //public void DeleteFeedPost(int postID)
+        //{
+        //    SqlParameter[] parameters =
+        //    {
+        //        new SqlParameter("@PostID", postID)
+        //    };
 
-            dbConnection.ExecuteNonQuery("DeleteFeedPost", parameters);
-        }
+        //    dbConnection.ExecuteNonQuery("DeleteFeedPost", parameters);
+        //}
 
         public void AddUserToChat(int userID, int chatID)
         {

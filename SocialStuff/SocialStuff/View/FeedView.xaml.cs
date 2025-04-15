@@ -1,7 +1,7 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using SocialStuff.ViewModel;
-using SocialStuff.Services;
 using SocialStuff.Data;
+using SocialStuff.Services.Implementations;
 
 namespace SocialStuff.View
 {

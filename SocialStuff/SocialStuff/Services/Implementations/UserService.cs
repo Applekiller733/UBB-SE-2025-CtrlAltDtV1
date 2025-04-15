@@ -7,25 +7,26 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SocialStuff.Services.Interfaces;
 
 
-namespace SocialStuff.Services
+namespace SocialStuff.Services.Implementations
 {
-    public class UserService
+    public class UserService : IUserService
     {
-        private Repository repo;
-        private readonly NotificationService notificationService;
+        private IRepository repo;
+        private readonly INotificationService notificationService;
         private int UserID;
-        private static bool isUserInTimeout;
+        private bool isUserInTimeout;    //MADE IT NONSTATIC
 
-        public UserService(Repository repo)
+        public UserService(IRepository repo, INotificationService notificationService)
         {
             this.repo = repo;
-            this.notificationService = new NotificationService(repo);
-            this.UserID = GetCurrentUser();
+            this.notificationService = notificationService;
+            UserID = GetCurrentUser();
         }
 
-        public Repository GetRepo()
+        public IRepository GetRepo()
         {
             return repo;
         }
@@ -128,7 +129,7 @@ namespace SocialStuff.Services
         {
             List<Chat> chats = new List<Chat>();
             List<Chat> currentUserChats = new List<Chat>();
-            chats = this.repo.GetChatsList();
+            chats = repo.GetChatsList();
 
             foreach (Chat chat in chats)
             {
@@ -186,12 +187,13 @@ namespace SocialStuff.Services
         {
             return user.GetTimeoutEnd() != null && user.GetTimeoutEnd() > DateTime.Now;
         }
-        public static bool IsUserInTimeout()
-        {
-            return isUserInTimeout;
-        }
 
-        public static void setUserTimeout(bool value)
+        //public static bool IsUserInTimeout()
+        //{
+        //    return isUserInTimeout;
+        //}
+
+        public void setUserTimeout(bool value)
         {
             isUserInTimeout = true;
         }

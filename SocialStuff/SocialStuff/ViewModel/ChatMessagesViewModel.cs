@@ -13,7 +13,7 @@ using Microsoft.UI.Xaml.Media;
 using MvvmHelpers;
 using SocialStuff.Data;
 using SocialStuff.Model.MessageClasses;
-using SocialStuff.Services;
+using SocialStuff.Services.Implementations;
 using SocialStuff.View;
 using SocialStuff.Views;
 using Windows.Storage;
