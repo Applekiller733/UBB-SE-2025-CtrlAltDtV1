@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using SocialStuff.Model;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 
 
 namespace SocialStuff.ViewModel
 {
     public class ReportViewModel : INotifyPropertyChanged
     {
-        private readonly UserService userService;
-        private readonly ReportService reportService;
+        private readonly IUserService userService;
+        private readonly IReportService reportService;
         private readonly int reportedUserId;
         private readonly int messageId;
 
@@ -58,7 +59,7 @@ namespace SocialStuff.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public ReportViewModel(UserService userService, ReportService reportService, int reportedUserId, int messageId)
+        public ReportViewModel(IUserService userService, IReportService reportService, int reportedUserId, int messageId)
         {
             this.userService = userService;
             this.reportService = reportService;

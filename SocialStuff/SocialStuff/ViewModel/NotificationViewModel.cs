@@ -9,12 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 
 namespace SocialStuff.ViewModel
 {
     public class NotificationViewModel : INotifyPropertyChanged
     {
-        private readonly NotificationService notificationService;
+        private readonly INotificationService notificationService;
         private readonly int currentUserID;
         private ObservableCollection<Notification> notifications;
 
@@ -36,7 +37,7 @@ namespace SocialStuff.ViewModel
             //  constructor 
         }
 
-        public NotificationViewModel(NotificationService service, int userID)
+        public NotificationViewModel(INotificationService service, int userID)
         {
             notificationService = service;
             currentUserID = userID;

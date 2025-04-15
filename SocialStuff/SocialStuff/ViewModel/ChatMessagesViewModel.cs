@@ -14,6 +14,7 @@ using MvvmHelpers;
 using SocialStuff.Data;
 using SocialStuff.Model.MessageClasses;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 using SocialStuff.View;
 using SocialStuff.Views;
 using Windows.Storage;
@@ -27,10 +28,10 @@ namespace SocialStuff.ViewModel
         private readonly Window _window;
         public ObservableCollection<Message> ChatMessages { get; set; }
         public ListView ChatListView { get; set; }
-        public MessageService messageService;
-        public ChatService chatService;
-        public UserService userService;
-        public ReportService reportService;
+        public IMessageService messageService;
+        public IChatService chatService;
+        public IUserService userService;
+        public IReportService reportService;
         private MessageTemplateSelector templateSelector;
         public int CurrentChatID { get; set; }
         public int CurrentUserID { get; set; }
@@ -157,7 +158,7 @@ namespace SocialStuff.ViewModel
             return null;
         }
 
-        public ChatMessagesViewModel(Window window,Frame RightFrame, int currentChatID, MessageService msgService, ChatService chtService, UserService usrService, ReportService reportService)
+        public ChatMessagesViewModel(Window window,Frame RightFrame, int currentChatID, IMessageService msgService, IChatService chtService, IUserService usrService, IReportService reportService)
         {
             _window = window;
             ChatMessages = new ObservableCollection<Message>();

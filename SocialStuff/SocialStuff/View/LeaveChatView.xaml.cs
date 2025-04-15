@@ -14,6 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using SocialStuff.ViewModel;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -23,14 +24,14 @@ namespace SocialStuff.View
 
     public sealed partial class LeaveChatView : Page
     {
-        private ChatService chatService;
-        private UserService userService;
+        private IChatService chatService;
+        private IUserService userService;
         private Frame RightFrame;
         private LeaveChatViewModel leaveChatViewModel;
         private Page lastPage;
         private ChatListViewModel chatMessagesViewModel;
 
-        public LeaveChatView(int ChatID, ChatListViewModel chVm, Page chatM, Frame right, ChatService chat, UserService user)
+        public LeaveChatView(int ChatID, ChatListViewModel chVm, Page chatM, Frame right, IChatService chat, IUserService user)
         {
             this.InitializeComponent();
             this.chatMessagesViewModel = chVm;

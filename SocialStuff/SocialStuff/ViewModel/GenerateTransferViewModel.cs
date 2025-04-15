@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Microsoft.UI.Xaml;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 
 namespace SocialStuff.ViewModel
 {
@@ -23,9 +24,9 @@ namespace SocialStuff.ViewModel
         private bool isCheckingFunds = false;
         private int ChatID;
 
-        private readonly ChatService chatService;
+        private readonly IChatService chatService;
 
-        public GenerateTransferViewModel(ChatService chatService,int ChatID)
+        public GenerateTransferViewModel(IChatService chatService,int ChatID)
         {
             this.chatService = chatService;
             this.ChatID = ChatID;

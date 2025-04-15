@@ -18,6 +18,7 @@ using SocialStuff.View;
 using SocialStuff.ViewModel;
 using SocialStuff.Model;
 using SocialStuff.Services.Implementations;
+using SocialStuff.Services.Interfaces;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -30,19 +31,19 @@ namespace SocialStuff
     public sealed partial class MainWindow : Window
     {
         private Window mainWindow;
-        private UserService userService;
-        private ChatService chatService;
-        private MessageService messageService;
-        private FeedService feedService;
-        private ReportService reportService;
-        private NotificationService notificationService;
+        private IUserService userService;
+        private IChatService chatService;
+        private IMessageService messageService;
+        private IFeedService feedService;
+        private IReportService reportService;
+        private INotificationService notificationService;
 
         public MainWindow()
         {
             this.InitializeComponent();
 
             mainWindow = this;
-            Repository repo = new Repository();
+            IRepository repo = new Repository();
             notificationService = new NotificationService(repo);
             userService = new UserService(repo, notificationService);
             chatService = new ChatService(repo);
