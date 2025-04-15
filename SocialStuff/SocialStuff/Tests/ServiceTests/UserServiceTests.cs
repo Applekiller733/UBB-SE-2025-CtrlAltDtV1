@@ -1,30 +1,33 @@
-﻿using SocialStuff.Data;
-using SocialStuff.Model;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-
+﻿// <copyright file="UserServiceTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright> --------------------------------------------------------------------------------------------------------------------
 
 namespace SocialStuff.Tests.ServiceTests
 {
+    using System;
+    using System.Collections.Generic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Moq;
+    using SocialStuff.Data;
+    using SocialStuff.Model;
+    using SocialStuff.Services.Implementations;
+    using SocialStuff.Services.Interfaces;
+
     [TestClass]
     public class UserServiceTests
     {
-        private Mock<IRepository> _repoMock;
-        private Mock<INotificationService> _notificationServiceMock;
-        private UserService _userService;
         private const int CurrentUserId = 2;
-    
+        private Mock<IRepository>? repoMock;
+        private Mock<INotificationService>? notificationServiceMock;
+        private UserService? userService;
+
         [TestInitialize]
         public void Setup()
         {
-            _repoMock = new Mock<IRepository>();
-            _notificationServiceMock = new Mock<INotificationService>();
-            _repoMock.Setup(r => r.GetLoggedInUserID()).Returns(CurrentUserId);
-            _userService = new UserService(_repoMock.Object, _notificationServiceMock.Object);
+            this.repoMock = new Mock<IRepository>();
+            this.notificationServiceMock = new Mock<INotificationService>();
+            this.repoMock.Setup(r => r.GetLoggedInUserID()).Returns(CurrentUserId);
+            this.userService = new UserService(this.repoMock.Object, this.notificationServiceMock.Object);
         }
 
         [TestMethod]
@@ -34,14 +37,14 @@ namespace SocialStuff.Tests.ServiceTests
             int friendId = 3;
             var user = new User(userId, "User1", "1234567890", 0);
             var friend = new User(friendId, "Friend1", "0987654321", 0);
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            _repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
-            _repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { 2 });
+            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            this.repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
+            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { 2 });
 
-            _userService.AddFriend(userId, friendId);
+            this.userService.AddFriend(userId, friendId);
 
-            _repoMock.Verify(r => r.AddFriend(userId, friendId), Times.Once());
-            _notificationServiceMock.Verify(n => n.SendFriendNotification(userId, friendId), Times.Once());
+            this.repoMock.Verify(r => r.AddFriend(userId, friendId), Times.Once());
+            this.notificationServiceMock.Verify(n => n.SendFriendNotification(userId, friendId), Times.Once());
             Assert.IsTrue(user.GetFriends().Contains(friendId));
         }
 
@@ -52,14 +55,14 @@ namespace SocialStuff.Tests.ServiceTests
             int friendId = 3;
             var user = new User(userId, "User1", "1234567890", 0);
             var friend = new User(friendId, "Friend1", "0987654321", 0);
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            _repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
-            _repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { friendId });
+            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            this.repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
+            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { friendId });
 
-            _userService.AddFriend(userId, friendId);
+            this.userService.AddFriend(userId, friendId);
 
-            _repoMock.Verify(r => r.AddFriend(userId, friendId), Times.Never());
-            _notificationServiceMock.Verify(n => n.SendFriendNotification(userId, friendId), Times.Never());
+            this.repoMock.Verify(r => r.AddFriend(userId, friendId), Times.Never());
+            this.notificationServiceMock.Verify(n => n.SendFriendNotification(userId, friendId), Times.Never());
         }
 
         [TestMethod]
@@ -70,14 +73,14 @@ namespace SocialStuff.Tests.ServiceTests
             var user = new User(userId, "User1", "1234567890", 0);
             var friend = new User(friendId, "Friend1", "0987654321", 0);
             user.AddFriend(friendId);
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            _repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
-            _repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { friendId });
+            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            this.repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
+            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { friendId });
 
-            _userService.RemoveFriend(userId, friendId);
+            this.userService.RemoveFriend(userId, friendId);
 
-            _repoMock.Verify(r => r.DeleteFriend(userId, friendId), Times.Once());
-            _notificationServiceMock.Verify(n => n.SendRemoveFriendNotification(userId, friendId), Times.Once());
+            this.repoMock.Verify(r => r.DeleteFriend(userId, friendId), Times.Once());
+            this.notificationServiceMock.Verify(n => n.SendRemoveFriendNotification(userId, friendId), Times.Once());
             Assert.IsFalse(user.GetFriends().Contains(friendId));
         }
 
@@ -88,14 +91,14 @@ namespace SocialStuff.Tests.ServiceTests
             int friendId = 3;
             var user = new User(userId, "User1", "1234567890", 0);
             var friend = new User(friendId, "Friend1", "0987654321", 0);
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            _repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
-            _repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { 2 });
+            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            this.repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
+            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { 2 });
 
-            _userService.RemoveFriend(userId, friendId);
+            this.userService.RemoveFriend(userId, friendId);
 
-            _repoMock.Verify(r => r.DeleteFriend(userId, friendId), Times.Never());
-            _notificationServiceMock.Verify(n => n.SendRemoveFriendNotification(userId, friendId), Times.Never());
+            this.repoMock.Verify(r => r.DeleteFriend(userId, friendId), Times.Never());
+            this.notificationServiceMock.Verify(n => n.SendRemoveFriendNotification(userId, friendId), Times.Never());
         }
 
         [TestMethod]
@@ -104,12 +107,12 @@ namespace SocialStuff.Tests.ServiceTests
             int userId = 1;
             int chatId = 100;
             var user = new User(userId, "User1", "1234567890", 0);
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            _repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { 200 });
+            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            this.repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { 200 });
 
-            _userService.JoinChat(userId, chatId);
+            this.userService.JoinChat(userId, chatId);
 
-            _repoMock.Verify(r => r.AddUserToChat(chatId, userId), Times.Once());
+            this.repoMock.Verify(r => r.AddUserToChat(chatId, userId), Times.Once());
             Assert.IsTrue(user.GetChats().Contains(chatId));
         }
 
@@ -119,12 +122,12 @@ namespace SocialStuff.Tests.ServiceTests
             int userId = 1;
             int chatId = 100;
             var user = new User(userId, "User1", "1234567890", 0);
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            _repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { chatId });
+            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            this.repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { chatId });
 
-            _userService.JoinChat(userId, chatId);
+            this.userService.JoinChat(userId, chatId);
 
-            _repoMock.Verify(r => r.AddUserToChat(chatId, userId), Times.Never());
+            this.repoMock.Verify(r => r.AddUserToChat(chatId, userId), Times.Never());
         }
 
         [TestMethod]
@@ -134,12 +137,12 @@ namespace SocialStuff.Tests.ServiceTests
             int chatId = 100;
             var user = new User(userId, "User1", "1234567890", 0);
             user.JoinChat(chatId);
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            _repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { chatId });
+            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            this.repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { chatId });
 
-            _userService.LeaveChat(userId, chatId);
+            this.userService.LeaveChat(userId, chatId);
 
-            _repoMock.Verify(r => r.RemoveUserFromChat(userId, chatId), Times.Once());
+            this.repoMock.Verify(r => r.RemoveUserFromChat(userId, chatId), Times.Once());
             Assert.IsFalse(user.GetChats().Contains(chatId));
         }
 
@@ -149,12 +152,12 @@ namespace SocialStuff.Tests.ServiceTests
             int userId = 1;
             int chatId = 100;
             var user = new User(userId, "User1", "1234567890", 0);
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            _repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { 200 });
+            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            this.repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { 200 });
 
-            _userService.LeaveChat(userId, chatId);
+            this.userService.LeaveChat(userId, chatId);
 
-            _repoMock.Verify(r => r.RemoveUserFromChat(userId, chatId), Times.Never());
+            this.repoMock.Verify(r => r.RemoveUserFromChat(userId, chatId), Times.Never());
         }
 
         [TestMethod]
@@ -167,9 +170,9 @@ namespace SocialStuff.Tests.ServiceTests
             new User(2, "TestUser", "1234567890", 0),
             new User(3, "Other", "0987654321", 0)
         };
-            _repoMock.Setup(r => r.GetUsersList()).Returns(users);
+            this.repoMock.Setup(r => r.GetUsersList()).Returns(users);
 
-            var result = _userService.FilterUsers(keyword, userId);
+            var result = this.userService.FilterUsers(keyword, userId);
 
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(2, result[0]);
@@ -185,10 +188,10 @@ namespace SocialStuff.Tests.ServiceTests
             new User(2, "TestFriend", "1234567890", 0),
             new User(3, "Other", "0987654321", 0)
         };
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(new User(userId, "User1", "123", 0));
-            _repoMock.Setup(r => r.GetUserFriendsList(userId)).Returns(friends);
+            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(new User(userId, "User1", "123", 0));
+            this.repoMock.Setup(r => r.GetUserFriendsList(userId)).Returns(friends);
 
-            var result = _userService.FilterFriends(keyword, userId);
+            var result = this.userService.FilterFriends(keyword, userId);
 
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(2, result[0]);
@@ -199,9 +202,9 @@ namespace SocialStuff.Tests.ServiceTests
         {
             int userId = 1;
             var friendIds = new List<int> { 2, 3 };
-            _repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(friendIds);
+            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(friendIds);
 
-            var result = _userService.GetFriendsIDsByUser(userId);
+            var result = this.userService.GetFriendsIDsByUser(userId);
 
             CollectionAssert.AreEqual(friendIds, result);
         }
@@ -214,9 +217,9 @@ namespace SocialStuff.Tests.ServiceTests
         {
             new User(2, "Friend1", "1234567890", 0)
         };
-            _repoMock.Setup(r => r.GetUserFriendsList(userId)).Returns(friends);
+            this.repoMock.Setup(r => r.GetUserFriendsList(userId)).Returns(friends);
 
-            var result = _userService.GetFriendsByUser(userId);
+            var result = this.userService.GetFriendsByUser(userId);
 
             CollectionAssert.AreEqual(friends, result);
         }
@@ -226,9 +229,9 @@ namespace SocialStuff.Tests.ServiceTests
         {
             int userId = 1;
             var chatIds = new List<int> { 100, 200 };
-            _repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(chatIds);
+            this.repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(chatIds);
 
-            var result = _userService.GetChatsByUser(userId);
+            var result = this.userService.GetChatsByUser(userId);
 
             CollectionAssert.AreEqual(chatIds, result);
         }
@@ -241,9 +244,9 @@ namespace SocialStuff.Tests.ServiceTests
             new Chat(100, "Chat1", new List<int> { CurrentUserId, 3 }),
             new Chat(200, "Chat2", new List<int> { 4, 5 })
         };
-            _repoMock.Setup(r => r.GetChatsList()).Returns(chats);
+            this.repoMock.Setup(r => r.GetChatsList()).Returns(chats);
 
-            var result = _userService.GetCurrentUserChats();
+            var result = this.userService.GetCurrentUserChats();
 
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(100, result[0].getChatID());
@@ -257,9 +260,9 @@ namespace SocialStuff.Tests.ServiceTests
         {
             new User(userId, "User1", "1234567890", 0)
         };
-            _repoMock.Setup(r => r.GetUsersList()).Returns(users);
+            this.repoMock.Setup(r => r.GetUsersList()).Returns(users);
 
-            var result = _userService.GetUserById(userId);
+            var result = this.userService.GetUserById(userId);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(userId, result.GetUserId());
@@ -275,10 +278,10 @@ namespace SocialStuff.Tests.ServiceTests
             new User(2, "Friend1", "456", 0),
             new User(3, "NonFriend", "789", 0)
         };
-            _repoMock.Setup(r => r.GetUsersList()).Returns(users);
-            _repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { 2 });
+            this.repoMock.Setup(r => r.GetUsersList()).Returns(users);
+            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { 2 });
 
-            var result = _userService.GetNonFriendsUsers(userId);
+            var result = this.userService.GetNonFriendsUsers(userId);
 
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(3, result[0].GetUserId());
@@ -287,7 +290,7 @@ namespace SocialStuff.Tests.ServiceTests
         [TestMethod]
         public void GetCurrentUser_ReturnsLoggedInUserId()
         {
-            var result = _userService.GetCurrentUser();
+            var result = this.userService.GetCurrentUser();
 
             Assert.AreEqual(CurrentUserId, result);
         }
@@ -297,7 +300,7 @@ namespace SocialStuff.Tests.ServiceTests
         {
             var user = new User(1, "User1", "1234567890", 1);
 
-            _userService.MarkUserAsDangerousAndGiveTimeout(user);
+            this.userService.MarkUserAsDangerousAndGiveTimeout(user);
 
             Assert.IsNotNull(user.GetTimeoutEnd());
             Assert.IsTrue(user.GetTimeoutEnd() > DateTime.Now);
@@ -309,19 +312,9 @@ namespace SocialStuff.Tests.ServiceTests
             var user = new User(1, "User1", "1234567890", 0);
             user.SetTimeoutEnd(DateTime.Now.AddMinutes(5));
 
-            var result = _userService.IsUserInTimeout(user);
+            var result = this.userService.IsUserInTimeout(user);
 
             Assert.IsTrue(result);
         }
-
-        [TestMethod]
-        public void SetUserTimeout_SetsFlag()
-        {
-            _userService.setUserTimeout(true);
-
-            // Note: This tests a private field change; ideally, verify through behavior
-            Assert.IsTrue(true); // Placeholder since isUserInTimeout is private
-        }
     }
 }
-

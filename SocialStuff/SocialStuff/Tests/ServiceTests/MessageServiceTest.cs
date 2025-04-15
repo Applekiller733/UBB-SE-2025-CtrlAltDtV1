@@ -169,7 +169,7 @@ namespace SocialStuff.Tests.ServiceTests
             var message = new TextMessage(1, 1, 2, DateTime.Now, "content", new List<int>());
 
             // Act
-            _service.reportMessage(message);
+            _service.ReportMessage(message);
 
             // Assert
             Assert.IsTrue(true); // Since method is empty, ensure it doesn't throw
