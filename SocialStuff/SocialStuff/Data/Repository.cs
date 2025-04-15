@@ -17,32 +17,47 @@ namespace SocialStuff.Data
     using User = SocialStuff.Model.User;
     using WindowsNotification = Windows.UI.Notifications.Notification;
 
+    /// <summary>
+    /// Represents a repository for accessing and managing data.
+    /// </summary>
     public class Repository : IRepository
     {
+        /// <summary>
+        /// The ID of the currently logged-in user.
+        /// </summary>
         public const int LOGGEDINUSERID = 2;
+
         private static int loggedInUserID = LOGGEDINUSERID;
         private DatabaseConnection dbConnection;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Repository"/> class.
+        /// </summary>
         public Repository()
         {
             this.dbConnection = new DatabaseConnection();
             Console.WriteLine("Repo created");
         }
 
-        // public DatabaseConnection GetDatabaseConnection()
-        // {
-        //    return dbConnection;
-        // }
+        /// <summary>
+        /// Gets the ID of the currently logged-in user.
+        /// </summary>
+        /// <returns>The ID of the logged-in user.</returns>
         public int GetLoggedInUserID()
         {
             return loggedInUserID;
         }
 
+        /// <summary>
+        /// Retrieves a user by their ID.
+        /// </summary>
+        /// <param name="userID">The ID of the user to retrieve.</param>
+        /// <returns>A <see cref="User"/> object representing the user.</returns>
         public User GetUserById(int userID)
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@UserID", userID),
+            new SqlParameter("@UserID", userID),
             };
             DataTable dataTable = this.dbConnection.ExecuteReader("SELECT * FROM Users WHERE UserID = @UserID", parameters, false);
             if (dataTable.Rows.Count > 0)
@@ -58,12 +73,16 @@ namespace SocialStuff.Data
             return new User();
         }
 
-        // Get a chat by ID
+        /// <summary>
+        /// Retrieves a chat by its ID.
+        /// </summary>
+        /// <param name="chatID">The ID of the chat to retrieve.</param>
+        /// <returns>A <see cref="Chat"/> object representing the chat, or null if not found.</returns>
         public Chat? GetChatById(int chatID)
         {
             SqlParameter[] parameters =
             {
-                new SqlParameter("@ChatID", chatID),
+            new SqlParameter("@ChatID", chatID),
             };
             DataTable dataTable = this.dbConnection.ExecuteReader("SELECT * FROM Chats WHERE ChatID = @ChatID", parameters, false);
             if (dataTable.Rows.Count > 0)
@@ -78,7 +97,10 @@ namespace SocialStuff.Data
             return null;
         }
 
-        // Get all users
+        /// <summary>
+        /// Retrieves a list of all users.
+        /// </summary>
+        /// <returns>A list of <see cref="User"/> objects representing all users.</returns>
         public List<User> GetUsersList()
         {
             DataTable dataTable = this.dbConnection.ExecuteReader("select * from Users", Array.Empty<SqlParameter>(), false);
@@ -96,7 +118,11 @@ namespace SocialStuff.Data
             return users;
         }
 
-        // Get notifications for a specific user
+        /// <summary>
+        /// Retrieves the notifications for a specific user.
+        /// </summary>
+        /// <param name="userID">The ID of the user whose notifications are to be retrieved.</param>
+        /// <returns>A list of <see cref="NotificationModel"/> objects representing the user's notifications.</returns>
         public List<NotificationModel> GetNotifications(int userID)
         {
             SqlParameter[] parameters =
@@ -118,7 +144,11 @@ namespace SocialStuff.Data
             return notifications;
         }
 
-        // Get the Friends of a USERID, friends returned as User Class Type
+        /// <summary>
+        /// Retrieves the friends of a user by their user ID.
+        /// </summary>
+        /// <param name="userId">The ID of the user whose friends are to be retrieved.</param>
+        /// <returns>A list of <see cref="User"/> objects representing the user's friends.</returns>
         public List<User> GetUserFriendsList(int userId)
         {
             DataTable dataTable = this.dbConnection.ExecuteReader("select * from Users", Array.Empty<SqlParameter>(), false);
@@ -181,7 +211,10 @@ namespace SocialStuff.Data
         //    return Chats;
         // }
 
-        // Get all chats
+        /// <summary>
+        /// Retrieves a list of all chats.
+        /// </summary>
+        /// <returns>A list of <see cref="Chat"/> objects representing all chats.</returns>
         public List<Chat> GetChatsList()
         {
             DataTable dataTable = this.dbConnection.ExecuteReader("select * from Chats", Array.Empty<SqlParameter>(), false);
@@ -206,7 +239,11 @@ namespace SocialStuff.Data
             return chats;
         }
 
-        // get the pparticipants of a chat
+        /// <summary>
+        /// Retrieves the participants of a chat by its ID.
+        /// </summary>
+        /// <param name="chatID">The ID of the chat whose participants are to be retrieved.</param>
+        /// <returns>A list of <see cref="User"/> objects representing the participants of the chat.</returns>
         public List<User> GetChatParticipants(int chatID)
         {
             SqlParameter[] parameters =
@@ -229,10 +266,10 @@ namespace SocialStuff.Data
             return users;
         }
 
-        // <summary>
-        // Gets the list of all messages.
-        // </summary>
-        // <returns>A list of messages.</returns>
+        /// <summary>
+        /// Retrieves the list of all messages.
+        /// </summary>
+        /// <returns>A list of <see cref="Message"/> objects representing all messages.</returns>
         public List<Message> GetMessagesList()
         {
             // messagetypes : 1-text , 2-image, 3-request, 4-transfer
@@ -281,7 +318,11 @@ namespace SocialStuff.Data
             return messages;
         }
 
-        // Get all friends ids of a user
+        /// <summary>
+        /// Retrieves the IDs of the friends of a specific user.
+        /// </summary>
+        /// <param name="userID">The ID of the user whose friends' IDs are to be retrieved.</param>
+        /// <returns>A list of integers representing the IDs of the user's friends.</returns>
         public List<int> GetFriendsIDs(int userID)
         {
             SqlParameter[] parameters =
@@ -302,7 +343,10 @@ namespace SocialStuff.Data
             return friends;
         }
 
-        // Get all reports
+        /// <summary>
+        /// Retrieves a list of all reports.
+        /// </summary>
+        /// <returns>A list of <see cref="Report"/> objects representing all reports.</returns>
         public List<Report> GetReportsList()
         {
             DataTable dataTable = this.dbConnection.ExecuteReader("select * from Reports", Array.Empty<SqlParameter>(), false);
@@ -321,7 +365,10 @@ namespace SocialStuff.Data
             return reports;
         }
 
-        // Get all feed posts
+        /// <summary>
+        /// Retrieves a list of all feed posts.
+        /// </summary>
+        /// <returns>A list of <see cref="Post"/> objects representing all feed posts.</returns>
         public List<Post> GetFeedPostsList()
         {
             DataTable dataTable = this.dbConnection.ExecuteReader("select * from Feed_Posts", Array.Empty<SqlParameter>(), false);
@@ -339,7 +386,11 @@ namespace SocialStuff.Data
             return feedPosts;
         }
 
-        // Get all chats ids of a user
+        /// <summary>
+        /// Retrieves a list of chat IDs for a specific user.
+        /// </summary>
+        /// <param name="userID">The ID of the user whose chat IDs are to be retrieved.</param>
+        /// <returns>A list of integers representing the chat IDs associated with the user.</returns>
         public List<int> GetChatsIDs(int userID)
         {
             SqlParameter[] parameters =
@@ -356,7 +407,11 @@ namespace SocialStuff.Data
             return chats;
         }
 
-        // Add a chat to the database
+        /// <summary>
+        /// Adds a new chat to the database.
+        /// </summary>
+        /// <param name="chatName">The name of the chat to be added.</param>
+        /// <returns>The ID of the newly created chat.</returns>
         public int AddChat(string chatName)
         {
             int chatID;
@@ -371,6 +426,11 @@ namespace SocialStuff.Data
             return chatID;
         }
 
+        /// <summary>
+        /// Retrieves the IDs of the participants of a specific chat.
+        /// </summary>
+        /// <param name="chatID">The ID of the chat whose participant IDs are to be retrieved.</param>
+        /// <returns>A list of integers representing the IDs of the participants in the chat.</returns>
         public List<int> GetChatParticipantsIDs(int chatID)
         {
             DataTable dataTable = this.dbConnection.ExecuteReader("select * from Chat_Participants", Array.Empty<SqlParameter>(), false);
@@ -397,7 +457,10 @@ namespace SocialStuff.Data
         // dbConnection.ExecuteNonQuery("UpdateChat", parameters);
         // }
 
-        // Delete a chat from the database
+        /// <summary>
+        /// Deletes a chat from the database.
+        /// </summary>
+        /// <param name="chatID">The ID of the chat to delete.</param>
         public void DeleteChat(int chatID)
         {
             SqlParameter[] parameters =
@@ -408,7 +471,11 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("DeleteChat", parameters);
         }
 
-        // Add a friend to the database
+        /// <summary>
+        /// Adds a friend to the database.
+        /// </summary>
+        /// <param name="userID">The ID of the user who is adding a friend.</param>
+        /// <param name="friendID">The ID of the friend to be added.</param>
         public void AddFriend(int userID, int friendID)
         {
             SqlParameter[] parameters =
@@ -420,7 +487,11 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("AddFriend", parameters);
         }
 
-        // Delete a friend from the database
+        /// <summary>
+        /// Deletes a friend from the database.
+        /// </summary>
+        /// <param name="userID">The ID of the user.</param>
+        /// <param name="friendID">The ID of the friend to delete.</param>
         public void DeleteFriend(int userID, int friendID)
         {
             SqlParameter[] parameters =
@@ -468,7 +539,12 @@ namespace SocialStuff.Data
         // dbConnection.ExecuteNonQuery("DeleteUser", parameters);
         // }
 
-        // Add a message to the database (handles all types)
+        /// <summary>
+        /// Adds a text message to the database.
+        /// </summary>
+        /// <param name="userID">The ID of the user sending the message.</param>
+        /// <param name="chatID">The ID of the chat where the message is being sent.</param>
+        /// <param name="content">The content of the text message.</param>
         public void AddTextMessage(int userID, int chatID, string content)
         {
             SqlParameter[] parameters =
@@ -482,6 +558,12 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("AddMessage", parameters);
         }
 
+        /// <summary>
+        /// Adds an image message to the database.
+        /// </summary>
+        /// <param name="userID">The ID of the user sending the message.</param>
+        /// <param name="chatID">The ID of the chat where the message is being sent.</param>
+        /// <param name="imageURL">The URL of the image being sent.</param>
         public void AddImageMessage(int userID, int chatID, string imageURL)
         {
             SqlParameter[] parameters =
@@ -495,6 +577,15 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("AddMessage", parameters);
         }
 
+        /// <summary>
+        /// Adds a request message to the database.
+        /// </summary>
+        /// <param name="userID">The ID of the user sending the message.</param>
+        /// <param name="chatID">The ID of the chat where the message is being sent.</param>
+        /// <param name="content">The content of the request message.</param>
+        /// <param name="status">The status of the request message (optional).</param>
+        /// <param name="amount">The amount associated with the request message (optional).</param>
+        /// <param name="currency">The currency of the amount (optional).</param>
         public void AddRequestMessage(int userID, int chatID, string content, string? status = null, float? amount = null, string? currency = null)
         {
             SqlParameter[] parameters =
@@ -511,6 +602,15 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("AddMessage", parameters);
         }
 
+        /// <summary>
+        /// Adds a transfer message to the database.
+        /// </summary>
+        /// <param name="userID">The ID of the user sending the message.</param>
+        /// <param name="chatID">The ID of the chat where the message is being sent.</param>
+        /// <param name="content">The content of the transfer message.</param>
+        /// <param name="status">The status of the transfer message (optional).</param>
+        /// <param name="amount">The amount associated with the transfer message (optional).</param>
+        /// <param name="currency">The currency of the amount (optional).</param>
         public void AddTransferMessage(int userID, int chatID, string content, string? status = null, float? amount = null, string? currency = null)
         {
             SqlParameter[] parameters =
@@ -543,7 +643,10 @@ namespace SocialStuff.Data
         // dbConnection.ExecuteNonQuery("UpdateMessage", parameters);
         // }
 
-        // Delete a message from the database
+        /// <summary>
+        /// Deletes a message from the database.
+        /// </summary>
+        /// <param name="messageID">The ID of the message to delete.</param>
         public void DeleteMessage(int messageID)
         {
             SqlParameter[] parameters =
@@ -554,7 +657,11 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("DeleteMessage", parameters);
         }
 
-        // Add a notification
+        /// <summary>
+        /// Adds a notification for a specific user.
+        /// </summary>
+        /// <param name="content">The content of the notification.</param>
+        /// <param name="userID">The ID of the user to whom the notification is being added.</param>
         public void AddNotification(string content, int userID)
         {
             SqlParameter[] parameters =
@@ -566,7 +673,10 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("AddNotification", parameters);
         }
 
-        // Delete a notification
+        /// <summary>
+        /// Deletes a notification from the database.
+        /// </summary>
+        /// <param name="notifID">The ID of the notification to delete.</param>
         public void DeleteNotification(int notifID)
         {
             SqlParameter[] parameters =
@@ -577,7 +687,10 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("DeleteNotification", parameters);
         }
 
-        // Clear all notifications
+        /// <summary>
+        /// Clears all notifications for a specific user.
+        /// </summary>
+        /// <param name="userID">The ID of the user whose notifications are to be cleared.</param>
         public void ClearAllNotifications(int userID)
         {
             SqlParameter[] parameters =
@@ -588,13 +701,13 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("DeleteAllNotifications", parameters);
         }
 
-        // <summary>
-        // Adds a report to the database.
-        // </summary>
-        // <param name="messageID">The ID of the message being reported.</param>
-        // <param name="reason">The reason for the report.</param>
-        // <param name="description">The description of the report.</param>
-        // <param name="status">The status of the report.</param>
+        /// <summary>
+        /// Adds a report to the database.
+        /// </summary>
+        /// <param name="messageID">The ID of the message being reported.</param>
+        /// <param name="reason">The reason for the report.</param>
+        /// <param name="description">The description of the report.</param>
+        /// <param name="status">The status of the report.</param>
         public void AddReport(int messageID, string reason, string description, string status)
         {
             SqlParameter[] parameters =
@@ -670,6 +783,12 @@ namespace SocialStuff.Data
 
         // dbConnection.ExecuteNonQuery("DeleteFeedPost", parameters);
         // }
+
+        /// <summary>
+        /// Adds a user to a specific chat.
+        /// </summary>
+        /// <param name="userID">The ID of the user to add to the chat.</param>
+        /// <param name="chatID">The ID of the chat to which the user is being added.</param>
         public void AddUserToChat(int userID, int chatID)
         {
             SqlParameter[] parameters =
@@ -680,6 +799,11 @@ namespace SocialStuff.Data
             this.dbConnection.ExecuteNonQuery("AddUserToChat", parameters);
         }
 
+        /// <summary>
+        /// Removes a user from a specific chat.
+        /// </summary>
+        /// <param name="userID">The ID of the user to remove from the chat.</param>
+        /// <param name="chatID">The ID of the chat from which the user is being removed.</param>
         public void RemoveUserFromChat(int userID, int chatID)
         {
             SqlParameter[] parameters =

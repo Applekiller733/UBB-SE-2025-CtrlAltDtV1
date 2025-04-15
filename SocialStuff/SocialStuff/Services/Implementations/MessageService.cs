@@ -37,7 +37,7 @@ namespace SocialStuff.Services.Implementations
         /// Gets the repository instance.
         /// </summary>
         /// <returns>The repository instance.</returns>
-        public IRepository getRepo()
+        public IRepository GetRepo()
         {
             return this.repository;
         }
@@ -45,40 +45,40 @@ namespace SocialStuff.Services.Implementations
         /// <summary>
         /// Sends a text message to a chat.
         /// </summary>
-        /// <param name="SenderID">The ID of the sender.</param>
-        /// <param name="ChatID">The ID of the chat.</param>
-        /// <param name="Content">The content of the message.</param>
-        public void sendMessage(int SenderID, int ChatID, string Content)
+        /// <param name="senderID">The ID of the sender.</param>
+        /// <param name="chatID">The ID of the chat.</param>
+        /// <param name="content">The content of the message.</param>
+        public void SendMessage(int senderID, int chatID, string content)
         {
-            if (this.IsUserInTimeout(SenderID))
+            if (this.IsUserInTimeout(senderID))
             {
                 return;
             }
 
-            this.repository.AddTextMessage(SenderID, ChatID, Content);
+            this.repository.AddTextMessage(senderID, chatID, content);
         }
 
         /// <summary>
         /// Sends an image message to a chat.
         /// </summary>
-        /// <param name="SenderID">The ID of the sender.</param>
-        /// <param name="ChatID">The ID of the chat.</param>
-        /// <param name="ImageURL">The URL of the image.</param>
-        public void sendImage(int SenderID, int ChatID, string ImageURL)
+        /// <param name="senderID">The ID of the sender.</param>
+        /// <param name="chatID">The ID of the chat.</param>
+        /// <param name="imageURL">The URL of the image.</param>
+        public void SendImage(int senderID, int chatID, string imageURL)
         {
-            if (this.IsUserInTimeout(SenderID))
+            if (this.IsUserInTimeout(senderID))
             {
                 return;
             }
 
-            this.repository.AddImageMessage(SenderID, ChatID, ImageURL);
+            this.repository.AddImageMessage(senderID, chatID, imageURL);
         }
 
         /// <summary>
         /// Deletes a message from the repository.
         /// </summary>
         /// <param name="message">The message to delete.</param>
-        public void deleteMessage(Message message)
+        public void DeleteMessage(Message message)
         {
             this.repository.DeleteMessage(message.getMessageID());
         }
@@ -92,7 +92,7 @@ namespace SocialStuff.Services.Implementations
         /// <param name="status">The status of the transfer.</param>
         /// <param name="amount">The amount being transferred.</param>
         /// <param name="currency">The currency of the transfer.</param>
-        public void sendTransferMessage(int userID, int chatID, string content, string status, float amount, string currency)
+        public void SendTransferMessage(int userID, int chatID, string content, string status, float amount, string currency)
         {
             this.repository.AddTransferMessage(userID, chatID, content, status, amount, currency);
         }
@@ -106,7 +106,7 @@ namespace SocialStuff.Services.Implementations
         /// <param name="status">The status of the request.</param>
         /// <param name="amount">The amount being requested.</param>
         /// <param name="currency">The currency of the request.</param>
-        public void sendRequestMessage(int userID, int chatID, string content, string status, float amount, string currency)
+        public void SendRequestMessage(int userID, int chatID, string content, string status, float amount, string currency)
         {
             this.repository.AddRequestMessage(userID, chatID, content, status, amount, currency);
         }

@@ -44,7 +44,7 @@ namespace SocialStuff.ViewModel
             this.lastChat = lastChat;
             this.userService = user;
             this.chatService = chat;
-            ChatName = this.chatService.getChatNameByID(ChatID);
+            ChatName = this.chatService.GetChatNameByID(ChatID);
 
             this.UnaddedFriends = new ObservableCollection<User>();
             this.CurrentChatMembers = new ObservableCollection<User>();
@@ -66,7 +66,7 @@ namespace SocialStuff.ViewModel
             this.NewlyAddedFriends.Clear();
             this.UpdateObservableLists();
 
-            chatMessagesViewModel.CurrentChatParticipants = chatService.getChatParticipantsStringList(ChatID);
+            chatMessagesViewModel.CurrentChatParticipants = chatService.GetChatParticipantsStringList(ChatID);
         }
 
         public void AddToSelected(User user)
@@ -98,7 +98,7 @@ namespace SocialStuff.ViewModel
         public void LoadAllUnaddedFriendsList()
         {
             var allFriends = this.userService.GetFriendsByUser(this.userService.GetCurrentUser());
-            var currentChatParticipants = this.chatService.getChatParticipantsList(ChatID);
+            var currentChatParticipants = this.chatService.GetChatParticipantsList(ChatID);
             this.allUnaddedFriends = allFriends.Where(friend => !currentChatParticipants.Any(participant => participant.GetUserId() == friend.GetUserId())).ToList();
         }
 
@@ -107,7 +107,7 @@ namespace SocialStuff.ViewModel
             LoadAllUnaddedFriendsList();
 
             this.CurrentChatMembers.Clear();
-            foreach (var participant in this.chatService.getChatParticipantsList(ChatID))
+            foreach (var participant in this.chatService.GetChatParticipantsList(ChatID))
             {
                 this.CurrentChatMembers.Add(participant);
             }

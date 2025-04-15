@@ -71,7 +71,7 @@ namespace SocialStuff.ViewModel
                 }
             }
             // sort chats by last message time
-            ChatList = new ObservableCollection<Chat>(ChatList.OrderByDescending(chat => chatService.getLastMessageTimeStamp(chat.getChatID())));
+            ChatList = new ObservableCollection<Chat>(ChatList.OrderByDescending(chat => chatService.GetLastMessageTimeStamp(chat.getChatID())));
 
         }
     }
