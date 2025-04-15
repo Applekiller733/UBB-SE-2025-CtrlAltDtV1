@@ -26,6 +26,6 @@ namespace SocialStuff.Services.Interfaces
         int GetCurrentUser();   // This should be replaced with actual logic to get the logged-in user. ---> JUST A MOCK FUNCTION
         void MarkUserAsDangerousAndGiveTimeout(User user);
         bool IsUserInTimeout(User user);
-        void setUserTimeout(bool value);
+        //void setUserTimeout(bool value);
     }
 }

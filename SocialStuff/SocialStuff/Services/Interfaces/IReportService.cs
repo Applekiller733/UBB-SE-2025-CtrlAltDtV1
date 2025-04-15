@@ -10,7 +10,7 @@ namespace SocialStuff.Services.Interfaces
 {
     public interface IReportService
     {
-        Report GetReportById(int id);
+        Report? GetReportById(int id);
         void AddReport(Report report);
         bool CheckIfReportExists(int messageID, int reporterUserID);
         void IncreaseReportCount(int reportedID);
