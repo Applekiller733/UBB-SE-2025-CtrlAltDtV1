@@ -82,7 +82,7 @@ namespace SocialStuff.ViewModel
             {
                 selectedFriendsIDs.Add(friend.GetUserId());
             }
-            chatService.createChat(selectedFriendsIDs, GroupName);
+            chatService.CreateChat(selectedFriendsIDs, GroupName);
             this.chatListViewModel.LoadChats();
         }
 

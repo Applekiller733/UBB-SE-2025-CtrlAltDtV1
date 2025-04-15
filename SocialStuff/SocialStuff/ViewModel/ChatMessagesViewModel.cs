@@ -84,7 +84,7 @@ namespace SocialStuff.ViewModel
         private void SendMessage()
         {
             string convertedContent = EmoticonConverter.ConvertEmoticonsToEmojis(MessageContent);
-            this.messageService.sendMessage(CurrentUserID, CurrentChatID, convertedContent);
+            this.messageService.SendMessage(CurrentUserID, CurrentChatID, convertedContent);
             this.CheckForNewMessages();
             MessageContent = "";
         }
@@ -109,7 +109,7 @@ namespace SocialStuff.ViewModel
             if (file != null)
             {
                 string imageUrl = await ImgurImageUploader.UploadImageAndGetUrl(file);
-                this.messageService.sendImage(CurrentUserID, CurrentChatID, imageUrl);
+                this.messageService.SendImage(CurrentUserID, CurrentChatID, imageUrl);
                 this.CheckForNewMessages();
             }
         }
@@ -129,7 +129,7 @@ namespace SocialStuff.ViewModel
         public ICommand DeleteMessageCommand { get; set; }
         private void DeleteMessage(Message message)
         {
-            this.messageService.deleteMessage(message);
+            this.messageService.DeleteMessage(message);
             this.LoadAllMessagesForChat();
         }
 
@@ -170,8 +170,8 @@ namespace SocialStuff.ViewModel
             this.CurrentUserID = userService.GetCurrentUser();
             this.SendMessageCommand = new RelayCommand(SendMessage);
             this.SendImageCommand = new RelayCommand(SendImage);
-            this.CurrentChatName = chatService.getChatNameByID(CurrentChatID);
-            this.CurrentChatParticipants = chatService.getChatParticipantsStringList(CurrentChatID);
+            this.CurrentChatName = chatService.GetChatNameByID(CurrentChatID);
+            this.CurrentChatParticipants = chatService.GetChatParticipantsStringList(CurrentChatID);
             this.DeleteMessageCommand = new RelayCommand<Message>(DeleteMessage);
             this.ReportMessageCommand = new RelayCommand<Message>(ReportMessage);
 
@@ -200,7 +200,7 @@ namespace SocialStuff.ViewModel
         private void LoadAllMessagesForChat()
         {
             ChatMessages.Clear();
-            var messages = this.chatService.getChatHistory(this.CurrentChatID);
+            var messages = this.chatService.GetChatHistory(this.CurrentChatID);
 
             foreach (var message in messages)
             {
@@ -241,7 +241,7 @@ namespace SocialStuff.ViewModel
         // Check for new messages by comparing timestamps
         private void CheckForNewMessages()
         {
-            var messages = this.chatService.getChatHistory(this.CurrentChatID);
+            var messages = this.chatService.GetChatHistory(this.CurrentChatID);
             bool hasNewMessages = false;
 
             foreach (var message in messages)

@@ -233,12 +233,12 @@ namespace SocialStuff.Services.Implementations
         /// <summary>
         /// Retrieves a list of users who are not friends with the specified user.
         /// </summary>
-        /// <param name="UserID">The ID of the user whose non-friends are being retrieved.</param>
+        /// <param name="userID">The ID of the user whose non-friends are being retrieved.</param>
         /// <returns>A list of <see cref="User"/> objects representing users who are not friends with the specified user.</returns>
-        public List<User> GetNonFriendsUsers(int UserID)
+        public List<User> GetNonFriendsUsers(int userID)
         {
-            List<User> users = new List<User>(this.repo.GetUsersList().Where(user => user.GetUserId() != UserID));
-            List<int> friends = this.repo.GetFriendsIDs(UserID);
+            List<User> users = new List<User>(this.repo.GetUsersList().Where(user => user.GetUserId() != userID));
+            List<int> friends = this.repo.GetFriendsIDs(userID);
             List<User> nonFriends = new List<User>();
             foreach (User user in users)
             {

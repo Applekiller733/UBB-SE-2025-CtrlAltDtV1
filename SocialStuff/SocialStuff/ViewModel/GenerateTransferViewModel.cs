@@ -185,14 +185,14 @@ namespace SocialStuff.ViewModel
                 switch (SelectedTransferType)
                 {
                     case "Transfer Money":
-                        chatService.sendMoneyViaChat(Amount, Currency, Description, this.ChatID);
+                        chatService.SendMoneyViaChat(Amount, Currency, Description, this.ChatID);
                         break;
                     case "Request Money":
-                        chatService.requestMoneyViaChat(Amount, Currency, this.ChatID, Description);
+                        chatService.RequestMoneyViaChat(Amount, Currency, this.ChatID, Description);
                         break;
                     case "Split Bill":
-                        float SplitAmount = Amount / (chatService.getNumberOfParticipants(ChatID));
-                        chatService.requestMoneyViaChat(SplitAmount, Currency, this.ChatID, description);
+                        float SplitAmount = Amount / (chatService.GetNumberOfParticipants(ChatID));
+                        chatService.RequestMoneyViaChat(SplitAmount, Currency, this.ChatID, description);
                         break;
                     default:
                         throw new InvalidOperationException("Invalid transfer type selected.");
@@ -285,11 +285,11 @@ namespace SocialStuff.ViewModel
                 int currentUserID = chatService.GetCurrentUserID();
 
                 // Calculate total amount based on number of participants
-                int participantCount = chatService.getNumberOfParticipants(chatID);
+                int participantCount = chatService.GetNumberOfParticipants(chatID);
                 float totalAmount = amount * (participantCount-1);
 
                 // Check if user has enough funds for the total amount
-                HasSufficientFunds = chatService.enoughFunds(totalAmount, Currency, currentUserID);
+                HasSufficientFunds = chatService.EnoughFunds(totalAmount, Currency, currentUserID);
             }
             catch (Exception ex)
             {
