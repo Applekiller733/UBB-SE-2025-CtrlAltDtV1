@@ -91,7 +91,7 @@ namespace SocialStuff.ViewModel
             string reportMessage = reportedUser.IncreaseReportCount();
 
             userService.MarkUserAsDangerousAndGiveTimeout(reportedUser);
-            this.userService.setUserTimeout(true);  //MADE IT NONSTATIC HERE TOO!!!
+            //this.userService.setUserTimeout(true);  //MADE IT NONSTATIC HERE TOO!!!
 
             // Trigger an event or callback to show the success dialog in the view
             OnShowSuccessDialog("Report submitted successfully.");

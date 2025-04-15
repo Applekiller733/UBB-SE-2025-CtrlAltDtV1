@@ -17,7 +17,7 @@ namespace SocialStuff.Services.Implementations
         private IRepository repo;
         private readonly INotificationService notificationService;
         private int UserID;
-        private bool isUserInTimeout;    //MADE IT NONSTATIC
+        //private bool isUserInTimeout;
 
         public UserService(IRepository repo, INotificationService notificationService)
         {
@@ -152,7 +152,7 @@ namespace SocialStuff.Services.Implementations
                 }
             }
 
-            return null;
+            return new User();
         }
 
         public List<User> GetNonFriendsUsers(int UserID)
@@ -193,9 +193,10 @@ namespace SocialStuff.Services.Implementations
         //    return isUserInTimeout;
         //}
 
-        public void setUserTimeout(bool value)
+        /*public void setUserTimeout(bool value)
         {
-            isUserInTimeout = true;
+            this.isUserInTimeout = value;
         }
+        */
     }
 }

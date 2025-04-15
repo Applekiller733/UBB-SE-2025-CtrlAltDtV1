@@ -217,8 +217,12 @@ namespace SocialStuff.Services.Implementations
         public string getChatNameByID(int ChatID)
         {
             List<Chat> chatList = repository.GetChatsList();
-            string chatName = chatList.Where(c => c.getChatID() == ChatID).FirstOrDefault().getChatName();
-
+            Chat? chat = chatList.FirstOrDefault(c => c.getChatID() == ChatID);
+            if (chat == null)
+            {
+                throw new InvalidOperationException($"Chat with ID {ChatID} not found.");
+            }
+            string chatName = chat.getChatName();
             return chatName;
         }
 
