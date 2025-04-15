@@ -45,16 +45,16 @@ namespace SocialStuff.Data
             {
                 DataRow row = dataTable.Rows[0];
                 int id = Convert.ToInt32(row["UserID"]);
-                string username = row["Username"].ToString();
-                string phoneNumber = row["PhoneNumber"].ToString();
+                string username = row["Username"]?.ToString() ?? string.Empty;
+                string phoneNumber = row["PhoneNumber"]?.ToString() ?? string.Empty;
                 int reportedCount = Convert.ToInt32(row["ReportedCount"]);
                 return new User(id, username, phoneNumber, reportedCount);
             }
-            return null;
+            return new User();
         }
 
         // Get a chat by ID
-        public Chat GetChatById(int chatID)
+        public Chat? GetChatById(int chatID)
         {
             SqlParameter[] parameters =
             {
@@ -65,7 +65,7 @@ namespace SocialStuff.Data
             {
                 DataRow row = dataTable.Rows[0];
                 int id = Convert.ToInt32(row["ChatID"]);
-                string chatName = row["ChatName"].ToString();
+                string chatName = row["ChatName"]?.ToString() ?? string.Empty;
                 List<int> participants = GetChatParticipants(id).ConvertAll(p => p.GetUserId());
                 return new Chat(id, chatName, participants);
             }
@@ -81,8 +81,8 @@ namespace SocialStuff.Data
             foreach (DataRow row in dataTable.Rows)
             {
                 int userID = Convert.ToInt32(row["userid"]);
-                string username = row["username"].ToString();
-                string phoneNumber = row["phonenumber"].ToString();
+                string username = row["username"]?.ToString() ?? string.Empty;
+                string phoneNumber = row["phonenumber"]?.ToString() ?? string.Empty;
                 int reportedCount = Convert.ToInt32(row["reportedcount"]);
                 users.Add(new User(userID, username, phoneNumber, reportedCount));
             }
@@ -103,7 +103,7 @@ namespace SocialStuff.Data
             {
                 int notificationID = Convert.ToInt32(row["NotifID"]);
                 DateTime timestamp = Convert.ToDateTime(row["Timestamp"]);
-                string content = row["Content"].ToString();
+                string content = row["Content"]?.ToString() ?? string.Empty;
                 int userReceiverID = Convert.ToInt32(row["UserID"]);
                 notifications.Add(new NotificationModel(notificationID, timestamp, content, userReceiverID));
             }
@@ -130,8 +130,8 @@ namespace SocialStuff.Data
                 int userID = Convert.ToInt32(row["userid"]);
                 if (FriendIds.Contains(userID))
                 {
-                    string username = row["username"].ToString();
-                    string phoneNumber = row["phonenumber"].ToString();
+                    string username = row["username"]?.ToString() ?? string.Empty;
+                    string phoneNumber = row["phonenumber"]?.ToString() ?? string.Empty;
                     int reportedCount = Convert.ToInt32(row["reportedcount"]);
                     users.Add(new User(userID, username, phoneNumber, reportedCount));
                 }
@@ -184,7 +184,7 @@ namespace SocialStuff.Data
             foreach (DataRow row in dataTable.Rows)
             {
                 int chatID = Convert.ToInt32(row["chatid"]);
-                string chatName = row["chatname"].ToString();
+                string chatName = row["chatname"]?.ToString() ?? string.Empty;
                 List<int> ParticipantsIDs = new List<int>();
                 foreach (DataRow row1 in dataTable1.Rows)
                 {
@@ -233,10 +233,10 @@ namespace SocialStuff.Data
                 int userID = Convert.ToInt32(row["userid"]);
                 int chatID = Convert.ToInt32(row["chatid"]);
                 DateTime timestamp = Convert.ToDateTime(row["timestamp"]);
-                string content = row["content"].ToString();
-                string status = row["status"].ToString();
+                string content = row["content"]?.ToString() ?? string.Empty;
+                string status = row["status"]?.ToString() ?? string.Empty;
                 float? amount = row["amount"] == DBNull.Value ? (float?)null : Convert.ToSingle(row["amount"]);
-                string currency = row["currency"].ToString();
+                string currency = row["currency"]?.ToString() ?? string.Empty;
                 DataTable reportsTable = dbConnection.ExecuteReader("select * from Reports", null, false);
                 List<int> UserReports = new List<int>();
                 foreach (DataRow row1 in reportsTable.Rows)
@@ -298,9 +298,9 @@ namespace SocialStuff.Data
             {
                 int reportID = Convert.ToInt32(row["reportid"]);
                 int messageID = Convert.ToInt32(row["messageid"]);
-                string reason = row["reason"].ToString();
-                string description = row["description"].ToString();
-                string status = row["status"].ToString();
+                string reason = row["reason"]?.ToString() ?? string.Empty;
+                string description = row["description"]?.ToString() ?? string.Empty;
+                string status = row["status"]?.ToString() ?? string.Empty;
                 // reports.Add(new Report(reportID, messageID, reason, description, status));
             }
             return reports;
@@ -313,9 +313,9 @@ namespace SocialStuff.Data
             foreach (DataRow row in dataTable.Rows)
             {
                 int postID = Convert.ToInt32(row["postid"]);
-                string title = row["title"].ToString();
-                string category = row["category"].ToString();
-                string content = row["content"].ToString();
+                string title = row["title"]?.ToString() ?? string.Empty;
+                string category = row["category"]?.ToString() ?? string.Empty;
+                string content = row["content"]?.ToString() ?? string.Empty;
                 DateTime timestamp = Convert.ToDateTime(row["timestamp"]);
                 feedPosts.Add(new Post(postID, title, category, content, timestamp));
             }
@@ -479,7 +479,7 @@ namespace SocialStuff.Data
         }
 
 
-        public void AddRequestMessage(int userID, int chatID, string content, string status = null, float? amount = null, string currency = null)
+        public void AddRequestMessage(int userID, int chatID, string content, string? status = null, float? amount = null, string? currency = null)
         {
             SqlParameter[] parameters =
             {
@@ -495,7 +495,7 @@ namespace SocialStuff.Data
             dbConnection.ExecuteNonQuery("AddMessage", parameters);
         }
 
-        public void AddTransferMessage(int userID, int chatID, string content, string status = null, float? amount = null, string currency = null)
+        public void AddTransferMessage(int userID, int chatID, string content, string? status = null, float? amount = null, string? currency = null)
         {
             SqlParameter[] parameters =
             {

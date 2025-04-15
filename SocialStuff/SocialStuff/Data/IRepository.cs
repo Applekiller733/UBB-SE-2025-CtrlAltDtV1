@@ -22,7 +22,7 @@ namespace SocialStuff.Data
         void DeleteFriend(int userId, int friendId);
         
         //chat part
-        Chat GetChatById(int chatId);
+        Chat? GetChatById(int chatId);
         List<Chat> GetChatsList();
         List<User> GetChatParticipants(int chatId);
         List<int> GetChatParticipantsIDs(int chatId);
@@ -36,8 +36,8 @@ namespace SocialStuff.Data
         List<Message> GetMessagesList();
         void AddTextMessage(int userId, int chatId, string content);
         void AddImageMessage(int userId, int chatId, string imageURL);
-        void AddRequestMessage(int userId, int chatId, string content, string status = null, float? amount = null, string currency = null);
-        void AddTransferMessage(int userId, int chatId, string content, string status = null, float? amount = null, string currency = null);
+        void AddRequestMessage(int userId, int chatId, string content, string? status = null, float? amount = null, string? currency = null);
+        void AddTransferMessage(int userId, int chatId, string content, string? status = null, float? amount = null, string? currency = null);
         void DeleteMessage(int messageId);
         
         //notification part
