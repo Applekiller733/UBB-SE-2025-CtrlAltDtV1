@@ -1,31 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using Microsoft.UI;
-using Windows.Graphics;
-using WinRT.Interop;
-using SocialStuff.ViewModel;
-using SocialStuff.Data;
-using Microsoft.IdentityModel.Tokens;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
+// <copyright file="GenerateTransferView.xaml.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.View
 {
+    using Microsoft.UI.Xaml;
+    using Microsoft.UI.Xaml.Controls;
+    using SocialStuff.Services.Interfaces;
+    using SocialStuff.ViewModel;
+
     public sealed partial class GenerateTransferView : Page
     {
         public GenerateTransferViewModel ViewModel { get; }
+
         private IChatService chatService;
         private Page lastChat;
         private Frame rightFrame;
@@ -36,7 +23,7 @@ namespace SocialStuff.View
             this.chatService = chatService;
 
             // Initialize ViewModel
-            ViewModel = GenerateTransferViewModel;
+            this.ViewModel = GenerateTransferViewModel;
             this.lastChat = lastChat;
             this.rightFrame = rightFrame;
             this.InitializeComponent();
@@ -44,27 +31,27 @@ namespace SocialStuff.View
 
         private void TransferTypeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (TransferTypeComboBox.SelectedItem != null)
+            if (this.TransferTypeComboBox.SelectedItem != null)
             {
                 string selectedValue = ((ComboBoxItem)TransferTypeComboBox.SelectedItem).Content.ToString();
-                ViewModel.SelectedTransferType = selectedValue;
+                this.ViewModel.SelectedTransferType = selectedValue;
 
                 switch (selectedValue)
                 {
                     case "Transfer Money":
-                        TitleTextBlock.Text = "Make a Transfer";
-                        TransferButton.Content = "Transfer Money";
+                        this.TitleTextBlock.Text = "Make a Transfer";
+                        this.TransferButton.Content = "Transfer Money";
                         break;
                     case "Request Money":
-                        TitleTextBlock.Text = "Request Funds";
-                        TransferButton.Content = "Request Money";
+                        this.TitleTextBlock.Text = "Request Funds";
+                        this.TransferButton.Content = "Request Money";
                         break;
                     case "Split Bill":
-                        TitleTextBlock.Text = "Split Bill";
-                        TransferButton.Content = "Split Bill";
+                        this.TitleTextBlock.Text = "Split Bill";
+                        this.TransferButton.Content = "Split Bill";
                         break;
                     default:
-                        TitleTextBlock.Text = "";
+                        this.TitleTextBlock.Text = string.Empty;
                         break;
                 }
             }
@@ -74,17 +61,19 @@ namespace SocialStuff.View
         {
             // Empty text is allowed
             if (string.IsNullOrEmpty(args.NewText))
+            {
                 return;
+            }
 
             // Check if new text matches a valid numeric pattern (digits with optional single decimal point)
             bool isValid = System.Text.RegularExpressions.Regex.IsMatch(
                 args.NewText,
-                @"^\d*\.?\d{0,2}$"
-            );
+                @"^\d*\.?\d{0,2}$");
 
             // Cancel if invalid
             args.Cancel = !isValid;
         }
+
         private void AmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             // This ensures the funds check happens when text changes through user input
@@ -102,7 +91,7 @@ namespace SocialStuff.View
 
         public void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            this.rightFrame.Content = lastChat;
+            this.rightFrame.Content = this.lastChat;
         }
     }
 }

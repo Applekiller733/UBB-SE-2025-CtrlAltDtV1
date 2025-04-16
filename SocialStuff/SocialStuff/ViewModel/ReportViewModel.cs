@@ -22,7 +22,7 @@ namespace SocialStuff.ViewModel
 
         public string SelectedCategory
         {
-            get => selectedCategory;
+            get => this.selectedCategory;
             set
             {
                 if (this.selectedCategory != value)
@@ -40,13 +40,13 @@ namespace SocialStuff.ViewModel
 
         public string OtherReason
         {
-            get => otherReason;
+            get => this.otherReason;
             set
             {
-                if (otherReason != value)
+                if (this.otherReason != value)
                 {
-                    otherReason = value;
-                    OnPropertyChanged(nameof(OtherReason));
+                    this.otherReason = value;
+                    this.OnPropertyChanged(nameof(this.OtherReason));
                 }
             }
         }

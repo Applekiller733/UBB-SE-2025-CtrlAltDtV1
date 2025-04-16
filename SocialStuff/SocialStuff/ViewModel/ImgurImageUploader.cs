@@ -1,10 +1,14 @@
-﻿using System;
+﻿// <copyright file="ImgurImageUploader.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Windows.Storage;
-using System.IO;
-using System.Collections.Generic;
 
 public class ImgurImageUploader
 {
@@ -13,7 +17,9 @@ public class ImgurImageUploader
     public static async Task<string> UploadImageAndGetUrl(StorageFile file)
     {
         if (file == null)
+        {
             return null;
+        }
 
         using (var httpClient = new HttpClient())
         {
@@ -30,8 +36,8 @@ public class ImgurImageUploader
             {
                 Content = new FormUrlEncodedContent(new[]
                 {
-                    new KeyValuePair<string, string>("image", base64Image)
-                })
+                    new KeyValuePair<string, string>("image", base64Image),
+                }),
             };
 
             request.Headers.Authorization = new AuthenticationHeaderValue("Client-ID", ClientId);

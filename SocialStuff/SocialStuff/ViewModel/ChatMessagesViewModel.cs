@@ -1,40 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Media;
-using MvvmHelpers;
-using SocialStuff.Data;
-using SocialStuff.Model.MessageClasses;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
-using SocialStuff.View;
-using SocialStuff.Views;
-using Windows.Storage;
-using Windows.Storage.Pickers;
-using WinRT.Interop;
+﻿// <copyright file="ChatMessagesViewModel.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.ViewModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Threading;
+    using System.Windows.Input;
+    using Microsoft.UI.Xaml;
+    using Microsoft.UI.Xaml.Controls;
+    using Microsoft.UI.Xaml.Media;
+    using SocialStuff.Model.MessageClasses;
+    using SocialStuff.Services.Interfaces;
+    using SocialStuff.View;
+    using SocialStuff.Views;
+    using Windows.Media.AppBroadcasting;
+    using Windows.Storage;
+    using Windows.Storage.Pickers;
+    using WinRT.Interop;
+
     public class ChatMessagesViewModel : INotifyPropertyChanged
     {
         private readonly Window _window;
+
         public ObservableCollection<Message> ChatMessages { get; set; }
+
         public ListView ChatListView { get; set; }
+
         public IMessageService messageService;
         public IChatService chatService;
         public IUserService userService;
         public IReportService reportService;
         private MessageTemplateSelector templateSelector;
+
         public int CurrentChatID { get; set; }
+
         public int CurrentUserID { get; set; }
+
         public string CurrentChatName { get; set; }
 
         // For message polling
@@ -42,91 +49,99 @@ namespace SocialStuff.ViewModel
         private DateTime _lastMessageTimestamp = DateTime.MinValue;
         private const int POLLING_INTERVAL = 2000; // 2 seconds
 
-        public string CurrentChatParticipantsString => string.Join(", ", CurrentChatParticipants ?? new List<string>());
+        public string CurrentChatParticipantsString => string.Join(", ", this.CurrentChatParticipants ?? new List<string>());
+
         private List<string> currentChatParticipants;
+
         public List<string> CurrentChatParticipants
         {
-            get => currentChatParticipants;
+            get => this.currentChatParticipants;
             set
             {
-                if (currentChatParticipants != value)
+                if (this.currentChatParticipants != value)
                 {
-                    currentChatParticipants = value;
-                    OnPropertyChanged(nameof(CurrentChatParticipants));
-                    OnPropertyChanged(nameof(CurrentChatParticipantsString));
+                    this.currentChatParticipants = value;
+                    this.OnPropertyChanged(nameof(this.CurrentChatParticipants));
+                    this.OnPropertyChanged(nameof(this.CurrentChatParticipantsString));
                 }
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         public virtual void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private string messageContent;
+
         public string MessageContent
         {
-            get => messageContent;
+            get => this.messageContent;
             set
             {
-                if (messageContent != value)
+                if (this.messageContent != value)
                 {
-                    messageContent = value;
-                    OnPropertyChanged(nameof(MessageContent));
-                    OnPropertyChanged(nameof(RemainingCharacterCount));
+                    this.messageContent = value;
+                    this.OnPropertyChanged(nameof(this.MessageContent));
+                    this.OnPropertyChanged(nameof(this.RemainingCharacterCount));
                 }
             }
         }
-        public int RemainingCharacterCount => 256 - (MessageContent?.Length ?? 0);
+
+        public int RemainingCharacterCount => 256 - (this.MessageContent?.Length ?? 0);
 
         public ICommand SendMessageCommand { get; }
+
         private void SendMessage()
         {
-            string convertedContent = EmoticonConverter.ConvertEmoticonsToEmojis(MessageContent);
-            this.messageService.SendMessage(CurrentUserID, CurrentChatID, convertedContent);
+            string convertedContent = EmoticonConverter.ConvertEmoticonsToEmojis(this.MessageContent);
+            this.messageService.SendMessage(this.CurrentUserID, this.CurrentChatID, convertedContent);
             this.CheckForNewMessages();
-            MessageContent = "";
+            this.MessageContent = string.Empty;
         }
 
         public ICommand SendImageCommand { get; }
+
         private async void SendImage()
         {
             var picker = new FileOpenPicker
             {
                 ViewMode = PickerViewMode.Thumbnail,
-                SuggestedStartLocation = PickerLocationId.PicturesLibrary
+                SuggestedStartLocation = PickerLocationId.PicturesLibrary,
             };
 
             picker.FileTypeFilter.Add(".jpg");
             picker.FileTypeFilter.Add(".jpeg");
             picker.FileTypeFilter.Add(".png");
 
-            var hwnd = WindowNative.GetWindowHandle(_window);
+            var hwnd = WindowNative.GetWindowHandle(this._window);
             InitializeWithWindow.Initialize(picker, hwnd);
 
             StorageFile file = await picker.PickSingleFileAsync();
             if (file != null)
             {
                 string imageUrl = await ImgurImageUploader.UploadImageAndGetUrl(file);
-                this.messageService.SendImage(CurrentUserID, CurrentChatID, imageUrl);
+                this.messageService.SendImage(this.CurrentUserID, this.CurrentChatID, imageUrl);
                 this.CheckForNewMessages();
             }
         }
 
         public void ScrollToBottom()
         {
-            if (ChatListView != null)
+            if (this.ChatListView != null)
             {
-                ChatListView.DispatcherQueue.TryEnqueue(() =>
+                this.ChatListView.DispatcherQueue.TryEnqueue(() =>
                 {
-                    var scrollViewer = FindVisualChild<ScrollViewer>(ChatListView);
+                    var scrollViewer = this.FindVisualChild<ScrollViewer>(this.ChatListView);
                     scrollViewer?.ChangeView(null, scrollViewer.ScrollableHeight, null);
                 });
             }
         }
 
         public ICommand DeleteMessageCommand { get; set; }
+
         private void DeleteMessage(Message message)
         {
             this.messageService.DeleteMessage(message);
@@ -134,48 +149,56 @@ namespace SocialStuff.ViewModel
         }
 
         public ICommand ReportMessageCommand { get; set; }
+
         private void ReportMessage(Message message)
         {
             // Navigate to ReportView
 
-            ReportView reportView = new ReportView(userService, reportService, message.GetSenderID(), message.GetMessageID());
+            ReportView reportView = new ReportView(this.userService, this.reportService, message.GetSenderID(), message.GetMessageID());
             reportView.Activate();
         }
 
 
-        private T FindVisualChild<T>(DependencyObject parent) where T : DependencyObject
+        private T FindVisualChild<T>(DependencyObject parent)
+            where T : DependencyObject
         {
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
             {
                 DependencyObject child = VisualTreeHelper.GetChild(parent, i);
                 if (child is T typedChild)
+                {
                     return typedChild;
+                }
 
-                T childOfChild = FindVisualChild<T>(child);
+                T childOfChild = this.FindVisualChild<T>(child);
                 if (childOfChild != null)
+                {
                     return childOfChild;
+                }
+
             }
+
             return null;
         }
 
-        public ChatMessagesViewModel(Window window,Frame RightFrame, int currentChatID, IMessageService msgService, IChatService chtService, IUserService usrService, IReportService reportService)
+        public ChatMessagesViewModel(Window window, Frame RightFrame, int currentChatID, IMessageService msgService, IChatService chtService, IUserService usrService, IReportService reportService)
         {
-            _window = window;
-            ChatMessages = new ObservableCollection<Message>();
-            messageService = msgService;
-            chatService = chtService;
-            userService = usrService;
+            this._window = window;
+            this.ChatMessages = new ObservableCollection<Message>();
+            this.messageService = msgService;
+            this.chatService = chtService;
+            this.userService = usrService;
             this.reportService = reportService;
             this.CurrentChatID = currentChatID;
-            this.CurrentUserID = userService.GetCurrentUser();
-            this.SendMessageCommand = new RelayCommand(SendMessage);
-            this.SendImageCommand = new RelayCommand(SendImage);
-            this.CurrentChatName = chatService.GetChatNameByID(CurrentChatID);
-            this.CurrentChatParticipants = chatService.GetChatParticipantsStringList(CurrentChatID);
-            this.DeleteMessageCommand = new RelayCommand<Message>(DeleteMessage);
-            this.ReportMessageCommand = new RelayCommand<Message>(ReportMessage);
+            this.CurrentUserID = this.userService.GetCurrentUser();
+            this.SendMessageCommand = new RelayCommand(this.SendMessage);
+            this.SendImageCommand = new RelayCommand(this.SendImage);
+            this.CurrentChatName = this.chatService.GetChatNameByID(this.CurrentChatID);
+            this.CurrentChatParticipants = this.chatService.GetChatParticipantsStringList(this.CurrentChatID);
+            this.DeleteMessageCommand = new RelayCommand<Message>(this.DeleteMessage);
+            this.ReportMessageCommand = new RelayCommand<Message>(this.ReportMessage);
 
-            templateSelector = new MessageTemplateSelector()
+            this.templateSelector = new MessageTemplateSelector()
             {
                 TextMessageTemplateLeft = (DataTemplate)App.Current.Resources["TextMessageTemplateLeft"],
                 TextMessageTemplateRight = (DataTemplate)App.Current.Resources["TextMessageTemplateRight"],
@@ -185,7 +208,6 @@ namespace SocialStuff.ViewModel
                 TransferMessageTemplateRight = (DataTemplate)App.Current.Resources["TransferMessageTemplateRight"],
                 RequestMessageTemplateLeft = (DataTemplate)App.Current.Resources["RequestMessageTemplateLeft"],
                 RequestMessageTemplateRight = (DataTemplate)App.Current.Resources["RequestMessageTemplateRight"],
-
             };
 
             // Initial load of messages
@@ -193,42 +215,41 @@ namespace SocialStuff.ViewModel
             this.ScrollToBottom();
 
             // Start polling for new messages
-            StartMessagePolling();
+            this.StartMessagePolling();
         }
 
         // Initial load of all messages
         private void LoadAllMessagesForChat()
         {
-            ChatMessages.Clear();
+            this.ChatMessages.Clear();
             var messages = this.chatService.GetChatHistory(this.CurrentChatID);
 
             foreach (var message in messages)
             {
-                AddMessageToChat(message);
+                this.AddMessageToChat(message);
             }
 
             // Update the last message timestamp
-            if (ChatMessages.Any())
+            if (this.ChatMessages.Any())
             {
-                _lastMessageTimestamp = ChatMessages.Max(m => m.GetTimestamp());
+                this._lastMessageTimestamp = this.ChatMessages.Max(m => m.GetTimestamp());
             }
 
-            ScrollToBottom();
+            this.ScrollToBottom();
         }
 
         // Start polling for new messages
         private void StartMessagePolling()
         {
             // Dispose of existing timer if it exists
-            _messagePollingTimer?.Dispose();
+            this._messagePollingTimer?.Dispose();
 
             // Create new timer that checks for new messages
-            _messagePollingTimer = new Timer(
-                _ => ChatListView?.DispatcherQueue.TryEnqueue(() => CheckForNewMessages()),
+            this._messagePollingTimer = new Timer(
+                _ => this.ChatListView?.DispatcherQueue.TryEnqueue(() => this.CheckForNewMessages()),
                 null,
                 0,
-                POLLING_INTERVAL
-            );
+                POLLING_INTERVAL);
         }
 
         // Stop polling for messages
