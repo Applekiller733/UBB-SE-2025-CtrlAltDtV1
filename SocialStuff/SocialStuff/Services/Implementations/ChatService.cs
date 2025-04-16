@@ -232,9 +232,9 @@ namespace SocialStuff.Services.Implementations
         {
             List<Message> allMessages = this.repository.GetMessagesList();
 
-            var chatMessages = allMessages.Where(m => m.getChatID() == chatID).ToList();
+            var chatMessages = allMessages.Where(m => m.GetChatID() == chatID).ToList();
 
-            var lastMessage = chatMessages.OrderByDescending(m => m.getTimestamp()).FirstOrDefault();
+            var lastMessage = chatMessages.OrderByDescending(m => m.GetTimestamp()).FirstOrDefault();
 
             if (lastMessage == null)
             {
@@ -242,7 +242,7 @@ namespace SocialStuff.Services.Implementations
                 return DateTime.MinValue;
             }
 
-            return lastMessage.getTimestamp();
+            return lastMessage.GetTimestamp();
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace SocialStuff.Services.Implementations
         {
             List<Message> allMessages = this.repository.GetMessagesList();
 
-            List<Message> chatHistory = allMessages.Where(m => m.getChatID() == chatID).ToList();
+            List<Message> chatHistory = allMessages.Where(m => m.GetChatID() == chatID).ToList();
 
             return chatHistory;
         }

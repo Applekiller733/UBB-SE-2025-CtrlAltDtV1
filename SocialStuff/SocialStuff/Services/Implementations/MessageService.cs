@@ -80,7 +80,7 @@ namespace SocialStuff.Services.Implementations
         /// <param name="message">The message to delete.</param>
         public void DeleteMessage(Message message)
         {
-            this.repository.DeleteMessage(message.getMessageID());
+            this.repository.DeleteMessage(message.GetMessageID());
         }
 
         /// <summary>

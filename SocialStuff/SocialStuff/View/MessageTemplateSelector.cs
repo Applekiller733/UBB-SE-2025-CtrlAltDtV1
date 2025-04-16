@@ -34,16 +34,16 @@ namespace SocialStuff.View
                 switch (message)
                 {
                     case TextMessage _:
-                        return message.getSenderID() == this.CurrentUserID ? TextMessageTemplateRight : TextMessageTemplateLeft;
+                        return message.GetSenderID() == this.CurrentUserID ? TextMessageTemplateRight : TextMessageTemplateLeft;
 
                     case ImageMessage _:
-                        return message.getSenderID() == this.CurrentUserID ? ImageMessageTemplateRight : ImageMessageTemplateLeft;
+                        return message.GetSenderID() == this.CurrentUserID ? ImageMessageTemplateRight : ImageMessageTemplateLeft;
 
                     case TransferMessage _:
-                        return message.getSenderID() == this.CurrentUserID ? TransferMessageTemplateRight : TransferMessageTemplateLeft;
+                        return message.GetSenderID() == this.CurrentUserID ? TransferMessageTemplateRight : TransferMessageTemplateLeft;
 
                     case RequestMessage _:
-                        return message.getSenderID() == this.CurrentUserID ? RequestMessageTemplateRight : RequestMessageTemplateLeft;
+                        return message.GetSenderID() == this.CurrentUserID ? RequestMessageTemplateRight : RequestMessageTemplateLeft;
                 }
             }
 

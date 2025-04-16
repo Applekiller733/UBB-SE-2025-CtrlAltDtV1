@@ -138,7 +138,7 @@ namespace SocialStuff.ViewModel
         {
             // Navigate to ReportView
 
-            ReportView reportView = new ReportView(userService, reportService, message.getSenderID(), message.getMessageID());
+            ReportView reportView = new ReportView(userService, reportService, message.GetSenderID(), message.GetMessageID());
             reportView.Activate();
         }
 
@@ -210,7 +210,7 @@ namespace SocialStuff.ViewModel
             // Update the last message timestamp
             if (ChatMessages.Any())
             {
-                _lastMessageTimestamp = ChatMessages.Max(m => m.getTimestamp());
+                _lastMessageTimestamp = ChatMessages.Max(m => m.GetTimestamp());
             }
 
             ScrollToBottom();
@@ -247,15 +247,15 @@ namespace SocialStuff.ViewModel
             foreach (var message in messages)
             {
                 // If the message timestamp is newer than the last message we processed
-                if (message.getTimestamp() > _lastMessageTimestamp)
+                if (message.GetTimestamp() > _lastMessageTimestamp)
                 {
                     AddMessageToChat(message);
                     hasNewMessages = true;
 
                     // Update the last message timestamp if this is newer
-                    if (message.getTimestamp() > _lastMessageTimestamp)
+                    if (message.GetTimestamp() > _lastMessageTimestamp)
                     {
-                        _lastMessageTimestamp = message.getTimestamp();
+                        _lastMessageTimestamp = message.GetTimestamp();
                     }
                 }
             }
@@ -274,51 +274,51 @@ namespace SocialStuff.ViewModel
             if (message is TextMessage textMessage)
             {
                 TextMessage newTextMessage = new TextMessage(
-                    textMessage.getMessageID(),
-                    textMessage.getSenderID(),
-                    textMessage.getChatID(),
-                    textMessage.getTimestamp(),
-                    textMessage.getContent(),
-                    textMessage.getUsersReport());
-                newTextMessage.SenderUsername = this.userService.GetUserById(textMessage.getSenderID()).GetUsername();
+                    textMessage.GetMessageID(),
+                    textMessage.GetSenderID(),
+                    textMessage.GetChatID(),
+                    textMessage.GetTimestamp(),
+                    textMessage.GetContent(),
+                    textMessage.GetUsersReport());
+                newTextMessage.SenderUsername = this.userService.GetUserById(textMessage.GetSenderID()).GetUsername();
                 ChatMessages.Add(newTextMessage);
             }
             else if (message is ImageMessage imageMessage)
             {
                 ImageMessage newImageMessage = new ImageMessage(
-                    imageMessage.getMessageID(),
-                    imageMessage.getSenderID(),
-                    imageMessage.getChatID(),
-                    imageMessage.getTimestamp(),
-                    imageMessage.getImageURL(),
-                    imageMessage.getUsersReport());
-                newImageMessage.SenderUsername = this.userService.GetUserById(imageMessage.getSenderID()).GetUsername();
+                    imageMessage.GetMessageID(),
+                    imageMessage.GetSenderID(),
+                    imageMessage.GetChatID(),
+                    imageMessage.GetTimestamp(),
+                    imageMessage.GetImageURL(),
+                    imageMessage.GetUsersReport());
+                newImageMessage.SenderUsername = this.userService.GetUserById(imageMessage.GetSenderID()).GetUsername();
                 ChatMessages.Add(newImageMessage);
             }
             else if (message is TransferMessage transferMessage)
             {
                 TransferMessage newTransferMessage = new TransferMessage(
-                    transferMessage.getMessageID(),
-                    transferMessage.getSenderID(),
-                    transferMessage.getChatID(),
-                    transferMessage.getStatus(),
-                    transferMessage.getAmount(),
-                    transferMessage.getDescription(),
-                    transferMessage.getCurrency());
-                newTransferMessage.SenderUsername = this.userService.GetUserById(transferMessage.getSenderID()).GetUsername();
+                    transferMessage.GetMessageID(),
+                    transferMessage.GetSenderID(),
+                    transferMessage.GetChatID(),
+                    transferMessage.GetStatus(),
+                    transferMessage.GetAmount(),
+                    transferMessage.GetDescription(),
+                    transferMessage.GetCurrency());
+                newTransferMessage.SenderUsername = this.userService.GetUserById(transferMessage.GetSenderID()).GetUsername();
                 ChatMessages.Add(newTransferMessage);
             }
             else if (message is RequestMessage requestMessage)
             {
                 RequestMessage newRequestMessage = new RequestMessage(
-                    requestMessage.getMessageID(),
-                    requestMessage.getSenderID(),
-                    requestMessage.getChatID(),
-                    requestMessage.getStatus(),
-                    requestMessage.getAmount(),
-                    requestMessage.getDescription(),
-                    requestMessage.getCurrency());
-                newRequestMessage.SenderUsername = this.userService.GetUserById(requestMessage.getSenderID()).GetUsername();
+                    requestMessage.GetMessageID(),
+                    requestMessage.GetSenderID(),
+                    requestMessage.GetChatID(),
+                    requestMessage.GetStatus(),
+                    requestMessage.GetAmount(),
+                    requestMessage.GetDescription(),
+                    requestMessage.GetCurrency());
+                newRequestMessage.SenderUsername = this.userService.GetUserById(requestMessage.GetSenderID()).GetUsername();
                 ChatMessages.Add(newRequestMessage);
             }
         }
