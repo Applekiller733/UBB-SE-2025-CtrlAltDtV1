@@ -1,22 +1,31 @@
-﻿using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml;
-using SocialStuff.Model.MessageClasses;
-using SocialStuff.Services;
-using System.Runtime.CompilerServices;
-using SocialStuff.Data;
-using System.Windows.Input;
+﻿// <copyright file="MessageTemplateSelector.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.View
 {
+    using Microsoft.UI.Xaml;
+    using Microsoft.UI.Xaml.Controls;
+    using SocialStuff.Data;
+    using SocialStuff.Model.MessageClasses;
+
     public class MessageTemplateSelector : DataTemplateSelector
     {
         public DataTemplate TextMessageTemplateLeft { get; set; }
+
         public DataTemplate TextMessageTemplateRight { get; set; }
+
         public DataTemplate ImageMessageTemplateLeft { get; set; }
+
+
         public DataTemplate ImageMessageTemplateRight { get; set; }
+
         public DataTemplate TransferMessageTemplateLeft { get; set; }
+
         public DataTemplate TransferMessageTemplateRight { get; set; }
+
         public DataTemplate RequestMessageTemplateLeft { get; set; }
+
         public DataTemplate RequestMessageTemplateRight { get; set; }
 
         public int CurrentUserID { get; set; }
@@ -34,20 +43,20 @@ namespace SocialStuff.View
                 switch (message)
                 {
                     case TextMessage _:
-                        return message.GetSenderID() == this.CurrentUserID ? TextMessageTemplateRight : TextMessageTemplateLeft;
+                        return message.GetSenderID() == this.CurrentUserID ? this.TextMessageTemplateRight : this.TextMessageTemplateLeft;
 
                     case ImageMessage _:
-                        return message.GetSenderID() == this.CurrentUserID ? ImageMessageTemplateRight : ImageMessageTemplateLeft;
+                        return message.GetSenderID() == this.CurrentUserID ? this.ImageMessageTemplateRight : this.ImageMessageTemplateLeft;
 
                     case TransferMessage _:
-                        return message.GetSenderID() == this.CurrentUserID ? TransferMessageTemplateRight : TransferMessageTemplateLeft;
+                        return message.GetSenderID() == this.CurrentUserID ? this.TransferMessageTemplateRight : this.TransferMessageTemplateLeft;
 
                     case RequestMessage _:
-                        return message.GetSenderID() == this.CurrentUserID ? RequestMessageTemplateRight : RequestMessageTemplateLeft;
+                        return message.GetSenderID() == this.CurrentUserID ? this.RequestMessageTemplateRight : this.RequestMessageTemplateLeft;
                 }
             }
 
-            return TextMessageTemplateLeft;
+            return this.TextMessageTemplateLeft;
         }
     }
 }

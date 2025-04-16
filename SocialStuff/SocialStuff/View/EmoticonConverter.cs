@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿// <copyright file="EmoticonConverter.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.View
 {
+    using System.Collections.Generic;
+    using System.Text.RegularExpressions;
+
     public static class EmoticonConverter
     {
         private static readonly Dictionary<string, string> EmoticonToEmojiMap = new Dictionary<string, string>
@@ -65,13 +65,15 @@ namespace SocialStuff.View
         { ">:-(", "😠" },
         { ">:)", "😈" },
         { ">:-)", "😈" },
-        { "¯\\_(ツ)_/¯", "🤷" }
+        { "¯\\_(ツ)_/¯", "🤷" },
     };
 
         public static string ConvertEmoticonsToEmojis(string input)
         {
             if (string.IsNullOrEmpty(input))
+            {
                 return input;
+            }
 
             string result = input;
 

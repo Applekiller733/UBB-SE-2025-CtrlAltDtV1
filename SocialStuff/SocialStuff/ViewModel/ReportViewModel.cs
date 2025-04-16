@@ -91,7 +91,7 @@ namespace SocialStuff.ViewModel
 
             // Increase the reported count for the user
             User reportedUser = this.userService.GetUserById(reportedUserId);
-            string reportMessage = reportedUser.IncreaseReportCount();
+            string reportMessage = reportedUser!.IncreaseReportCount();
 
             this.userService.MarkUserAsDangerousAndGiveTimeout(reportedUser);
 
