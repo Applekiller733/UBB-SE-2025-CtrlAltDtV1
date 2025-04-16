@@ -339,23 +339,30 @@ namespace SocialStuff.Data
         /// <returns>A list of integers representing the IDs of the user's friends.</returns>
         public List<int> GetFriendsIDs(int userID)
         {
+            // Use the correct query to fetch friends for the specific user
+            string query = "SELECT friendid FROM Friends WHERE userid = @UserID";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@UserID", userID),
-            };
-            DataTable users = this.dbConnection.ExecuteReader("select * from users", Array.Empty<SqlParameter>(), false);
-            DataTable dataTable = this.dbConnection.ExecuteReader("select * from Friends", Array.Empty<SqlParameter>(), false);
+        new SqlParameter("@UserID", userID),
+    };
+
+            // Execute the query
+            DataTable dataTable = this.dbConnection.ExecuteReader(query, parameters, false);
+
+            // Initialize a list to store friend IDs
             List<int> friends = new List<int>();
+
+            // Iterate through the result and add friend IDs to the list
             foreach (DataRow row in dataTable.Rows)
             {
-                if (Convert.ToInt32(row["userid"]) == userID)
-                {
-                    friends.Add(Convert.ToInt32(row["friendid"]));
-                }
+                // Ensure you are accessing the 'friendid' column
+                friends.Add(Convert.ToInt32(row["friendid"]));
             }
 
+            // Return the list of friend IDs
             return friends;
         }
+
 
         /// <summary>
         /// Retrieves a list of all reports.
