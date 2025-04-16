@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SocialStuffTest (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SocialStuffTest (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

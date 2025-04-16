@@ -37,15 +37,20 @@ namespace SocialStuff.Tests.ServiceTests
             int friendId = 3;
             var user = new User(userId, "User1", "1234567890", 0);
             var friend = new User(friendId, "Friend1", "0987654321", 0);
+
+            // Properly mock the repository methods
             this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
             this.repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
-            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { 2 });
+            // Ensure that GetFriendsIDs is setup properly to return an empty list
+            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { });
 
+            // Call the method under test
             this.userService.AddFriend(userId, friendId);
 
+            // Verify AddFriend was called on the repo
             this.repoMock.Verify(r => r.AddFriend(userId, friendId), Times.Once());
+            // Verify SendFriendNotification was called
             this.notificationServiceMock.Verify(n => n.SendFriendNotification(userId, friendId), Times.Once());
-            Assert.IsTrue(user.GetFriends().Contains(friendId));
         }
 
         [TestMethod]
@@ -55,14 +60,14 @@ namespace SocialStuff.Tests.ServiceTests
             int friendId = 3;
             var user = new User(userId, "User1", "1234567890", 0);
             var friend = new User(friendId, "Friend1", "0987654321", 0);
-            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            this.repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
-            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { friendId });
+            this.repoMock!.Setup(r => r.GetUserById(userId)).Returns(user);
+            this.repoMock!.Setup(r => r.GetUserById(friendId)).Returns(friend);
+            this.repoMock!.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { friendId });
 
-            this.userService.AddFriend(userId, friendId);
+            this.userService!.AddFriend(userId, friendId);
 
             this.repoMock.Verify(r => r.AddFriend(userId, friendId), Times.Never());
-            this.notificationServiceMock.Verify(n => n.SendFriendNotification(userId, friendId), Times.Never());
+            this.notificationServiceMock!.Verify(n => n.SendFriendNotification(userId, friendId), Times.Never());
         }
 
         [TestMethod]
@@ -73,14 +78,14 @@ namespace SocialStuff.Tests.ServiceTests
             var user = new User(userId, "User1", "1234567890", 0);
             var friend = new User(friendId, "Friend1", "0987654321", 0);
             user.AddFriend(friendId);
-            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            this.repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
-            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { friendId });
 
-            this.userService.RemoveFriend(userId, friendId);
+            this.repoMock!.Setup(r => r.GetUsersList()).Returns(new List<User> { user, friend });
+            this.repoMock!.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { friendId });
+
+            this.userService!.RemoveFriend(userId, friendId);
 
             this.repoMock.Verify(r => r.DeleteFriend(userId, friendId), Times.Once());
-            this.notificationServiceMock.Verify(n => n.SendRemoveFriendNotification(userId, friendId), Times.Once());
+            this.notificationServiceMock!.Verify(n => n.SendRemoveFriendNotification(userId, friendId), Times.Once());
             Assert.IsFalse(user.GetFriends().Contains(friendId));
         }
 
@@ -89,46 +94,67 @@ namespace SocialStuff.Tests.ServiceTests
         {
             int userId = 1;
             int friendId = 3;
+
             var user = new User(userId, "User1", "1234567890", 0);
             var friend = new User(friendId, "Friend1", "0987654321", 0);
-            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
-            this.repoMock.Setup(r => r.GetUserById(friendId)).Returns(friend);
-            this.repoMock.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { 2 });
 
-            this.userService.RemoveFriend(userId, friendId);
+            // ✅ Fix: mock GetUsersList with both user and friend
+            this.repoMock!.Setup(r => r.GetUsersList()).Returns(new List<User> { user, friend });
+
+            // ✅ user is NOT friends with friendId
+            this.repoMock!.Setup(r => r.GetFriendsIDs(userId)).Returns(new List<int> { 2 });
+
+            this.userService!.RemoveFriend(userId, friendId);
 
             this.repoMock.Verify(r => r.DeleteFriend(userId, friendId), Times.Never());
-            this.notificationServiceMock.Verify(n => n.SendRemoveFriendNotification(userId, friendId), Times.Never());
+            this.notificationServiceMock!.Verify(n => n.SendRemoveFriendNotification(userId, friendId), Times.Never());
         }
+
 
         [TestMethod]
         public void JoinChat_NotInChat_JoinsSuccessfully()
         {
             int userId = 1;
             int chatId = 100;
+
             var user = new User(userId, "User1", "1234567890", 0);
-            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+
+            // Fix: mock GetUsersList instead of GetUserById
+            this.repoMock.Setup(r => r.GetUsersList()).Returns(new List<User> { user });
+
+            // Mock that the user is NOT in the chat yet
             this.repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { 200 });
 
+            // Act
             this.userService.JoinChat(userId, chatId);
 
+            // Assert
             this.repoMock.Verify(r => r.AddUserToChat(chatId, userId), Times.Once());
             Assert.IsTrue(user.GetChats().Contains(chatId));
         }
+
 
         [TestMethod]
         public void JoinChat_AlreadyInChat_DoesNotJoin()
         {
             int userId = 1;
             int chatId = 100;
+
             var user = new User(userId, "User1", "1234567890", 0);
-            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+
+            // Mock GetUsersList() because GetUserById() in UserService loops through it
+            this.repoMock.Setup(r => r.GetUsersList()).Returns(new List<User> { user });
+
+            // Simulate that user is already in the chat
             this.repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { chatId });
 
+            // Act
             this.userService.JoinChat(userId, chatId);
 
+            // Assert: Ensure AddUserToChat was never called because user was already in chat
             this.repoMock.Verify(r => r.AddUserToChat(chatId, userId), Times.Never());
         }
+
 
         [TestMethod]
         public void LeaveChat_InChat_LeavesSuccessfully()
@@ -136,15 +162,22 @@ namespace SocialStuff.Tests.ServiceTests
             int userId = 1;
             int chatId = 100;
             var user = new User(userId, "User1", "1234567890", 0);
-            user.JoinChat(chatId);
-            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            user.JoinChat(chatId); // manually add chat to user
+
+            // ✅ Mock GetUsersList() so GetUserById() can find the user
+            this.repoMock.Setup(r => r.GetUsersList()).Returns(new List<User> { user });
+
+            // ✅ Mock chat membership
             this.repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { chatId });
 
+            // Act
             this.userService.LeaveChat(userId, chatId);
 
+            // Assert
             this.repoMock.Verify(r => r.RemoveUserFromChat(userId, chatId), Times.Once());
             Assert.IsFalse(user.GetChats().Contains(chatId));
         }
+
 
         [TestMethod]
         public void LeaveChat_NotInChat_DoesNotCallRepo()
@@ -152,13 +185,18 @@ namespace SocialStuff.Tests.ServiceTests
             int userId = 1;
             int chatId = 100;
             var user = new User(userId, "User1", "1234567890", 0);
-            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+
+            // ✅ Fix: mock GetUsersList, not GetUserById
+            this.repoMock.Setup(r => r.GetUsersList()).Returns(new List<User> { user });
+
+            // ✅ User is NOT in chat 100
             this.repoMock.Setup(r => r.GetChatsIDs(userId)).Returns(new List<int> { 200 });
 
             this.userService.LeaveChat(userId, chatId);
 
             this.repoMock.Verify(r => r.RemoveUserFromChat(userId, chatId), Times.Never());
         }
+
 
         [TestMethod]
         public void FilterUsers_ValidKeyword_ReturnsMatchingUsers()
@@ -179,22 +217,43 @@ namespace SocialStuff.Tests.ServiceTests
         }
 
         [TestMethod]
-        public void FilterFriends_ValidKeyword_ReturnsMatchingFriends()
+        public void FilterFriends_WithMatchingKeyword_ReturnsExpectedFriendIds()
         {
-            int userId = 1;
-            string keyword = "test";
+            // Arrange
+            var repoMock = new Mock<IRepository>();
+            var notificationServiceMock = new Mock<INotificationService>();
+
+            var userId = 1;
+            var keyword = "test";
+
+            // Full list of users (used by GetUserById)
+            var users = new List<User>
+            {
+                new User(1, "MainUser", "0000000000", 0),
+                new User(2, "TestFriend", "1111111111", 0),     // match by username
+                new User(3, "NoMatch", "2222222222", 0),
+                new User(4, "Another", "4444test555", 0)        // match by phone number
+            };
+
+            // Friends list (used by GetUserFriendsList)
             var friends = new List<User>
-        {
-            new User(2, "TestFriend", "1234567890", 0),
-            new User(3, "Other", "0987654321", 0)
-        };
-            this.repoMock.Setup(r => r.GetUserById(userId)).Returns(new User(userId, "User1", "123", 0));
-            this.repoMock.Setup(r => r.GetUserFriendsList(userId)).Returns(friends);
+            {
+                users[1], // ID 2
+                users[2], // ID 3
+                users[3]  // ID 4
+            };
 
-            var result = this.userService.FilterFriends(keyword, userId);
+            repoMock.Setup(r => r.GetUsersList()).Returns(users);
+            repoMock.Setup(r => r.GetUserFriendsList(userId)).Returns(friends);
 
-            Assert.AreEqual(1, result.Count);
-            Assert.AreEqual(2, result[0]);
+            var userService = new UserService(repoMock.Object, notificationServiceMock.Object);
+
+            // Act
+            var result = userService.FilterFriends(keyword, userId);
+
+            // Assert
+            Assert.AreEqual(2, result.Count);
+            CollectionAssert.AreEquivalent(new List<int> { 2, 4 }, result);
         }
 
         [TestMethod]

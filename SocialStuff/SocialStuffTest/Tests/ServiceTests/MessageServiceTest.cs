@@ -77,7 +77,7 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int senderId = 1, chatId = 2;
             string content = "Hello";
-            _userServiceMock.Setup(u => u.GetUserById(senderId)).Returns((User)null);
+            _userServiceMock.Setup(u => u.GetUserById(senderId)).Returns((User?)null!);
 
             // Act
             _service.SendMessage(senderId, chatId, content);

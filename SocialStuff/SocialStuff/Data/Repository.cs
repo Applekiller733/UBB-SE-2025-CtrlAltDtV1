@@ -39,6 +39,12 @@ namespace SocialStuff.Data
             Console.WriteLine("Repo created");
         }
 
+        public Repository(DatabaseConnection _db)
+        {
+            this.dbConnection = _db;
+            Console.WriteLine("Repo created");
+        }
+
         /// <summary>
         /// Gets the ID of the currently logged-in user.
         /// </summary>
@@ -60,6 +66,12 @@ namespace SocialStuff.Data
             new SqlParameter("@UserID", userID),
             };
             DataTable dataTable = this.dbConnection.ExecuteReader("SELECT * FROM Users WHERE UserID = @UserID", parameters, false);
+
+            if (dataTable == null || dataTable.Rows.Count == 0)
+            {
+                return null;
+            }
+
             if (dataTable.Rows.Count > 0)
             {
                 DataRow row = dataTable.Rows[0];
@@ -272,9 +284,11 @@ namespace SocialStuff.Data
         /// <returns>A list of <see cref="Message"/> objects representing all messages.</returns>
         public List<Message> GetMessagesList()
         {
-            // messagetypes : 1-text , 2-image, 3-request, 4-transfer
             DataTable dataTable = this.dbConnection.ExecuteReader("select * from Messages", Array.Empty<SqlParameter>(), false);
+            DataTable reportsTable = this.dbConnection.ExecuteReader("select * from Reports", Array.Empty<SqlParameter>(), false); // <== moved here
+
             List<Message> messages = new List<Message>();
+
             foreach (DataRow row in dataTable.Rows)
             {
                 int messageID = Convert.ToInt32(row["messageid"]);
@@ -286,7 +300,7 @@ namespace SocialStuff.Data
                 string status = row["status"]?.ToString() ?? string.Empty;
                 float? amount = row["amount"] == DBNull.Value ? (float?)null : Convert.ToSingle(row["amount"]);
                 string currency = row["currency"]?.ToString() ?? string.Empty;
-                DataTable reportsTable = this.dbConnection.ExecuteReader("select * from Reports", Array.Empty<SqlParameter>(), false);
+
                 List<int> userReports = new List<int>();
                 foreach (DataRow row1 in reportsTable.Rows)
                 {
@@ -298,16 +312,16 @@ namespace SocialStuff.Data
 
                 switch (typeID)
                 {
-                    case 1: // Text message
+                    case 1:
                         messages.Add(new TextMessage(messageID, userID, chatID, timestamp, content, userReports));
                         break;
-                    case 2: // Image message
+                    case 2:
                         messages.Add(new ImageMessage(messageID, userID, chatID, timestamp, content, userReports));
                         break;
-                    case 3: // Request message
+                    case 3:
                         messages.Add(new RequestMessage(messageID, userID, chatID, timestamp, status, amount ?? 0, content, currency));
                         break;
-                    case 4: // Transfer message
+                    case 4:
                         messages.Add(new TransferMessage(messageID, userID, chatID, timestamp, status, amount ?? 0, content, currency));
                         break;
                     default:
@@ -399,6 +413,12 @@ namespace SocialStuff.Data
             };
             DataTable dataTable = this.dbConnection.ExecuteReader("select * from chats", Array.Empty<SqlParameter>(), false);
             List<int> chats = new List<int>();
+
+            if (dataTable == null)
+            {
+                return chats;
+            }
+
             foreach (DataRow row in dataTable.Rows)
             {
                 chats.Add(Convert.ToInt32(row["ChatID"]));

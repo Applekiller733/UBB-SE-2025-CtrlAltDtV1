@@ -130,8 +130,8 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             var reports = new List<Report>
             {
-                new Report(1, 1, "Spam", "Bad", "Pending"),
-                new Report(2, 2, "Abuse", "Worse", "Open")
+                new Report(1, 1, "Pending", "Spam", "Bad"),
+                new Report(2, 2, "Open", "Abuse", "Worse")
             };
 
             // Act

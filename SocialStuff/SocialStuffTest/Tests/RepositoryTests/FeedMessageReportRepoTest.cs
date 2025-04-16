@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 
-namespace SocialStuff.Tests.UnitTests
+namespace SocialStuff.Tests.RepositoryTests
 {
     [TestClass]
     public class RepositoryTests
@@ -21,8 +21,7 @@ namespace SocialStuff.Tests.UnitTests
         public void Setup()
         {
             _dbConnectionMock = new Mock<DatabaseConnection>();
-            _repository = new Repository();
-            // Use reflection or dependency injection in real setup to inject mock
+            _repository = new Repository(_dbConnectionMock.Object);
         }
 
         [TestMethod]
