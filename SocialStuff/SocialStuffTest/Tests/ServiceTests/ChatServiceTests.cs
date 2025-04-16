@@ -208,7 +208,7 @@ namespace SocialStuff.Tests.ServiceTests
             DateTime expectedTimestamp = messages[1].GetTimestamp();
 
             // Act
-            DateTime actualTimestamp = _chatService.GetLastMessageTimeStamp(chatId);
+            DateTime actualTimestamp = _chatService!.GetLastMessageTimeStamp(chatId);
 
             // Assert
             Assert.AreEqual(expectedTimestamp, actualTimestamp);
@@ -223,7 +223,7 @@ namespace SocialStuff.Tests.ServiceTests
             _mockRepo!.Setup(repo => repo.GetMessagesList()).Returns(messages);
 
             // Act
-            DateTime actualTimestamp = _chatService.GetLastMessageTimeStamp(chatId);
+            DateTime actualTimestamp = _chatService!.GetLastMessageTimeStamp(chatId);
 
             // Assert
             Assert.AreEqual(DateTime.MinValue, actualTimestamp);
@@ -242,7 +242,7 @@ namespace SocialStuff.Tests.ServiceTests
             _mockRepo!.Setup(repo => repo.GetMessagesList()).Returns(messages);
 
             // Act
-            var chatHistory = _chatService.GetChatHistory(chatId);
+            var chatHistory = _chatService!.GetChatHistory(chatId);
 
             // Assert
             Assert.AreEqual(1, chatHistory.Count);

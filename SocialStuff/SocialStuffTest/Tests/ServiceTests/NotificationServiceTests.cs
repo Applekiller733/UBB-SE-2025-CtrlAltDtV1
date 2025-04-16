@@ -49,11 +49,11 @@ namespace SocialStuff.Tests.ServiceTests
             int newFriendId = 2;
             var user = new User(userId, "User1", "1234567890", 0);
             var newFriend = new User(newFriendId, "Friend1", "0987654321", 0);
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            _repoMock!.Setup(r => r.GetUserById(userId)).Returns(user);
             _repoMock.Setup(r => r.GetUserById(newFriendId)).Returns(newFriend);
 
             // Act
-            _service.SendFriendNotification(userId, newFriendId);
+            _service!.SendFriendNotification(userId, newFriendId);
 
             // Assert
             _repoMock.Verify(r => r.AddNotification(
@@ -70,11 +70,11 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int userId = 1;
             int newFriendId = 2;
-            _repoMock!.Setup(r => r.GetUserById(userId)).Returns((User)null);
+            _repoMock!.Setup(r => r.GetUserById(userId)).Returns((User?)null);
             _repoMock.Setup(r => r.GetUserById(newFriendId)).Returns(new User(newFriendId, "Friend1", "0987654321", 0));
 
             // Act
-            _service.SendFriendNotification(userId, newFriendId);
+            _service!.SendFriendNotification(userId, newFriendId);
 
             // Assert
             _repoMock.Verify(r => r.AddNotification(It.IsAny<string>(), It.IsAny<int>()), Times.Never());
@@ -86,11 +86,11 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int userId = 1;
             int newFriendId = 2;
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(new User(userId, "User1", "1234567890", 0));
+            _repoMock!.Setup(r => r.GetUserById(userId)).Returns(new User(userId, "User1", "1234567890", 0));
             _repoMock.Setup(r => r.GetUserById(newFriendId)).Returns((User?)null);
 
             // Act
-            _service.SendFriendNotification(userId, newFriendId);
+            _service!.SendFriendNotification(userId, newFriendId);
 
             // Assert
             _repoMock.Verify(r => r.AddNotification(It.IsAny<string>(), It.IsAny<int>()), Times.Never());
@@ -104,11 +104,11 @@ namespace SocialStuff.Tests.ServiceTests
             int oldFriendId = 2;
             var user = new User(userId, "User1", "1234567890", 0);
             var oldFriend = new User(oldFriendId, "Friend1", "0987654321", 0);
-            _repoMock.Setup(r => r.GetUserById(userId)).Returns(user);
+            _repoMock!.Setup(r => r.GetUserById(userId)).Returns(user);
             _repoMock.Setup(r => r.GetUserById(oldFriendId)).Returns(oldFriend);
 
             // Act
-            _service.SendRemoveFriendNotification(userId, oldFriendId);
+            _service!.SendRemoveFriendNotification(userId, oldFriendId);
 
             // Assert
             _repoMock.Verify(r => r.AddNotification(

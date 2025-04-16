@@ -32,7 +32,7 @@ namespace SocialStuff.Data
         /// </summary>
         /// <param name="userId">The ID of the user to retrieve.</param>
         /// <returns>The user with the specified ID.</returns>
-        User GetUserById(int userId);
+        User? GetUserById(int userId);
 
         /// <summary>
         /// Retrieves a list of all users.

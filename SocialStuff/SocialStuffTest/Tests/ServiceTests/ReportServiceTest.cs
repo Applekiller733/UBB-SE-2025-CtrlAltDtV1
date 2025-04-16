@@ -115,7 +115,7 @@ namespace SocialStuff.Tests.ServiceTests
         {
             // Arrange
             int userId = 1;
-            _userServiceMock!.Setup(u => u.GetUserById(userId)).Returns((User)null);
+            _userServiceMock!.Setup(u => u.GetUserById(userId)).Returns((User?)null);
 
             // Act
             _service!.IncreaseReportCount(userId);

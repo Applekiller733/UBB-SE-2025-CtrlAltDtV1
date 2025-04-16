@@ -53,11 +53,11 @@ namespace SocialStuff.Tests.RepositoryTests
             // Arrange
             int userId = 1;
             var dataTable = new DataTable();
-            _dbConnectionMock.Setup(d => d.ExecuteReader(It.IsAny<string>(), It.IsAny<SqlParameter[]>(), false))
+            _dbConnectionMock!.Setup(d => d.ExecuteReader(It.IsAny<string>(), It.IsAny<SqlParameter[]>(), false))
                             .Returns(dataTable);
 
             // Act
-            var result = _repository.GetUserById(userId);
+            var result = _repository!.GetUserById(userId);
 
             // Assert
             Assert.IsNull(result);
@@ -71,10 +71,10 @@ namespace SocialStuff.Tests.RepositoryTests
             string content = "Hello";
 
             // Act
-            _repository.AddTextMessage(userId, chatId, content);
+            _repository!.AddTextMessage(userId, chatId, content);
 
             // Assert
-            _dbConnectionMock.Verify(d => d.ExecuteNonQuery("AddMessage", It.Is<SqlParameter[]>(p =>
+            _dbConnectionMock!.Verify(d => d.ExecuteNonQuery("AddMessage", It.Is<SqlParameter[]>(p =>
                 p[0].ParameterName == "@TypeID" && (int)p[0].Value == 1 &&
                 p[1].ParameterName == "@UserID" && (int)p[1].Value == userId &&
                 p[2].ParameterName == "@ChatID" && (int)p[2].Value == chatId &&
@@ -102,12 +102,12 @@ namespace SocialStuff.Tests.RepositoryTests
 
             var reportsTable = new DataTable();
             reportsTable.Columns.Add("messageid", typeof(int));
-            _dbConnectionMock.SetupSequence(d => d.ExecuteReader(It.IsAny<string>(), It.IsAny<SqlParameter[]>(), false))
+            _dbConnectionMock!.SetupSequence(d => d.ExecuteReader(It.IsAny<string>(), It.IsAny<SqlParameter[]>(), false))
                             .Returns(messagesTable)
                             .Returns(reportsTable);
 
             // Act
-            var result = _repository.GetMessagesList();
+            var result = _repository!.GetMessagesList();
 
             // Assert
             Assert.AreEqual(3, result.Count);
@@ -127,11 +127,11 @@ namespace SocialStuff.Tests.RepositoryTests
             dataTable.Columns.Add("content", typeof(string));
             dataTable.Columns.Add("timestamp", typeof(DateTime));
             dataTable.Rows.Add(1, "Title", "Cat", "Content", DateTime.Now);
-            _dbConnectionMock.Setup(d => d.ExecuteReader(It.IsAny<string>(), It.IsAny<SqlParameter[]>(), false))
+            _dbConnectionMock!.Setup(d => d.ExecuteReader(It.IsAny<string>(), It.IsAny<SqlParameter[]>(), false))
                             .Returns(dataTable);
 
             // Act
-            var result = _repository.GetFeedPostsList();
+            var result = _repository!.GetFeedPostsList();
 
             // Assert
             Assert.AreEqual(1, result.Count);
@@ -146,10 +146,10 @@ namespace SocialStuff.Tests.RepositoryTests
             string reason = "Spam", description = "Bad", status = "Pending";
 
             // Act
-            _repository.AddReport(messageId, reason, description, status);
+            _repository!.AddReport(messageId, reason, description, status);
 
             // Assert
-            _dbConnectionMock.Verify(d => d.ExecuteNonQuery("AddReport", It.Is<SqlParameter[]>(p =>
+            _dbConnectionMock!.Verify(d => d.ExecuteNonQuery("AddReport", It.Is<SqlParameter[]>(p =>
                 p[0].ParameterName == "@MessageID" && (int)p[0].Value == messageId &&
                 p[1].ParameterName == "@Reason" && (string)p[1].Value == reason &&
                 p[2].ParameterName == "@Description" && (string)p[2].Value == description &&
