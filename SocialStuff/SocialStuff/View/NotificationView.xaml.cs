@@ -1,11 +1,15 @@
-using Microsoft.UI.Xaml.Controls;
-using SocialStuff.ViewModel;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Data;
-using Microsoft.UI.Xaml;
+// <copyright file="NotificationView.xaml.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.View
 {
+    using Microsoft.UI.Xaml;
+    using Microsoft.UI.Xaml.Controls;
+    using SocialStuff.Data;
+    using SocialStuff.Services.Implementations;
+    using SocialStuff.ViewModel;
+
     public sealed partial class NotificationView : Page
     {
         private NotificationViewModel viewModel;

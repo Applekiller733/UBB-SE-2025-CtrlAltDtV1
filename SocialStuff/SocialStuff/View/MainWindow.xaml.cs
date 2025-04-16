@@ -1,30 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using SocialStuff.Data.Database;
-using SocialStuff.Data;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using SocialStuff.View;
-using SocialStuff.ViewModel;
-using SocialStuff.Model;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
-
+// <copyright file="MainWindow.xaml.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace SocialStuff
 {
+    using Microsoft.UI.Xaml;
+    using SocialStuff.Data;
+    using SocialStuff.Services.Implementations;
+    using SocialStuff.Services.Interfaces;
+    using SocialStuff.View;
+    using SocialStuff.ViewModel;
+
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -42,72 +30,69 @@ namespace SocialStuff
         {
             this.InitializeComponent();
 
-            mainWindow = this;
+            this.mainWindow = this;
             IRepository repo = new Repository();
-            notificationService = new NotificationService(repo);
-            userService = new UserService(repo, notificationService);
-            chatService = new ChatService(repo);
-            messageService = new MessageService(repo, userService);
-            feedService = new FeedService(repo, userService);
-            reportService = new ReportService(repo, userService);
+            this.notificationService = new NotificationService(repo);
+            this.userService = new UserService(repo, this.notificationService);
+            this.chatService = new ChatService(repo);
+            this.messageService = new MessageService(repo, this.userService);
+            this.feedService = new FeedService(repo, this.userService);
+            this.reportService = new ReportService(repo, this.userService);
 
-            if (LeftFrame.Content == null || !(LeftFrame.Content is ChatListView))
+            if (this.LeftFrame.Content == null || !(this.LeftFrame.Content is ChatListView))
             {
-                var chatListView = new ChatListView(this, chatService, userService, reportService, messageService, this.RightFrame);
-                LeftFrame.Content = chatListView;
+                var chatListView = new ChatListView(this, this.chatService, this.userService, this.reportService, this.messageService, this.RightFrame);
+                this.LeftFrame.Content = chatListView;
             }
-            if (RightFrame.Content == null || !(RightFrame.Content is FeedView))
-            {
 
-                var feedViewModel = new FeedViewModel(feedService);
-                var feedView = new FeedView(feedViewModel, userService, feedService);
-                RightFrame.Content = feedView;
+            if (this.RightFrame.Content == null || !(this.RightFrame.Content is FeedView))
+            {
+                var feedViewModel = new FeedViewModel(this.feedService);
+                var feedView = new FeedView(feedViewModel, this.userService, this.feedService);
+                this.RightFrame.Content = feedView;
             }
         }
 
         private void Chat_Click(object sender, RoutedEventArgs e)
         {
-            if (LeftFrame.Content == null || !(LeftFrame.Content is ChatListView))
+            if (this.LeftFrame.Content == null || !(this.LeftFrame.Content is ChatListView))
             {
-                var chatListView = new ChatListView(this, chatService, userService, reportService, messageService, this.RightFrame);
-                LeftFrame.Content = chatListView;
+                var chatListView = new ChatListView(this, this.chatService, this.userService, this.reportService, this.messageService, this.RightFrame);
+                this.LeftFrame.Content = chatListView;
             }
         }
 
-        //private void Feed_Click(object sender, RoutedEventArgs e)
-        //{
+        // private void Feed_Click(object sender, RoutedEventArgs e)
+        // {
         //    RightFrame.Navigate(typeof(FeedView));
-        //}
-
+        // }
         private void Friends_Click(object sender, RoutedEventArgs e)
         {
-            if (LeftFrame.Content == null || !(LeftFrame.Content is FriendsListView))
+            if (this.LeftFrame.Content == null || !(this.LeftFrame.Content is FriendsListView))
             {
-                var friendsListView = new FriendsListView(chatService, userService, messageService, this.RightFrame);
-                LeftFrame.Content = friendsListView;
-
+                var friendsListView = new FriendsListView(this.chatService, this.userService, this.messageService, this.RightFrame);
+                this.LeftFrame.Content = friendsListView;
             }
         }
 
         private void Feed_Click(object sender, RoutedEventArgs e)
         {
-            if (RightFrame.Content == null || !(RightFrame.Content is FeedView))
+            if (this.RightFrame.Content == null || !(this.RightFrame.Content is FeedView))
             {
 
-                var feedViewModel = new FeedViewModel(feedService);
-                var feedView = new FeedView(feedViewModel, userService, feedService);
-                RightFrame.Content = feedView;
+                var feedViewModel = new FeedViewModel(this.feedService);
+                var feedView = new FeedView(feedViewModel, this.userService, this.feedService);
+                this.RightFrame.Content = feedView;
             }
         }
 
         private void Notifications_click(object sender, RoutedEventArgs e)
         {
-            if (RightFrame.Content == null || !(RightFrame.Content is NotificationView))
+            if (this.RightFrame.Content == null || !(this.RightFrame.Content is NotificationView))
             {
                 var notificationView = new NotificationView();
-                RightFrame.Content = notificationView;
+                this.RightFrame.Content = notificationView;
             }
         }
     }
-
 }

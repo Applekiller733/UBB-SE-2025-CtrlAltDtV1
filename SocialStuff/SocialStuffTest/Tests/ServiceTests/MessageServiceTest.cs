@@ -14,9 +14,9 @@ namespace SocialStuff.Tests.ServiceTests
     [TestClass]
     public class MessageServiceTests
     {
-        private Mock<IRepository> _repoMock;
-        private Mock<IUserService> _userServiceMock;
-        private MessageService _service;
+        private Mock<IRepository>? _repoMock;
+        private Mock<IUserService>? _userServiceMock;
+        private MessageService? _service;
 
         [TestInitialize]
         public void Setup()
@@ -30,10 +30,10 @@ namespace SocialStuff.Tests.ServiceTests
         public void GetRepo_Called_ReturnsRepository()
         {
             // Arrange
-            var expectedRepo = _repoMock.Object;
+            var expectedRepo = _repoMock!.Object;
 
             // Act
-            var result = _service.GetRepo();
+            var result = _service!.GetRepo();
 
             // Assert
             Assert.AreEqual(expectedRepo, result);
@@ -45,14 +45,14 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int senderId = 1, chatId = 2;
             string content = "Hello";
-            _userServiceMock.Setup(u => u.GetUserById(senderId)).Returns(new User(senderId, "user", "123", 0));
+            _userServiceMock!.Setup(u => u.GetUserById(senderId)).Returns(new User(senderId, "user", "123", 0));
             _userServiceMock.Setup(u => u.IsUserInTimeout(It.IsAny<User>())).Returns(false);
 
             // Act
-            _service.SendMessage(senderId, chatId, content);
+            _service!.SendMessage(senderId, chatId, content);
 
             // Assert
-            _repoMock.Verify(r => r.AddTextMessage(senderId, chatId, content), Times.Once());
+            _repoMock!.Verify(r => r.AddTextMessage(senderId, chatId, content), Times.Once());
         }
 
         [TestMethod]
@@ -61,14 +61,14 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int senderId = 1, chatId = 2;
             string content = "Hello";
-            _userServiceMock.Setup(u => u.GetUserById(senderId)).Returns(new User(senderId, "user", "123", 0));
+            _userServiceMock!.Setup(u => u.GetUserById(senderId)).Returns(new User(senderId, "user", "123", 0));
             _userServiceMock.Setup(u => u.IsUserInTimeout(It.IsAny<User>())).Returns(true);
 
             // Act
-            _service.SendMessage(senderId, chatId, content);
+            _service!.SendMessage(senderId, chatId, content);
 
             // Assert
-            _repoMock.Verify(r => r.AddTextMessage(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<string>()), Times.Never());
+            _repoMock!.Verify(r => r.AddTextMessage(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<string>()), Times.Never());
         }
 
         [TestMethod]
@@ -77,13 +77,13 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int senderId = 1, chatId = 2;
             string content = "Hello";
-            _userServiceMock.Setup(u => u.GetUserById(senderId)).Returns((User?)null!);
+            _userServiceMock!.Setup(u => u.GetUserById(senderId)).Returns((User?)null!);
 
             // Act
-            _service.SendMessage(senderId, chatId, content);
+            _service!.SendMessage(senderId, chatId, content);
 
             // Assert
-            _repoMock.Verify(r => r.AddTextMessage(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<string>()), Times.Never());
+            _repoMock!.Verify(r => r.AddTextMessage(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<string>()), Times.Never());
         }
 
         [TestMethod]
@@ -92,14 +92,14 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int senderId = 1, chatId = 2;
             string imageUrl = "http://image.com";
-            _userServiceMock.Setup(u => u.GetUserById(senderId)).Returns(new User(senderId, "user", "123", 0));
+            _userServiceMock!.Setup(u => u.GetUserById(senderId)).Returns(new User(senderId, "user", "123", 0));
             _userServiceMock.Setup(u => u.IsUserInTimeout(It.IsAny<User>())).Returns(false);
 
             // Act
-            _service.SendImage(senderId, chatId, imageUrl);
+            _service!.SendImage(senderId, chatId, imageUrl);
 
             // Assert
-            _repoMock.Verify(r => r.AddImageMessage(senderId, chatId, imageUrl), Times.Once());
+            _repoMock!.Verify(r => r.AddImageMessage(senderId, chatId, imageUrl), Times.Once());
         }
 
         [TestMethod]
@@ -108,14 +108,14 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int senderId = 1, chatId = 2;
             string imageUrl = "http://image.com";
-            _userServiceMock.Setup(u => u.GetUserById(senderId)).Returns(new User(senderId, "user", "123", 0));
+            _userServiceMock!.Setup(u => u.GetUserById(senderId)).Returns(new User(senderId, "user", "123", 0));
             _userServiceMock.Setup(u => u.IsUserInTimeout(It.IsAny<User>())).Returns(true);
 
             // Act
-            _service.SendImage(senderId, chatId, imageUrl);
+            _service!.SendImage(senderId, chatId, imageUrl);
 
             // Assert
-            _repoMock.Verify(r => r.AddImageMessage(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<string>()), Times.Never());
+            _repoMock!.Verify(r => r.AddImageMessage(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<string>()), Times.Never());
         }
 
         [TestMethod]
@@ -123,10 +123,10 @@ namespace SocialStuff.Tests.ServiceTests
         {
             // Arrange
             var message = new TextMessage(1, 1, 2, DateTime.Now, "content", new List<int>());
-            _repoMock.Setup(r => r.DeleteMessage(message.GetMessageID())).Verifiable();
+            _repoMock!.Setup(r => r.DeleteMessage(message.GetMessageID())).Verifiable();
 
             // Act
-            _service.DeleteMessage(message);
+            _service!.DeleteMessage(message);
 
             // Assert
             _repoMock.Verify(r => r.DeleteMessage(message.GetMessageID()), Times.Once());
@@ -141,10 +141,10 @@ namespace SocialStuff.Tests.ServiceTests
             float amount = 100.0f;
 
             // Act
-            _service.SendTransferMessage(userId, chatId, content, status, amount, currency);
+            _service!.SendTransferMessage(userId, chatId, content, status, amount, currency);
 
             // Assert
-            _repoMock.Verify(r => r.AddTransferMessage(userId, chatId, content, status, amount, currency), Times.Once());
+            _repoMock!.Verify(r => r.AddTransferMessage(userId, chatId, content, status, amount, currency), Times.Once());
         }
 
         [TestMethod]
@@ -156,10 +156,10 @@ namespace SocialStuff.Tests.ServiceTests
             float amount = 50.0f;
 
             // Act
-            _service.SendRequestMessage(userId, chatId, content, status, amount, currency);
+            _service!.SendRequestMessage(userId, chatId, content, status, amount, currency);
 
             // Assert
-            _repoMock.Verify(r => r.AddRequestMessage(userId, chatId, content, status, amount, currency), Times.Once());
+            _repoMock!.Verify(r => r.AddRequestMessage(userId, chatId, content, status, amount, currency), Times.Once());
         }
 
         [TestMethod]
@@ -169,7 +169,7 @@ namespace SocialStuff.Tests.ServiceTests
             var message = new TextMessage(1, 1, 2, DateTime.Now, "content", new List<int>());
 
             // Act
-            _service.ReportMessage(message);
+            _service!.ReportMessage(message);
 
             // Assert
             Assert.IsTrue(true); // Since method is empty, ensure it doesn't throw

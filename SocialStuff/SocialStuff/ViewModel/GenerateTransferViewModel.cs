@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Microsoft.UI.Xaml;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
+﻿// <copyright file="GenerateTransferViewModel.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.ViewModel
 {
+    using System;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+    using System.Windows.Input;
+    using SocialStuff.Services.Interfaces;
+
     public class GenerateTransferViewModel : INotifyPropertyChanged
     {
         private string amountText;
@@ -30,23 +28,23 @@ namespace SocialStuff.ViewModel
         {
             this.chatService = chatService;
             this.ChatID = ChatID;
-            SendMessageCommand = new RelayCommand(ExecuteSendMessage);
+            this.SendMessageCommand = new RelayCommand(this.ExecuteSendMessage);
 
             // Set default values
-            Description = "";
-            AmountText = "";
-            SelectedTransferType = "";
+            this.Description = string.Empty;
+            this.AmountText = string.Empty;
+            this.SelectedTransferType = string.Empty;
         }
 
         public string AmountText
         {
-            get => amountText;
+            get => this.amountText;
             set
             {
-                amountText = value;
-                OnPropertyChanged();
-                ValidateForm();
-                CheckFunds();
+                this.amountText = value;
+                this.OnPropertyChanged();
+                this.ValidateForm();
+                this.CheckFunds();
             }
         }
 
@@ -54,75 +52,76 @@ namespace SocialStuff.ViewModel
         {
             get
             {
-                if (float.TryParse(AmountText, out float result))
+                if (float.TryParse(this.AmountText, out float result))
                 {
                     return result;
                 }
+
                 return 0f;
             }
         }
 
         public string Description
         {
-            get => description;
+            get => this.description;
             set
             {
-                description = value;
-                OnPropertyChanged();
-                ValidateForm();
+                this.description = value;
+                this.OnPropertyChanged();
+                this.ValidateForm();
             }
         }
 
         public string SelectedTransferType
         {
-            get => selectedTransferType;
+            get => this.selectedTransferType;
             set
             {
-                selectedTransferType = value;
-                OnPropertyChanged();
-                ValidateForm();
-                CheckFunds();
+                this.selectedTransferType = value;
+                this.OnPropertyChanged();
+                this.ValidateForm();
+                this.CheckFunds();
             }
         }
 
         public int TransferTypeIndex
         {
-            get => transferTypeIndex;
+            get => this.transferTypeIndex;
             set
             {
-                transferTypeIndex = value;
-                OnPropertyChanged();
+                this.transferTypeIndex = value;
+                this.OnPropertyChanged();
 
                 // Update the SelectedTransferType based on index
-                switch (transferTypeIndex)
+                switch (this.transferTypeIndex)
                 {
                     case 0:
-                        SelectedTransferType = "Transfer Money";
+                        this.SelectedTransferType = "Transfer Money";
                         break;
                     case 1:
-                        SelectedTransferType = "Request Money";
+                        this.SelectedTransferType = "Request Money";
                         break;
                     case 2:
-                        SelectedTransferType = "Split Bill";
+                        this.SelectedTransferType = "Split Bill";
                         break;
                     default:
-                        SelectedTransferType = null;
+                        this.SelectedTransferType = null;
                         break;
                 }
 
-                ValidateForm();
+                this.ValidateForm();
             }
         }
 
         public int CurrencyIndex
         {
-            get => currencyIndex;
+            get => this.currencyIndex;
             set
             {
-                currencyIndex = value;
-                OnPropertyChanged();
-                ValidateForm();
-                CheckFunds();
+                this.currencyIndex = value;
+                this.OnPropertyChanged();
+                this.ValidateForm();
+                this.CheckFunds();
             }
         }
 
@@ -130,7 +129,7 @@ namespace SocialStuff.ViewModel
         {
             get
             {
-                switch (CurrencyIndex)
+                switch (this.CurrencyIndex)
                 {
                     case 0:
                         return "USD";
@@ -146,13 +145,13 @@ namespace SocialStuff.ViewModel
 
         public bool IsFormValid
         {
-            get => isFormValid;
+            get => this.isFormValid;
             set
             {
-                if (isFormValid != value)
+                if (this.isFormValid != value)
                 {
-                    isFormValid = value;
-                    OnPropertyChanged();
+                    this.isFormValid = value;
+                    this.OnPropertyChanged();
                 }
             }
         }
@@ -161,45 +160,44 @@ namespace SocialStuff.ViewModel
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void ValidateForm()
         {
-            IsFormValid =
-                TransferTypeIndex >= 0 &&
-                CurrencyIndex >= 0 &&
-                !string.IsNullOrWhiteSpace(AmountText) &&
-                float.TryParse(AmountText, out float parsedAmount) &&
+            this.IsFormValid =
+                this.TransferTypeIndex >= 0 &&
+                this.CurrencyIndex >= 0 &&
+                !string.IsNullOrWhiteSpace(this.AmountText) &&
+                float.TryParse(this.AmountText, out float parsedAmount) &&
                 parsedAmount > 0 &&
-                (SelectedTransferType != "Transfer Money" || HasSufficientFunds);
+                (this.SelectedTransferType != "Transfer Money" || this.HasSufficientFunds);
         }
 
         private void ExecuteSendMessage()
         {
             try
             {
-
-                switch (SelectedTransferType)
+                switch (this.SelectedTransferType)
                 {
                     case "Transfer Money":
-                        chatService.SendMoneyViaChat(Amount, Currency, Description, this.ChatID);
+                        this.chatService.SendMoneyViaChat(this.Amount, this.Currency, this.Description, this.ChatID);
                         break;
                     case "Request Money":
-                        chatService.RequestMoneyViaChat(Amount, Currency, this.ChatID, Description);
+                        this.chatService.RequestMoneyViaChat(this.Amount, this.Currency, this.ChatID, this.Description);
                         break;
                     case "Split Bill":
-                        float SplitAmount = Amount / (chatService.GetNumberOfParticipants(ChatID));
-                        chatService.RequestMoneyViaChat(SplitAmount, Currency, this.ChatID, description);
+                        float SplitAmount = this.Amount / (this.chatService.GetNumberOfParticipants(this.ChatID));
+                        this.chatService.RequestMoneyViaChat(SplitAmount, this.Currency, this.ChatID, this.description);
                         break;
                     default:
                         throw new InvalidOperationException("Invalid transfer type selected.");
                 }
 
                 // Reset form after successful operation
-                ResetForm();
+                this.ResetForm();
             }
             catch (Exception ex)
             {
@@ -210,36 +208,36 @@ namespace SocialStuff.ViewModel
 
         private void ResetForm()
         {
-            AmountText = "";
-            Description = "";
-            HasSufficientFunds = true;
+            this.AmountText = string.Empty;
+            this.Description = string.Empty;
+            this.HasSufficientFunds = true;
+
             // Optionally reset other fields if needed
         }
-        
 
         public bool HasSufficientFunds
         {
-            get => hasSufficientFunds;
+            get => this.hasSufficientFunds;
             set
             {
-                if (hasSufficientFunds != value)
+                if (this.hasSufficientFunds != value)
                 {
-                    hasSufficientFunds = value;
-                    OnPropertyChanged();
-                    OnPropertyChanged(nameof(ShowInsufficientFundsError));
+                    this.hasSufficientFunds = value;
+                    this.OnPropertyChanged();
+                    this.OnPropertyChanged(nameof(this.ShowInsufficientFundsError));
                 }
             }
         }
 
         public bool IsCheckingFunds
         {
-            get => isCheckingFunds;
+            get => this.isCheckingFunds;
             set
             {
-                if (isCheckingFunds != value)
+                if (this.isCheckingFunds != value)
                 {
-                    isCheckingFunds = value;
-                    OnPropertyChanged();
+                    this.isCheckingFunds = value;
+                    this.OnPropertyChanged();
                 }
             }
         }
@@ -249,58 +247,58 @@ namespace SocialStuff.ViewModel
             get
             {
                 // Only show error for Transfer Money operations
-                return !HasSufficientFunds &&
-                       SelectedTransferType == "Transfer Money" &&
-                       !string.IsNullOrWhiteSpace(AmountText) &&
-                       float.TryParse(AmountText, out float amount) &&
+                return !this.HasSufficientFunds &&
+                       this.SelectedTransferType == "Transfer Money" &&
+                       !string.IsNullOrWhiteSpace(this.AmountText) &&
+                       float.TryParse(this.AmountText, out float amount) &&
                        amount > 0 &&
-                       CurrencyIndex >= 0;
+                       this.CurrencyIndex >= 0;
             }
         }
 
         private void CheckFunds()
         {
             // Only check funds for transfer money operations
-            if (SelectedTransferType != "Transfer Money")
+            if (this.SelectedTransferType != "Transfer Money")
             {
-                HasSufficientFunds = true;
+                this.HasSufficientFunds = true;
                 return;
             }
 
             // Return if any required fields are not set
-            if (string.IsNullOrWhiteSpace(AmountText) ||
-                !float.TryParse(AmountText, out float amount) ||
+            if (string.IsNullOrWhiteSpace(this.AmountText) ||
+                !float.TryParse(this.AmountText, out float amount) ||
                 amount <= 0 ||
-                CurrencyIndex < 0)
+                this.CurrencyIndex < 0)
             {
-                HasSufficientFunds = true;
+                this.HasSufficientFunds = true;
                 return;
             }
 
-            IsCheckingFunds = true;
+            this.IsCheckingFunds = true;
 
             try
             {
-                int chatID = ChatID;
-                int currentUserID = chatService.GetCurrentUserID();
+                int chatID = this.ChatID;
+                int currentUserID = this.chatService.GetCurrentUserID();
 
                 // Calculate total amount based on number of participants
-                int participantCount = chatService.GetNumberOfParticipants(chatID);
-                float totalAmount = amount * (participantCount-1);
+                int participantCount = this.chatService.GetNumberOfParticipants(chatID);
+                float totalAmount = amount * (participantCount - 1);
 
                 // Check if user has enough funds for the total amount
-                HasSufficientFunds = chatService.EnoughFunds(totalAmount, Currency, currentUserID);
+                this.HasSufficientFunds = this.chatService.EnoughFunds(totalAmount, this.Currency, currentUserID);
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Error checking funds: {ex.Message}");
-                HasSufficientFunds = false;
+                this.HasSufficientFunds = false;
             }
             finally
             {
-                IsCheckingFunds = false;
-                OnPropertyChanged(nameof(ShowInsufficientFundsError));
-                ValidateForm();
+                this.IsCheckingFunds = false;
+                this.OnPropertyChanged(nameof(this.ShowInsufficientFundsError));
+                this.ValidateForm();
             }
         }
     }

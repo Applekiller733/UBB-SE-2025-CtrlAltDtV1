@@ -1,13 +1,17 @@
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using SocialStuff.Model;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
-using SocialStuff.ViewModel;
-using System;
+// <copyright file="ReportView.xaml.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.Views
 {
+    using System;
+    using Microsoft.UI.Xaml;
+    using Microsoft.UI.Xaml.Controls;
+    using SocialStuff.Model;
+    using SocialStuff.Services.Implementations;
+    using SocialStuff.Services.Interfaces;
+    using SocialStuff.ViewModel;
+
     public sealed partial class ReportView : Window
     {
         public ReportViewModel ViewModel { get; }
@@ -52,7 +56,7 @@ namespace SocialStuff.Views
                 Title = "Error",
                 Content = message,
                 CloseButtonText = "OK",
-                XamlRoot = this.Content.XamlRoot
+                XamlRoot = this.Content.XamlRoot,
             };
             await dialog.ShowAsync();
         }
@@ -64,7 +68,7 @@ namespace SocialStuff.Views
                 Title = "Success",
                 Content = message,
                 CloseButtonText = "OK",
-                XamlRoot = this.Content.XamlRoot
+                XamlRoot = this.Content.XamlRoot,
             };
             await dialog.ShowAsync();
             this.Close();
@@ -78,12 +82,12 @@ namespace SocialStuff.Views
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             // reportcommand
-            ViewModel.SubmitCommand.Execute(null);
+            this.ViewModel.SubmitCommand.Execute(null);
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.CancelCommand.Execute(null);
+            this.ViewModel.CancelCommand.Execute(null);
         }
 
         private void CategoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -91,13 +95,13 @@ namespace SocialStuff.Views
             if (CategoryComboBox.SelectedItem is ComboBoxItem selectedItem)
             {
                 // Get the string content from the ComboBoxItem
-                ViewModel.SelectedCategory = selectedItem.Content.ToString();
+                this.ViewModel.SelectedCategory = selectedItem.Content.ToString();
             }
         }
 
         private void OtherReasonTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            ViewModel.OtherReason = OtherReasonTextBox.Text;
+            this.ViewModel.OtherReason = OtherReasonTextBox.Text;
         }
     }
 }

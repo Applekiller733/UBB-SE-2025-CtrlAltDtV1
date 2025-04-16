@@ -11,10 +11,10 @@ namespace SocialStuff.Tests.ServiceTests
     [TestClass]
     public class ReportServiceTests
     {
-        private Mock<IRepository> _repoMock;
-        private Mock<IUserService> _userServiceMock;
-        private ReportService _service;
-        private List<Report> _reports;
+        private Mock<IRepository>? _repoMock;
+        private Mock<IUserService>? _userServiceMock;
+        private ReportService? _service;
+        private List<Report>? _reports;
 
         [TestInitialize]
         public void Setup()
@@ -31,10 +31,10 @@ namespace SocialStuff.Tests.ServiceTests
         {
             // Arrange
             var report = new Report(1, 1, "Spam", "Bad message", "Pending");
-            _reports.Add(report);
+            _reports!.Add(report);
 
             // Act
-            var result = _service.GetReportById(1);
+            var result = _service!.GetReportById(1);
 
             // Assert
             Assert.AreEqual(report, result);
@@ -47,7 +47,7 @@ namespace SocialStuff.Tests.ServiceTests
             // Empty reports list
 
             // Act
-            var result = _service.GetReportById(1);
+            var result = _service!.GetReportById(1);
 
             // Assert
             Assert.IsNull(result);
@@ -60,10 +60,10 @@ namespace SocialStuff.Tests.ServiceTests
             var report = new Report(1, 1, "Spam", "Bad message", "Pending");
 
             // Act
-            _service.AddReport(report);
+            _service!.AddReport(report);
 
             // Assert
-            Assert.IsTrue(_reports.Contains(report));
+            Assert.IsTrue(_reports!.Contains(report));
             Assert.AreEqual(1, _reports.Count);
         }
 
@@ -72,10 +72,10 @@ namespace SocialStuff.Tests.ServiceTests
         {
             // Arrange
             var report = new Report(1, 1, "Spam", "Bad message", "Pending") { ReporterUserID = 2 };
-            _reports.Add(report);
+            _reports!.Add(report);
 
             // Act
-            var result = _service.CheckIfReportExists(1, 2);
+            var result = _service!.CheckIfReportExists(1, 2);
 
             // Assert
             Assert.IsTrue(result);
@@ -88,7 +88,7 @@ namespace SocialStuff.Tests.ServiceTests
             // Empty reports list
 
             // Act
-            var result = _service.CheckIfReportExists(1, 2);
+            var result = _service!.CheckIfReportExists(1, 2);
 
             // Assert
             Assert.IsFalse(result);
@@ -100,10 +100,10 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int userId = 1;
             var user = new User(userId, "user", "123", 0);
-            _userServiceMock.Setup(u => u.GetUserById(userId)).Returns(user);
+            _userServiceMock!.Setup(u => u.GetUserById(userId)).Returns(user);
 
             // Act
-            _service.IncreaseReportCount(userId);
+            _service!.IncreaseReportCount(userId);
 
             // Assert
             _userServiceMock.Verify(u => u.GetUserById(userId), Times.Once());
@@ -115,10 +115,10 @@ namespace SocialStuff.Tests.ServiceTests
         {
             // Arrange
             int userId = 1;
-            _userServiceMock.Setup(u => u.GetUserById(userId)).Returns((User)null);
+            _userServiceMock!.Setup(u => u.GetUserById(userId)).Returns((User?)null);
 
             // Act
-            _service.IncreaseReportCount(userId);
+            _service!.IncreaseReportCount(userId);
 
             // Assert
             _userServiceMock.Verify(u => u.GetUserById(userId), Times.Once());
@@ -135,10 +135,10 @@ namespace SocialStuff.Tests.ServiceTests
             };
 
             // Act
-            _service.LogReportedMessages(reports);
+            _service!.LogReportedMessages(reports);
 
             // Assert
-            _repoMock.Verify(r => r.AddReport(1, "Spam", "Bad", "Pending"), Times.Once());
+            _repoMock!.Verify(r => r.AddReport(1, "Spam", "Bad", "Pending"), Times.Once());
             _repoMock.Verify(r => r.AddReport(2, "Abuse", "Worse", "Open"), Times.Once());
         }
 
@@ -149,7 +149,7 @@ namespace SocialStuff.Tests.ServiceTests
             var report = new Report(1, 1, "Spam", "Bad message", "Pending");
 
             // Act
-            _service.SendReport(report);
+            _service!.SendReport(report);
 
             // Assert
             Assert.IsTrue(true); // Since method is empty, ensure it doesn't throw

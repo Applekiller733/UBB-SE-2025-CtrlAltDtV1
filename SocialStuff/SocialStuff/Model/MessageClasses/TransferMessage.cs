@@ -100,25 +100,25 @@ namespace SocialStuff.Model.MessageClasses
         /// Gets the unique identifier of the message.
         /// </summary>
         /// <returns>The message ID.</returns>
-        public int GetMessageID() => this.MessageID;
+        public new int GetMessageID() => this.MessageID;
 
         /// <summary>
         /// Gets the unique identifier of the sender.
         /// </summary>
         /// <returns>The sender ID.</returns>
-        public int GetSenderID() => this.SenderID;
+        public new int GetSenderID() => this.SenderID;
 
         /// <summary>
         /// Gets the unique identifier of the chat.
         /// </summary>
         /// <returns>The chat ID.</returns>
-        public int GetChatID() => this.ChatID;
+        public new int GetChatID() => this.ChatID;
 
         /// <summary>
         /// Gets the timestamp of the message.
         /// </summary>
         /// <returns>The timestamp.</returns>
-        public DateTime GetTimestamp() => this.Timestamp;
+        public new DateTime GetTimestamp() => this.Timestamp;
 
         /// <summary>
         /// Gets the status of the transfer.

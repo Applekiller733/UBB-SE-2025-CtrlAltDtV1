@@ -1,19 +1,25 @@
-﻿using System;
+﻿// <copyright file="ImgurImageUploader.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Windows.Storage;
-using System.IO;
-using System.Collections.Generic;
 
 public class ImgurImageUploader
 {
     private const string ClientId = "ecde1e79945f70c";
 
-    public static async Task<string> UploadImageAndGetUrl(StorageFile file)
+    public static async Task<string?> UploadImageAndGetUrl(StorageFile file)
     {
         if (file == null)
+        {
             return null;
+        }
 
         using (var httpClient = new HttpClient())
         {
@@ -30,8 +36,8 @@ public class ImgurImageUploader
             {
                 Content = new FormUrlEncodedContent(new[]
                 {
-                    new KeyValuePair<string, string>("image", base64Image)
-                })
+                    new KeyValuePair<string, string>("image", base64Image),
+                }),
             };
 
             request.Headers.Authorization = new AuthenticationHeaderValue("Client-ID", ClientId);
@@ -39,7 +45,7 @@ public class ImgurImageUploader
             var response = await httpClient.SendAsync(request);
             string jsonResponse = await response.Content.ReadAsStringAsync();
 
-            dynamic result = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonResponse);
+            var result = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(jsonResponse);
             return result?.data?.link;
         }
     }

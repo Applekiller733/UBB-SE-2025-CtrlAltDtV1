@@ -99,7 +99,7 @@ namespace SocialStuff.Services.Interfaces
         /// </summary>
         /// <param name="userID">The ID of the user.</param>
         /// <returns>The User object.</returns>
-        User GetUserById(int userID);
+        User? GetUserById(int userID);
 
         /// <summary>
         /// Gets a list of users who are not friends with the specified user.

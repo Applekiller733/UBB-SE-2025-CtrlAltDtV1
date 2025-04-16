@@ -59,7 +59,7 @@ namespace SocialStuff.Data
         /// </summary>
         /// <param name="userID">The ID of the user to retrieve.</param>
         /// <returns>A <see cref="User"/> object representing the user.</returns>
-        public User GetUserById(int userID)
+        public User? GetUserById(int userID)
         {
             SqlParameter[] parameters =
             {

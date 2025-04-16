@@ -1,60 +1,70 @@
-﻿using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using SocialStuff.Model;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿// <copyright file="FriendsListViewModel.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.ViewModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Windows.Input;
+    using Microsoft.UI.Xaml;
+    using SocialStuff.Model;
+    using SocialStuff.Services.Interfaces;
+
     public class FriendsListViewModel : INotifyPropertyChanged
     {
         public List<User> allFriends { get; set; }
+
         public ObservableCollection<User> FriendsList { get; set; }
+
         public IUserService userService { get; set; }
+
         public IChatService chatService { get; set; }
+
         public IMessageService messageService { get; set; }
 
         public ICommand RemoveFriend { get; }
 
         private Visibility _noFriendsVisibility = Visibility.Collapsed;
+
         public Visibility NoFriendsVisibility
         {
-            get { return _noFriendsVisibility; }
+            get
+            {
+                return this._noFriendsVisibility;
+            }
+
             set
             {
-                _noFriendsVisibility = value;
-                OnPropertyChanged(nameof(NoFriendsVisibility));
+                this._noFriendsVisibility = value;
+                this.OnPropertyChanged(nameof(this.NoFriendsVisibility));
             }
         }
 
         private string searchQuery;
+
         public string SearchQuery
         {
-            get => searchQuery;
+            get => this.searchQuery;
             set
             {
-                if (searchQuery != value)
+                if (this.searchQuery != value)
                 {
-                    searchQuery = value;
-                    OnPropertyChanged(nameof(SearchQuery));
-                    FilterFriends();
+                    this.searchQuery = value;
+                    this.OnPropertyChanged(nameof(this.SearchQuery));
+                    this.FilterFriends();
                 }
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public FriendsListViewModel(IChatService chat, IUserService user, IMessageService message)
@@ -64,9 +74,9 @@ namespace SocialStuff.ViewModel
             this.messageService = message;
             this.allFriends = this.userService.GetFriendsByUser(this.userService.GetCurrentUser());
             this.FriendsList = new ObservableCollection<User>();
-            RemoveFriend = new RelayCommand<object>(RemoveFriendFromList);
+            this.RemoveFriend = new RelayCommand<object>(this.RemoveFriendFromList);
 
-            LoadFriends();
+            this.LoadFriends();
         }
 
         public void RemoveFriendFromList(object user)
@@ -76,6 +86,7 @@ namespace SocialStuff.ViewModel
             {
                 this.userService.RemoveFriend(this.userService.GetCurrentUser(), friend.GetUserId());
             }
+
             this.allFriends = this.userService.GetFriendsByUser(this.userService.GetCurrentUser());
 
             this.LoadFriends();
@@ -84,27 +95,27 @@ namespace SocialStuff.ViewModel
         public void LoadFriends()
         {
             this.allFriends = this.userService.GetFriendsByUser(this.userService.GetCurrentUser());
-            FilterFriends();
+            this.FilterFriends();
         }
 
         public void FilterFriends()
         {
-            FriendsList.Clear();
+            this.FriendsList.Clear();
 
-            foreach (var friend in allFriends.Where(f =>
-                         string.IsNullOrEmpty(SearchQuery) ||
-                         f.Username.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase) ||
-                         f.PhoneNumber.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase)))
+            foreach (var friend in this.allFriends.Where(f =>
+                         string.IsNullOrEmpty(this.SearchQuery) ||
+                         f.Username.Contains(this.SearchQuery, StringComparison.OrdinalIgnoreCase) ||
+                         f.PhoneNumber.Contains(this.SearchQuery, StringComparison.OrdinalIgnoreCase)))
             {
-                FriendsList.Add(friend);
+                this.FriendsList.Add(friend);
             }
 
-            UpdateNoFriendsVisibility();
+            this.UpdateNoFriendsVisibility();
         }
 
         private void UpdateNoFriendsVisibility()
         {
-            NoFriendsVisibility = (FriendsList == null || FriendsList.Count == 0)
+            this.NoFriendsVisibility = (this.FriendsList == null || this.FriendsList.Count == 0)
                 ? Visibility.Visible
                 : Visibility.Collapsed;
         }

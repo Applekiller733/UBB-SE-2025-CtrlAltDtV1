@@ -1,75 +1,79 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using SocialStuff.Model;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
+﻿// <copyright file="NotificationViewModel.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.ViewModel
 {
+    using System.Collections.ObjectModel;
+    using System.ComponentModel;
+    using System.Windows.Input;
+    using SocialStuff.Model;
+    using SocialStuff.Services.Interfaces;
+
     public class NotificationViewModel : INotifyPropertyChanged
     {
-        private readonly INotificationService notificationService;
-        private readonly int currentUserID;
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public ICommand ClearNotificationCommand { get; }
+
+        public ICommand ClearAllNotificationsCommand { get; }
+
         private ObservableCollection<Notification> notifications;
 
         public ObservableCollection<Notification> Notifications
         {
-            get { return notifications; }
+            get
+            {
+                return notifications;
+            }
+
             set
             {
-                notifications = value;
-                OnPropertyChanged(nameof(Notifications));
+                this.notifications = value;
+                this.OnPropertyChanged(nameof(this.Notifications));
             }
         }
 
-        public ICommand ClearNotificationCommand { get; }
-        public ICommand ClearAllNotificationsCommand { get; }
+        private readonly int currentUserID;
 
-        public NotificationViewModel()
-        {
-            //  constructor 
-        }
+        private readonly INotificationService notificationService;
+
+        // public NotificationViewModel()
+        // {
+        //    // constructor
+        // }
 
         public NotificationViewModel(INotificationService service, int userID)
         {
-            notificationService = service;
-            currentUserID = userID;
-            Notifications = new ObservableCollection<Notification>();
-            ClearNotificationCommand = new RelayCommand<int>(ClearNotification);
-            ClearAllNotificationsCommand = new RelayCommand(ClearAllNotifications);
-            LoadNotifications();
+            this.notificationService = service;
+            this.currentUserID = userID;
+            this.Notifications = new ObservableCollection<Notification>();
+            this.ClearNotificationCommand = new RelayCommand<int>(this.ClearNotification);
+            this.ClearAllNotificationsCommand = new RelayCommand(this.ClearAllNotifications);
+            this.LoadNotifications();
         }
 
         public void LoadNotifications()
         {
-            var notificationsList = notificationService.GetNotifications(currentUserID);
-            Notifications = new ObservableCollection<Notification>(notificationsList);
+            var notificationsList = this.notificationService.GetNotifications(this.currentUserID);
+            this.Notifications = new ObservableCollection<Notification>(notificationsList);
         }
 
         public void ClearNotification(int notificationID)
         {
-            notificationService.ClearNotification(notificationID);
-            LoadNotifications();
+            this.notificationService.ClearNotification(notificationID);
+            this.LoadNotifications();
         }
 
         public void ClearAllNotifications()
         {
-            notificationService.ClearAllNotifications(currentUserID);
-            LoadNotifications();
+            this.notificationService.ClearAllNotifications(this.currentUserID);
+            this.LoadNotifications();
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

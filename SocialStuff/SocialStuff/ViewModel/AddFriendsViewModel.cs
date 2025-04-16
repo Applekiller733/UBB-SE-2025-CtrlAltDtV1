@@ -1,80 +1,91 @@
-﻿using SocialStuff.Model;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿// <copyright file="AddFriendsViewModel.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.ViewModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Windows.Input;
+    using SocialStuff.Model;
+    using SocialStuff.Services.Interfaces;
+
     public class AddFriendsViewModel : INotifyPropertyChanged
     {
-        public List<User> allUsers { get; set; }
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         public ObservableCollection<User> UsersList { get; set; }
-        public IUserService userService { get; set; }
+
         private FriendsListViewModel friendsListViewModel;
+
+        private string searchQuery;
+
+        public List<User> allUsers { get; set; }
+
+        public IUserService userService { get; set; }
+
         public ICommand AddFriendCommand { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        private string searchQuery;
         public string SearchQuery
         {
-            get => searchQuery;
+            get => this.searchQuery;
             set
             {
-                if (searchQuery != value)
+                if (this.searchQuery != value)
                 {
-                    searchQuery = value;
-                    OnPropertyChanged(nameof(SearchQuery));
-                    FilterUsers();
+                    this.searchQuery = value;
+                    this.OnPropertyChanged(nameof(this.SearchQuery));
+                    this.FilterUsers();
                 }
             }
         }
+
         public AddFriendsViewModel(FriendsListViewModel friendsListViewModel, IUserService userService)
         {
             this.userService = userService;
             this.friendsListViewModel = friendsListViewModel;
             this.allUsers = userService.GetNonFriendsUsers(userService.GetCurrentUser());
-            UsersList = new ObservableCollection<User>();
-            AddFriendCommand = new RelayCommand<object>(AddFriend);
+            this.UsersList = new ObservableCollection<User>();
+            this.AddFriendCommand = new RelayCommand<object>(AddFriend);
 
-            LoadUsers();
+            this.LoadUsers();
+        }
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void AddFriend(object user)
         {
             var friend = user as User;
 
-            this.userService.AddFriend(this.userService.GetCurrentUser(), friend.GetUserId());
-            friendsListViewModel.LoadFriends();
-            LoadUsers();
+            this.userService.AddFriend(this.userService.GetCurrentUser(), friend!.GetUserId());
+            this.friendsListViewModel.LoadFriends();
+            this.LoadUsers();
         }
 
         private void LoadUsers()
         {
-            this.allUsers = userService.GetNonFriendsUsers(userService.GetCurrentUser());
-            FilterUsers();
+            this.allUsers = this.userService.GetNonFriendsUsers(this.userService.GetCurrentUser());
+            this.FilterUsers();
         }
 
         private void FilterUsers()
         {
-            UsersList.Clear();
+            this.UsersList.Clear();
 
-            foreach (var friend in allUsers.Where(f =>
-                         string.IsNullOrEmpty(SearchQuery) ||
-                         f.Username.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase)))
+            foreach (var friend in this.allUsers.Where(f =>
+                         string.IsNullOrEmpty(this.SearchQuery) ||
+                         f.Username.Contains(this.SearchQuery, StringComparison.OrdinalIgnoreCase)))
             {
-                UsersList.Add(friend);
+                this.UsersList.Add(friend);
             }
         }
     }

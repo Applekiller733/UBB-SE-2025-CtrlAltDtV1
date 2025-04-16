@@ -13,8 +13,8 @@ namespace SocialStuff.Tests.ServiceTests
     [TestClass]
     public class ChatServiceTests
     {
-        private Mock<IRepository> _mockRepo;
-        private ChatService _chatService;
+        private Mock<IRepository>? _mockRepo;
+        private ChatService? _chatService;
 
         [TestInitialize]
         public void TestInitialize()
@@ -28,10 +28,10 @@ namespace SocialStuff.Tests.ServiceTests
         {
             // Arrange
             int expectedUserId = 2;
-            _mockRepo.Setup(repo => repo.GetLoggedInUserID()).Returns(expectedUserId);
+            _mockRepo!.Setup(repo => repo.GetLoggedInUserID()).Returns(expectedUserId);
 
             // Act
-            int actualUserId = _chatService.GetCurrentUserID();
+            int actualUserId = _chatService!.GetCurrentUserID();
 
             // Assert
             _mockRepo.Verify(repo => repo.GetLoggedInUserID(), Times.Once);
@@ -44,10 +44,10 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int chatId = 1;
             var participants = new List<int> { 1, 2, 3 };
-            _mockRepo.Setup(repo => repo.GetChatParticipantsIDs(chatId)).Returns(participants);
+            _mockRepo!.Setup(repo => repo.GetChatParticipantsIDs(chatId)).Returns(participants);
 
             // Act
-            int count = _chatService.GetNumberOfParticipants(chatId);
+            int count = _chatService!.GetNumberOfParticipants(chatId);
 
             // Assert
             _mockRepo.Verify(repo => repo.GetChatParticipantsIDs(chatId), Times.Once);
@@ -58,10 +58,10 @@ namespace SocialStuff.Tests.ServiceTests
         public void GetRepo_WhenCalled_ReturnsRepositoryInstance()
         {
             // Act
-            var repo = _chatService.GetRepo();
+            var repo = _chatService!.GetRepo();
 
             // Assert
-            Assert.AreSame(_mockRepo.Object, repo);
+            Assert.AreSame(_mockRepo!.Object, repo);
         }
 
         [TestMethod]
@@ -73,10 +73,10 @@ namespace SocialStuff.Tests.ServiceTests
             int chatId = 1;
             string description = "Test request";
             int currentUserId = 2;
-            _mockRepo.Setup(repo => repo.GetLoggedInUserID()).Returns(currentUserId);
+            _mockRepo!.Setup(repo => repo.GetLoggedInUserID()).Returns(currentUserId);
 
             // Act
-            _chatService.RequestMoneyViaChat(amount, currency, chatId, description);
+            _chatService!.RequestMoneyViaChat(amount, currency, chatId, description);
 
             // Assert
             _mockRepo.Verify(repo => repo.AddRequestMessage(
@@ -94,7 +94,7 @@ namespace SocialStuff.Tests.ServiceTests
         public void RequestMoneyViaChat_InvalidAmount_ThrowsArgumentException()
         {
             // Act
-            _chatService.RequestMoneyViaChat(-50, "USD", 1, "Test");
+            _chatService!.RequestMoneyViaChat(-50, "USD", 1, "Test");
         }
 
         [TestMethod]
@@ -102,7 +102,7 @@ namespace SocialStuff.Tests.ServiceTests
         public void RequestMoneyViaChat_EmptyCurrency_ThrowsArgumentException()
         {
             // Act
-            _chatService.RequestMoneyViaChat(100, string.Empty, 1, "Test");
+            _chatService!.RequestMoneyViaChat(100, string.Empty, 1, "Test");
         }
 
         [TestMethod]
@@ -115,12 +115,12 @@ namespace SocialStuff.Tests.ServiceTests
             string description = "Test send";
             int currentUserId = 1;
             var participants = new List<int> { currentUserId, 2, 3 };
-            _mockRepo.Setup(repo => repo.GetLoggedInUserID()).Returns(currentUserId);
+            _mockRepo!.Setup(repo => repo.GetLoggedInUserID()).Returns(currentUserId);
             _mockRepo.Setup(repo => repo.GetChatParticipantsIDs(chatId)).Returns(participants);
             float expectedTotalAmount = amount * (participants.Count - 1);
 
             // Act
-            _chatService.SendMoneyViaChat(amount, currency, description, chatId);
+            _chatService!.SendMoneyViaChat(amount, currency, description, chatId);
 
             // Assert
             _mockRepo.Verify(repo => repo.AddTransferMessage(
@@ -142,10 +142,10 @@ namespace SocialStuff.Tests.ServiceTests
             int accepterId = 2;
             int requesterId = 1;
             int chatId = 1;
-            _mockRepo.Setup(repo => repo.GetLoggedInUserID()).Returns(accepterId);
+            _mockRepo!.Setup(repo => repo.GetLoggedInUserID()).Returns(accepterId);
 
             // Act
-            _chatService.AcceptRequestViaChat(amount, currency, accepterId, requesterId, chatId);
+            _chatService!.AcceptRequestViaChat(amount, currency, accepterId, requesterId, chatId);
 
             // Assert
             _mockRepo.Verify(repo => repo.AddTransferMessage(
@@ -165,11 +165,11 @@ namespace SocialStuff.Tests.ServiceTests
             var participants = new List<int> { 1, 2, 3 };
             string chatName = "Test Chat";
             int expectedChatId = 5;
-            _mockRepo.Setup(repo => repo.AddChat(chatName)).Returns(expectedChatId);
+            _mockRepo!.Setup(repo => repo.AddChat(chatName)).Returns(expectedChatId);
             _mockRepo.Setup(repo => repo.GetChatParticipants(expectedChatId)).Returns(new List<User>());
 
             // Act
-            _chatService.CreateChat(participants, chatName);
+            _chatService!.CreateChat(participants, chatName);
 
             // Assert
             _mockRepo.Verify(repo => repo.AddChat(chatName), Times.Once);
@@ -187,10 +187,10 @@ namespace SocialStuff.Tests.ServiceTests
             int chatId = 1;
 
             // Act
-            _chatService.DeleteChat(chatId);
+            _chatService!.DeleteChat(chatId);
 
             // Assert
-            _mockRepo.Verify(repo => repo.DeleteChat(chatId), Times.Once);
+            _mockRepo!.Verify(repo => repo.DeleteChat(chatId), Times.Once);
         }
 
         [TestMethod]
@@ -204,11 +204,11 @@ namespace SocialStuff.Tests.ServiceTests
                 new TextMessage(2, 1, chatId, DateTime.Now.AddHours(-1), "Newer message", new List<int>()),
                 new TextMessage(3, 1, 2, DateTime.Now, "Other chat message", new List<int>())
             };
-            _mockRepo.Setup(repo => repo.GetMessagesList()).Returns(messages);
+            _mockRepo!.Setup(repo => repo.GetMessagesList()).Returns(messages);
             DateTime expectedTimestamp = messages[1].GetTimestamp();
 
             // Act
-            DateTime actualTimestamp = _chatService.GetLastMessageTimeStamp(chatId);
+            DateTime actualTimestamp = _chatService!.GetLastMessageTimeStamp(chatId);
 
             // Assert
             Assert.AreEqual(expectedTimestamp, actualTimestamp);
@@ -220,10 +220,10 @@ namespace SocialStuff.Tests.ServiceTests
             // Arrange
             int chatId = 1;
             var messages = new List<Message>();
-            _mockRepo.Setup(repo => repo.GetMessagesList()).Returns(messages);
+            _mockRepo!.Setup(repo => repo.GetMessagesList()).Returns(messages);
 
             // Act
-            DateTime actualTimestamp = _chatService.GetLastMessageTimeStamp(chatId);
+            DateTime actualTimestamp = _chatService!.GetLastMessageTimeStamp(chatId);
 
             // Assert
             Assert.AreEqual(DateTime.MinValue, actualTimestamp);
@@ -239,10 +239,10 @@ namespace SocialStuff.Tests.ServiceTests
                 new TextMessage(1, 1, chatId, DateTime.Now, "Message 1", new List<int>()),
                 new TextMessage(2, 1, 2, DateTime.Now, "Message 2", new List<int>())
             };
-            _mockRepo.Setup(repo => repo.GetMessagesList()).Returns(messages);
+            _mockRepo!.Setup(repo => repo.GetMessagesList()).Returns(messages);
 
             // Act
-            var chatHistory = _chatService.GetChatHistory(chatId);
+            var chatHistory = _chatService!.GetChatHistory(chatId);
 
             // Assert
             Assert.AreEqual(1, chatHistory.Count);
@@ -257,10 +257,10 @@ namespace SocialStuff.Tests.ServiceTests
             int chatId = 1;
 
             // Act
-            _chatService.AddUserToChat(userId, chatId);
+            _chatService!.AddUserToChat(userId, chatId);
 
             // Assert
-            _mockRepo.Verify(repo => repo.AddUserToChat(userId, chatId), Times.Once);
+            _mockRepo!.Verify(repo => repo.AddUserToChat(userId, chatId), Times.Once);
         }
 
         [TestMethod]
@@ -271,10 +271,10 @@ namespace SocialStuff.Tests.ServiceTests
             int chatId = 1;
 
             // Act
-            _chatService.RemoveUserFromChat(userId, chatId);
+            _chatService!.RemoveUserFromChat(userId, chatId);
 
             // Assert
-            _mockRepo.Verify(repo => repo.RemoveUserFromChat(userId, chatId), Times.Once);
+            _mockRepo!.Verify(repo => repo.RemoveUserFromChat(userId, chatId), Times.Once);
         }
 
         [TestMethod]
@@ -284,10 +284,10 @@ namespace SocialStuff.Tests.ServiceTests
             int chatId = 1;
             string expectedName = "Test Chat";
             var chat = new Chat(chatId, expectedName, new List<int>());
-            _mockRepo.Setup(repo => repo.GetChatsList()).Returns(new List<Chat> { chat });
+            _mockRepo!.Setup(repo => repo.GetChatsList()).Returns(new List<Chat> { chat });
 
             // Act
-            string actualName = _chatService.GetChatNameByID(chatId);
+            string actualName = _chatService!.GetChatNameByID(chatId);
 
             // Assert
             Assert.AreEqual(expectedName, actualName);
@@ -299,10 +299,10 @@ namespace SocialStuff.Tests.ServiceTests
         {
             // Arrange
             int chatId = 1;
-            _mockRepo.Setup(repo => repo.GetChatsList()).Returns(new List<Chat>());
+            _mockRepo!.Setup(repo => repo.GetChatsList()).Returns(new List<Chat>());
 
             // Act
-            _chatService.GetChatNameByID(chatId);
+            _chatService!.GetChatNameByID(chatId);
         }
 
         [TestMethod]
@@ -315,10 +315,10 @@ namespace SocialStuff.Tests.ServiceTests
                 new User(1, "User1", "123", 0),
                 new User(2, "User2", "456", 0)
             };
-            _mockRepo.Setup(repo => repo.GetChatParticipants(chatId)).Returns(participants);
+            _mockRepo!.Setup(repo => repo.GetChatParticipants(chatId)).Returns(participants);
 
             // Act
-            var result = _chatService.GetChatParticipantsStringList(chatId);
+            var result = _chatService!.GetChatParticipantsStringList(chatId);
 
             // Assert
             CollectionAssert.AreEqual(new List<string> { "User1", "User2" }, result);
@@ -334,10 +334,10 @@ namespace SocialStuff.Tests.ServiceTests
                 new User(1, "User1", "123", 0),
                 new User(2, "User2", "456", 0)
             };
-            _mockRepo.Setup(repo => repo.GetChatParticipants(chatId)).Returns(expectedParticipants);
+            _mockRepo!.Setup(repo => repo.GetChatParticipants(chatId)).Returns(expectedParticipants);
 
             // Act
-            var actualParticipants = _chatService.GetChatParticipantsList(chatId);
+            var actualParticipants = _chatService!.GetChatParticipantsList(chatId);
 
             // Assert
             CollectionAssert.AreEqual(expectedParticipants, actualParticipants);
@@ -347,7 +347,7 @@ namespace SocialStuff.Tests.ServiceTests
         public void EnoughFunds_ReturnsBoolean()
         {
             // Act
-            bool result = _chatService.EnoughFunds(100, "USD", 1);
+            bool result = _chatService!.EnoughFunds(100, "USD", 1);
 
             // Assert
             Assert.IsTrue(result || !result); // Always true, checks it's a boolean
@@ -357,7 +357,7 @@ namespace SocialStuff.Tests.ServiceTests
         public void InitiateTransfer_DoesNotThrow()
         {
             // Act & Assert (no exception expected)
-            _chatService.InitiateTransfer(1, 2, 100, "USD");
+            _chatService!.InitiateTransfer(1, 2, 100, "USD");
         }
     }
 }

@@ -1,12 +1,12 @@
-﻿using Microsoft.UI.Xaml.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="EmoticonToEmojiConverter.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.View
 {
+    using System;
+    using Microsoft.UI.Xaml.Data;
+
     public class EmoticonToEmojiConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
@@ -15,6 +15,7 @@ namespace SocialStuff.View
             {
                 return EmoticonConverter.ConvertEmoticonsToEmojis(message);
             }
+
             return value;
         }
 

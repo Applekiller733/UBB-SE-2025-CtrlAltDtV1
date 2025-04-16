@@ -12,9 +12,9 @@ namespace SocialStuff.Tests.ServiceTests
     [TestClass]
     public class FeedServiceTests
     {
-        private Mock<IRepository> _repoMock;
-        private Mock<IUserService> _userServiceMock;
-        private FeedService _service;
+        private Mock<IRepository>? _repoMock;
+        private Mock<IUserService>? _userServiceMock;
+        private FeedService? _service;
 
         [TestInitialize]
         public void Setup()
@@ -33,10 +33,10 @@ namespace SocialStuff.Tests.ServiceTests
                 new Post(1, "Title1", "Cat1", "Content1", DateTime.Now),
                 new Post(2, "Title2", "Cat2", "Content2", DateTime.Now)
             };
-            _repoMock.Setup(r => r.GetFeedPostsList()).Returns(posts);
+            _repoMock!.Setup(r => r.GetFeedPostsList()).Returns(posts);
 
             // Act
-            var result = _service.GetFeedContent();
+            var result = _service!.GetFeedContent();
 
             // Assert
             Assert.AreEqual(posts, result);

@@ -13,18 +13,21 @@ namespace SocialStuff.Tests.RepositoryTests
     [TestClass]
     public class NotificationRepositoryTests
     {
-        private Mock<DatabaseConnection> _dbConnectionMock;
-        private Repository _repository;
+        private Mock<DatabaseConnection>? _dbConnectionMock;
+        private Repository? _repository;
 
         [TestInitialize]
         public void Setup()
         {
             _dbConnectionMock = new Mock<DatabaseConnection>();
             _repository = new Repository();
-            // Inject mock DatabaseConnection using reflection
-            typeof(Repository)
-                .GetField("dbConnection", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-                .SetValue(_repository, _dbConnectionMock.Object);
+            if (_repository != null)
+            {
+                // Inject mock DatabaseConnection using reflection
+                typeof(Repository)
+                    .GetField("dbConnection", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                    ?.SetValue(_repository, _dbConnectionMock.Object);
+            }
         }
 
         [TestMethod]
@@ -40,14 +43,14 @@ namespace SocialStuff.Tests.RepositoryTests
             dataTable.Rows.Add(1, DateTime.Now, "Notification 1", userId);
             dataTable.Rows.Add(2, DateTime.Now, "Notification 2", userId);
 
-            _dbConnectionMock.Setup(db => db.ExecuteReader(
+            _dbConnectionMock!.Setup(db => db.ExecuteReader(
                 "SELECT * FROM Notifications WHERE UserID = @UserID ORDER BY Timestamp DESC",
                 It.Is<SqlParameter[]>(p => p[0].ParameterName == "@UserID" && (int)p[0].Value == userId),
                 false))
                 .Returns(dataTable);
 
             // Act
-            var result = _repository.GetNotifications(userId);
+            var result = _repository!.GetNotifications(userId);
 
             // Assert
             Assert.AreEqual(2, result.Count);
@@ -64,14 +67,14 @@ namespace SocialStuff.Tests.RepositoryTests
             // Arrange
             int userId = 1;
             var dataTable = new DataTable();
-            _dbConnectionMock.Setup(db => db.ExecuteReader(
+            _dbConnectionMock!.Setup(db => db.ExecuteReader(
                 "SELECT * FROM Notifications WHERE UserID = @UserID ORDER BY Timestamp DESC",
                 It.Is<SqlParameter[]>(p => p[0].ParameterName == "@UserID" && (int)p[0].Value == userId),
                 false))
                 .Returns(dataTable);
 
             // Act
-            var result = _repository.GetNotifications(userId);
+            var result = _repository!.GetNotifications(userId);
 
             // Assert
             Assert.AreEqual(0, result.Count);
@@ -83,20 +86,20 @@ namespace SocialStuff.Tests.RepositoryTests
             // Arrange
             string content = "Test notification";
             int userId = 1;
-            SqlParameter[] capturedParameters = null;
-            _dbConnectionMock.Setup(db => db.ExecuteNonQuery(
+            SqlParameter[]? capturedParameters = null;
+            _dbConnectionMock!.Setup(db => db.ExecuteNonQuery(
                 "AddNotification",
                 It.IsAny<SqlParameter[]>()))
                 .Callback<string, SqlParameter[]>((_, p) => capturedParameters = p);
 
             // Act
-            _repository.AddNotification(content, userId);
+            _repository!.AddNotification(content, userId);
 
             // Assert
             _dbConnectionMock.Verify(db => db.ExecuteNonQuery(
                 "AddNotification",
                 It.IsAny<SqlParameter[]>()), Times.Once());
-            Assert.AreEqual(2, capturedParameters.Length);
+            Assert.AreEqual(2, capturedParameters!.Length);
             Assert.AreEqual("@Content", capturedParameters[0].ParameterName);
             Assert.AreEqual(content, capturedParameters[0].Value);
             Assert.AreEqual("@UserID", capturedParameters[1].ParameterName);
@@ -108,20 +111,20 @@ namespace SocialStuff.Tests.RepositoryTests
         {
             // Arrange
             int notifId = 1;
-            SqlParameter[] capturedParameters = null;
-            _dbConnectionMock.Setup(db => db.ExecuteNonQuery(
+            SqlParameter[]? capturedParameters = null;
+            _dbConnectionMock!.Setup(db => db.ExecuteNonQuery(
                 "DeleteNotification",
                 It.IsAny<SqlParameter[]>()))
                 .Callback<string, SqlParameter[]>((_, p) => capturedParameters = p);
 
             // Act
-            _repository.DeleteNotification(notifId);
+            _repository!.DeleteNotification(notifId);
 
             // Assert
             _dbConnectionMock.Verify(db => db.ExecuteNonQuery(
                 "DeleteNotification",
                 It.IsAny<SqlParameter[]>()), Times.Once());
-            Assert.AreEqual(1, capturedParameters.Length);
+            Assert.AreEqual(1, capturedParameters!.Length);
             Assert.AreEqual("@NotifID", capturedParameters[0].ParameterName);
             Assert.AreEqual(notifId, capturedParameters[0].Value);
         }
@@ -131,20 +134,20 @@ namespace SocialStuff.Tests.RepositoryTests
         {
             // Arrange
             int userId = 1;
-            SqlParameter[] capturedParameters = null;
-            _dbConnectionMock.Setup(db => db.ExecuteNonQuery(
+            SqlParameter[]? capturedParameters = null;
+            _dbConnectionMock!.Setup(db => db.ExecuteNonQuery(
                 "DeleteAllNotifications",
                 It.IsAny<SqlParameter[]>()))
                 .Callback<string, SqlParameter[]>((_, p) => capturedParameters = p);
 
             // Act
-            _repository.ClearAllNotifications(userId);
+            _repository!.ClearAllNotifications(userId);
 
             // Assert
             _dbConnectionMock.Verify(db => db.ExecuteNonQuery(
                 "DeleteAllNotifications",
                 It.IsAny<SqlParameter[]>()), Times.Once());
-            Assert.AreEqual(1, capturedParameters.Length);
+            Assert.AreEqual(1, capturedParameters!.Length);
             Assert.AreEqual("@UserID", capturedParameters[0].ParameterName);
             Assert.AreEqual(userId, capturedParameters[0].Value);
         }
@@ -161,14 +164,14 @@ namespace SocialStuff.Tests.RepositoryTests
             dataTable.Columns.Add("ReportedCount", typeof(int));
             dataTable.Rows.Add(userId, "TestUser", "1234567890", 0);
 
-            _dbConnectionMock.Setup(db => db.ExecuteReader(
+            _dbConnectionMock!.Setup(db => db.ExecuteReader(
                 "SELECT * FROM Users WHERE UserID = @UserID",
                 It.Is<SqlParameter[]>(p => p[0].ParameterName == "@UserID" && (int)p[0].Value == userId),
                 false))
                 .Returns(dataTable);
 
             // Act
-            var result = _repository.GetUserById(userId);
+            var result = _repository!.GetUserById(userId);
 
             // Assert
             Assert.IsNotNull(result);
@@ -184,14 +187,14 @@ namespace SocialStuff.Tests.RepositoryTests
             // Arrange
             int userId = 1;
             var dataTable = new DataTable();
-            _dbConnectionMock.Setup(db => db.ExecuteReader(
+            _dbConnectionMock!.Setup(db => db.ExecuteReader(
                 "SELECT * FROM Users WHERE UserID = @UserID",
                 It.Is<SqlParameter[]>(p => p[0].ParameterName == "@UserID" && (int)p[0].Value == userId),
                 false))
                 .Returns(dataTable);
 
             // Act
-            var result = _repository.GetUserById(userId);
+            var result = _repository!.GetUserById(userId);
 
             // Assert
             Assert.IsNull(result);
@@ -226,7 +229,7 @@ namespace SocialStuff.Tests.RepositoryTests
             userDataTable2.Columns.Add("ReportedCount", typeof(int));
             userDataTable2.Rows.Add(2, "User2", "0987654321", 0);
 
-            _dbConnectionMock.Setup(db => db.ExecuteReader(
+            _dbConnectionMock!.Setup(db => db.ExecuteReader(
                 "SELECT * FROM Chats WHERE ChatID = @ChatID",
                 It.Is<SqlParameter[]>(p => p[0].ParameterName == "@ChatID" && (int)p[0].Value == chatId),
                 false))
@@ -251,7 +254,7 @@ namespace SocialStuff.Tests.RepositoryTests
                 .Returns(userDataTable2);
 
             // Act
-            var result = _repository.GetChatById(chatId);
+            var result = _repository!.GetChatById(chatId);
 
             // Assert
             Assert.IsNotNull(result);
@@ -266,14 +269,14 @@ namespace SocialStuff.Tests.RepositoryTests
             // Arrange
             int chatId = 1;
             var dataTable = new DataTable();
-            _dbConnectionMock.Setup(db => db.ExecuteReader(
+            _dbConnectionMock!.Setup(db => db.ExecuteReader(
                 "SELECT * FROM Chats WHERE ChatID = @ChatID",
                 It.Is<SqlParameter[]>(p => p[0].ParameterName == "@ChatID" && (int)p[0].Value == chatId),
                 false))
                 .Returns(dataTable);
 
             // Act
-            var result = _repository.GetChatById(chatId);
+            var result = _repository!.GetChatById(chatId);
 
             // Assert
             Assert.IsNull(result);
@@ -303,7 +306,7 @@ namespace SocialStuff.Tests.RepositoryTests
             userDataTable2.Columns.Add("ReportedCount", typeof(int));
             userDataTable2.Rows.Add(2, "User2", "0987654321", 0);
 
-            _dbConnectionMock.Setup(db => db.ExecuteReader(
+            _dbConnectionMock!.Setup(db => db.ExecuteReader(
                 "SELECT * FROM Chat_Participants WHERE ChatID = @ChatID",
                 It.Is<SqlParameter[]>(p => p[0].ParameterName == "@ChatID" && (int)p[0].Value == chatId),
                 false))
@@ -322,7 +325,7 @@ namespace SocialStuff.Tests.RepositoryTests
                 .Returns(userDataTable2);
 
             // Act
-            var result = _repository.GetChatParticipants(chatId);
+            var result = _repository!.GetChatParticipants(chatId);
 
             // Assert
             Assert.AreEqual(2, result.Count);
@@ -338,14 +341,14 @@ namespace SocialStuff.Tests.RepositoryTests
             // Arrange
             int chatId = 1;
             var dataTable = new DataTable();
-            _dbConnectionMock.Setup(db => db.ExecuteReader(
+            _dbConnectionMock!.Setup(db => db.ExecuteReader(
                 "SELECT * FROM Chat_Participants WHERE ChatID = @ChatID",
                 It.Is<SqlParameter[]>(p => p[0].ParameterName == "@ChatID" && (int)p[0].Value == chatId),
                 false))
                 .Returns(dataTable);
 
             // Act
-            var result = _repository.GetChatParticipants(chatId);
+            var result = _repository!.GetChatParticipants(chatId);
 
             // Assert
             Assert.AreEqual(0, result.Count);
