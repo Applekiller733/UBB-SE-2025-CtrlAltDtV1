@@ -16,8 +16,8 @@ namespace SocialStuff.Tests.RepositoryTests
     [TestClass]
     public class UserRepositoryTests
     {
-        private Mock<DatabaseConnection> _dbConnectionMock;
-        private Repository _repository;
+        private Mock<DatabaseConnection>? _dbConnectionMock;
+        private Repository? _repository;
 
         [TestInitialize]
         public void Setup()
@@ -29,7 +29,7 @@ namespace SocialStuff.Tests.RepositoryTests
         [TestMethod]
         public void GetLoggedInUserID_ReturnsCorrectId()
         {
-            var result = _repository.GetLoggedInUserID();
+            var result = _repository!.GetLoggedInUserID();
 
             Assert.AreEqual(2, result);
         }
@@ -44,10 +44,10 @@ namespace SocialStuff.Tests.RepositoryTests
             dataTable.Columns.Add("PhoneNumber", typeof(string));
             dataTable.Columns.Add("ReportedCount", typeof(int));
             dataTable.Rows.Add(userId, "User1", "1234567890", 0);
-            _dbConnectionMock.Setup(db => db.ExecuteReader(It.IsAny<string>(), It.IsAny<SqlParameter[]>(), false))
+            _dbConnectionMock!.Setup(db => db.ExecuteReader(It.IsAny<string>(), It.IsAny<SqlParameter[]>(), false))
                 .Returns(dataTable);
 
-            var result = _repository.GetUserById(userId);
+            var result = _repository!.GetUserById(userId);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(userId, result.GetUserId());

@@ -14,8 +14,8 @@ namespace SocialStuff.Tests.RepositoryTests
     [TestClass]
     public class RepositoryTests
     {
-        private Mock<DatabaseConnection> _dbConnectionMock;
-        private Repository _repository;
+        private Mock<DatabaseConnection>? _dbConnectionMock;
+        private Repository? _repository;
 
         [TestInitialize]
         public void Setup()
@@ -35,11 +35,11 @@ namespace SocialStuff.Tests.RepositoryTests
             dataTable.Columns.Add("PhoneNumber", typeof(string));
             dataTable.Columns.Add("ReportedCount", typeof(int));
             dataTable.Rows.Add(userId, "user", "123", 0);
-            _dbConnectionMock.Setup(d => d.ExecuteReader(It.IsAny<string>(), It.IsAny<SqlParameter[]>(), false))
+            _dbConnectionMock!.Setup(d => d.ExecuteReader(It.IsAny<string>(), It.IsAny<SqlParameter[]>(), false))
                             .Returns(dataTable);
 
             // Act
-            var result = _repository.GetUserById(userId);
+            var result = _repository!.GetUserById(userId);
 
             // Assert
             Assert.IsNotNull(result);

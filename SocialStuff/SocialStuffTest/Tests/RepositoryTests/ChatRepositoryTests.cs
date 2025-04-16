@@ -14,8 +14,8 @@ namespace SocialStuffTest.Tests.RepositoryTests
     [TestClass]
     public class ChatRepositoryTests
     {
-        private Mock<DatabaseConnection> _mockDbConnection;
-        private Repository _repository;
+        private Mock<DatabaseConnection>? _mockDbConnection;
+        private Repository? _repository;
 
         [TestInitialize]
         public void TestInitialize()
@@ -31,7 +31,7 @@ namespace SocialStuffTest.Tests.RepositoryTests
             int expectedUserId = 2; // LOGGEDINUSERID constant
 
             // Act
-            int actualUserId = _repository.GetLoggedInUserID();
+            int actualUserId = _repository!.GetLoggedInUserID();
 
             // Assert
             Assert.AreEqual(expectedUserId, actualUserId);
@@ -47,12 +47,12 @@ namespace SocialStuffTest.Tests.RepositoryTests
             dataTable.Columns.Add("userid", typeof(int));
             dataTable.Rows.Add(chatId, 1);
             dataTable.Rows.Add(chatId, 2);
-            _mockDbConnection.Setup(db => db.ExecuteReader("select * from Chat_Participants", It.IsAny<SqlParameter[]>(), false))
+            _mockDbConnection!.Setup(db => db.ExecuteReader("select * from Chat_Participants", It.IsAny<SqlParameter[]>(), false))
                 .Returns(dataTable);
             var expectedIds = new List<int> { 1, 2 };
 
             // Act
-            var actualIds = _repository.GetChatParticipantsIDs(chatId);
+            var actualIds = _repository!.GetChatParticipantsIDs(chatId);
 
             // Assert
             CollectionAssert.AreEqual(expectedIds, actualIds);
@@ -65,11 +65,11 @@ namespace SocialStuffTest.Tests.RepositoryTests
             // Arrange
             int chatId = 1;
             var dataTable = new DataTable();
-            _mockDbConnection.Setup(db => db.ExecuteReader("select * from Chat_Participants", It.IsAny<SqlParameter[]>(), false))
+            _mockDbConnection!.Setup(db => db.ExecuteReader("select * from Chat_Participants", It.IsAny<SqlParameter[]>(), false))
                 .Returns(dataTable);
 
             // Act
-            var actualIds = _repository.GetChatParticipantsIDs(chatId);
+            var actualIds = _repository!.GetChatParticipantsIDs(chatId);
 
             // Assert
             CollectionAssert.AreEqual(new List<int>(), actualIds);
@@ -87,10 +87,10 @@ namespace SocialStuffTest.Tests.RepositoryTests
             string currency = "USD";
 
             // Act
-            _repository.AddRequestMessage(userId, chatId, content, status, amount, currency);
+            _repository!.AddRequestMessage(userId, chatId, content, status, amount, currency);
 
             // Assert
-            _mockDbConnection.Verify(db => db.ExecuteNonQuery(
+            _mockDbConnection!.Verify(db => db.ExecuteNonQuery(
                 "AddMessage",
                 It.Is<SqlParameter[]>(p =>
                     (int)p[0].Value == 3 &&
@@ -112,10 +112,10 @@ namespace SocialStuffTest.Tests.RepositoryTests
             string content = "Request money";
 
             // Act
-            _repository.AddRequestMessage(userId, chatId, content);
+            _repository!.AddRequestMessage(userId, chatId, content);
 
             // Assert
-            _mockDbConnection.Verify(db => db.ExecuteNonQuery(
+            _mockDbConnection!.Verify(db => db.ExecuteNonQuery(
                 "AddMessage",
                 It.Is<SqlParameter[]>(p =>
                     (int)p[0].Value == 3 &&
@@ -140,10 +140,10 @@ namespace SocialStuffTest.Tests.RepositoryTests
             string currency = "USD";
 
             // Act
-            _repository.AddTransferMessage(userId, chatId, content, status, amount, currency);
+            _repository!.AddTransferMessage(userId, chatId, content, status, amount, currency);
 
             // Assert
-            _mockDbConnection.Verify(db => db.ExecuteNonQuery(
+            _mockDbConnection!.Verify(db => db.ExecuteNonQuery(
                 "AddMessage",
                 It.Is<SqlParameter[]>(p =>
                     (int)p[0].Value == 4 &&
@@ -162,7 +162,7 @@ namespace SocialStuffTest.Tests.RepositoryTests
             // Arrange
             string chatName = "Test Chat";
             int expectedChatId = 5;
-            _mockDbConnection.Setup(db => db.ExecuteNonQuery(
+            _mockDbConnection!.Setup(db => db.ExecuteNonQuery(
                 "AddChat",
                 It.Is<SqlParameter[]>(p =>
                     p[0].ParameterName == "@ChatName" &&
@@ -172,7 +172,7 @@ namespace SocialStuffTest.Tests.RepositoryTests
                 ))).Callback<string, SqlParameter[]>((name, p) => p[1].Value = expectedChatId);
 
             // Act
-            int actualChatId = _repository.AddChat(chatName);
+            int actualChatId = _repository!.AddChat(chatName);
 
             // Assert
             Assert.AreEqual(expectedChatId, actualChatId);
@@ -187,10 +187,10 @@ namespace SocialStuffTest.Tests.RepositoryTests
             int chatId = 1;
 
             // Act
-            _repository.AddUserToChat(userId, chatId);
+            _repository!.AddUserToChat(userId, chatId);
 
             // Assert
-            _mockDbConnection.Verify(db => db.ExecuteNonQuery(
+            _mockDbConnection!.Verify(db => db.ExecuteNonQuery(
                 "AddUserToChat",
                 It.Is<SqlParameter[]>(p =>
                     (int)p[0].Value == userId &&
@@ -207,7 +207,7 @@ namespace SocialStuffTest.Tests.RepositoryTests
             participantsTable.Columns.Add("UserID", typeof(int));
             participantsTable.Rows.Add(1);
             participantsTable.Rows.Add(2);
-            _mockDbConnection.Setup(db => db.ExecuteReader(
+            _mockDbConnection!.Setup(db => db.ExecuteReader(
                 "SELECT * FROM Chat_Participants WHERE ChatID = @ChatID",
                 It.Is<SqlParameter[]>(p => (int)p[0].Value == chatId),
                 false
@@ -227,7 +227,7 @@ namespace SocialStuffTest.Tests.RepositoryTests
             )).Returns(CreateUserDataTable(2, "User2", "456", 0));
 
             // Act
-            var participants = _repository.GetChatParticipants(chatId);
+            var participants = _repository!.GetChatParticipants(chatId);
 
             // Assert
             Assert.AreEqual(2, participants.Count);
@@ -243,10 +243,10 @@ namespace SocialStuffTest.Tests.RepositoryTests
             int chatId = 1;
 
             // Act
-            _repository.DeleteChat(chatId);
+            _repository!.DeleteChat(chatId);
 
             // Assert
-            _mockDbConnection.Verify(db => db.ExecuteNonQuery(
+            _mockDbConnection!.Verify(db => db.ExecuteNonQuery(
                 "DeleteChat",
                 It.Is<SqlParameter[]>(p => (int)p[0].Value == chatId)
             ), Times.Once);
@@ -270,13 +270,13 @@ namespace SocialStuffTest.Tests.RepositoryTests
 
             var reportsTable = new DataTable();
             reportsTable.Columns.Add("messageid", typeof(int));
-            _mockDbConnection.Setup(db => db.ExecuteReader("select * from Messages", It.IsAny<SqlParameter[]>(), false))
+            _mockDbConnection!.Setup(db => db.ExecuteReader("select * from Messages", It.IsAny<SqlParameter[]>(), false))
                 .Returns(messagesTable);
             _mockDbConnection.Setup(db => db.ExecuteReader("select * from Reports", It.IsAny<SqlParameter[]>(), false))
                 .Returns(reportsTable);
 
             // Act
-            var messages = _repository.GetMessagesList();
+            var messages = _repository!.GetMessagesList();
 
             // Assert
             Assert.AreEqual(1, messages.Count);
@@ -300,13 +300,13 @@ namespace SocialStuffTest.Tests.RepositoryTests
             participantsTable.Rows.Add(1, 1);
             participantsTable.Rows.Add(1, 2);
 
-            _mockDbConnection.Setup(db => db.ExecuteReader("select * from Chats", It.IsAny<SqlParameter[]>(), false))
+            _mockDbConnection!.Setup(db => db.ExecuteReader("select * from Chats", It.IsAny<SqlParameter[]>(), false))
                 .Returns(chatsTable);
             _mockDbConnection.Setup(db => db.ExecuteReader("select * from Chat_Participants", It.IsAny<SqlParameter[]>(), false))
                 .Returns(participantsTable);
 
             // Act
-            var chats = _repository.GetChatsList();
+            var chats = _repository!.GetChatsList();
 
             // Assert
             Assert.AreEqual(1, chats.Count);
@@ -323,10 +323,10 @@ namespace SocialStuffTest.Tests.RepositoryTests
             int chatId = 1;
 
             // Act
-            _repository.RemoveUserFromChat(userId, chatId);
+            _repository!.RemoveUserFromChat(userId, chatId);
 
             // Assert
-            _mockDbConnection.Verify(db => db.ExecuteNonQuery(
+            _mockDbConnection!.Verify(db => db.ExecuteNonQuery(
                 "RemoveUserFromChat",
                 It.Is<SqlParameter[]>(p =>
                     (int)p[0].Value == userId &&
