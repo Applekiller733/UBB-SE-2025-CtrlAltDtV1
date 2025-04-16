@@ -52,17 +52,18 @@ namespace SocialStuff.Services.Implementations
         /// <param name="newFriendID">The ID of the new friend to add.</param>
         public void AddFriend(int userID, int newFriendID)
         {
-            var user = this.GetUserById(userID);
-            var friend = this.GetUserById(newFriendID);
+            var user = this.repo.GetUserById(userID);
+            var friend = this.repo.GetUserById(newFriendID);
             var friends = this.repo.GetFriendsIDs(userID);
 
             if (user != null && friend != null && !friends.Contains(newFriendID))
             {
                 this.repo.AddFriend(userID, newFriendID);
-                user.AddFriend(newFriendID);
+                user.AddFriend(newFriendID); // assuming this is just updating an in-memory list
                 this.notificationService.SendFriendNotification(userID, newFriendID);
             }
         }
+
 
         /// <summary>
         /// Removes a friend for the specified user.

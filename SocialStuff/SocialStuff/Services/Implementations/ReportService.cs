@@ -70,6 +70,12 @@ namespace SocialStuff.Services.Implementations
         public void IncreaseReportCount(int reportedID)
         {
             User user = this.userService.GetUserById(reportedID);
+
+            if (user == null)
+            {
+                return;
+            }
+
             user.IncreaseReportCount();
         }
 

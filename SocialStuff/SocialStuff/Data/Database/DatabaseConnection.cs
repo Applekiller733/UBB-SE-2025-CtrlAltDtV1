@@ -127,7 +127,7 @@ namespace SocialStuff.Data.Database
         /// <param name="sqlParameters">The parameters for the query or stored procedure.</param>
         /// <param name="isStoredProcedure">Indicates whether the query is a stored procedure.</param>
         /// <returns>The result as a DataTable.</returns>
-        public DataTable ExecuteReader(string query, SqlParameter[] sqlParameters, bool isStoredProcedure = true)
+        public virtual DataTable ExecuteReader(string query, SqlParameter[] sqlParameters, bool isStoredProcedure = true)
         {
             try
             {
@@ -172,7 +172,7 @@ namespace SocialStuff.Data.Database
         /// <param name="storedProcedure">The name of the stored procedure or query.</param>
         /// <param name="sqlParameters">The parameters for the stored procedure or query.</param>
         /// <returns>The number of affected rows.</returns>
-        public int ExecuteNonQuery(string storedProcedure, SqlParameter[] sqlParameters)
+        public virtual int ExecuteNonQuery(string storedProcedure, SqlParameter[] sqlParameters)
         {
             try
             {

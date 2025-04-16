@@ -50,6 +50,13 @@ namespace SocialStuff.Services.Implementations
         /// <param name="content">The content of the message.</param>
         public void SendMessage(int senderID, int chatID, string content)
         {
+            var user = this.userService.GetUserById(senderID);
+            if (user == null)
+            {
+                System.Diagnostics.Debug.WriteLine($"User with ID {senderID} not found.");
+                return;
+            }
+
             if (this.IsUserInTimeout(senderID))
             {
                 return;
@@ -115,7 +122,7 @@ namespace SocialStuff.Services.Implementations
         /// Reports a message.
         /// </summary>
         /// <param name="message">The message to report.</param>
-        internal void ReportMessage(Message message)
+        public void ReportMessage(Message message)
         {
             // this.repository.(message.getMessageID());
         }
