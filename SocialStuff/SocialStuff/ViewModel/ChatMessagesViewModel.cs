@@ -234,8 +234,8 @@ namespace SocialStuff.ViewModel
         // Stop polling for messages
         public void StopMessagePolling()
         {
-            _messagePollingTimer?.Dispose();
-            _messagePollingTimer = null;
+            this._messagePollingTimer?.Dispose();
+            this._messagePollingTimer = null;
         }
 
         // Check for new messages by comparing timestamps
@@ -247,15 +247,15 @@ namespace SocialStuff.ViewModel
             foreach (var message in messages)
             {
                 // If the message timestamp is newer than the last message we processed
-                if (message.GetTimestamp() > _lastMessageTimestamp)
+                if (message.GetTimestamp() > this._lastMessageTimestamp)
                 {
-                    AddMessageToChat(message);
+                    this.AddMessageToChat(message);
                     hasNewMessages = true;
 
                     // Update the last message timestamp if this is newer
-                    if (message.GetTimestamp() > _lastMessageTimestamp)
+                    if (message.GetTimestamp() > this._lastMessageTimestamp)
                     {
-                        _lastMessageTimestamp = message.GetTimestamp();
+                        this._lastMessageTimestamp = message.GetTimestamp();
                     }
                 }
             }
@@ -263,7 +263,7 @@ namespace SocialStuff.ViewModel
             // Only scroll if we added new messages
             if (hasNewMessages)
             {
-                ScrollToBottom();
+                this.ScrollToBottom();
             }
         }
 
@@ -281,7 +281,7 @@ namespace SocialStuff.ViewModel
                     textMessage.GetContent(),
                     textMessage.GetUsersReport());
                 newTextMessage.SenderUsername = this.userService.GetUserById(textMessage.GetSenderID()).GetUsername();
-                ChatMessages.Add(newTextMessage);
+                this.ChatMessages.Add(newTextMessage);
             }
             else if (message is ImageMessage imageMessage)
             {
@@ -293,7 +293,7 @@ namespace SocialStuff.ViewModel
                     imageMessage.GetImageURL(),
                     imageMessage.GetUsersReport());
                 newImageMessage.SenderUsername = this.userService.GetUserById(imageMessage.GetSenderID()).GetUsername();
-                ChatMessages.Add(newImageMessage);
+                this.ChatMessages.Add(newImageMessage);
             }
             else if (message is TransferMessage transferMessage)
             {
@@ -306,7 +306,7 @@ namespace SocialStuff.ViewModel
                     transferMessage.GetDescription(),
                     transferMessage.GetCurrency());
                 newTransferMessage.SenderUsername = this.userService.GetUserById(transferMessage.GetSenderID()).GetUsername();
-                ChatMessages.Add(newTransferMessage);
+                this.ChatMessages.Add(newTransferMessage);
             }
             else if (message is RequestMessage requestMessage)
             {
@@ -319,18 +319,18 @@ namespace SocialStuff.ViewModel
                     requestMessage.GetDescription(),
                     requestMessage.GetCurrency());
                 newRequestMessage.SenderUsername = this.userService.GetUserById(requestMessage.GetSenderID()).GetUsername();
-                ChatMessages.Add(newRequestMessage);
+                this.ChatMessages.Add(newRequestMessage);
             }
         }
 
         public void SetupMessageTracking()
         {
-            ChatMessages.CollectionChanged += (sender, e) =>
+            this.ChatMessages.CollectionChanged += (sender, e) =>
             {
                 if (e.Action == NotifyCollectionChangedAction.Add ||
                     e.Action == NotifyCollectionChangedAction.Reset)
                 {
-                    ScrollToBottom();
+                    this.ScrollToBottom();
                 }
             };
         }
@@ -338,7 +338,7 @@ namespace SocialStuff.ViewModel
         // Important: Call this method when the view is being unloaded or when navigating away
         public void Cleanup()
         {
-            StopMessagePolling();
+            this.StopMessagePolling();
         }
     }
 }

@@ -1,49 +1,47 @@
-﻿using SocialStuff.Model;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿// <copyright file="AddFriendsViewModel.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.ViewModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Windows.Input;
+    using SocialStuff.Model;
+    using SocialStuff.Services.Interfaces;
+
     public class AddFriendsViewModel : INotifyPropertyChanged
     {
-        public List<User> allUsers { get; set; }
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public ObservableCollection<User> UsersList { get; set; }
 
-        public IUserService userService { get; set; }
-
         private FriendsListViewModel friendsListViewModel;
-
-        public ICommand AddFriendCommand { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         private string searchQuery;
 
+        public List<User> allUsers { get; set; }
+
+        public IUserService userService { get; set; }
+
+        public ICommand AddFriendCommand { get; set; }
+
         public string SearchQuery
         {
-            get => searchQuery;
+            get => this.searchQuery;
             set
             {
-                if (searchQuery != value)
+                if (this.searchQuery != value)
                 {
-                    searchQuery = value;
-                    OnPropertyChanged(nameof(SearchQuery));
-                    FilterUsers();
+                    this.searchQuery = value;
+                    this.OnPropertyChanged(nameof(this.SearchQuery));
+                    this.FilterUsers();
                 }
             }
         }
@@ -57,6 +55,11 @@ namespace SocialStuff.ViewModel
             this.AddFriendCommand = new RelayCommand<object>(AddFriend);
 
             this.LoadUsers();
+        }
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void AddFriend(object user)

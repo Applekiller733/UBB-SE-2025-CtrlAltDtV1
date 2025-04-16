@@ -14,12 +14,14 @@ namespace SocialStuff.ViewModel
     public class LeaveChatViewModel : INotifyPropertyChanged
     {
         public ICommand LeaveChatCommand { get; set; }
+
         private IUserService userService;
         private IChatService chatService;
         private ChatListViewModel lastViewModel;
         private int ChatID;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
