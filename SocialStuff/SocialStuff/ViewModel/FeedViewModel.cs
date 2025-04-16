@@ -1,11 +1,14 @@
-﻿using SocialStuff.Model;
-using SocialStuff.Services.Implementations;
-using SocialStuff.Services.Interfaces;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿// <copyright file="FeedViewModel.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.ViewModel
 {
+    using System.Collections.ObjectModel;
+    using System.ComponentModel;
+    using SocialStuff.Model;
+    using SocialStuff.Services.Interfaces;
+
     public class FeedViewModel : INotifyPropertyChanged
     {
         private readonly IFeedService feedService;
@@ -13,11 +16,15 @@ namespace SocialStuff.ViewModel
 
         public ObservableCollection<Post> Posts
         {
-            get { return posts; }
+            get
+            {
+                return this.posts;
+            }
+
             set
             {
-                posts = value;
-                OnPropertyChanged(nameof(Posts));
+                this.posts = value;
+                this.OnPropertyChanged(nameof(this.Posts));
             }
         }
 
@@ -29,20 +36,20 @@ namespace SocialStuff.ViewModel
         public FeedViewModel(IFeedService service)
         {
             this.feedService = service;
-            LoadPosts();
+            this.LoadPosts();
         }
 
         public void LoadPosts()
         {
-            var feedContent = feedService.GetFeedContent();
-            Posts = new ObservableCollection<Post>(feedContent);
+            var feedContent = this.feedService.GetFeedContent();
+            this.Posts = new ObservableCollection<Post>(feedContent);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

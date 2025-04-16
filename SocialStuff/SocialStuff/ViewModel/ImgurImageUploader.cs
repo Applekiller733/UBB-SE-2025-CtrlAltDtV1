@@ -14,7 +14,7 @@ public class ImgurImageUploader
 {
     private const string ClientId = "ecde1e79945f70c";
 
-    public static async Task<string> UploadImageAndGetUrl(StorageFile file)
+    public static async Task<string?> UploadImageAndGetUrl(StorageFile file)
     {
         if (file == null)
         {
@@ -45,7 +45,7 @@ public class ImgurImageUploader
             var response = await httpClient.SendAsync(request);
             string jsonResponse = await response.Content.ReadAsStringAsync();
 
-            dynamic result = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonResponse);
+            var result = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(jsonResponse);
             return result?.data?.link;
         }
     }

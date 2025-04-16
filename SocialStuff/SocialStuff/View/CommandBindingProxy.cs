@@ -1,8 +1,12 @@
-﻿using Microsoft.UI.Xaml;
-using System.Windows.Input;
+﻿// <copyright file="CommandBindingProxy.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SocialStuff.View
 {
+    using System.Windows.Input;
+    using Microsoft.UI.Xaml;
+
     public class CommandBindingProxy : DependencyObject
     {
         public static readonly DependencyProperty CommandProperty =
@@ -10,8 +14,8 @@ namespace SocialStuff.View
 
         public ICommand Command
         {
-            get { return (ICommand)GetValue(CommandProperty); }
-            set { SetValue(CommandProperty, value); }
+            get { return (ICommand)this.GetValue(CommandProperty); }
+            set { this.SetValue(CommandProperty, value); }
         }
     }
 }

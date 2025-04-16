@@ -12,7 +12,7 @@ namespace SocialStuff.ViewModel
 
     public class NotificationViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public ICommand ClearNotificationCommand { get; }
 
@@ -38,10 +38,10 @@ namespace SocialStuff.ViewModel
 
         private readonly INotificationService notificationService;
 
-        public NotificationViewModel()
-        {
-            // constructor
-        }
+        // public NotificationViewModel()
+        // {
+        //    // constructor
+        // }
 
         public NotificationViewModel(INotificationService service, int userID)
         {

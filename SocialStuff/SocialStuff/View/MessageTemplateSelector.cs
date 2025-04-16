@@ -17,7 +17,6 @@ namespace SocialStuff.View
 
         public DataTemplate ImageMessageTemplateLeft { get; set; }
 
-
         public DataTemplate ImageMessageTemplateRight { get; set; }
 
         public DataTemplate TransferMessageTemplateLeft { get; set; }

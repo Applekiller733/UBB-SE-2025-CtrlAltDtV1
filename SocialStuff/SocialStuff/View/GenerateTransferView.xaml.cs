@@ -9,8 +9,14 @@ namespace SocialStuff.View
     using SocialStuff.Services.Interfaces;
     using SocialStuff.ViewModel;
 
+    /// <summary>
+    /// bagati ai in el summary text
+    /// </summary>
     public sealed partial class GenerateTransferView : Page
     {
+        /// <summary>
+        /// Gets the ViewModel associated with this view.
+        /// </summary>
         public GenerateTransferViewModel ViewModel { get; }
 
         private IChatService chatService;
@@ -27,6 +33,11 @@ namespace SocialStuff.View
             this.lastChat = lastChat;
             this.rightFrame = rightFrame;
             this.InitializeComponent();
+        }
+
+        public void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.rightFrame.Content = this.lastChat;
         }
 
         private void TransferTypeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -87,11 +98,6 @@ namespace SocialStuff.View
         {
             // This ensures the funds check happens when currency changes
             // The binding will update ViewModel.CurrencyIndex which triggers CheckFunds
-        }
-
-        public void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.rightFrame.Content = this.lastChat;
         }
     }
 }

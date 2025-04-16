@@ -66,7 +66,7 @@ namespace SocialStuff.ViewModel
         {
             var friend = user as User;
 
-            this.userService.AddFriend(this.userService.GetCurrentUser(), friend.GetUserId());
+            this.userService.AddFriend(this.userService.GetCurrentUser(), friend!.GetUserId());
             this.friendsListViewModel.LoadFriends();
             this.LoadUsers();
         }

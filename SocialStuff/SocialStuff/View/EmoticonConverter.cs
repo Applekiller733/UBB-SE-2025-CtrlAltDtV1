@@ -85,8 +85,7 @@ namespace SocialStuff.View
                 result = Regex.Replace(
                     result,
                     $@"(?<!\w){Regex.Escape(emoticon.Key)}(?!\w)",
-                    emoticon.Value
-                );
+                    emoticon.Value);
             }
 
             return result;

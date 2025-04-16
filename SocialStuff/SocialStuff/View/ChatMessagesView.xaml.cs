@@ -30,7 +30,7 @@ namespace SocialStuff.View
             this.chatService = chatService;
             this.reportService = reportService;
             this.RightFrame = RightFrame;
-            this.chatMessagesViewModel = new ChatMessagesViewModel(mainWindow,RightFrame, ChatID, messageService, chatService, userService, reportService);
+            this.chatMessagesViewModel = new ChatMessagesViewModel(mainWindow, RightFrame, ChatID, messageService, chatService, userService, reportService);
             this.GenerateTransferViewModel = new GenerateTransferViewModel(chatService, ChatID);
             this.chatMessagesViewModel.ChatListView = this.ChatListView;
             this.chatMessagesViewModel.SetupMessageTracking();

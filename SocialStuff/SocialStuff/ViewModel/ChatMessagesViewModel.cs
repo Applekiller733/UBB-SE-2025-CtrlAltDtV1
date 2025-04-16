@@ -30,7 +30,7 @@ namespace SocialStuff.ViewModel
 
         public ObservableCollection<Message> ChatMessages { get; set; }
 
-        public ListView ChatListView { get; set; }
+        public ListView ChatListView { get; set; } = null!;
 
         public IMessageService messageService;
         public IChatService chatService;
@@ -45,13 +45,13 @@ namespace SocialStuff.ViewModel
         public string CurrentChatName { get; set; }
 
         // For message polling
-        private Timer _messagePollingTimer;
+        private Timer? _messagePollingTimer;
         private DateTime _lastMessageTimestamp = DateTime.MinValue;
         private const int POLLING_INTERVAL = 2000; // 2 seconds
 
         public string CurrentChatParticipantsString => string.Join(", ", this.CurrentChatParticipants ?? new List<string>());
 
-        private List<string> currentChatParticipants;
+        private List<string> currentChatParticipants = new List<string>();
 
         public List<string> CurrentChatParticipants
         {
@@ -67,14 +67,14 @@ namespace SocialStuff.ViewModel
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public virtual void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private string messageContent;
+        private string messageContent = string.Empty;
 
         public string MessageContent
         {
@@ -158,7 +158,6 @@ namespace SocialStuff.ViewModel
             reportView.Activate();
         }
 
-
         private T FindVisualChild<T>(DependencyObject parent)
             where T : DependencyObject
         {
@@ -181,7 +180,17 @@ namespace SocialStuff.ViewModel
             return null;
         }
 
-        public ChatMessagesViewModel(Window window, Frame RightFrame, int currentChatID, IMessageService msgService, IChatService chtService, IUserService usrService, IReportService reportService)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessagesViewModel"/> class.
+        /// </summary>
+        /// <param name="window">The window instance.</param>
+        /// <param name="rightFrame">The right frame instance.</param>
+        /// <param name="currentChatID">The current chat ID.</param>
+        /// <param name="msgService">The message service instance.</param>
+        /// <param name="chtService">The chat service instance.</param>
+        /// <param name="usrService">The user service instance.</param>
+        /// <param name="reportService">The report service instance.</param>
+        public ChatMessagesViewModel(Window window, Frame rightFrame, int currentChatID, IMessageService msgService, IChatService chtService, IUserService usrService, IReportService reportService)
         {
             this._window = window;
             this.ChatMessages = new ObservableCollection<Message>();
