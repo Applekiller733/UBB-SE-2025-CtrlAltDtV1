@@ -16,17 +16,24 @@ namespace SocialStuff.ViewModel
     public class AddFriendsViewModel : INotifyPropertyChanged
     {
         public List<User> allUsers { get; set; }
+
         public ObservableCollection<User> UsersList { get; set; }
+
         public IUserService userService { get; set; }
+
         private FriendsListViewModel friendsListViewModel;
+
         public ICommand AddFriendCommand { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         private string searchQuery;
+
         public string SearchQuery
         {
             get => searchQuery;
@@ -40,15 +47,16 @@ namespace SocialStuff.ViewModel
                 }
             }
         }
+
         public AddFriendsViewModel(FriendsListViewModel friendsListViewModel, IUserService userService)
         {
             this.userService = userService;
             this.friendsListViewModel = friendsListViewModel;
             this.allUsers = userService.GetNonFriendsUsers(userService.GetCurrentUser());
-            UsersList = new ObservableCollection<User>();
-            AddFriendCommand = new RelayCommand<object>(AddFriend);
+            this.UsersList = new ObservableCollection<User>();
+            this.AddFriendCommand = new RelayCommand<object>(AddFriend);
 
-            LoadUsers();
+            this.LoadUsers();
         }
 
         private void AddFriend(object user)
@@ -56,25 +64,25 @@ namespace SocialStuff.ViewModel
             var friend = user as User;
 
             this.userService.AddFriend(this.userService.GetCurrentUser(), friend.GetUserId());
-            friendsListViewModel.LoadFriends();
-            LoadUsers();
+            this.friendsListViewModel.LoadFriends();
+            this.LoadUsers();
         }
 
         private void LoadUsers()
         {
-            this.allUsers = userService.GetNonFriendsUsers(userService.GetCurrentUser());
-            FilterUsers();
+            this.allUsers = this.userService.GetNonFriendsUsers(this.userService.GetCurrentUser());
+            this.FilterUsers();
         }
 
         private void FilterUsers()
         {
-            UsersList.Clear();
+            this.UsersList.Clear();
 
-            foreach (var friend in allUsers.Where(f =>
-                         string.IsNullOrEmpty(SearchQuery) ||
-                         f.Username.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase)))
+            foreach (var friend in this.allUsers.Where(f =>
+                         string.IsNullOrEmpty(this.SearchQuery) ||
+                         f.Username.Contains(this.SearchQuery, StringComparison.OrdinalIgnoreCase)))
             {
-                UsersList.Add(friend);
+                this.UsersList.Add(friend);
             }
         }
     }

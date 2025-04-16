@@ -26,12 +26,17 @@ namespace SocialStuff.ViewModel
         private string searchQuery;
         private int ChatID;
         private ChatMessagesViewModel chatMessagesViewModel;
+
         public string ChatName { get; set; }
+
         public ICommand AddToSelectedCommand { get; set; }
+
         public ICommand RemoveFromSelectedCommand { get; set; }
+
         public ICommand AddUsersToChatCommand { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -83,7 +88,11 @@ namespace SocialStuff.ViewModel
 
         public string SearchQuery
         {
-            get { return searchQuery; }
+            get
+            {
+                return searchQuery;
+            }
+
             set
             {
                 if (searchQuery != value)
