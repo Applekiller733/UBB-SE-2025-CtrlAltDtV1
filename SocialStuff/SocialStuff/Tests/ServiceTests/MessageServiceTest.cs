@@ -123,13 +123,13 @@ namespace SocialStuff.Tests.ServiceTests
         {
             // Arrange
             var message = new TextMessage(1, 1, 2, DateTime.Now, "content", new List<int>());
-            _repoMock.Setup(r => r.DeleteMessage(message.GetMessageID())).Verifiable();
+            _repoMock.Setup(r => r.DeleteMessage(message.getMessageID())).Verifiable();
 
             // Act
             _service.DeleteMessage(message);
 
             // Assert
-            _repoMock.Verify(r => r.DeleteMessage(message.GetMessageID()), Times.Once());
+            _repoMock.Verify(r => r.DeleteMessage(message.getMessageID()), Times.Once());
         }
 
         [TestMethod]
